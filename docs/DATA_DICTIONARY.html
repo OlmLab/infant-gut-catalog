@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Data dictionary — Infant Gut Shotgun-Metagenome Catalog</title>
+<meta name="description" content="Curated, evidence-linked catalog of public shotgun-metagenome studies of the human infant gut with per-sample metadata.">
+<link rel="stylesheet" href="../static/site.css">
+
+
+</head>
+<body>
+<nav class="topnav"><div class="in">
+<a class="brand" href="../index.html">Infant Gut Metagenome Catalog</a>
+<a href="../studies/index.html" >Studies</a>
+<a href="../cohorts/index.html" >Cohorts</a>
+<a href="../samples/index.html" >Sample explorer</a>
+<a href="../fields/index.html" >Fields</a>
+<a href="../universe.html" >Universe</a>
+<a href="../methods.html" class="active">Methods</a>
+<a href="../downloads.html" >Downloads</a>
+</div></nav>
+<main>
+<div class="crumbs"><a href="../index.html">Home</a> › <a href="../methods.html">Methods</a> › Data dictionary</div>
+
+<p class="small">Rendered from <a href="DATA_DICTIONARY.md">DATA_DICTIONARY.md</a>.</p>
+<div class="md"><h1 id="data-dictionary">Data dictionary</h1>
+<h2 id="sample_metadata_wideparquet">sample_metadata_wide.parquet</h2>
+<table>
+<thead>
+<tr>
+<th>column</th>
+<th>type</th>
+<th>meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>sample_key</code></td>
+<td>string</td>
+<td>ENA/BioSample accession (SAMEA/SAMN/SAMD) — primary key</td>
+</tr>
+<tr>
+<td><code>study_accession</code></td>
+<td>str</td>
+<td>BioProject (PRJ…)</td>
+</tr>
+<tr>
+<td><code>secondary_sample</code></td>
+<td>str</td>
+<td>ENA secondary sample accession (ERS/SRS/DRS)</td>
+</tr>
+<tr>
+<td><code>sample_title</code></td>
+<td>str</td>
+<td>submitter sample title</td>
+</tr>
+<tr>
+<td><code>body_site_class</code></td>
+<td>str</td>
+<td>primary (infant gut/stool)</td>
+</tr>
+<tr>
+<td><code>collection_date</code></td>
+<td>str</td>
+<td>archive collection_date as given</td>
+</tr>
+<tr>
+<td><code>is_gold_heldout</code></td>
+<td>bool</td>
+<td>True if in the curatedMetagenomicData evaluation set</td>
+</tr>
+<tr>
+<td><code>probiotic_exposure</code></td>
+<td>str</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><code>preterm_status</code></td>
+<td>str</td>
+<td>preterm</td>
+</tr>
+<tr>
+<td><code>gestational_age_weeks</code></td>
+<td>float64</td>
+<td>float weeks at birth</td>
+</tr>
+<tr>
+<td><code>delivery_mode</code></td>
+<td>str</td>
+<td>vaginal</td>
+</tr>
+<tr>
+<td><code>feeding_mode</code></td>
+<td>str</td>
+<td>exclusive_breast</td>
+</tr>
+<tr>
+<td><code>antibiotic_exposure</code></td>
+<td>str</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><code>age_at_collection_days</code></td>
+<td>float64</td>
+<td>integer days postnatal</td>
+</tr>
+<tr>
+<td><code>birth_weight_grams</code></td>
+<td>float64</td>
+<td>integer grams</td>
+</tr>
+<tr>
+<td><code>country</code></td>
+<td>str</td>
+<td>ISO-3166 alpha-2</td>
+</tr>
+<tr>
+<td><code>maternal_antibiotics</code></td>
+<td>str</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><code>hmo_supplementation</code></td>
+<td>str</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><code>nec_status</code></td>
+<td>str</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><code>health_condition</code></td>
+<td>str</td>
+<td>healthy_control</td>
+</tr>
+<tr>
+<td><code>multiple_birth</code></td>
+<td>str</td>
+<td>singleton</td>
+</tr>
+<tr>
+<td><code>sibling_in_study</code></td>
+<td>str</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><code>geo_subregion</code></td>
+<td>str</td>
+<td>'City, Region' free text as given by submitter (never reverse-geocoded)</td>
+</tr>
+<tr>
+<td><code>sex</code></td>
+<td>str</td>
+<td>male</td>
+</tr>
+<tr>
+<td><code>timepoint_label</code></td>
+<td>str</td>
+<td>study's own label (free text)</td>
+</tr>
+<tr>
+<td><code>subject_id</code></td>
+<td>str</td>
+<td>study's own subject identifier (free text)</td>
+</tr>
+<tr>
+<td><code>probiotic_exposure__confidence</code></td>
+<td>float</td>
+<td>confidence (0–1) of <code>probiotic_exposure</code></td>
+</tr>
+<tr>
+<td><code>preterm_status__confidence</code></td>
+<td>float</td>
+<td>confidence (0–1) of <code>preterm_status</code></td>
+</tr>
+<tr>
+<td><code>gestational_age_weeks__confidence</code></td>
+<td>float</td>
+<td>confidence (0–1) of <code>gestational_age_weeks</code></td>
+</tr>
+<tr>
+<td><code>delivery_mode__confidence</code></td>
+<td>float</td>
+<td>confidence (0–1) of <code>delivery_mode</code></td>
+</tr>
+<tr>
+<td><code>feeding_mode__confidence</code></td>
+<td>float</td>
+<td>confidence (0–1) of <code>feeding_mode</code></td>
+</tr>
+<tr>
+<td><code>antibiotic_exposure__confidence</code></td>
+<td>float</td>
+<td>confidence (0–1) of <code>antibiotic_exposure</code></td>
+</tr>
+<tr>
+<td><code>age_at_collection_days__confidence</code></td>
+<td>float</td>
+<td>confidence (0–1) of <code>age_at_collection_days</code></td>
+</tr>
+<tr>
+<td><code>birth_weight_grams__confidence</code></td>
+<td>float</td>
+<td>confidence (0–1) of <code>birth_weight_grams</code></td>
+</tr>
+<tr>
+<td><code>country__confidence</code></td>
+<td>float</td>
+<td>confidence (0–1) of <code>country</code></td>
+</tr>
+<tr>
+<td><code>maternal_antibiotics__confidence</code></td>
+<td>float</td>
+<td>confidence (0–1) of <code>maternal_antibiotics</code></td>
+</tr>
+<tr>
+<td><code>hmo_supplementation__confidence</code></td>
+<td>float</td>
+<td>confidence (0–1) of <code>hmo_supplementation</code></td>
+</tr>
+<tr>
+<td><code>nec_status__confidence</code></td>
+<td>float</td>
+<td>confidence (0–1) of <code>nec_status</code></td>
+</tr>
+<tr>
+<td><code>health_condition__confidence</code></td>
+<td>float</td>
+<td>confidence (0–1) of <code>health_condition</code></td>
+</tr>
+<tr>
+<td><code>multiple_birth__confidence</code></td>
+<td>float</td>
+<td>confidence (0–1) of <code>multiple_birth</code></td>
+</tr>
+<tr>
+<td><code>sibling_in_study__confidence</code></td>
+<td>float</td>
+<td>confidence (0–1) of <code>sibling_in_study</code></td>
+</tr>
+<tr>
+<td><code>geo_subregion__confidence</code></td>
+<td>float</td>
+<td>confidence (0–1) of <code>geo_subregion</code></td>
+</tr>
+<tr>
+<td><code>sex__confidence</code></td>
+<td>float</td>
+<td>confidence (0–1) of <code>sex</code></td>
+</tr>
+<tr>
+<td><code>timepoint_label__confidence</code></td>
+<td>float</td>
+<td>confidence (0–1) of <code>timepoint_label</code></td>
+</tr>
+<tr>
+<td><code>subject_id__confidence</code></td>
+<td>float</td>
+<td>confidence (0–1) of <code>subject_id</code></td>
+</tr>
+<tr>
+<td><code>probiotic_exposure__route</code></td>
+<td>str</td>
+<td>evidence route of <code>probiotic_exposure</code> (R1–R4)</td>
+</tr>
+<tr>
+<td><code>preterm_status__route</code></td>
+<td>str</td>
+<td>evidence route of <code>preterm_status</code> (R1–R4)</td>
+</tr>
+<tr>
+<td><code>gestational_age_weeks__route</code></td>
+<td>str</td>
+<td>evidence route of <code>gestational_age_weeks</code> (R1–R4)</td>
+</tr>
+<tr>
+<td><code>delivery_mode__route</code></td>
+<td>str</td>
+<td>evidence route of <code>delivery_mode</code> (R1–R4)</td>
+</tr>
+<tr>
+<td><code>feeding_mode__route</code></td>
+<td>str</td>
+<td>evidence route of <code>feeding_mode</code> (R1–R4)</td>
+</tr>
+<tr>
+<td><code>antibiotic_exposure__route</code></td>
+<td>str</td>
+<td>evidence route of <code>antibiotic_exposure</code> (R1–R4)</td>
+</tr>
+<tr>
+<td><code>age_at_collection_days__route</code></td>
+<td>str</td>
+<td>evidence route of <code>age_at_collection_days</code> (R1–R4)</td>
+</tr>
+<tr>
+<td><code>birth_weight_grams__route</code></td>
+<td>str</td>
+<td>evidence route of <code>birth_weight_grams</code> (R1–R4)</td>
+</tr>
+<tr>
+<td><code>country__route</code></td>
+<td>str</td>
+<td>evidence route of <code>country</code> (R1–R4)</td>
+</tr>
+<tr>
+<td><code>maternal_antibiotics__route</code></td>
+<td>str</td>
+<td>evidence route of <code>maternal_antibiotics</code> (R1–R4)</td>
+</tr>
+<tr>
+<td><code>hmo_supplementation__route</code></td>
+<td>str</td>
+<td>evidence route of <code>hmo_supplementation</code> (R1–R4)</td>
+</tr>
+<tr>
+<td><code>nec_status__route</code></td>
+<td>str</td>
+<td>evidence route of <code>nec_status</code> (R1–R4)</td>
+</tr>
+<tr>
+<td><code>health_condition__route</code></td>
+<td>str</td>
+<td>evidence route of <code>health_condition</code> (R1–R4)</td>
+</tr>
+<tr>
+<td><code>multiple_birth__route</code></td>
+<td>str</td>
+<td>evidence route of <code>multiple_birth</code> (R1–R4)</td>
+</tr>
+<tr>
+<td><code>sibling_in_study__route</code></td>
+<td>str</td>
+<td>evidence route of <code>sibling_in_study</code> (R1–R4)</td>
+</tr>
+<tr>
+<td><code>geo_subregion__route</code></td>
+<td>str</td>
+<td>evidence route of <code>geo_subregion</code> (R1–R4)</td>
+</tr>
+<tr>
+<td><code>sex__route</code></td>
+<td>str</td>
+<td>evidence route of <code>sex</code> (R1–R4)</td>
+</tr>
+<tr>
+<td><code>timepoint_label__route</code></td>
+<td>str</td>
+<td>evidence route of <code>timepoint_label</code> (R1–R4)</td>
+</tr>
+<tr>
+<td><code>subject_id__route</code></td>
+<td>str</td>
+<td>evidence route of <code>subject_id</code> (R1–R4)</td>
+</tr>
+<tr>
+<td><code>subject_key</code></td>
+<td>str</td>
+<td>resolved subject id (study-scoped)</td>
+</tr>
+<tr>
+<td><code>role</code></td>
+<td>str</td>
+<td>infant</td>
+</tr>
+<tr>
+<td><code>t_index</code></td>
+<td>float64</td>
+<td>ordinal timepoint within subject</td>
+</tr>
+<tr>
+<td><code>n_timepoints_subject</code></td>
+<td>float64</td>
+<td>timepoints for this subject</td>
+</tr>
+<tr>
+<td><code>linked_infant_subject_key</code></td>
+<td>str</td>
+<td>for mother samples: the infant's subject_key</td>
+</tr>
+<tr>
+<td><code>run_accessions</code></td>
+<td>str</td>
+<td>';'-joined run accessions</td>
+</tr>
+<tr>
+<td><code>n_runs</code></td>
+<td>int64</td>
+<td>runs for this sample</td>
+</tr>
+<tr>
+<td><code>instrument_model</code></td>
+<td>str</td>
+<td>instrument model(s)</td>
+</tr>
+<tr>
+<td><code>library_layout</code></td>
+<td>str</td>
+<td>PAIRED/SINGLE</td>
+</tr>
+<tr>
+<td><code>read_count_total</code></td>
+<td>int64</td>
+<td>sum of read_count over runs</td>
+</tr>
+<tr>
+<td><code>study_title</code></td>
+<td>str</td>
+<td>BioProject title</td>
+</tr>
+<tr>
+<td><code>cohort_id</code></td>
+<td>str</td>
+<td>cohort cluster id (COH…)</td>
+</tr>
+<tr>
+<td><code>cohort_name</code></td>
+<td>str</td>
+<td>cohort name</td>
+</tr>
+<tr>
+<td><code>first_public_min</code></td>
+<td>str</td>
+<td>earliest run release date in study</td>
+</tr>
+<tr>
+<td><code>adult_age_flag</code></td>
+<td>bool</td>
+<td>True when the resolved age is &gt;36 months (adult/maternal sample)</td>
+</tr>
+<tr>
+<td><code>n_fields_with_value</code></td>
+<td>int64</td>
+<td>count of populated metadata fields</td>
+</tr>
+<tr>
+<td><code>ena_sample_url</code></td>
+<td>str</td>
+<td>ENA browser link</td>
+</tr>
+<tr>
+<td><code>ena_study_url</code></td>
+<td>str</td>
+<td>ENA browser link</td>
+</tr>
+</tbody>
+</table>
+<h2 id="sample_determinationsparquet">sample_determinations.parquet</h2>
+<table>
+<thead>
+<tr>
+<th>column</th>
+<th>meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>sample_key</code>, <code>study_accession</code>, <code>field_name</code></td>
+<td>key</td>
+</tr>
+<tr>
+<td><code>field_value</code></td>
+<td>raw value as found in the source</td>
+</tr>
+<tr>
+<td><code>value_normalized</code></td>
+<td>value in the controlled vocabulary/unit</td>
+</tr>
+<tr>
+<td><code>confidence</code></td>
+<td>0–1</td>
+</tr>
+<tr>
+<td><code>evidence_source</code></td>
+<td>label: <code>sample.attr.&lt;key&gt;</code>, <code>run.library_name</code>, <code>sample_id_pattern</code>, <code>paper.supp.table</code>, <code>paper.fulltext.methods</code>, <code>paper.abstract</code>, <code>study.description</code> …</td>
+</tr>
+<tr>
+<td><code>evidence_locator</code></td>
+<td>attribute key / pmcid:file:sheet:column / section</td>
+</tr>
+<tr>
+<td><code>evidence_quote</code></td>
+<td>≤12-word verbatim quote</td>
+</tr>
+<tr>
+<td><code>evidence_limited_to_abstract</code></td>
+<td>1 when the paper was paywalled</td>
+</tr>
+<tr>
+<td><code>determined_by</code></td>
+<td>parser or model id</td>
+</tr>
+<tr>
+<td><code>route</code></td>
+<td>R1–R4</td>
+</tr>
+<tr>
+<td><code>scope</code></td>
+<td>sample</td>
+</tr>
+<tr>
+<td><code>parse_note</code></td>
+<td>derivation notes (unit resolution, propagation, supersession, review flags)</td>
+</tr>
+<tr>
+<td><code>group_audit</code></td>
+<td>keep/downgrade for group statements (Opus audit)</td>
+</tr>
+<tr>
+<td><code>src_track</code></td>
+<td>pipeline pass that produced the row</td>
+</tr>
+</tbody>
+</table>
+<h2 id="routes">Routes</h2>
+<p>R1 = archive sample attribute or sample-name convention (per sample); R2 = supplementary table row (per sample; 'subject_level_join' in parse_note when copied from a per-subject row); R3 = statement in the paper text applied to a defined group; R4 = abstract/ENA description statement (group; confidence ≤0.5).</p>
+<h2 id="field-vocabularies">Field vocabularies</h2>
+<table>
+<thead>
+<tr>
+<th>field</th>
+<th>values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>delivery_mode</code></td>
+<td>vaginal</td>
+</tr>
+<tr>
+<td><code>feeding_mode</code></td>
+<td>exclusive_breast</td>
+</tr>
+<tr>
+<td><code>preterm_status</code></td>
+<td>preterm</td>
+</tr>
+<tr>
+<td><code>antibiotic_exposure</code></td>
+<td>yes</td>
+</tr>
+<tr>
+<td><code>maternal_antibiotics</code></td>
+<td>yes</td>
+</tr>
+<tr>
+<td><code>probiotic_exposure</code></td>
+<td>yes</td>
+</tr>
+<tr>
+<td><code>hmo_supplementation</code></td>
+<td>yes</td>
+</tr>
+<tr>
+<td><code>nec_status</code></td>
+<td>yes</td>
+</tr>
+<tr>
+<td><code>age_at_collection_days</code></td>
+<td>integer days postnatal</td>
+</tr>
+<tr>
+<td><code>gestational_age_weeks</code></td>
+<td>float weeks at birth</td>
+</tr>
+<tr>
+<td><code>birth_weight_grams</code></td>
+<td>integer grams</td>
+</tr>
+<tr>
+<td><code>country</code></td>
+<td>ISO-3166 alpha-2</td>
+</tr>
+<tr>
+<td><code>sex</code></td>
+<td>male</td>
+</tr>
+<tr>
+<td><code>timepoint_label</code></td>
+<td>study's own label (free text)</td>
+</tr>
+<tr>
+<td><code>subject_id</code></td>
+<td>study's own subject identifier (free text)</td>
+</tr>
+<tr>
+<td><code>health_condition</code></td>
+<td>healthy_control</td>
+</tr>
+<tr>
+<td><code>multiple_birth</code></td>
+<td>singleton</td>
+</tr>
+<tr>
+<td><code>sibling_in_study</code></td>
+<td>yes</td>
+</tr>
+<tr>
+<td><code>geo_subregion</code></td>
+<td>'City, Region' free text as given by submitter (never reverse-geocoded)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="study_metadata_wideparquet">study_metadata_wide.parquet</h2>
+<table>
+<thead>
+<tr>
+<th>column</th>
+<th>meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>study_accession</code>, <code>study_title</code>, <code>n_samples</code>, <code>n_runs</code>, <code>first_public_min</code></td>
+<td>archive identity and size</td>
+</tr>
+<tr>
+<td><code>catalog_status</code>, <code>triage_verdict</code>, <code>decision_stage</code>, <code>confidence</code>, <code>evidence</code></td>
+<td>inclusion verdict and its evidence</td>
+</tr>
+<tr>
+<td><code>universe_slice</code></td>
+<td>enumeration channel that found the study</td>
+</tr>
+<tr>
+<td><code>recov_age</code>, <code>recov_delivery</code>, …</td>
+<td>recoverability tier predicted before extraction (R1 archive / R2 table / R3 paper / R4 abstract / R0 none)</td>
+</tr>
+<tr>
+<td><code>cov_&lt;field&gt;</code></td>
+<td>fraction of the study's infant-scope samples with a value</td>
+</tr>
+<tr>
+<td><code>cohort_id</code>, <code>cohort_name</code>, <code>n_linked_papers</code>, <code>linked_pmids</code></td>
+<td>cohort and literature</td>
+</tr>
+<tr>
+<td><code>n_unique_infants_est</code>, <code>longitudinal</code>, <code>max_timepoints</code>, <code>n_mothers</code></td>
+<td>subject resolution</td>
+</tr>
+<tr>
+<td><code>worklist_rank</code>, <code>effort_class</code></td>
+<td>curation priority</td>
+</tr>
+<tr>
+<td><code>ena_url</code>, <code>ncbi_url</code></td>
+<td>links</td>
+</tr>
+</tbody>
+</table></div>
+
+</main>
+<footer>
+<div><b>Infant Gut Shotgun-Metagenome Catalog</b> — data package v1 (built 2026-09-25). Curated tables are released under <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a>; archive metadata remains under INSDC terms.</div>
+<div>How to cite: <i>Infant Gut Shotgun-Metagenome Catalog v1, 2026.</i></div>
+<div>Caveats: every value carries a route (R1 archive attribute, R2 supplementary table, R3 paper text, R4 abstract/description) and a confidence; R3/R4 values are group-level statements applied to samples — see <a href="../fields/index.html">Fields</a> and <a href="../methods.html#limitations">Methods › Limitations</a>. Built with an LLM-assisted pipeline; treat individual values as evidence-linked claims, not ground truth.</div>
+</footer>
+
+<script src="../static/site.js"></script>
+
+</body>
+</html>

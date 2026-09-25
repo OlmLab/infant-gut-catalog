@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>README — Infant Gut Shotgun-Metagenome Catalog</title>
+<meta name="description" content="Curated, evidence-linked catalog of public shotgun-metagenome studies of the human infant gut with per-sample metadata.">
+<link rel="stylesheet" href="../static/site.css">
+
+
+</head>
+<body>
+<nav class="topnav"><div class="in">
+<a class="brand" href="../index.html">Infant Gut Metagenome Catalog</a>
+<a href="../studies/index.html" >Studies</a>
+<a href="../cohorts/index.html" >Cohorts</a>
+<a href="../samples/index.html" >Sample explorer</a>
+<a href="../fields/index.html" >Fields</a>
+<a href="../universe.html" >Universe</a>
+<a href="../methods.html" class="active">Methods</a>
+<a href="../downloads.html" >Downloads</a>
+</div></nav>
+<main>
+<div class="crumbs"><a href="../index.html">Home</a> › <a href="../methods.html">Methods</a> › README</div>
+
+<p class="small">Rendered from <a href="README.md">README.md</a>.</p>
+<div class="md"><h1 id="infant-gut-shotgun-metagenome-catalog-data-package-v1-2026-09-25">Infant Gut Shotgun-Metagenome Catalog — data package v1 (2026-09-25)</h1>
+<p>A curated, evidence-linked catalog of every public shotgun-metagenome study of the human infant gut (0–36 months) in the INSDC archives (ENA/SRA/DDBJ), with per-sample metadata recovered from archive attributes, supplementary tables and papers.</p>
+<p><strong>Headline numbers.</strong> 389 included studies · 153,743 samples · 174,022 sequencing runs · 606,023 sample × field determinations, each with a verbatim evidence quote · age at collection recovered for 53,802 infant-scope samples (37%) · precision vs 3,670 independently curated samples: age 0.99, delivery mode 0.995, preterm status 1.00.</p>
+<p>Universe screened: 9,579 candidate studies (all METAGENOMIC WGS/WXS runs in ENA with a human signal, no taxon filter) → 389 included, 52 unresolvable after two full-text review rounds, the rest excluded with a coded reason (<code>universe_studies_all.parquet</code>).</p>
+<h2 id="files">Files</h2>
+<table>
+<thead>
+<tr>
+<th>File</th>
+<th style="text-align: right;">Rows</th>
+<th>What it is</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>sample_metadata_wide.parquet</code> / <code>.csv.gz</code></td>
+<td style="text-align: right;">153,701</td>
+<td><strong>Start here.</strong> One row per sample: identifiers, body-site class, every metadata field with <code>&lt;field&gt;__confidence</code> and <code>&lt;field&gt;__route</code>, subject/timepoint, run accessions, cohort, links</td>
+</tr>
+<tr>
+<td><code>sample_determinations.parquet</code></td>
+<td style="text-align: right;">606,023</td>
+<td>Long form: one row per sample × field with <code>evidence_source</code>, <code>evidence_locator</code>, <code>evidence_quote</code> (≤12 words verbatim), <code>route</code>, <code>scope</code>, <code>confidence</code></td>
+</tr>
+<tr>
+<td><code>study_metadata_wide.parquet</code> / <code>.csv</code></td>
+<td style="text-align: right;">389</td>
+<td>One row per included study (BioProject): title, counts, triage evidence, recoverability tiers, per-field coverage (<code>cov_*</code>), cohort, links</td>
+</tr>
+<tr>
+<td><code>runs.parquet</code></td>
+<td style="text-align: right;">174,022</td>
+<td>Run → sample → study with library/instrument fields (join key into ENA/SRA)</td>
+</tr>
+<tr>
+<td><code>sample_subjects.parquet</code></td>
+<td style="text-align: right;">153,701</td>
+<td>Subject and timepoint resolution per sample (<code>subject_key</code>, <code>role</code> infant/mother/other, <code>t_index</code>)</td>
+</tr>
+<tr>
+<td><code>cohorts.csv</code></td>
+<td style="text-align: right;">373</td>
+<td>Cohort clusters (studies + papers sharing a cohort) with unique-infant estimates</td>
+</tr>
+<tr>
+<td><code>study_paper_links.csv</code></td>
+<td style="text-align: right;">972</td>
+<td>Study ↔ paper links with PMID/PMCID/DOI and link method</td>
+</tr>
+<tr>
+<td><code>universe_studies_all.parquet</code></td>
+<td style="text-align: right;">9,579</td>
+<td>Every screened study with verdict, reason code and evidence</td>
+</tr>
+<tr>
+<td><code>human_review_queue.csv</code></td>
+<td style="text-align: right;">52</td>
+<td>Studies the pipeline could not decide, with the reason</td>
+</tr>
+<tr>
+<td><code>field_coverage_summary.csv</code>, <code>study_field_coverage_matrix.csv</code></td>
+<td style="text-align: right;"></td>
+<td>Coverage per field and per study × field</td>
+</tr>
+<tr>
+<td><code>extraction_gold_eval_hires.csv</code></td>
+<td style="text-align: right;"></td>
+<td>Precision/recall vs curatedMetagenomicData</td>
+</tr>
+<tr>
+<td><code>DATA_DICTIONARY.md</code></td>
+<td style="text-align: right;"></td>
+<td>Every column, every vocabulary</td>
+</tr>
+<tr>
+<td><code>getting_started.ipynb</code></td>
+<td style="text-align: right;"></td>
+<td>Load, filter, join, plot</td>
+</tr>
+</tbody>
+</table>
+<h2 id="how-to-read-a-value">How to read a value</h2>
+<p>Every value carries a <strong>route</strong> (R1 = archive sample attribute or sample-name convention (per sample); R2 = supplementary table row (per sample; 'subject_level_join' in parse_note when copied from a per-subject row); R3 = statement in the paper text applied to a defined group; R4 = abstract/ENA description statement (group; confidence ≤0.5).) and a <strong>confidence</strong> (0–1). For most analyses: use R1/R2 values at any confidence, and R3/R4 values only when <code>confidence ≥ 0.5</code> — those are group-level statements applied to samples. <code>parse_note</code> explains derivations (unit resolution, subject propagation, date arithmetic). Rows the validator rejected are not in these tables (see the release bundle for <code>*_rejected.parquet</code>).</p>
+<h2 id="known-limitations">Known limitations</h2>
+<ul>
+<li>Age is recoverable for ~37 % of infant-scope samples; per study it is all-or-nothing. ~42k samples belong to studies whose supplementary tables are keyed by identifiers absent from the archive (e.g. TEDDY) and can only be joined with submitter help.</li>
+<li><code>antibiotic_exposure</code> means <em>any</em> antibiotics before/at sampling; sources that record only current use disagree (precision 0.87 vs that definition).</li>
+<li><code>feeding_mode</code> categories differ between sources; precision 0.89.</li>
+<li>Exposure fields (probiotic, HMO, NEC, birth weight, maternal antibiotics) have no external truth set — audited by blind model re-judgement only.</li>
+<li>~9.6k samples in included studies are adults/mothers (<code>adult_age_flag</code>); <code>body_site_class</code> and <code>role</code> separate them.</li>
+<li>Extension fields (<code>health_condition</code>, <code>multiple_birth</code>, <code>sibling_in_study</code>, <code>geo_subregion</code>) were added in a single pass and are less audited than the core fields.</li>
+</ul>
+<h2 id="provenance">Provenance</h2>
+<p>Built 2026-09-17 → 2026-09-25 with Claude-model pipelines (Haiku for screening/normalisation, Sonnet for rubric judgement and prose extraction, Opus for adjudication), deterministic parsers, and two rounds of full-text model review of the undecidable residue. Full methods: <code>CATALOG_REPORT.md</code> and <code>EXTRACTION_REPORT.md</code> in the release bundle. Licence: CC-BY-4.0 for the curated tables (archive metadata remains under INSDC terms). Citation placeholder: <em>Infant Gut Shotgun-Metagenome Catalog v1, 2026.</em></p></div>
+
+</main>
+<footer>
+<div><b>Infant Gut Shotgun-Metagenome Catalog</b> — data package v1 (built 2026-09-25). Curated tables are released under <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a>; archive metadata remains under INSDC terms.</div>
+<div>How to cite: <i>Infant Gut Shotgun-Metagenome Catalog v1, 2026.</i></div>
+<div>Caveats: every value carries a route (R1 archive attribute, R2 supplementary table, R3 paper text, R4 abstract/description) and a confidence; R3/R4 values are group-level statements applied to samples — see <a href="../fields/index.html">Fields</a> and <a href="../methods.html#limitations">Methods › Limitations</a>. Built with an LLM-assisted pipeline; treat individual values as evidence-linked claims, not ground truth.</div>
+</footer>
+
+<script src="../static/site.js"></script>
+
+</body>
+</html>

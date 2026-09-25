@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Infant Gut Shotgun-Metagenome Catalog</title>
+<meta name="description" content="Curated, evidence-linked catalog of public shotgun-metagenome studies of the human infant gut with per-sample metadata.">
+<link rel="stylesheet" href="static/site.css">
+
+
+</head>
+<body>
+<nav class="topnav"><div class="in">
+<a class="brand" href="index.html">Infant Gut Metagenome Catalog</a>
+<a href="studies/index.html" >Studies</a>
+<a href="cohorts/index.html" >Cohorts</a>
+<a href="samples/index.html" >Sample explorer</a>
+<a href="fields/index.html" >Fields</a>
+<a href="universe.html" >Universe</a>
+<a href="methods.html" >Methods</a>
+<a href="downloads.html" >Downloads</a>
+</div></nav>
+<main>
+
+
+<h1>Infant Gut Shotgun-Metagenome Catalog</h1>
+<p class="lead">A curated, evidence-linked catalog of every public shotgun-metagenome study of the human infant gut (0–36 months) in the INSDC archives (ENA/SRA/DDBJ), with per-sample metadata recovered from archive attributes, supplementary tables and papers. Every value carries a verbatim evidence quote, a route (R1–R4) and a confidence.</p>
+
+<div class="cards">
+<div class="card"><div class="num">389</div><div class="lbl">included studies (BioProjects)</div></div>
+<div class="card"><div class="num">153,701</div><div class="lbl">samples</div></div>
+<div class="card"><div class="num">174,022</div><div class="lbl">sequencing runs</div></div>
+<div class="card"><div class="num">606,023</div><div class="lbl">sample × field determinations with evidence</div></div>
+<div class="card"><div class="num">37%</div><div class="lbl">of infant-scope samples with age at collection (53,802)</div></div>
+<div class="card"><div class="num">0.991</div><div class="lbl">age precision vs 3,346 independently curated samples</div></div>
+<div class="card"><div class="num">9,579</div><div class="lbl">studies screened (9,138 excluded, 52 in human review)</div></div>
+<div class="card"><div class="num">373</div><div class="lbl">cohorts (410 linked papers)</div></div>
+</div>
+
+<h2>Find a study, cohort or accession</h2>
+<input id="q" class="searchbox" type="search" placeholder="Type a BioProject accession (PRJ…), a study title word, a cohort name, or a sample/run accession (SAMEA…, SRR…)" autocomplete="off">
+<ul id="search-results"></ul>
+<p class="small">Sample and run accessions are looked up in the <a href="samples/index.html">Sample explorer</a>; studies and cohorts are matched client-side against a small index.</p>
+
+<div class="sections">
+<a class="card" href="studies/index.html"><b>Studies</b><br>389 included BioProjects with per-study pages, links, coverage and downloads.</a>
+<a class="card" href="cohorts/index.html"><b>Cohorts</b><br>373 cohort clusters grouping studies and papers that share subjects.</a>
+<a class="card" href="samples/index.html"><b>Sample explorer</b><br>Filter 153,701 samples in the browser; download any slice as CSV or parquet; inspect evidence per value.</a>
+<a class="card" href="fields/index.html"><b>Fields &amp; data dictionary</b><br>Every column, vocabulary, coverage and route mix.</a>
+<a class="card" href="universe.html"><b>Screened universe</b><br>9,579 candidate studies with status and exclusion reason.</a>
+<a class="card" href="methods.html"><b>Methods &amp; caveats</b><br>Enumeration, triage, four evidence routes, audits and gold evaluation.</a>
+<a class="card" href="downloads.html"><b>Downloads</b><br>The complete data package, individual tables and the getting-started notebook.</a>
+</div>
+
+<h2>Field coverage</h2>
+<img class="fig" src="static/field_coverage.png" alt="Field coverage: stacked bars of infant-scope samples with a value per field, split by evidence route; per-study coverage is bimodal">
+<p class="small">Infant-scope samples with a value for each field, coloured by evidence route (a), and per-study coverage fractions (b). Numbers per field are in <a href="fields/index.html">Fields</a>.</p>
+
+<h2>Route legend</h2>
+<table class="tbl" style="max-width:900px">
+<tr><th>Route</th><th>Evidence</th><th>Scope</th></tr>
+<tr><td><span class="tag R1">R1</span></td><td>archive sample attribute or sample-name convention</td><td>per sample</td></tr>
+<tr><td><span class="tag R2">R2</span></td><td>supplementary table row keyed to the study's own accessions or library names</td><td>per sample (or per subject)</td></tr>
+<tr><td><span class="tag R3">R3</span></td><td>statement in the paper text applied to a defined group</td><td>group</td></tr>
+<tr><td><span class="tag R4">R4</span></td><td>abstract / ENA description statement (confidence ≤ 0.5)</td><td>group</td></tr>
+</table>
+
+</main>
+<footer>
+<div><b>Infant Gut Shotgun-Metagenome Catalog</b> — data package v1 (built 2026-09-25). Curated tables are released under <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a>; archive metadata remains under INSDC terms.</div>
+<div>How to cite: <i>Infant Gut Shotgun-Metagenome Catalog v1, 2026.</i></div>
+<div>Caveats: every value carries a route (R1 archive attribute, R2 supplementary table, R3 paper text, R4 abstract/description) and a confidence; R3/R4 values are group-level statements applied to samples — see <a href="fields/index.html">Fields</a> and <a href="methods.html#limitations">Methods › Limitations</a>. Built with an LLM-assisted pipeline; treat individual values as evidence-linked claims, not ground truth.</div>
+</footer>
+
+<script src="static/site.js"></script>
+
+<script>
+fetch('search_index.json').then(r=>r.json()).then(idx=>{
+  const q=document.getElementById('q'), out=document.getElementById('search-results');
+  function run(){
+    const s=q.value.trim().toLowerCase(); out.innerHTML='';
+    if(s.length<2) return;
+    if(/^(sam[end]|[sed]rr|[sed]rs|[sed]rx)\d+/i.test(s)){
+      const li=document.createElement('li'); li.innerHTML='Look up <b>'+s.toUpperCase()+'</b> in the <a href="samples/index.html?sample='+encodeURIComponent(s.toUpperCase())+'">sample explorer</a>';
+      out.appendChild(li);
+    }
+    const hits=idx.filter(e=>e.k.includes(s)).slice(0,25);
+    for(const h of hits){const li=document.createElement('li'); li.innerHTML='<span class="tag">'+h.t+'</span> <a href="'+h.u+'">'+h.id+'</a> '+h.n; out.appendChild(li);}
+    if(!hits.length){const li=document.createElement('li');li.className='small';li.textContent='No study or cohort matches.';out.appendChild(li);}
+  }
+  q.addEventListener('input',run);
+});
+</script>
+
+</body>
+</html>

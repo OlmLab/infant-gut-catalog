@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Downloads — Infant Gut Shotgun-Metagenome Catalog</title>
+<meta name="description" content="Curated, evidence-linked catalog of public shotgun-metagenome studies of the human infant gut with per-sample metadata.">
+<link rel="stylesheet" href="static/site.css">
+
+
+</head>
+<body>
+<nav class="topnav"><div class="in">
+<a class="brand" href="index.html">Infant Gut Metagenome Catalog</a>
+<a href="studies/index.html" >Studies</a>
+<a href="cohorts/index.html" >Cohorts</a>
+<a href="samples/index.html" >Sample explorer</a>
+<a href="fields/index.html" >Fields</a>
+<a href="universe.html" >Universe</a>
+<a href="methods.html" >Methods</a>
+<a href="downloads.html" class="active">Downloads</a>
+</div></nav>
+<main>
+<div class="crumbs"><a href="index.html">Home</a> › Downloads</div>
+
+<h1>Downloads</h1>
+<p class="lead">The complete data package (v1) and each file in it. Column definitions are in <a href="fields/index.html">Fields</a>; per-study and per-cohort slices are on the individual <a href="studies/index.html">study</a> and <a href="cohorts/index.html">cohort</a> pages, and arbitrary slices can be exported from the <a href="samples/index.html">sample explorer</a>.</p>
+<div class="btns"><a class="btn" href="data/package/data_package_v1.zip" download>Whole package (zip, 24.6 MB)</a> <a class="btn sec" href="data/package/getting_started.ipynb" download>getting_started.ipynb</a> <a class="btn sec" href="docs/README.html">README</a> <a class="btn sec" href="docs/DATA_DICTIONARY.html">Data dictionary</a></div>
+<table class="tbl"><thead><tr><th>File</th><th class="num">Rows</th><th class="num">Size</th><th>Description</th></tr></thead><tbody>
+<tr><td class="mono"><a href="data/package/DATA_DICTIONARY.md" download>DATA_DICTIONARY.md</a></td><td class="num"></td><td class="num">9.5 KB</td><td>Every column, every vocabulary.</td></tr><tr><td class="mono"><a href="data/package/README.md" download>README.md</a></td><td class="num"></td><td class="num">4.7 KB</td><td>Package overview and how to read a value.</td></tr><tr><td class="mono"><a href="data/package/cohorts.csv" download>cohorts.csv</a></td><td class="num">373</td><td class="num">133.7 KB</td><td>Cohort clusters (studies + papers sharing a cohort) with unique-infant estimates.</td></tr><tr><td class="mono"><a href="data/package/extraction_gold_eval_hires.csv" download>extraction_gold_eval_hires.csv</a></td><td class="num">6</td><td class="num">326 B</td><td>Precision/recall vs curatedMetagenomicData (hi-res gold).</td></tr><tr><td class="mono"><a href="data/package/field_coverage_summary.csv" download>field_coverage_summary.csv</a></td><td class="num">16</td><td class="num">964 B</td><td>Coverage per field (samples, studies, route counts).</td></tr><tr><td class="mono"><a href="data/package/getting_started.ipynb" download>getting_started.ipynb</a></td><td class="num"></td><td class="num">31.1 KB</td><td>Notebook: load, filter, join, plot.</td></tr><tr><td class="mono"><a href="data/package/human_review_queue.csv" download>human_review_queue.csv</a></td><td class="num">52</td><td class="num">48.9 KB</td><td>Studies the pipeline could not decide, with the reason.</td></tr><tr><td class="mono"><a href="data/package/runs.parquet" download>runs.parquet</a></td><td class="num">174,022</td><td class="num">8.4 MB</td><td>Run → sample → study with library/instrument fields (join key into ENA/SRA).</td></tr><tr><td class="mono"><a href="data/sample_determinations.parquet" download>sample_determinations.parquet</a></td><td class="num">0</td><td class="num">6.6 MB</td><td>Long form: one row per sample × field with evidence_source, evidence_locator, evidence_quote (≤12 words verbatim), route, scope, confidence.</td></tr><tr><td class="mono"><a href="data/package/sample_metadata_wide.csv.gz" download>sample_metadata_wide.csv.gz</a></td><td class="num"></td><td class="num">4.9 MB</td><td>Same table as gzip-compressed CSV.</td></tr><tr><td class="mono"><a href="data/sample_metadata_wide.parquet" download>sample_metadata_wide.parquet</a></td><td class="num">0</td><td class="num">7.6 MB</td><td>Start here. One row per sample: identifiers, body-site class, every metadata field with __confidence and __route, subject/timepoint, run accessions, cohort, links.</td></tr><tr><td class="mono"><a href="data/package/sample_subjects.parquet" download>sample_subjects.parquet</a></td><td class="num">0</td><td class="num">2.7 MB</td><td>Subject and timepoint resolution per sample (subject_key, role, t_index).</td></tr><tr><td class="mono"><a href="data/package/study_field_coverage_matrix.csv" download>study_field_coverage_matrix.csv</a></td><td class="num">371</td><td class="num">32.1 KB</td><td>Coverage per study × field.</td></tr><tr><td class="mono"><a href="data/package/study_metadata_wide.csv" download>study_metadata_wide.csv</a></td><td class="num">389</td><td class="num">356.2 KB</td><td>Same table as CSV.</td></tr><tr><td class="mono"><a href="data/package/study_metadata_wide.parquet" download>study_metadata_wide.parquet</a></td><td class="num">0</td><td class="num">149.4 KB</td><td>One row per included study (BioProject): title, counts, triage evidence, recoverability tiers, per-field coverage (cov_*), cohort, links.</td></tr><tr><td class="mono"><a href="data/package/study_paper_links.csv" download>study_paper_links.csv</a></td><td class="num">972</td><td class="num">158.2 KB</td><td>Study ↔ paper links with PMID/PMCID/DOI.</td></tr><tr><td class="mono"><a href="data/package/universe_studies_all.parquet" download>universe_studies_all.parquet</a></td><td class="num">0</td><td class="num">1.0 MB</td><td>Every screened study with verdict, reason code and evidence.</td></tr>
+</tbody></table>
+<h2>Reports</h2>
+<ul>
+<li><a href="docs/CATALOG_REPORT.html">CATALOG_REPORT</a> (<a href="docs/CATALOG_REPORT.md">markdown</a>) — universe enumeration, triage cascade, coverage estimate, audits.</li>
+<li><a href="docs/EXTRACTION_REPORT.html">EXTRACTION_REPORT</a> (<a href="docs/EXTRACTION_REPORT.md">markdown</a>) — per-sample metadata extraction, four routes, gold evaluation, recovery rounds.</li>
+</ul>
+<h2>Site data files</h2>
+<p class="small">Files used by the explorer and the per-study pages; listed in <a href="data/manifest.json">data/manifest.json</a>.</p>
+<table class="tbl"><thead><tr><th>Path</th><th class="num">Files</th><th class="num">Size</th><th>Description</th></tr></thead><tbody>
+<tr><td class="mono">data/sample_metadata_wide.parquet</td><td class="num">1</td><td class="num">7.6 MB</td><td>Sample table loaded by the explorer</td></tr><tr><td class="mono">data/sample_determinations.parquet</td><td class="num">1</td><td class="num">6.6 MB</td><td>Evidence rows loaded by the explorer on demand</td></tr><tr><td class="mono">data/studies/&lt;PRJ&gt;.csv|.parquet</td><td class="num">389</td><td class="num">72.8 MB</td><td>Per-study sample slices</td></tr><tr><td class="mono">data/studies/&lt;PRJ&gt;_determinations.csv.gz</td><td class="num">389</td><td class="num">3.8 MB</td><td>Per-study determinations with evidence (gzip CSV)</td></tr><tr><td class="mono">data/cohorts/&lt;COH&gt;.csv|.parquet</td><td class="num">22</td><td class="num">3.7 MB</td><td>Per-cohort sample slices (multi-study cohorts; singleton cohorts use the study files)</td></tr><tr><td class="mono">data/package/</td><td class="num">16</td><td class="num">42.5 MB</td><td>The complete package, file by file, plus the zip</td></tr>
+</tbody></table>
+
+</main>
+<footer>
+<div><b>Infant Gut Shotgun-Metagenome Catalog</b> — data package v1 (built 2026-09-25). Curated tables are released under <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a>; archive metadata remains under INSDC terms.</div>
+<div>How to cite: <i>Infant Gut Shotgun-Metagenome Catalog v1, 2026.</i></div>
+<div>Caveats: every value carries a route (R1 archive attribute, R2 supplementary table, R3 paper text, R4 abstract/description) and a confidence; R3/R4 values are group-level statements applied to samples — see <a href="fields/index.html">Fields</a> and <a href="methods.html#limitations">Methods › Limitations</a>. Built with an LLM-assisted pipeline; treat individual values as evidence-linked claims, not ground truth.</div>
+</footer>
+
+<script src="static/site.js"></script>
+
+</body>
+</html>
