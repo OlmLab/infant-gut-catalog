@@ -649,7 +649,31 @@
 <td>links</td>
 </tr>
 </tbody>
-</table></div>
+</table>
+<h2 id="sample-unit-added-after-the-auditors-run-vs-biosample-finding">Sample unit (added after the auditor's run-vs-BioSample finding)</h2>
+<table>
+<thead>
+<tr>
+<th>column</th>
+<th>meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>sample_unit</code></td>
+<td><code>biosample</code> (default: one BioSample = one stool), <code>run</code> (child row: the submitter registered one BioSample per infant and one run per stool — 6 studies, 521 rows), <code>biosample_pooled</code> (the parent BioSample of such runs; kept for provenance, excluded from sample counts)</td>
+</tr>
+<tr>
+<td><code>parent_biosample</code></td>
+<td>for <code>run</code> rows, the pooled BioSample they belong to</td>
+</tr>
+<tr>
+<td>studies.<code>n_samples</code></td>
+<td>catalog sample rows (biosample + run units); <code>n_biosamples</code> keeps the archive's BioSample count (e.g. PRJNA294605: 158 samples, 11 BioSamples)</td>
+</tr>
+</tbody>
+</table>
+<p>Class-A decision rule (deterministic, <code>sample_unit_classification.csv</code>): BioSample text says 'Assembly of N … samples'/'pooled', or a run-keyed supplementary table gives ≥2 distinct ages/timepoints across the BioSample's runs, or NCBI BioSample carries a collection-date range. Technical multi-run BioSamples (lanes, replicates, paired/unpaired, long+short reads; 33 studies) keep the BioSample as unit.</p></div>
 
 </main>
 <footer>

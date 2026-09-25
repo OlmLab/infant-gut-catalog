@@ -20,7 +20,7 @@ Grant context: Anthropic grant on organizing human microbiome metadata. Scope lo
 | gold-negative include rate | 2/108 = 1.9% |
 | inter-judge κ (Opus blind vs Sonnet majority, n=200) | 0.77 (3-class) / 0.85 (include vs not) |
 | in-universe coverage (capture–recapture) | N̂ = 302–383 → 0.77–0.98; conservative headline 0.78 |
-| LLM tokens, whole pipeline | ≈ 44.9 M (see BUDGET.md) |
+| LLM tokens, whole pipeline | ≈ 47.3 M (see BUDGET.md) |
 
 ## 2. Machine-checkable inclusion criteria
 A study is `included` iff all four hold with a cited quote: (1) host is *Homo sapiens* (host_tax_id 9606 or an explicit human statement); (2) ≥1 run with `library_source=METAGENOMIC` and strategy WGS/WXS, or OTHER/Targeted-Capture with a shotgun depth signature; (3) primary site gut/stool/meconium (linked sites only alongside infant gut samples); (4) ≥1 sample from a subject aged 0–1,100 days, evidenced by an archive attribute, a sample-title convention, the study description, a linked paper's title/abstract/data-availability text, or a per-sample supplementary table whose sample IDs map to the study's accessions (`paper.supp.table`). Adult cohorts with an incidental infant subgroup are included with `n_infant_samples_est`. Deterministic exclusions: non-human host taxon, isolate genomes, amplicon/RNA-only, environmental/synthetic. Rows that fail any validator are kept as `validator_rejected` and routed to human review.
@@ -111,5 +111,8 @@ Instrument generation: NovaSeq 102, HiSeq 2000/2500 73, MiSeq/NextSeq 64, HiSeq 
 See BUDGET.md (final): ≈19.6 M tokens across 3 track agents (Phase 1), 24 leaf workers (Haiku screen 12+1, Sonnet confirm 5+2+1, Opus 3), 4 track agents (Phases 3–4), and ≈1.2 M in-frame. No single frame exceeded 1.6 M.
 
 
-## 10. Per-sample metadata extraction (2026-09-25, after recovery round 2)
-527,474 validated sample × field determinations over 150,635 samples / 379 included studies via four evidence routes with Opus-adjudicated conflicts and an Opus audit of every group-level statement. Age at collection: 36% of infant-scope samples; preterm 23%; delivery 19%; antibiotics 14%. Gold (3,670 cMD samples): age precision 0.993 / recall 0.949, delivery 0.995 / 0.890, preterm 1.000 / 0.961. 9,567 samples in included studies carry adult ages (mothers/adult cohorts) and are flagged in `extraction/adult_age_rows.parquet`. Details: `extraction/EXTRACTION_REPORT.md`; SQLite `infant_catalog.sqlite`.
+## 10. Per-sample metadata extraction (final, 2026-09-25)
+606,023 validated sample × field determinations over 150,677 samples / 381 included studies; 12 core fields + 4 extension fields (health_condition, multiple_birth, sibling_in_study, geo_subregion). Age at collection: 37% of infant-scope samples; preterm 23%; delivery 20%; antibiotics 14%. Gold (3,670 cMD samples): age precision 0.991 / recall 0.951, delivery 0.995 / 0.932, preterm 1.000 / 0.961. Details `extraction/EXTRACTION_REPORT.md`.
+
+## 11. Publication
+Data package v1 (`data_package_v1.zip`: README, DATA_DICTIONARY, sample_metadata_wide, study_metadata_wide, cohorts, runs, determinations with evidence, notebook) and a static GitHub Pages website (`site.zip`, 774 pages: study, cohort, explorer with DuckDB-WASM slice downloads, fields, universe, methods; 0 broken internal links of 134,567). Publishing steps: `website/PUBLISH_INSTRUCTIONS.md`.

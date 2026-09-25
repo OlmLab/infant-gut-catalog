@@ -142,3 +142,12 @@ R1 = archive sample attribute or sample-name convention (per sample); R2 = suppl
 | `n_unique_infants_est`, `longitudinal`, `max_timepoints`, `n_mothers` | subject resolution |
 | `worklist_rank`, `effort_class` | curation priority |
 | `ena_url`, `ncbi_url` | links |
+
+## Sample unit (added after the auditor's run-vs-BioSample finding)
+| column | meaning |
+|---|---|
+| `sample_unit` | `biosample` (default: one BioSample = one stool), `run` (child row: the submitter registered one BioSample per infant and one run per stool — 6 studies, 521 rows), `biosample_pooled` (the parent BioSample of such runs; kept for provenance, excluded from sample counts) |
+| `parent_biosample` | for `run` rows, the pooled BioSample they belong to |
+| studies.`n_samples` | catalog sample rows (biosample + run units); `n_biosamples` keeps the archive's BioSample count (e.g. PRJNA294605: 158 samples, 11 BioSamples) |
+
+Class-A decision rule (deterministic, `sample_unit_classification.csv`): BioSample text says 'Assembly of N … samples'/'pooled', or a run-keyed supplementary table gives ≥2 distinct ages/timepoints across the BioSample's runs, or NCBI BioSample carries a collection-date range. Technical multi-run BioSamples (lanes, replicates, paired/unpaired, long+short reads; 33 studies) keep the BioSample as unit.

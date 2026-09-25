@@ -1,8 +1,8 @@
-# Infant Gut Shotgun-Metagenome Catalog — data package v1 (2026-09-25)
+# Infant Gut Shotgun-Metagenome Catalog — data package v1.1 (2026-09-25)
 
 A curated, evidence-linked catalog of every public shotgun-metagenome study of the human infant gut (0–36 months) in the INSDC archives (ENA/SRA/DDBJ), with per-sample metadata recovered from archive attributes, supplementary tables and papers.
 
-**Headline numbers.** 389 included studies · 153,743 samples · 174,022 sequencing runs · 606,023 sample × field determinations, each with a verbatim evidence quote · age at collection recovered for 53,802 infant-scope samples (37%) · precision vs 3,670 independently curated samples: age 0.99, delivery mode 0.995, preterm status 1.00.
+**Headline numbers.** 389 included studies · 154,206 samples (521 of them run-level rows from 6 one-BioSample-per-infant deposits; see `sample_unit`) · 174,022 sequencing runs · 609,584 sample × field determinations, each with a verbatim evidence quote · age at collection recovered for 53,802 infant-scope samples (37%) · precision vs 3,670 independently curated samples: age 0.99, delivery mode 0.995, preterm status 1.00.
 
 Universe screened: 9,579 candidate studies (all METAGENOMIC WGS/WXS runs in ENA with a human signal, no taxon filter) → 389 included, 52 unresolvable after two full-text review rounds, the rest excluded with a coded reason (`universe_studies_all.parquet`).
 

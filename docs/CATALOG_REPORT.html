@@ -93,7 +93,7 @@
 </tr>
 <tr>
 <td>LLM tokens, whole pipeline</td>
-<td style="text-align: right;">≈ 44.9 M (see BUDGET.md)</td>
+<td style="text-align: right;">≈ 47.3 M (see BUDGET.md)</td>
 </tr>
 </tbody>
 </table>
@@ -461,8 +461,10 @@
 <p><code>catalog_studies.{parquet,csv}</code> (6,086 studies, all fields), <code>catalog_included_studies.csv</code> (310), <code>catalog_included_runs.parquet</code> (143,833 runs), <code>human_review_queue.csv</code> (157), <code>paper_study_links.parquet</code>, <code>cohorts.csv</code>, <code>recoverability.parquet</code>, <code>extraction_worklist.csv</code>, <code>mislabel_audit.csv</code>, <code>enumeration_misses.csv</code>, <code>controlled_access_registry.csv</code>, <code>screened_in_papers.parquet</code>, <code>schema.json</code>. Supporting reports: <code>triage_validation.md</code>, <code>coverage_estimate.md</code>, <code>recoverability_report.md</code>, <code>access_report.md</code>, <code>yield_method.md</code>, <code>BUDGET.md</code>.</p>
 <h2 id="13-token-budget-log">13. Token budget log</h2>
 <p>See BUDGET.md (final): ≈19.6 M tokens across 3 track agents (Phase 1), 24 leaf workers (Haiku screen 12+1, Sonnet confirm 5+2+1, Opus 3), 4 track agents (Phases 3–4), and ≈1.2 M in-frame. No single frame exceeded 1.6 M.</p>
-<h2 id="10-per-sample-metadata-extraction-2026-09-25-after-recovery-round-2">10. Per-sample metadata extraction (2026-09-25, after recovery round 2)</h2>
-<p>527,474 validated sample × field determinations over 150,635 samples / 379 included studies via four evidence routes with Opus-adjudicated conflicts and an Opus audit of every group-level statement. Age at collection: 36% of infant-scope samples; preterm 23%; delivery 19%; antibiotics 14%. Gold (3,670 cMD samples): age precision 0.993 / recall 0.949, delivery 0.995 / 0.890, preterm 1.000 / 0.961. 9,567 samples in included studies carry adult ages (mothers/adult cohorts) and are flagged in <code>extraction/adult_age_rows.parquet</code>. Details: <code>extraction/EXTRACTION_REPORT.md</code>; SQLite <code>infant_catalog.sqlite</code>.</p></div>
+<h2 id="10-per-sample-metadata-extraction-final-2026-09-25">10. Per-sample metadata extraction (final, 2026-09-25)</h2>
+<p>606,023 validated sample × field determinations over 150,677 samples / 381 included studies; 12 core fields + 4 extension fields (health_condition, multiple_birth, sibling_in_study, geo_subregion). Age at collection: 37% of infant-scope samples; preterm 23%; delivery 20%; antibiotics 14%. Gold (3,670 cMD samples): age precision 0.991 / recall 0.951, delivery 0.995 / 0.932, preterm 1.000 / 0.961. Details <code>extraction/EXTRACTION_REPORT.md</code>.</p>
+<h2 id="11-publication">11. Publication</h2>
+<p>Data package v1 (<code>data_package_v1.zip</code>: README, DATA_DICTIONARY, sample_metadata_wide, study_metadata_wide, cohorts, runs, determinations with evidence, notebook) and a static GitHub Pages website (<code>site.zip</code>, 774 pages: study, cohort, explorer with DuckDB-WASM slice downloads, fields, universe, methods; 0 broken internal links of 134,567). Publishing steps: <code>website/PUBLISH_INSTRUCTIONS.md</code>.</p></div>
 
 </main>
 <footer>

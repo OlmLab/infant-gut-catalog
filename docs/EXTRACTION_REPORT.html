@@ -25,10 +25,10 @@
 
 <p class="small">Rendered from <a href="EXTRACTION_REPORT.md">EXTRACTION_REPORT.md</a>.</p>
 <div class="md"><h1 id="extraction-report-per-sample-metadata-for-the-infant-gut-shotgun-metagenome-catalog">EXTRACTION REPORT — per-sample metadata for the Infant Gut Shotgun-Metagenome Catalog</h1>
-<p>Date 2026-09-25 (v2, after recovery round 2) · plan artifact 8c115402 (5 phases) · scope: 389 included studies, 153,701 samples, 174,022 runs.</p>
+<p>Date 2026-09-25 (v3, final passes + field extension) · plan artifact 8c115402 (5 phases) · scope: 389 included studies, 153,701 samples, 174,022 runs.</p>
 <h2 id="1-what-was-produced">1. What was produced</h2>
 <ul>
-<li><code>sample_determinations.parquet</code> — <strong>527,474 determinations</strong> (one per sample × field) over 150,544 samples in 379 studies; columns follow <code>catalog_schema.sql::sample_determinations</code> plus <code>route</code> (R1–R4), <code>scope</code> (sample|group), <code>group_audit</code>. Every row passes <code>validate_row()</code> (labelled ≤12-word verbatim quote, controlled vocabularies).</li>
+<li><code>sample_determinations.parquet</code> — <strong>606,023 determinations</strong> (one per sample × field) over 150,544 samples in 379 studies; columns follow <code>catalog_schema.sql::sample_determinations</code> plus <code>route</code> (R1–R4), <code>scope</code> (sample|group), <code>group_audit</code>. Every row passes <code>validate_row()</code> (labelled ≤12-word verbatim quote, controlled vocabularies).</li>
 <li><code>samples.parquet</code> (153,701; body-site class, gold flag) and <code>sample_attributes.parquet</code> (7,477,170 long-format archive attributes, 2,280 distinct keys; ENA sample XML 6.05M rows, NCBI BioSample 170k rows for the 10,034 SAMN records ENA lacks; 71 samples have no attributes anywhere).</li>
 <li><code>sample_subjects.parquet</code> / <code>subjects.parquet</code> / <code>study_subject_summary.csv</code> — subject and timepoint resolution: 190/389 studies resolve subjects; 34,185 infant subjects, 1,538 mothers (2,162 mother samples linked to an infant; 3,411 unlinked); 92 longitudinal studies; median 1 sample per infant (mean 2.6). <code>cohorts_v4.csv</code> recomputes unique_infants_est for 174 cohorts.</li>
 <li><code>infant_catalog.sqlite</code> (189 MB) — studies, samples, runs, sample_determinations, study_triage, cohorts, paper_study_links loaded per <code>catalog_schema.sql</code>.</li>
@@ -307,7 +307,55 @@
 | HMO supplementation | 1,256 | 1,256 | +0 | 0.9% |
 | NEC status | 5,153 | 5,153 | +0 | 3.5% |</p>
 <p>Gold after merge (hi-res): age precision 0.993 / recall 0.949 (was 0.994 / 0.947); other fields unchanged. Tokens this round: 2,700,912. <strong>Whole pipeline ≈ 44.9M.</strong></p>
-<p>Structural changes delivered: <code>r2_supp_extract_v2.py</code> (attribute-inverted-index gate default, study_keys fix, numeric-ID plausibility), Methods-first chunking for R3, skill rules for unit resolution and adult-age routing. The remaining ceiling is structural, not methodological: ~42k samples sit in studies whose per-sample tables cannot be joined to archive records without submitter keys, and 34k samples' extra papers were not read for budget reasons (a second multi-paper pass with the same recipe would finish them).</p></div>
+<p>Structural changes delivered: <code>r2_supp_extract_v2.py</code> (attribute-inverted-index gate default, study_keys fix, numeric-ID plausibility), Methods-first chunking for R3, skill rules for unit resolution and adult-age routing. The remaining ceiling is structural, not methodological: ~42k samples sit in studies whose per-sample tables cannot be joined to archive records without submitter keys, and 34k samples' extra papers were not read for budget reasons (a second multi-paper pass with the same recipe would finish them).</p>
+<h2 id="9-final-passes-2026-09-25-multi-paper-pass-2-r2-re-run-with-the-fixed-gate-field-extension">9. Final passes (2026-09-25) — multi-paper pass 2, R2 re-run with the fixed gate, field extension</h2>
+<table>
+<thead>
+<tr>
+<th>Pass</th>
+<th style="text-align: right;">Rows kept</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Multi-paper pass 2 (48 studies)</td>
+<td style="text-align: right;">1,714</td>
+<td>32 of 48 studies read (budget); 1,712 rows confirm existing R3 values exactly, 2 new pairs — the prose route is saturated. 8 studies (626 samples) still unread</td>
+</tr>
+<tr>
+<td>R2 full re-run, v2 gate (219 studies with tables; 7,363 study×table pairs)</td>
+<td style="text-align: right;">9,449</td>
+<td>386 newly accepted tables in 104 studies; 4,757 samples gain ≥1 field (age +651); 170 studies have no PMC-linked table at all; 2 ZIPs unretrievable; 1,978 rows removed by a post-hoc misclassification filter</td>
+</tr>
+<tr>
+<td>Field extension (R1 + R2)</td>
+<td style="text-align: right;">70,522</td>
+<td>New fields: geo_subregion 47,016 samples / 174 studies; health_condition 9,680 / 33; multiple_birth 4,792 / 18; sibling_in_study 3,924 / 10 (3,130 candidate sibling rows withheld — cannot verify distinct infants). No reverse-geocoding; region codes kept as given</td>
+</tr>
+</tbody>
+</table>
+<p>Final table: <strong>606,023 determinations</strong>, 150,677 samples, 381 studies. Gold (hi-res): age 0.991 / 0.951, delivery 0.995 / 0.932, preterm 1.000 / 0.961, feeding 0.891 / 0.577, antibiotics 0.867 / 0.820, GA 1.000 / 0.264.</p>
+<p>Coverage (infant-scope samples, n = 146,126):
+| Field | samples | share | studies |
+|---|---:|---:|---:|
+| Probiotic exposure | 8,308 | 5.7% | 24 |
+| Preterm status | 33,704 | 23.1% | 116 |
+| Gestational age | 12,791 | 8.8% | 48 |
+| Delivery mode | 29,149 | 19.9% | 87 |
+| Feeding mode | 11,828 | 8.1% | 72 |
+| Antibiotic exposure | 21,187 | 14.5% | 65 |
+| Age at collection | 53,802 | 36.8% | 171 |
+| Birth weight | 10,371 | 7.1% | 37 |
+| Country | 136,139 | 93.2% | 363 |
+| Maternal antibiotics | 8,397 | 5.7% | 38 |
+| HMO supplementation | 1,256 | 0.9% | 3 |
+| NEC status | 5,173 | 3.5% | 20 |
+| Health condition | 9,680 | 6.6% | 32 |
+| Multiple birth | 4,792 | 3.3% | 18 |
+| Sibling in study | 3,924 | 2.7% | 10 |
+| Geo subregion | 47,016 | 32.2% | 172 |</p>
+<p>Tokens these passes: 2,358,996. <strong>Whole pipeline ≈ 47.3M.</strong> Published as data_package_v1.zip (README, DATA_DICTIONARY, wide tables, notebook) and the GitHub Pages site.</p></div>
 
 </main>
 <footer>

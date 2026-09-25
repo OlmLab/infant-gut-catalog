@@ -161,7 +161,7 @@ async function showDetail(key){
   <table class="tbl kv">
   <tr><td>Sample title</td><td>${h(s.sample_title)}</td></tr>
   <tr><td>Secondary accession</td><td>${h(s.secondary_sample)}</td></tr>
-  <tr><td>Body-site class / role</td><td>${h(s.body_site_class)} / ${h(s.role)}${s.adult_age_flag ? ' <span class="tag">adult_age_flag</span>' : ''}${s.is_gold_heldout ? ' <span class="tag">gold held-out</span>' : ''}</td></tr>
+  <tr><td>Sample unit</td><td>${h(s.sample_unit)}${s.parent_biosample ? ' (parent BioSample <a href="https://www.ebi.ac.uk/ena/browser/view/'+h(s.parent_biosample)+'">'+h(s.parent_biosample)+'</a>)' : ''}</td></tr><tr><td>Body-site class / role</td><td>${h(s.body_site_class)} / ${h(s.role)}${s.adult_age_flag ? ' <span class="tag">adult_age_flag</span>' : ''}${s.is_gold_heldout ? ' <span class="tag">gold held-out</span>' : ''}</td></tr>
   <tr><td>Subject / timepoint</td><td>${h(s.subject_key)} ${s.t_index != null ? `· t=${fmtV(s.t_index)} of ${fmtV(s.n_timepoints_subject)}` : ''}${s.linked_infant_subject_key ? ` · linked infant ${h(s.linked_infant_subject_key)}` : ''}</td></tr>
   <tr><td>Collection date (archive)</td><td>${h(s.collection_date)}</td></tr>
   <tr><td>Runs (${runs.length})</td><td>${runs.slice(0,40).map(x => `<a href="https://www.ebi.ac.uk/ena/browser/view/${h(x)}">${h(x)}</a>`).join(', ')}${runs.length>40 ? ` … +${runs.length-40}` : ''}</td></tr>
