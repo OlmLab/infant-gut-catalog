@@ -1,5 +1,5 @@
 # EXTRACTION REPORT — per-sample metadata for the Infant Gut Shotgun-Metagenome Catalog
-Date 2026-09-25 (v3, final passes + field extension) · plan artifact 8c115402 (5 phases) · scope: 389 included studies, 153,701 samples, 174,022 runs.
+Date 2026-09-25 (v4, after sample-unit fix) · plan artifact 8c115402 (5 phases) · scope: 389 included studies, 153,701 samples, 174,022 runs.
 
 ## 1. What was produced
 * `sample_determinations.parquet` — **606,023 determinations** (one per sample × field) over 150,544 samples in 379 studies; columns follow `catalog_schema.sql::sample_determinations` plus `route` (R1–R4), `scope` (sample|group), `group_audit`. Every row passes `validate_row()` (labelled ≤12-word verbatim quote, controlled vocabularies).
@@ -142,3 +142,8 @@ Coverage (infant-scope samples, n = 146,126):
 | Geo subregion | 47,016 | 32.2% | 172 |
 
 Tokens these passes: 2,358,996. **Whole pipeline ≈ 47.3M.** Published as data_package_v1.zip (README, DATA_DICTIONARY, wide tables, notebook) and the GitHub Pages site.
+
+
+## 10. Sample-unit fix (auditor finding, 2026-09-25)
+The catalog's sample unit is the BioSample. The AUDITOR session found deposits that register one BioSample per infant and one run per stool (PRJNA294605: 11 BioSamples / 158 runs, "Assembly of 14 fecal samples from infant 23…"), where run-keyed supplementary values had been collapsed to one per BioSample. Deterministic classification of all 11,116 multi-run BioSamples in 63 studies (criteria: pooled text; ≥2 distinct ages/timepoints across a BioSample's runs in run-keyed tables; time tokens in library names confirmed by attributes; NCBI BioSample date ranges) → **6 class-A studies** (PRJNA294605, PRJNA1055141, PRJNA1258733, PRJNA299342, PRJNA751712, PRJNA869587; 16 BioSamples / 521 runs); 33 technical (lanes, replicates, paired/unpaired, long+short) studies unchanged (row-level diff empty); 24 class-B studies stayed BioSample-unit. For class A: 521 run-level sample rows (`sample_unit=run`, `parent_biosample`), 89 run-keyed tables re-gated per run → 2,938 R2 rows + 698 propagated per-infant-constant R1 rows; 75 collapsed BioSample-level rows superseded (`sample_determinations_superseded.parquet`); subjects rebuilt (PRJNA294605: 3–22 timepoints per infant, age for 141/158 runs). Also from the auditor: own-data paper PMID 27258951 linked to PRJNA294605 (confidence 0.6 — full text unreadable, Europe PMC 500) and 136 preterm_status values derived from gestational age. Validator pass 100 %; gold metrics unchanged (no gold samples in class-A studies). Catalog now **154,206 samples, 609,584 determinations**. Report: `SAMPLE_UNIT_FIX_REPORT.md`; classification: `sample_unit_classification.csv`.
+Deviations declared by the track: NCBI efetch returns nothing for SAMEA ids (2,192 class-B BioSamples evaluated on ENA attributes); library-name criterion tightened after false positives and fired on none; column→field classes reused from accepted R2 rows rather than re-classified.

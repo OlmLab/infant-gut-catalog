@@ -4,7 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>README — Infant Gut Shotgun-Metagenome Catalog</title>
-<meta name="description" content="Curated, evidence-linked catalog of public shotgun-metagenome studies of the human infant gut with per-sample metadata.">
+<meta name="description" content="Curated, evidence-linked catalog of public shotgun-metagenome studies of the human infant gut with per-sample metadata and Sandpiper community profiles.">
+<meta name="catalog-release" content="data-v1.2.1">
+<link rel="canonical" href="https://olmlab.github.io/infant-gut-catalog/docs/README.html">
+<meta name="catalog-package-version" content="1.2.1">
+<meta name="catalog-build-date" content="2026-09-26">
 <link rel="stylesheet" href="../static/site.css">
 
 
@@ -16,6 +20,7 @@
 <a href="../cohorts/index.html" >Cohorts</a>
 <a href="../samples/index.html" >Sample explorer</a>
 <a href="../fields/index.html" >Fields</a>
+<a href="../authors/index.html" >Authors</a>
 <a href="../universe.html" >Universe</a>
 <a href="../methods.html" class="active">Methods</a>
 <a href="../downloads.html" >Downloads</a>
@@ -24,10 +29,10 @@
 <div class="crumbs"><a href="../index.html">Home</a> › <a href="../methods.html">Methods</a> › README</div>
 
 <p class="small">Rendered from <a href="README.md">README.md</a>.</p>
-<div class="md"><h1 id="infant-gut-shotgun-metagenome-catalog-data-package-v11-2026-09-25">Infant Gut Shotgun-Metagenome Catalog — data package v1.1 (2026-09-25)</h1>
+<div class="md"><h1 id="infant-gut-shotgun-metagenome-catalog-data-package-v120-2026-09-26">Infant Gut Shotgun-Metagenome Catalog — data package v1.2.0 (2026-09-26)</h1>
 <p>A curated, evidence-linked catalog of every public shotgun-metagenome study of the human infant gut (0–36 months) in the INSDC archives (ENA/SRA/DDBJ), with per-sample metadata recovered from archive attributes, supplementary tables and papers.</p>
-<p><strong>Headline numbers.</strong> 389 included studies · 154,206 samples (521 of them run-level rows from 6 one-BioSample-per-infant deposits; see <code>sample_unit</code>) · 174,022 sequencing runs · 609,584 sample × field determinations, each with a verbatim evidence quote · age at collection recovered for 53,802 infant-scope samples (37%) · precision vs 3,670 independently curated samples: age 0.99, delivery mode 0.995, preterm status 1.00.</p>
-<p>Universe screened: 9,579 candidate studies (all METAGENOMIC WGS/WXS runs in ENA with a human signal, no taxon filter) → 389 included, 52 unresolvable after two full-text review rounds, the rest excluded with a coded reason (<code>universe_studies_all.parquet</code>).</p>
+<p><strong>Headline numbers (computed from the tables in this package; see CHANGELOG v1.2 and v1.2.1).</strong> 389 included studies · 154,206 catalog samples (153,685 BioSample units + 521 run units from 6 one-BioSample-per-infant deposits; their 16 parent BioSamples are listed in <code>parent_biosamples.parquet</code> and counted nowhere else) · 174,022 sequencing runs · 618,898 sample × field determinations, each with a verbatim evidence quote (9,559 of them are out-of-scope ages that document <code>adult_age_flag</code>) · <strong>age scope</strong>: 67,598 samples with per-sample or per-subject infant evidence + 7,097 in studies triage judged all-infant = 74,695 age-scope infant samples, of which 71,795 are also gut/unknown body site = <strong><code>catalog_scope</code>, the headline denominator</strong> (2,900 age-scope infant rows are body-site <code>excluded</code>/<code>linked</code>: skin, milk, oral, mother…); 14,410 samples sit in mixed-age deposits and 49,556 in studies without a per-study infant estimate (age unknown); 9,559 carry an out-of-range age (<code>adult_flagged</code>); 5,986 are mother/other samples · age at collection ≤ 1,100 d recovered for 53,669 of 74,695 age-scope infant samples (72%) for 52,649 of 71,795 catalog-scope samples (73%) and for 62,230 of 146,336 body-site infant-scope samples (43%; v1.2.0 said 54,105 of 146,631 before the v1.2.1 host/isolate exclusions; the v1.1 figure 53,802 was computed before the run-unit fix and the site's 54,150 included the 16 parent rows and rows later superseded) · precision vs curatedMetagenomicData (hi-res set, 3,498 gold rows; <code>extraction_gold_eval_hires.csv</code>): age 0.99, delivery mode 0.995, preterm status 1.00 (full set of 3,670 rows: age 0.976, delivery 0.995, preterm 1.00 — see <code>tier_field_precision.csv</code>, column <code>gold_set</code>).</p>
+<p>Universe screened: 9,579 candidate studies (all METAGENOMIC WGS/WXS runs in ENA with a human signal, no taxon filter) → 389 included, 52 unresolvable after two full-text review rounds; recall on the 22 curatedMetagenomicData infant BioProjects: 17/22 by the automated cascade, 18/22 after the human-review pass (one study, <code>decision_stage=session_model_review</code>), the rest excluded with a coded reason (<code>universe_studies_all.parquet</code>).</p>
 <h2 id="files">Files</h2>
 <table>
 <thead>
@@ -40,12 +45,12 @@
 <tbody>
 <tr>
 <td><code>sample_metadata_wide.parquet</code> / <code>.csv.gz</code></td>
-<td style="text-align: right;">153,701</td>
+<td style="text-align: right;">154,206</td>
 <td><strong>Start here.</strong> One row per sample: identifiers, body-site class, every metadata field with <code>&lt;field&gt;__confidence</code> and <code>&lt;field&gt;__route</code>, subject/timepoint, run accessions, cohort, links</td>
 </tr>
 <tr>
 <td><code>sample_determinations.parquet</code></td>
-<td style="text-align: right;">606,023</td>
+<td style="text-align: right;">618,898</td>
 <td>Long form: one row per sample × field with <code>evidence_source</code>, <code>evidence_locator</code>, <code>evidence_quote</code> (≤12 words verbatim), <code>route</code>, <code>scope</code>, <code>confidence</code></td>
 </tr>
 <tr>
@@ -60,7 +65,7 @@
 </tr>
 <tr>
 <td><code>sample_subjects.parquet</code></td>
-<td style="text-align: right;">153,701</td>
+<td style="text-align: right;">154,206</td>
 <td>Subject and timepoint resolution per sample (<code>subject_key</code>, <code>role</code> infant/mother/other, <code>t_index</code>)</td>
 </tr>
 <tr>
@@ -70,13 +75,68 @@
 </tr>
 <tr>
 <td><code>study_paper_links.csv</code></td>
-<td style="text-align: right;">972</td>
+<td style="text-align: right;">973</td>
 <td>Study ↔ paper links with PMID/PMCID/DOI and link method</td>
+</tr>
+<tr>
+<td><code>sandpiper_flag_table.csv</code></td>
+<td style="text-align: right;">20</td>
+<td>Single source for every Sandpiper flag (field, level, site label, definition, used) — v1.2.1</td>
+</tr>
+<tr>
+<td><code>sandpiper_study_panel_status.csv</code></td>
+<td style="text-align: right;">389</td>
+<td>Per-study panel scope label and n breakdown (age_scope of profiled rows) — v1.2.1</td>
+</tr>
+<tr>
+<td><code>sandpiper_auditor_candidate_runs.csv</code></td>
+<td style="text-align: right;">375</td>
+<td>Runs whose organism label is a non-human host or a named microbe, with the v1.2.1 action taken — v1.2.1</td>
+</tr>
+<tr>
+<td><code>review_genomic_only_samples.csv</code>, <code>review_named_microbe_metagenomic_samples.csv</code>, <code>review_amplicon_runs.csv</code></td>
+<td style="text-align: right;">3158 / 70 / 39</td>
+<td>Owner review lists (library_source GENOMIC on every run; METAGENOMIC runs with a named-microbe organism; AMPLICON-strategy runs) — v1.2.1</td>
 </tr>
 <tr>
 <td><code>universe_studies_all.parquet</code></td>
 <td style="text-align: right;">9,579</td>
 <td>Every screened study with verdict, reason code and evidence</td>
+</tr>
+<tr>
+<td><code>parent_biosamples.parquet</code></td>
+<td style="text-align: right;">16</td>
+<td>Parent BioSamples of the run-level rows (provenance only; excluded from every count)</td>
+</tr>
+<tr>
+<td><code>study_verdict_history.parquet</code></td>
+<td style="text-align: right;">32,231</td>
+<td>Every triage-stage verdict per study (screen, rubric, Sonnet replicates, Opus adjudication, growth waves, BioSample re-judge, human-review rounds, final) with model, confidence, evidence and source artifact</td>
+</tr>
+<tr>
+<td><code>value_history.parquet</code></td>
+<td style="text-align: right;">45,591</td>
+<td>Determinations that are not current: superseded, rejected, dropped by the group-statement audit, duplicates, moved parent rows, auditor findings — each with <code>status</code>, <code>reason</code>, <code>replaced_by</code></td>
+</tr>
+<tr>
+<td><code>sample_determinations_superseded.parquet</code></td>
+<td style="text-align: right;">223</td>
+<td>Subset of the above kept in the v1.1 layout (run-level supersessions + v1.2 age corrections)</td>
+</tr>
+<tr>
+<td><code>confidence_tiers.csv</code></td>
+<td style="text-align: right;">29</td>
+<td>The engine confidence tiers: route × determiner × scope with the fixed confidence values they emit</td>
+</tr>
+<tr>
+<td><code>tier_field_precision.csv</code></td>
+<td style="text-align: right;">49</td>
+<td>Empirical precision of each route × confidence tier per field against the cMD gold join (hi-res and full sets)</td>
+</tr>
+<tr>
+<td><code>sample_unit_classification_by_study.csv</code></td>
+<td style="text-align: right;">67</td>
+<td>Per-study sample-unit class (A run-keyed, C technical multi-run, X cross-study BioSample)</td>
 </tr>
 <tr>
 <td><code>human_review_queue.csv</code></td>
@@ -105,27 +165,40 @@
 </tr>
 </tbody>
 </table>
+<h2 id="age-scope-and-roles-new-in-v12">Age scope and roles (new in v1.2)</h2>
+<p><code>body_site_class</code> says <em>where</em> a sample comes from; it says nothing about the subject's age. Use <code>age_scope</code> for that: <code>infant_evidenced</code> (age ≤ 1,100 d, preterm status or gestational age committed on this sample, or on another sample of the same resolved subject), <code>study_all_infant</code> (no per-sample evidence, but triage estimated ≥ 90 % of the study's infant-scope samples to be infants), <code>age_unknown_mixed_study</code> (triage estimated the study as mixed-age), <code>age_unknown_no_study_estimate</code> (no per-sample evidence and no per-study estimate), <code>adult_flagged</code> (a committed age &gt; 1,100 d), <code>non_infant_role</code> (mother/other by attribute or sample-name evidence). <code>role</code> is <code>infant</code> only when evidenced (<code>role_source</code>), otherwise <code>unknown</code>; <code>adult</code>/<code>child</code> are set from the out-of-range age. <strong>Headline coverage is computed on <code>age_scope ∈ {infant_evidenced, study_all_infant}</code></strong>; <code>field_coverage_summary.csv</code> carries both denominators. Mixed-age deposits (61 studies, <code>mixed_age_deposit = True</code>, e.g. the American Gut Project PRJEB11419 with 79 infant-evidenced rows among 7,024) contribute most of the probiotic/antibiotic/delivery values on adults — filter on <code>age_scope</code> before using exposure fields.</p>
 <h2 id="how-to-read-a-value">How to read a value</h2>
-<p>Every value carries a <strong>route</strong> (R1 = archive sample attribute or sample-name convention (per sample); R2 = supplementary table row (per sample; 'subject_level_join' in parse_note when copied from a per-subject row); R3 = statement in the paper text applied to a defined group; R4 = abstract/ENA description statement (group; confidence ≤0.5).) and a <strong>confidence</strong> (0–1). For most analyses: use R1/R2 values at any confidence, and R3/R4 values only when <code>confidence ≥ 0.5</code> — those are group-level statements applied to samples. <code>parse_note</code> explains derivations (unit resolution, subject propagation, date arithmetic). Rows the validator rejected are not in these tables (see the release bundle for <code>*_rejected.parquet</code>).</p>
+<p>Every value carries a <strong>route</strong> (R1 = archive sample attribute or sample-name convention (per sample); R2 = supplementary table row (per sample; 'subject_level_join' in parse_note when copied from a per-subject row); R3 = statement in the paper text applied to a defined group; R4 = abstract/ENA description statement (group; confidence ≤0.5).) and a <strong>confidence</strong>. Confidence is an ordinal reliability tier fixed by the route/engine that produced the value (<code>confidence_tiers.csv</code>), <strong>not a calibrated probability</strong>; its empirical precision per tier and field against the gold set is in <code>tier_field_precision.csv</code> (see DATA_DICTIONARY). For most analyses: use R1/R2 values at any confidence, and R3/R4 values only when <code>confidence ≥ 0.5</code> — those are group-level statements applied to samples. <code>parse_note</code> explains derivations (unit resolution, subject propagation, date arithmetic). Rows that are no longer current (superseded, rejected, dropped by the group-statement audit) are in <code>value_history.parquet</code> with the reason and what replaced them; study-level verdict changes are in <code>study_verdict_history.parquet</code>.</p>
 <h2 id="known-limitations">Known limitations</h2>
 <ul>
 <li>Age is recoverable for ~37 % of infant-scope samples; per study it is all-or-nothing. ~42k samples belong to studies whose supplementary tables are keyed by identifiers absent from the archive (e.g. TEDDY) and can only be joined with submitter help.</li>
 <li><code>antibiotic_exposure</code> means <em>any</em> antibiotics before/at sampling; sources that record only current use disagree (precision 0.87 vs that definition).</li>
 <li><code>feeding_mode</code> categories differ between sources; precision 0.89.</li>
 <li>Exposure fields (probiotic, HMO, NEC, birth weight, maternal antibiotics) have no external truth set — audited by blind model re-judgement only.</li>
-<li>~9.6k samples in included studies are adults/mothers (<code>adult_age_flag</code>); <code>body_site_class</code> and <code>role</code> separate them.</li>
+<li>9,559 samples in included studies carry an archive age &gt; 36 months (<code>adult_age_flag</code>, evidence-linked to an <code>age_at_collection_days</code> determination with <code>parse_note</code> starting <code>out_of_scope_adult</code>); a further 63,966 samples have no age evidence at all — see <code>age_scope</code>.</li>
+<li>Study <code>n_samples</code>/<code>n_runs</code> count the study's own archive runs; 62 BioSamples carry runs from two BioProjects and appear once in the sample table (under one study), so per-study <code>n_samples</code> sum to 154,268 while the sample table has 154,206 rows (<code>n_sample_rows</code> per study).</li>
 <li>Extension fields (<code>health_condition</code>, <code>multiple_birth</code>, <code>sibling_in_study</code>, <code>geo_subregion</code>) were added in a single pass and are less audited than the core fields.</li>
 </ul>
 <h2 id="provenance">Provenance</h2>
-<p>Built 2026-09-17 → 2026-09-25 with Claude-model pipelines (Haiku for screening/normalisation, Sonnet for rubric judgement and prose extraction, Opus for adjudication), deterministic parsers, and two rounds of full-text model review of the undecidable residue. Full methods: <code>CATALOG_REPORT.md</code> and <code>EXTRACTION_REPORT.md</code> in the release bundle. Licence: CC-BY-4.0 for the curated tables (archive metadata remains under INSDC terms). Citation placeholder: <em>Infant Gut Shotgun-Metagenome Catalog v1, 2026.</em></p></div>
+<p>Built 2026-09-17 → 2026-09-25 with Claude-model pipelines (Haiku for screening/normalisation, Sonnet for rubric judgement and prose extraction, Opus for adjudication), deterministic parsers, and two rounds of full-text model review of the undecidable residue. Full methods: <code>CATALOG_REPORT.md</code> and <code>EXTRACTION_REPORT.md</code> in the release bundle. Licence: CC-BY-4.0 for the curated tables (archive metadata remains under INSDC terms). Citation placeholder: <em>Infant Gut Shotgun-Metagenome Catalog data package v1.2 (release v12), 2026.</em></p>
+<h2 id="added-in-v120-sandpiper-community-profiles-and-author-index">Added in v1.2.0: Sandpiper community profiles and author index</h2>
+<ul>
+<li><code>sample_metadata_wide</code> carries 39 Sandpiper columns (<code>sp_*</code>, <code>sandpiper_url</code>, <code>taxonomy_db</code>, <code>taxonomy_version</code>, <code>sandpiper_version</code>): 79,473 of 154,206 samples (51.5%) in 304 studies (<code>sp_n_samples_profiled &gt; 0</code>; 302 studies have profiled runs registered under their own accession, 181 have a composition panel — see <code>sp_panel_scope</code>) have a SingleM profile (Sandpiper 2.0.0, GTDB R232; 87,125 of 174,022 runs). Relative abundances (<code>*_ra</code>) are fractions of prokaryotic coverage — see <code>SANDPIPER_REPORT.md</code> §3 and the DATA_DICTIONARY. Every profiled sample links to <code>https://sandpiper.qut.edu.au/run/&lt;run&gt;</code> (the RANDOM-selection run with the highest root coverage). Profiles are Sandpiper 2.0.0 outputs from Zenodo snapshot 20419175; the linked live pages may show a newer Sandpiper version. Study composition panels and <code>sp_median_*</code> are computed over <code>catalog_scope</code> rows with adequate depth only (v1.2.1).</li>
+<li><code>&lt;field&gt;__scope</code> (sample / subject / group / biosample) for the 16 coverage fields, so slice exports carry the scope of R3/R4 group statements.</li>
+<li><code>study_metadata_wide</code> adds <code>sp_n_samples_profiled</code>, <code>sp_frac_samples_profiled</code>, <code>sp_n_runs_profiled</code>, <code>sp_frac_runs_profiled</code>, <code>sp_coverage_class</code>, <code>sp_frac_runs_flagged</code> (runs whose organism/library labels fire Sandpiper's non-human-host / named-microbe / synthetic / RNA rules), <code>sp_frac_low_complexity_profiled</code>, <code>sp_frac_low_depth_profiled</code>, <code>sp_median_spf</code>, <code>sp_median_known_species_fraction</code>, <code>sp_median_bifidobacterium_ra</code>, <code>sp_median_shannon_genus</code>, <code>sp_auditor_attention</code>, <code>sp_auditor_reason</code>, and the author columns <code>first_author</code>, <code>last_author</code>, <code>n_authors</code>, <code>n_author_papers</code>, <code>organisations</code>.</li>
+<li>On-site Sandpiper tables: <code>sandpiper_sample_summary.parquet</code>, <code>sandpiper_top_genera.parquet</code> (top-15 genera + unassigned bin per sample), <code>sandpiper_study_panels.parquet</code> (per-study mean top phyla/genera), <code>sandpiper_run_qc.parquet</code> (all runs, QC flags, miss reasons), <code>sandpiper_study_coverage.csv</code>, <code>sandpiper_study_qc_flags.csv</code>, <code>sandpiper_flag_definitions.json</code>. The full run × taxon profiles (<code>sandpiper_profiles.parquet</code>, ~100 MB) are a Release asset, not in this package.</li>
+<li>Author index: <code>authors.parquet</code> (28,367 study × author rows, 10,965 distinct author keys), <code>study_authors_summary.csv</code> (first/last author, organisations for all screened studies), <code>authors_index.json</code> (search index used by the website). Names are string-matched from Europe PMC author strings and NCBI BioProject records; 103 included studies have no author on record (see <code>AUTHORS_REPORT.md</code>).</li>
+<li><code>VERSION.json</code>: package version, release tag, build date and sha256 + row count of every table.</li>
+</ul></div>
 
 </main>
 <footer>
-<div><b>Infant Gut Shotgun-Metagenome Catalog</b> — data package v1 (built 2026-09-25). Curated tables are released under <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a>; archive metadata remains under INSDC terms.</div>
-<div>How to cite: <i>Infant Gut Shotgun-Metagenome Catalog v1, 2026.</i></div>
-<div>Caveats: every value carries a route (R1 archive attribute, R2 supplementary table, R3 paper text, R4 abstract/description) and a confidence; R3/R4 values are group-level statements applied to samples — see <a href="../fields/index.html">Fields</a> and <a href="../methods.html#limitations">Methods › Limitations</a>. Built with an LLM-assisted pipeline; treat individual values as evidence-linked claims, not ground truth.</div>
+<div><b>Infant Gut Shotgun-Metagenome Catalog</b> — package <span class="mono">1.2.1</span> · built 2026-09-26 · generator <span class="mono">nogit</span> · release <span class="mono">data-v1.2.1</span> (<a href="../data/VERSION.json">VERSION.json</a>, <a href="../docs/CHANGELOG.html">changelog</a>). Curated tables are released under <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a>; archive metadata remains under INSDC terms; community profiles from <a href="https://sandpiper.qut.edu.au/">Sandpiper</a> (Woodcroft et al. 2025, CC-BY).</div>
+<div>How to cite: <i>Infant Gut Shotgun-Metagenome Catalog, data package 1.2.1 (data-v1.2.1), 2026.</i></div>
+<div>Caveats: every value carries a route (R1 archive attribute, R2 supplementary table, R3 paper text, R4 abstract/description), a scope and a confidence tier (not a calibrated probability); R3/R4 values are group-level statements applied to samples — see <a href="../fields/index.html">Fields</a> and <a href="../methods.html#limitations">Methods › Limitations</a>. Built with an LLM-assisted pipeline; treat individual values as evidence-linked claims, not ground truth. Found an error? Every study, cohort and sample has a <b>Flag an issue</b> button that opens a prefilled GitHub issue.</div>
 </footer>
 
+<script>window.CATALOG={version:'1.2.1',release:'data-v1.2.1',issueRepo:'https://github.com/OlmLab/infant-gut-catalog/issues/new',issueTemplate:'catalog-finding.yml'};</script>
 <script src="../static/site.js"></script>
 
 </body>

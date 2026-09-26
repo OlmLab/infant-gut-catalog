@@ -5,9 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>PRJEB102491 — Shotgun sequencing of 91 infants from the ALADDIN birth cohort — Infant Gut Shotgun-Metagenome Catalog</title>
 <meta name="description" content="Shotgun sequencing of 91 infants from the ALADDIN birth cohort — 176 samples, 176 runs; infant gut shotgun metagenome study in the catalog.">
+<meta name="catalog-release" content="data-v1.2.1">
+<link rel="canonical" href="https://olmlab.github.io/infant-gut-catalog/studies/PRJEB102491.html">
+<meta name="catalog-package-version" content="1.2.1">
+<meta name="catalog-build-date" content="2026-09-26">
 <link rel="stylesheet" href="../static/site.css">
 
-<link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.dataTables.min.css">
+<link rel="stylesheet" href="../static/vendor/dataTables.dataTables-2.1.8.min.css" integrity="sha384-bK2L0Q3Sn2fB8YZTIjKejpTUJXd8xNtKn4RcIm7KM3EX3orMlOI31hwtNH0iyky/" crossorigin="anonymous">
 
 
 </head>
@@ -18,6 +22,7 @@
 <a href="../cohorts/index.html" >Cohorts</a>
 <a href="../samples/index.html" >Sample explorer</a>
 <a href="../fields/index.html" >Fields</a>
+<a href="../authors/index.html" >Authors</a>
 <a href="../universe.html" >Universe</a>
 <a href="../methods.html" >Methods</a>
 <a href="../downloads.html" >Downloads</a>
@@ -27,10 +32,13 @@
 
 <h1><span class="mono">PRJEB102491</span></h1>
 <p class="lead">Shotgun sequencing of 91 infants from the ALADDIN birth cohort</p>
+
 <div class="btns">
 <a class="btn sec" href="https://www.ebi.ac.uk/ena/browser/view/PRJEB102491">ENA browser</a>
 <a class="btn sec" href="https://www.ncbi.nlm.nih.gov/bioproject/PRJEB102491">NCBI BioProject</a>
 <a class="btn" href="../samples/index.html?study=PRJEB102491">Open in sample explorer</a>
+<a class="btn flag" href="https://github.com/OlmLab/infant-gut-catalog/issues/new?template=catalog-finding.yml&amp;labels=finding&amp;title=%5Bfinding%5D%20PRJEB102491%3A%20verdict&amp;action=study_verdict&amp;current_state=verdict%3Dinclude%20%C2%B7%20status%3Dincluded%20%C2%B7%20stage%3Dsonnet_replicates_n3_agree1.00%20%C2%B7%20confidence%3D0.92%20%C2%B7%20evidence%3A%20%E2%80%9CShotgun%20sequencing%20of%2091%20infants%20from%20the%20ALADDIN%20birth%20cohort%E2%80%9D%20%28study.title%29%3B%20%E2%80%9Cfaecal%20samples%20from%20infants%20were%20shot-gun%20sequenced%E2%80%9D%20%28study.description%29%3B%20%E2%80%9Cfeces%E2%80%9D%20%28sample.attr.environmental_medium%29&amp;evidence_source=external_curation.human&amp;finding_type=wrong_verdict&amp;identifier=PRJEB102491&amp;release_tag=data-v1.2.1%20%C2%B7%20studies%2FPRJEB102491.html" title="Opens a prefilled GitHub issue (template catalog-finding.yml) — needs a GitHub account">Flag an issue</a>
+<a class="btn confirm" href="https://github.com/OlmLab/infant-gut-catalog/issues/new?template=catalog-finding.yml&amp;labels=finding&amp;title=%5Bconfirmed%5D%20PRJEB102491%3A%20verdict&amp;action=confirm&amp;current_state=verdict%3Dinclude%20%C2%B7%20status%3Dincluded%20%C2%B7%20stage%3Dsonnet_replicates_n3_agree1.00%20%C2%B7%20confidence%3D0.92&amp;evidence_source=external_curation.human&amp;finding_type=confirmed_correct&amp;identifier=PRJEB102491&amp;proposed_change=none%20%E2%80%94%20confirmed%20correct&amp;release_tag=data-v1.2.1%20%C2%B7%20studies%2FPRJEB102491.html" title="Record that you checked this study and its verdict is correct">Confirm correct</a>
 </div>
 
 <div class="grid2">
@@ -38,30 +46,39 @@
 <h2>Summary</h2>
 <table class="tbl kv">
 <tr><td>Samples / runs</td><td>176 / 176</td></tr>
-<tr><td>Infant-scope samples</td><td>176</td></tr>
+
+<tr><td>Catalog scope</td><td><b>0</b> <span class="small">(age-scope infant AND body_site_class primary/unknown — the headline denominator)</span></td></tr>
+<tr><td>Age scope</td><td><b>0</b> infant-scope by age evidence (0 per-sample/subject evidence) · age_unknown_no_study_estimate 176</td></tr>
+<tr><td>Body-site infant-scope</td><td>176 <span class="small">(body_site_class primary or unknown)</span></td></tr>
 <tr><td>First public</td><td>2025-11-10</td></tr>
 <tr><td>Cohort</td><td><a href="../cohorts/COH0277.html">singleton study PRJEB102491</a> <span class="small mono">COH0277</span></td></tr>
 <tr><td>Instrument (top)</td><td>MGISEQ-2000RS</td></tr>
 <tr><td>Median Gbp / run</td><td>3.11</td></tr>
 <tr><td>Country (archive top value)</td><td>Sweden</td></tr>
 <tr><td>Controlled access</td><td>no</td></tr>
+<tr><td>Sandpiper profiles</td><td>none profiled</td></tr>
 </table>
 
 <h2>Subjects</h2>
 <table class="tbl kv">
-<tr><td>Unique infants (estimate)</td><td>0</td></tr>
-<tr><td>Longitudinal</td><td>no (max 1 timepoints per subject)</td></tr>
-<tr><td>Mother samples</td><td>—</td></tr>
-<tr><td>Roles</td><td>infant 176</td></tr>
+<tr><td>Unique infants</td><td>unknown (no infant-role samples) <span class="small">(source: no_infant_role_samples)</span></td></tr>
+<tr><td>Longitudinal</td><td>no</td></tr>
+<tr><td>Mother samples</td><td>0</td></tr>
+<tr><td>Roles (as evidenced; unknown when unevidenced)</td><td>unknown 176</td></tr>
 <tr><td>Body-site classes</td><td>primary 176</td></tr>
 </table>
+
+<h2>Authors and organisations</h2>
+<p class="small">No author on record for this BioProject (no linked paper, no BioProject publication, no ENA PubMed cross-reference).</p>
+<p class="small">Organisations: Technical University of Denmark</p>
+<p class="small">Names are string-matched from Europe PMC author strings and NCBI BioProject records; the same person may appear under several initial variants. See <a href="../docs/AUTHORS_REPORT.html">Authors report</a>.</p>
 </div>
 <div>
 <h2>Inclusion evidence</h2>
 <table class="tbl kv">
 <tr><td>Verdict</td><td><span class="tag included">include</span> → included</td></tr>
 <tr><td>Decision stage</td><td>sonnet_replicates_n3_agree1.00</td></tr>
-<tr><td>Confidence</td><td>0.92</td></tr>
+<tr><td>Confidence (tier)</td><td>0.92</td></tr>
 <tr><td>Body-site call</td><td>infant feces/gut</td></tr>
 
 </table>
@@ -71,1098 +88,1463 @@
 <h2>Recoverability tiers (predicted before extraction)</h2>
 <p class="small">R1 archive attribute · R2 supplementary table · R3 paper text · R4 abstract · R0 none</p>
 <p><span class="tag R0">age: R0</span> <span class="tag R0">delivery: R0</span> <span class="tag R0">feeding: R0</span> <span class="tag R0">preterm: R0</span> <span class="tag R0">antibiotics: R0</span> <span class="tag R0">probiotic: R0</span> </p>
+
+<h2>Decision history (6 rows)</h2>
+<details><summary class="small">Every triage stage that judged this study, in stage order (screen → tier-1 rubric → confirmation → adjudication → growth waves → re-judgement → human review → final), from <span class="mono">study_verdict_history.parquet</span>. A haiku screen pass is a candidate forward, not a verdict. 1 consolidated bookkeeping rows that repeat the deciding stage are folded into the single <b>final</b> line.</summary>
+<table class="tbl compact small"><thead><tr><th>#</th><th>Stage</th><th>Level</th><th>Verdict</th><th class="num">Conf.</th><th>Model</th><th>Reason / quotes</th><th>Source table</th></tr></thead><tbody>
+<tr><td class="num">1</td><td class="mono">screen_haiku</td><td class="small">screen</td><td><span class="tag human_review">uncertain</span> <span class="small">(screen-pass (haiku yes): candidate forwarded, not a verdict; raw: yes)</span></td><td class="num">0.99</td><td class="mono">claude-haiku-4-5-20251001</td><td><span class="quote">“Shotgun sequencing of 91 infants from the ALADDIN birth cohort” (study.title)</span></td><td class="mono">screen_haiku</td></tr><tr><td class="num">2</td><td class="mono">triage_tier1</td><td class="small">tier1_rubric</td><td><span class="tag included">include</span></td><td class="num">0.9</td><td class="mono">claude-sonnet-5</td><td><span class="quote"></span></td><td class="mono">triage_tier1</td></tr><tr><td class="num">3.1</td><td class="mono">confirm_r1_part01</td><td class="small">confirm</td><td><span class="tag included">include</span></td><td class="num">0.9</td><td class="mono">claude-sonnet-5</td><td><span class="quote">“Shotgun sequencing of 91 infants from the ALADDIN birth cohort” (study.title) · “faecal samples from infants were shot-gun sequenced” (study.description) · “feces” (sample.attr.environmental_medium)</span></td><td class="mono">confirm_r1_part01</td></tr><tr><td class="num">4.2</td><td class="mono">confirm_r2</td><td class="small">confirm</td><td><span class="tag included">include</span></td><td class="num">0.9</td><td class="mono">claude-sonnet-5</td><td><span class="quote">“Shotgun sequencing of 91 infants” (study.title) · “faecal samples from infants were shot-gun sequenced” (study.description) · “ALADDIN faecal sample 551” (sample.title (sample))</span></td><td class="mono">confirm_r2</td></tr><tr><td class="num">5.3</td><td class="mono">confirm_r3</td><td class="small">confirm</td><td><span class="tag included">include</span></td><td class="num">0.95</td><td class="mono">claude-sonnet-5</td><td><span class="quote">“Shotgun sequencing of 91 infants” (study.title) · “faecal samples from infants were shot-gun sequenced” (study.description) · “ALADDIN faecal sample 551” (sample.title)</span></td><td class="mono">confirm_r3</td></tr><tr class="final"><td class="num">6</td><td class="mono">sonnet_replicates_n3_agree1.00</td><td class="small">consolidated_final</td><td><span class="tag included">include</span> <b>final</b></td><td class="num">0.92</td><td class="mono">claude-sonnet-5</td><td><span class="quote">“Shotgun sequencing of 91 infants from the ALADDIN birth cohort” (study.title) · “faecal samples from infants were shot-gun sequenced” (study.description) · “feces” (sample.attr.environmental_medium)</span></td><td class="mono">universe_studies_all (final)</td></tr>
+</tbody></table></details>
 </div>
 </div>
+
+<h2>Community composition (Sandpiper/SingleM, GTDB R232)</h2>
+<p class="small">No run of this study is in the Sandpiper snapshot, so no community profile exists — runs not in the Sandpiper snapshot: non_illumina_platform 176.</p>
+
 
 <h2>Linked papers (0)</h2>
 <p class="small">No paper is linked to this BioProject in the catalog (orphan deposit or link not resolved).</p>
 
-<h2>Field coverage (fraction of infant-scope samples with a value)</h2>
+<h2>Field coverage (fraction of body-site infant-scope samples with a value)</h2>
 <div style="max-width:760px">
 <div class="covrow"><a href="../fields/index.html#age_at_collection_days">Age at collection (days)</a><div class="bar"><span style="width:0.0%"></span></div><span class="num">0%</span></div><div class="covrow"><a href="../fields/index.html#delivery_mode">Delivery mode</a><div class="bar"><span style="width:0.0%"></span></div><span class="num">0%</span></div><div class="covrow"><a href="../fields/index.html#feeding_mode">Feeding mode</a><div class="bar"><span style="width:0.0%"></span></div><span class="num">0%</span></div><div class="covrow"><a href="../fields/index.html#preterm_status">Preterm status</a><div class="bar"><span style="width:0.0%"></span></div><span class="num">0%</span></div><div class="covrow"><a href="../fields/index.html#antibiotic_exposure">Antibiotic exposure</a><div class="bar"><span style="width:0.0%"></span></div><span class="num">0%</span></div><div class="covrow"><a href="../fields/index.html#gestational_age_weeks">Gestational age (weeks)</a><div class="bar"><span style="width:0.0%"></span></div><span class="num">0%</span></div><div class="covrow"><a href="../fields/index.html#birth_weight_grams">Birth weight (g)</a><div class="bar"><span style="width:0.0%"></span></div><span class="num">0%</span></div><div class="covrow"><a href="../fields/index.html#probiotic_exposure">Probiotic exposure</a><div class="bar"><span style="width:0.0%"></span></div><span class="num">0%</span></div><div class="covrow"><a href="../fields/index.html#maternal_antibiotics">Maternal antibiotics</a><div class="bar"><span style="width:0.0%"></span></div><span class="num">0%</span></div><div class="covrow"><a href="../fields/index.html#hmo_supplementation">HMO supplementation</a><div class="bar"><span style="width:0.0%"></span></div><span class="num">0%</span></div><div class="covrow"><a href="../fields/index.html#nec_status">NEC status</a><div class="bar"><span style="width:0.0%"></span></div><span class="num">0%</span></div><div class="covrow"><a href="../fields/index.html#country">Country</a><div class="bar"><span style="width:100.0%"></span></div><span class="num">100%</span></div><div class="covrow"><a href="../fields/index.html#health_condition">Health condition</a><div class="bar"><span style="width:0.0%"></span></div><span class="num">0%</span></div><div class="covrow"><a href="../fields/index.html#multiple_birth">Multiple birth</a><div class="bar"><span style="width:0.0%"></span></div><span class="num">0%</span></div><div class="covrow"><a href="../fields/index.html#sibling_in_study">Sibling in study</a><div class="bar"><span style="width:0.0%"></span></div><span class="num">0%</span></div><div class="covrow"><a href="../fields/index.html#geo_subregion">Geographic subregion</a><div class="bar"><span style="width:0.0%"></span></div><span class="num">0%</span></div>
 </div>
 
+
+
 <h2>Downloads</h2>
 <div class="btns">
-<a class="btn sec" href="../data/studies/PRJEB102491.csv" download>Samples (CSV, 80.7 KB)</a>
-<a class="btn sec" href="../data/studies/PRJEB102491.parquet" download>Samples (parquet, 55.4 KB)</a>
+<a class="btn sec" href="../data/studies/PRJEB102491.csv.gz" download>Samples (CSV.gz, 6.0 KB)</a>
+<a class="btn sec" href="../data/studies/PRJEB102491.parquet" download>Samples (parquet, 91.4 KB)</a>
 <a class="btn sec" href="../data/studies/PRJEB102491_determinations.csv.gz" download>Determinations with evidence (CSV.gz, 1.4 KB, 352 rows)</a>
 </div>
 
 <h2>Samples (176)</h2>
 
 <table id="samples" class="tbl display compact">
-<thead><tr><th>Sample</th><th>Links</th><th class="num">Age (d)</th><th>Delivery</th><th>Feeding</th><th>Preterm</th><th>Antibiotics</th><th>Sex</th><th>Subject</th><th class="num">t</th><th>Role</th><th class="num">Runs</th></tr></thead>
+<thead><tr><th>Sample</th><th>Links</th><th>Age scope</th><th class="num">Age (d)</th><th>Delivery</th><th>Feeding</th><th>Preterm</th><th>Antibiotics</th><th>Sex</th><th>Subject</th><th class="num">t</th><th>Role</th><th class="num">Runs</th><th>Top genus</th><th class="num"><i>Bifidobacterium</i></th></tr></thead>
 <tbody>
 <tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500470">SAMEA120500470</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500470">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500470">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500471">SAMEA120500471</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500471">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500471">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500472">SAMEA120500472</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500472">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500472">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500473">SAMEA120500473</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500473">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500473">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500474">SAMEA120500474</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500474">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500474">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500475">SAMEA120500475</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500475">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500475">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500476">SAMEA120500476</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500476">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500476">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500477">SAMEA120500477</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500477">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500477">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500478">SAMEA120500478</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500478">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500478">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500479">SAMEA120500479</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500479">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500479">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500480">SAMEA120500480</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500480">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500480">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500481">SAMEA120500481</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500481">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500481">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500482">SAMEA120500482</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500482">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500482">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500483">SAMEA120500483</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500483">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500483">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500484">SAMEA120500484</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500484">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500484">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500485">SAMEA120500485</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500485">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500485">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500486">SAMEA120500486</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500486">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500486">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500487">SAMEA120500487</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500487">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500487">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500488">SAMEA120500488</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500488">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500488">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500489">SAMEA120500489</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500489">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500489">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500490">SAMEA120500490</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500490">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500490">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500491">SAMEA120500491</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500491">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500491">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500492">SAMEA120500492</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500492">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500492">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500493">SAMEA120500493</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500493">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500493">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500494">SAMEA120500494</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500494">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500494">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500495">SAMEA120500495</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500495">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500495">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500496">SAMEA120500496</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500496">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500496">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500497">SAMEA120500497</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500497">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500497">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500498">SAMEA120500498</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500498">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500498">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500499">SAMEA120500499</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500499">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500499">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500500">SAMEA120500500</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500500">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500500">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500501">SAMEA120500501</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500501">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500501">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500502">SAMEA120500502</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500502">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500502">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500503">SAMEA120500503</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500503">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500503">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500504">SAMEA120500504</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500504">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500504">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500505">SAMEA120500505</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500505">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500505">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500506">SAMEA120500506</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500506">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500506">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500507">SAMEA120500507</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500507">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500507">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500508">SAMEA120500508</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500508">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500508">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500509">SAMEA120500509</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500509">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500509">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500510">SAMEA120500510</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500510">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500510">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500511">SAMEA120500511</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500511">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500511">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500512">SAMEA120500512</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500512">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500512">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500513">SAMEA120500513</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500513">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500513">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500514">SAMEA120500514</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500514">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500514">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500515">SAMEA120500515</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500515">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500515">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500516">SAMEA120500516</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500516">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500516">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500517">SAMEA120500517</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500517">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500517">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500518">SAMEA120500518</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500518">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500518">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500519">SAMEA120500519</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500519">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500519">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500520">SAMEA120500520</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500520">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500520">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500521">SAMEA120500521</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500521">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500521">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500522">SAMEA120500522</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500522">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500522">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500523">SAMEA120500523</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500523">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500523">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500524">SAMEA120500524</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500524">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500524">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500525">SAMEA120500525</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500525">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500525">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500526">SAMEA120500526</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500526">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500526">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500527">SAMEA120500527</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500527">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500527">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500528">SAMEA120500528</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500528">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500528">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500529">SAMEA120500529</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500529">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500529">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500530">SAMEA120500530</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500530">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500530">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500531">SAMEA120500531</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500531">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500531">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500532">SAMEA120500532</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500532">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500532">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500533">SAMEA120500533</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500533">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500533">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500534">SAMEA120500534</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500534">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500534">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500535">SAMEA120500535</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500535">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500535">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500536">SAMEA120500536</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500536">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500536">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500537">SAMEA120500537</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500537">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500537">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500538">SAMEA120500538</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500538">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500538">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500539">SAMEA120500539</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500539">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500539">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500540">SAMEA120500540</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500540">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500540">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500541">SAMEA120500541</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500541">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500541">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500542">SAMEA120500542</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500542">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500542">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500543">SAMEA120500543</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500543">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500543">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500544">SAMEA120500544</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500544">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500544">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500545">SAMEA120500545</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500545">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500545">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500546">SAMEA120500546</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500546">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500546">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500547">SAMEA120500547</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500547">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500547">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500548">SAMEA120500548</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500548">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500548">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500549">SAMEA120500549</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500549">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500549">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500550">SAMEA120500550</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500550">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500550">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500551">SAMEA120500551</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500551">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500551">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500552">SAMEA120500552</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500552">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500552">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500553">SAMEA120500553</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500553">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500553">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500554">SAMEA120500554</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500554">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500554">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500555">SAMEA120500555</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500555">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500555">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500556">SAMEA120500556</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500556">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500556">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500557">SAMEA120500557</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500557">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500557">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500558">SAMEA120500558</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500558">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500558">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500559">SAMEA120500559</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500559">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500559">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500560">SAMEA120500560</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500560">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500560">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500561">SAMEA120500561</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500561">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500561">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500562">SAMEA120500562</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500562">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500562">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500563">SAMEA120500563</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500563">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500563">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500564">SAMEA120500564</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500564">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500564">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500565">SAMEA120500565</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500565">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500565">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500566">SAMEA120500566</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500566">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500566">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500567">SAMEA120500567</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500567">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500567">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500568">SAMEA120500568</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500568">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500568">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500569">SAMEA120500569</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500569">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500569">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500570">SAMEA120500570</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500570">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500570">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500571">SAMEA120500571</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500571">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500571">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500572">SAMEA120500572</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500572">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500572">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500573">SAMEA120500573</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500573">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500573">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500574">SAMEA120500574</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500574">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500574">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500575">SAMEA120500575</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500575">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500575">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500576">SAMEA120500576</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500576">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500576">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500577">SAMEA120500577</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500577">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500577">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500578">SAMEA120500578</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500578">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500578">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500579">SAMEA120500579</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500579">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500579">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500580">SAMEA120500580</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500580">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500580">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500581">SAMEA120500581</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500581">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500581">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500582">SAMEA120500582</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500582">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500582">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500583">SAMEA120500583</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500583">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500583">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500584">SAMEA120500584</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500584">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500584">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500585">SAMEA120500585</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500585">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500585">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500586">SAMEA120500586</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500586">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500586">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500587">SAMEA120500587</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500587">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500587">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500588">SAMEA120500588</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500588">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500588">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500589">SAMEA120500589</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500589">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500589">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500590">SAMEA120500590</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500590">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500590">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500591">SAMEA120500591</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500591">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500591">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500592">SAMEA120500592</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500592">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500592">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500593">SAMEA120500593</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500593">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500593">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500594">SAMEA120500594</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500594">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500594">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500595">SAMEA120500595</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500595">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500595">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500596">SAMEA120500596</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500596">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500596">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500597">SAMEA120500597</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500597">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500597">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500598">SAMEA120500598</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500598">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500598">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500599">SAMEA120500599</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500599">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500599">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500600">SAMEA120500600</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500600">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500600">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500601">SAMEA120500601</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500601">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500601">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500602">SAMEA120500602</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500602">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500602">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500603">SAMEA120500603</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500603">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500603">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500604">SAMEA120500604</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500604">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500604">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500605">SAMEA120500605</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500605">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500605">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500606">SAMEA120500606</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500606">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500606">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500607">SAMEA120500607</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500607">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500607">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500608">SAMEA120500608</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500608">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500608">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500609">SAMEA120500609</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500609">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500609">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500610">SAMEA120500610</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500610">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500610">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500611">SAMEA120500611</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500611">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500611">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500612">SAMEA120500612</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500612">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500612">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500613">SAMEA120500613</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500613">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500613">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500614">SAMEA120500614</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500614">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500614">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500615">SAMEA120500615</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500615">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500615">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500616">SAMEA120500616</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500616">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500616">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500617">SAMEA120500617</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500617">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500617">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500618">SAMEA120500618</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500618">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500618">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500619">SAMEA120500619</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500619">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500619">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500620">SAMEA120500620</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500620">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500620">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500621">SAMEA120500621</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500621">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500621">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500622">SAMEA120500622</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500622">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500622">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500623">SAMEA120500623</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500623">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500623">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500624">SAMEA120500624</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500624">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500624">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500625">SAMEA120500625</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500625">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500625">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500626">SAMEA120500626</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500626">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500626">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500627">SAMEA120500627</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500627">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500627">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500628">SAMEA120500628</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500628">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500628">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500629">SAMEA120500629</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500629">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500629">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500630">SAMEA120500630</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500630">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500630">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500631">SAMEA120500631</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500631">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500631">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500632">SAMEA120500632</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500632">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500632">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500633">SAMEA120500633</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500633">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500633">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500634">SAMEA120500634</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500634">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500634">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500635">SAMEA120500635</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500635">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500635">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500636">SAMEA120500636</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500636">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500636">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500637">SAMEA120500637</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500637">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500637">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500638">SAMEA120500638</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500638">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500638">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500639">SAMEA120500639</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500639">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500639">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500640">SAMEA120500640</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500640">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500640">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500641">SAMEA120500641</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500641">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500641">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500642">SAMEA120500642</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500642">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500642">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500643">SAMEA120500643</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500643">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500643">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500644">SAMEA120500644</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500644">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500644">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA120500645">SAMEA120500645</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500645">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA120500645">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small"></td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small"></td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr>
 </tbody></table>
 
 </main>
 <footer>
-<div><b>Infant Gut Shotgun-Metagenome Catalog</b> — data package v1 (built 2026-09-25). Curated tables are released under <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a>; archive metadata remains under INSDC terms.</div>
-<div>How to cite: <i>Infant Gut Shotgun-Metagenome Catalog v1, 2026.</i></div>
-<div>Caveats: every value carries a route (R1 archive attribute, R2 supplementary table, R3 paper text, R4 abstract/description) and a confidence; R3/R4 values are group-level statements applied to samples — see <a href="../fields/index.html">Fields</a> and <a href="../methods.html#limitations">Methods › Limitations</a>. Built with an LLM-assisted pipeline; treat individual values as evidence-linked claims, not ground truth.</div>
+<div><b>Infant Gut Shotgun-Metagenome Catalog</b> — package <span class="mono">1.2.1</span> · built 2026-09-26 · generator <span class="mono">nogit</span> · release <span class="mono">data-v1.2.1</span> (<a href="../data/VERSION.json">VERSION.json</a>, <a href="../docs/CHANGELOG.html">changelog</a>). Curated tables are released under <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a>; archive metadata remains under INSDC terms; community profiles from <a href="https://sandpiper.qut.edu.au/">Sandpiper</a> (Woodcroft et al. 2025, CC-BY).</div>
+<div>How to cite: <i>Infant Gut Shotgun-Metagenome Catalog, data package 1.2.1 (data-v1.2.1), 2026.</i></div>
+<div>Caveats: every value carries a route (R1 archive attribute, R2 supplementary table, R3 paper text, R4 abstract/description), a scope and a confidence tier (not a calibrated probability); R3/R4 values are group-level statements applied to samples — see <a href="../fields/index.html">Fields</a> and <a href="../methods.html#limitations">Methods › Limitations</a>. Built with an LLM-assisted pipeline; treat individual values as evidence-linked claims, not ground truth. Found an error? Every study, cohort and sample has a <b>Flag an issue</b> button that opens a prefilled GitHub issue.</div>
 </footer>
 
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-<script src="https://cdn.datatables.net/2.1.8/js/dataTables.min.js"></script>
+<script src="../static/vendor/jquery-3.7.1.min.js" integrity="sha384-1H217gwSVyLSIfaLxHbE7dRb3v4mYCKbpQvzx0cegeju1MVsGrX5xXxAvs/HgeFs" crossorigin="anonymous"></script>
+<script src="../static/vendor/dataTables-2.1.8.min.js" integrity="sha384-MgwUq0TVErv5Lkj/jIAgQpC+iUIqwhwXxJMfrZQVAOhr++1MR02yXH8aXdPc3fk0" crossorigin="anonymous"></script>
 
+<script>window.CATALOG={version:'1.2.1',release:'data-v1.2.1',issueRepo:'https://github.com/OlmLab/infant-gut-catalog/issues/new',issueTemplate:'catalog-finding.yml'};</script>
 <script src="../static/site.js"></script>
 
 <script>new DataTable('#samples',{pageLength:25,lengthMenu:[25,100,500],order:[]});</script>

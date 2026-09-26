@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Changelog — Infant Gut Shotgun-Metagenome Catalog</title>
+<meta name="description" content="Curated, evidence-linked catalog of public shotgun-metagenome studies of the human infant gut with per-sample metadata and Sandpiper community profiles.">
+<meta name="catalog-release" content="data-v1.2.1">
+<link rel="canonical" href="https://olmlab.github.io/infant-gut-catalog/docs/CHANGELOG.html">
+<meta name="catalog-package-version" content="1.2.1">
+<meta name="catalog-build-date" content="2026-09-26">
+<link rel="stylesheet" href="../static/site.css">
+
+
+</head>
+<body>
+<nav class="topnav"><div class="in">
+<a class="brand" href="../index.html">Infant Gut Metagenome Catalog</a>
+<a href="../studies/index.html" >Studies</a>
+<a href="../cohorts/index.html" >Cohorts</a>
+<a href="../samples/index.html" >Sample explorer</a>
+<a href="../fields/index.html" >Fields</a>
+<a href="../authors/index.html" >Authors</a>
+<a href="../universe.html" >Universe</a>
+<a href="../methods.html" class="active">Methods</a>
+<a href="../downloads.html" >Downloads</a>
+</div></nav>
+<main>
+<div class="crumbs"><a href="../index.html">Home</a> › <a href="../methods.html">Methods</a> › Changelog</div>
+
+<p class="small">Rendered from <a href="CHANGELOG.md">CHANGELOG.md</a>.</p>
+<div class="md"><h1 id="v121-2026-09-26-data-fixes-from-the-three-final-reviews-patch">v1.2.1 (2026-09-26) — data fixes from the three final reviews (patch)</h1>
+<ul>
+<li><strong>F1 / R3-5 organisations.</strong> 6,143 of 18,888 organisation rows tagged <code>org_type = not_an_organisation</code> ({'submission_id': 6033, 'lowercase_username': 93, 'placeholder': 9, 'email_or_handle': 8}); for PRJNA studies the NCBI BioProject Organization is preferred over the ENA center_name. <code>organisations_index.json</code> 9,886 → 3,747 keys; <code>study_authors_summary.organisations</code> rows containing a SUB id 6,042 → 0; studies with a displayable organisation 9,579 → 9,513 (included studies 386/389).</li>
+<li><strong>R3-1 GTDB suffix genera.</strong> Genus indicators match <code>^g__&lt;Name&gt;(_[A-Z]+)?$</code>: <code>sp_ra_g_Enterococcus</code> changed on 19,090 samples (mean 0.0234 → 0.0324), <code>sp_ra_g_Veillonella</code> 6,076, <code>sp_ra_enterobacterales_core</code> 3,315, <code>sp_ra_g_Bacteroides</code> 1,786, <code>sp_ra_g_Phocaeicola</code> 590; <code>gtdb_to_ncbi_note</code> table in the dictionary.</li>
+<li><strong>R3-2 / F3 / F13 panels and medians.</strong> <code>sandpiper_study_panels.parquet</code> v2 recomputed from the full profiles over <code>catalog_scope ∧ sp_profiled ∧ NOT sp_low_depth</code>: 298 → 181 studies with a panel (118 fall back with <code>no_catalog_scope_samples</code>, 2 <code>no_age_evidenced_profiled_samples</code>, 3 all low depth); panel n asserted equal to the recomputation from the shipped sample table; merge artefacts <code>n_samples_x/_y</code> removed; <code>sp_median_*</code> recomputed on the same scope (changed for 182 studies; null with <code>sp_panel_scope</code> fallback label for 208).</li>
+<li><strong>R3-3 host / isolate rule.</strong> Deterministic sample rule: non-human ENA scientific_name/tax_id (Mus musculus 10090, Gallus gallus 9031) → <code>body_site_class = excluded</code>, <code>exclusion_reason_code = host_nonhuman</code> (172 rows, PRJEB6921); every run GENOMIC with a named-microbe organism → <code>assay_isolate_genome</code> (123 rows: PRJEB6921 103, PRJEB49206 20). 295 validated <code>value_history</code> rows (<code>change_stage = auditor_review:R3-3</code>). Body-site <code>excluded</code> 5,180 → 5,475. Owner lists shipped: <code>review_genomic_only_samples.csv</code> (3,158 GENOMIC-only samples), <code>review_named_microbe_metagenomic_samples.csv</code> (70: PRJNA799247, PRJNA1082298), <code>sandpiper_auditor_candidate_runs.csv</code>.</li>
+<li><strong>R3-6 verdict history.</strong> <code>stage_order</code> follows a stage ontology (<code>stage_rank</code>, <code>stage_level</code>); Haiku <code>yes</code> → <code>uncertain</code> (screen-pass), <code>no</code> → <code>exclude</code>, <code>ERROR</code>/empty → null with <code>verdict_norm_note</code>; <code>is_consolidated</code> + <code>consolidated_kind</code> (20,222 rows). verdict_norm null 3,775 → 176.</li>
+<li><strong>R3-7 notebook.</strong> <code>getting_started.ipynb</code> rewritten on <code>age_scope</code>/<code>catalog_scope</code>, coverage cell fixed, Sandpiper cell added, runs joined via <code>biosample_accession</code>/<code>run_accession</code>; executed (flattened exec, outputs stored) with 0 errors.</li>
+<li><strong>R3-8 / F9 / F10 / F19 / R3-13 dictionary.</strong> <code>sandpiper_run_qc</code> section with the miss-reason and organism-class vocabularies; <code>sample_unit</code> <code>biosample_pooled</code> → <code>run</code> in <code>sandpiper_run_qc</code> and <code>sandpiper_study_coverage</code>; body_site_class vocabulary primary/unknown/excluded/linked defined; <code>catalog_scope</code> column (71,795 rows) added to the sample table and <code>n_catalog_scope</code> to the study table; single-source <code>sandpiper_flag_table.csv</code> (GlobDB flags marked unused); complete generated column reference for both wide tables (build fails on an undocumented column); <code>adult_flagged</code> footnoted as over-age (includes children); placeholder genera and Bifidobacterium-share denominator documented.</li>
+<li><strong>R3-9 flags.</strong> <code>sp_flag_non_metagenome</code> derived from <code>sp_nonmeta_class ∈ {named_nonhuman_host, named_microbe_or_other}</code> (sample table 1,650 → 365); any-run <code>sp_nonmeta_class</code> column added.</li>
+<li><strong>R3-11 / R3-12 / F6.</strong> Panel columns renamed (<code>n_samples_panel</code>, <code>n_samples_study</code>); <code>sp_coverage_class</code> defined on sample rows with <code>sp_coverage_note</code> for the two cross-study studies; <code>sp_n_runs_total</code> filled for every row, <code>sp_partial</code> False when unprofiled; <code>sandpiper_url</code> = RANDOM-selection run with the highest root coverage (1,324 URLs changed); <code>sp_frac_samples_profiled</code> on the single denominator <code>n_sample_rows</code>; <code>shared_biosample_note</code> for the five BioSample-sharing studies.</li>
+<li><strong>R3-14 miss reasons.</strong> Strategy evaluated first: <code>non_wgs_strategy</code> 94 → 511 (AMPLICON, Targeted-Capture, WXS — the strategies with zero profiled runs); <code>unknown_size</code> for base_count ≤ 0 (2 runs); <code>review_amplicon_runs.csv</code> (39 runs, PRJNA61745).</li>
+<li><strong>R3-10 / R3-15 authors.</strong> Transliteration before NFKD folding and folded initials (111 rows re-keyed; keys 10,965 → 10,964); 'Frontiers Production Office' → group; <code>name_needs_check</code> for 3 no-initials names; homonym statistic recomputed from the table: 1,075 of 8,181 surnames.</li>
+<li><strong>F4.</strong> <code>n_biosamples</code> = BioSample-unit rows (153,685); <code>n_run_units</code> (521) and <code>n_parent_biosamples</code> (16) added; card wording in README.</li>
+<li><strong>F22.</strong> <code>cohorts.csv</code> gains <code>unique_infants_display</code> / <code>unique_infants_display_source</code>: single-study cohorts (362) take the study display value.</li>
+<li><strong>R1-11.</strong> Package zip built with fixed timestamps (2026-09-26 00:00) and no extra attributes; per-file sha256 in VERSION.json; <code>VERSION.json</code> regenerated last and lists every file; the zip's own sha256 is in <code>data_package_v1.2.1.sha256</code> and the sidecar <code>VERSION.json</code> artifact.</li>
+<li>Counts corrected: study <code>sp_*</code> columns are 18 (CHANGELOG v1.2.0 said 16); <code>study_paper_links.csv</code> 973 rows (README said 972); AUTHORS_REPORT organisation keys 9,886 → 3,747 displayable.</li>
+</ul>
+<h1 id="changelog">CHANGELOG</h1>
+<h2 id="v120-2026-09-26-release-v12-sandpiper-profiles-author-index-versioning">v1.2.0 — 2026-09-26 (release v12) — Sandpiper profiles, author index, versioning</h2>
+<p>Deterministic changes only; no LLM calls.
+* <strong>Sandpiper (A6, B5, B6, B7).</strong> 79,473 / 154,206 samples profiled (87,125 / 174,022 runs); 38 <code>sp_*</code> columns on the sample table, 16 <code>sp_*</code> columns on the study table; seven on-site Sandpiper tables; full profiles off-site.
+* <strong>Scope (B13).</strong> <code>&lt;field&gt;__scope</code> for the 16 coverage fields.
+* <strong>Authors.</strong> <code>authors.parquet</code> (28,367 rows), <code>study_authors_summary.csv</code>, <code>authors_index.json</code>; <code>first_author</code>, <code>n_authors</code>, <code>organisations</code> on the study table.
+* <strong>Versioning (A7, B11).</strong> <code>VERSION.json</code> with per-table sha256 and row counts; README heading carries the semver; all <code>*.csv.gz</code> written with gzip mtime 0 so rebuilds are byte-identical.
+* Wide table: 143 columns.</p>
+<h2 id="v12-2026-09-26-release-v12-data-model-fix-after-reviewer-b">v1.2 — 2026-09-26 (release v12) — data-model fix after Reviewer B</h2>
+<p>Deterministic changes only; no LLM calls. Before/after counts in <code>DATA_MODEL_FIX_REPORT.md</code>.
+* <strong>B1 age scope.</strong> New sample columns <code>age_scope</code>, <code>age_scope_basis</code>, <code>role_source</code>; <code>role</code> defaults to <code>unknown</code> when unevidenced (infant 138,348 → 72,848); new roles <code>adult</code>/<code>child</code> for out-of-range ages. Study columns <code>n_age_scope_infant</code>, <code>n_&lt;age_scope&gt;</code> counts, <code>mixed_age_deposit</code>. Headline coverage is now reported on age-scope infant samples (74,695), with the body-site denominator (146,631) kept in <code>field_coverage_summary.csv</code>.
+* <strong>B2 parent BioSamples.</strong> The 16 <code>biosample_pooled</code> rows left the sample table (<code>parent_biosamples.parquet</code>); their 97 determinations are in <code>value_history.parquet</code>. Sample table 154,222 → 154,206 rows.
+* <strong>B9 adult_age_flag.</strong> Now literally <code>age_at_collection_days &gt; 1100</code>: 9,559 out-of-range R1 ages committed as determinations (<code>parse_note</code> <code>out_of_scope_adult | validate_age: …</code>, <code>src_track = adult_scope_fix</code>, all <code>validate_row</code>-checked). The 12 samples with a conflicting in-scope age were resolved for the archive attribute (23 in-scope rows superseded: PRJEB14941 maternal-visit dob arithmetic ×16, PRJNA716780 mother rows read as months ×6, PRJNA695570 R1&gt;R2 ×1); 8 adult rows on PRJEB14941 <code>.infant.</code> samples rejected (maternal age copied onto infant samples); 125 PRJEB14941 title-parser <code>birth → 0 d</code> rows on maternal birth-visit samples superseded (sample_id_pattern). Flag count 9,567 → 9,559.
+* <strong>B10 unique infants.</strong> <code>n_unique_infants_est</code> is NaN unless subject evidence exists; new <code>n_unique_infants_source</code>, <code>n_unique_infants_upper</code>, <code>n_unique_infants_display</code>.
+* <strong>B15 identity.</strong> <code>biosample_accession</code> (always) and <code>run_accession</code> (run units) on every sample row.
+* <strong>B3 history.</strong> <code>study_verdict_history.parquet</code> (32,231 rows, 56 stage tables) and <code>value_history.parquet</code> (45,591 rows).
+* <strong>B8 confidence.</strong> <code>confidence_tiers.csv</code>, <code>tier_field_precision.csv</code>, dictionary paragraph "not a calibrated probability".
+* <strong>B14 reconciliation.</strong> Gold recall: 17/22 automated, 18/22 after human review. Age covered: 54,105 body-site-scope samples with age ≤ 1,100 d (v1.1 README 53,802 predates the run-unit fix; site 54,150 counted parent rows and later-superseded values). Multi-run studies: 57 class-C + 6 class-A assessed; the 4 further studies with multi-run BioSamples in the sample table (PRJNA1019702, PRJNA1198101, PRJNA613032, PRJNA613054) share BioSamples with a sibling BioProject (class <code>X_cross_study_biosample</code>, <code>sample_unit_classification_by_study.csv</code>); the dictionary's "33 technical multi-run studies" was the pre-classification heuristic count and is withdrawn. Study <code>n_samples</code>/<code>n_runs</code> now come from <code>runs.parquet</code> (PRJEB49206: 419/457 → 439/477).
+* Determinations 609,584 − 97 (parent rows) − 23 (superseded conflicting ages) − 125 (superseded title-parser ages) + 9,559 (adult ages) = 618,898.</p>
+<h2 id="v11-2026-09-25-release-v11">v1.1 — 2026-09-25 (release v11)</h2>
+<p>Sample-unit fix (run-level rows for 6 one-BioSample-per-infant deposits), auditor findings applied, group-statement audit.</p>
+<h2 id="v1-2026-09-25">v1 — 2026-09-25</h2>
+<p>First public data package.</p></div>
+
+</main>
+<footer>
+<div><b>Infant Gut Shotgun-Metagenome Catalog</b> — package <span class="mono">1.2.1</span> · built 2026-09-26 · generator <span class="mono">nogit</span> · release <span class="mono">data-v1.2.1</span> (<a href="../data/VERSION.json">VERSION.json</a>, <a href="../docs/CHANGELOG.html">changelog</a>). Curated tables are released under <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a>; archive metadata remains under INSDC terms; community profiles from <a href="https://sandpiper.qut.edu.au/">Sandpiper</a> (Woodcroft et al. 2025, CC-BY).</div>
+<div>How to cite: <i>Infant Gut Shotgun-Metagenome Catalog, data package 1.2.1 (data-v1.2.1), 2026.</i></div>
+<div>Caveats: every value carries a route (R1 archive attribute, R2 supplementary table, R3 paper text, R4 abstract/description), a scope and a confidence tier (not a calibrated probability); R3/R4 values are group-level statements applied to samples — see <a href="../fields/index.html">Fields</a> and <a href="../methods.html#limitations">Methods › Limitations</a>. Built with an LLM-assisted pipeline; treat individual values as evidence-linked claims, not ground truth. Found an error? Every study, cohort and sample has a <b>Flag an issue</b> button that opens a prefilled GitHub issue.</div>
+</footer>
+
+<script>window.CATALOG={version:'1.2.1',release:'data-v1.2.1',issueRepo:'https://github.com/OlmLab/infant-gut-catalog/issues/new',issueTemplate:'catalog-finding.yml'};</script>
+<script src="../static/site.js"></script>
+
+</body>
+</html>

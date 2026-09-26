@@ -112,7 +112,7 @@ See BUDGET.md (final): ≈19.6 M tokens across 3 track agents (Phase 1), 24 leaf
 
 
 ## 10. Per-sample metadata extraction (final, 2026-09-25)
-606,023 validated sample × field determinations over 150,677 samples / 381 included studies; 12 core fields + 4 extension fields (health_condition, multiple_birth, sibling_in_study, geo_subregion). Age at collection: 37% of infant-scope samples; preterm 23%; delivery 20%; antibiotics 14%. Gold (3,670 cMD samples): age precision 0.991 / recall 0.951, delivery 0.995 / 0.932, preterm 1.000 / 0.961. Details `extraction/EXTRACTION_REPORT.md`.
+609,584 validated sample × field determinations over 151,198 samples / 381 included studies; 12 core fields + 4 extension fields (health_condition, multiple_birth, sibling_in_study, geo_subregion). Age at collection: 37% of infant-scope samples; preterm 23%; delivery 20%; antibiotics 14%. Gold (3,670 cMD samples): age precision 0.991 / recall 0.951, delivery 0.995 / 0.932, preterm 1.000 / 0.961. Details `extraction/EXTRACTION_REPORT.md`. Sample unit is the BioSample except for 6 one-BioSample-per-infant deposits keyed per run (§10 of EXTRACTION_REPORT).
 
 ## 11. Publication
 Data package v1 (`data_package_v1.zip`: README, DATA_DICTIONARY, sample_metadata_wide, study_metadata_wide, cohorts, runs, determinations with evidence, notebook) and a static GitHub Pages website (`site.zip`, 774 pages: study, cohort, explorer with DuckDB-WASM slice downloads, fields, universe, methods; 0 broken internal links of 134,567). Publishing steps: `website/PUBLISH_INSTRUCTIONS.md`.

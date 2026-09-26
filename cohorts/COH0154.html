@@ -4,7 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Xi 2022 China (COH0154) — Infant Gut Shotgun-Metagenome Catalog</title>
-<meta name="description" content="Curated, evidence-linked catalog of public shotgun-metagenome studies of the human infant gut with per-sample metadata.">
+<meta name="description" content="Curated, evidence-linked catalog of public shotgun-metagenome studies of the human infant gut with per-sample metadata and Sandpiper community profiles.">
+<meta name="catalog-release" content="data-v1.2.1">
+<link rel="canonical" href="https://olmlab.github.io/infant-gut-catalog/cohorts/COH0154.html">
+<meta name="catalog-package-version" content="1.2.1">
+<meta name="catalog-build-date" content="2026-09-26">
 <link rel="stylesheet" href="../static/site.css">
 
 
@@ -16,6 +20,7 @@
 <a href="../cohorts/index.html" class="active">Cohorts</a>
 <a href="../samples/index.html" >Sample explorer</a>
 <a href="../fields/index.html" >Fields</a>
+<a href="../authors/index.html" >Authors</a>
 <a href="../universe.html" >Universe</a>
 <a href="../methods.html" >Methods</a>
 <a href="../downloads.html" >Downloads</a>
@@ -24,6 +29,7 @@
 <div class="crumbs"><a href="../index.html">Home</a> › <a href="index.html">Cohorts</a> › Xi 2022 China</div>
 
 <h1>Xi 2022 China <span class="small mono">COH0154</span></h1>
+<div class="btns"><a class="btn flag" href="https://github.com/OlmLab/infant-gut-catalog/issues/new?template=catalog-finding.yml&amp;labels=finding&amp;title=%5Bfinding%5D%20COH0154%3A%20cohort&amp;action=study_note&amp;current_state=cohort%3DXi%202022%20China%20%C2%B7%20decision%3Dconfirm%20%280.85%29%20%C2%B7%20studies%3DPRJNA858926%20%C2%B7%20unique_infants_est%3D50.0%20%28sentinel_no_evidence%29&amp;evidence_source=external_curation.human&amp;finding_type=other&amp;identifier=COH0154&amp;release_tag=data-v1.2.1%20%C2%B7%20cohorts%2FCOH0154.html" title="Opens a prefilled GitHub issue">Flag an issue</a> <a class="btn confirm" href="https://github.com/OlmLab/infant-gut-catalog/issues/new?template=catalog-finding.yml&amp;labels=finding&amp;title=%5Bconfirmed%5D%20COH0154%3A%20cohort&amp;action=confirm&amp;current_state=cohort%3DXi%202022%20China%20%C2%B7%20decision%3Dconfirm%20%C2%B7%20studies%3DPRJNA858926&amp;evidence_source=external_curation.human&amp;finding_type=confirmed_correct&amp;identifier=COH0154&amp;proposed_change=none%20%E2%80%94%20confirmed%20correct&amp;release_tag=data-v1.2.1%20%C2%B7%20cohorts%2FCOH0154.html">Confirm correct</a></div>
 <div class="grid2">
 <div>
 <h2>Summary</h2>
@@ -41,7 +47,7 @@
 <div>
 <h2>Unique infants</h2>
 <table class="tbl kv">
-<tr><td>Estimate</td><td>50 <span class="small">(sentinel_no_evidence; source subject_resolution:all_members)</span></td></tr>
+<tr><td>Estimate</td><td>≤ 50 (one subject id per sample) <span class="small">(source: study_display:PRJNA858926 (subject_ids_all_distinct); outcome sentinel_no_evidence; single-study cohorts take the study page's value, multi-study cohorts a rule-based estimate)</span></td></tr>
 <tr><td>Index publication</td><td><a href="https://europepmc.org/article/MED/36687649">PMID 36687649</a></td></tr>
 </table>
 <ul><li><b>index</b>: <span class="quote">“explore the correlation between maternal diet, breast milk fatty acids”</span> <span class="small mono">paper.abstract</span></li></ul>
@@ -70,17 +76,18 @@
 
 <h2>Downloads</h2>
 <div class="btns">
-<a class="btn sec" href="../data/studies/PRJNA858926.csv" download>PRJNA858926 samples (CSV)</a> <a class="btn sec" href="../data/studies/PRJNA858926.parquet" download>parquet</a>
+<a class="btn sec" href="../data/studies/PRJNA858926.csv.gz" download>PRJNA858926 samples (CSV.gz)</a> <a class="btn sec" href="../data/studies/PRJNA858926.parquet" download>parquet</a>
 <a class="btn" href="../samples/index.html?study=PRJNA858926">Open in sample explorer</a>
 </div>
 
 </main>
 <footer>
-<div><b>Infant Gut Shotgun-Metagenome Catalog</b> — data package v1 (built 2026-09-25). Curated tables are released under <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a>; archive metadata remains under INSDC terms.</div>
-<div>How to cite: <i>Infant Gut Shotgun-Metagenome Catalog v1, 2026.</i></div>
-<div>Caveats: every value carries a route (R1 archive attribute, R2 supplementary table, R3 paper text, R4 abstract/description) and a confidence; R3/R4 values are group-level statements applied to samples — see <a href="../fields/index.html">Fields</a> and <a href="../methods.html#limitations">Methods › Limitations</a>. Built with an LLM-assisted pipeline; treat individual values as evidence-linked claims, not ground truth.</div>
+<div><b>Infant Gut Shotgun-Metagenome Catalog</b> — package <span class="mono">1.2.1</span> · built 2026-09-26 · generator <span class="mono">nogit</span> · release <span class="mono">data-v1.2.1</span> (<a href="../data/VERSION.json">VERSION.json</a>, <a href="../docs/CHANGELOG.html">changelog</a>). Curated tables are released under <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a>; archive metadata remains under INSDC terms; community profiles from <a href="https://sandpiper.qut.edu.au/">Sandpiper</a> (Woodcroft et al. 2025, CC-BY).</div>
+<div>How to cite: <i>Infant Gut Shotgun-Metagenome Catalog, data package 1.2.1 (data-v1.2.1), 2026.</i></div>
+<div>Caveats: every value carries a route (R1 archive attribute, R2 supplementary table, R3 paper text, R4 abstract/description), a scope and a confidence tier (not a calibrated probability); R3/R4 values are group-level statements applied to samples — see <a href="../fields/index.html">Fields</a> and <a href="../methods.html#limitations">Methods › Limitations</a>. Built with an LLM-assisted pipeline; treat individual values as evidence-linked claims, not ground truth. Found an error? Every study, cohort and sample has a <b>Flag an issue</b> button that opens a prefilled GitHub issue.</div>
 </footer>
 
+<script>window.CATALOG={version:'1.2.1',release:'data-v1.2.1',issueRepo:'https://github.com/OlmLab/infant-gut-catalog/issues/new',issueTemplate:'catalog-finding.yml'};</script>
 <script src="../static/site.js"></script>
 
 </body>

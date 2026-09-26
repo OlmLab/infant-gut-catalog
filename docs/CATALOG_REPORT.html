@@ -3,8 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CATALOG REPORT — Infant Gut Shotgun-Metagenome Catalog</title>
-<meta name="description" content="Curated, evidence-linked catalog of public shotgun-metagenome studies of the human infant gut with per-sample metadata.">
+<title>Catalog report — Infant Gut Shotgun-Metagenome Catalog</title>
+<meta name="description" content="Curated, evidence-linked catalog of public shotgun-metagenome studies of the human infant gut with per-sample metadata and Sandpiper community profiles.">
+<meta name="catalog-release" content="data-v1.2.1">
+<link rel="canonical" href="https://olmlab.github.io/infant-gut-catalog/docs/CATALOG_REPORT.html">
+<meta name="catalog-package-version" content="1.2.1">
+<meta name="catalog-build-date" content="2026-09-26">
 <link rel="stylesheet" href="../static/site.css">
 
 
@@ -16,12 +20,13 @@
 <a href="../cohorts/index.html" >Cohorts</a>
 <a href="../samples/index.html" >Sample explorer</a>
 <a href="../fields/index.html" >Fields</a>
+<a href="../authors/index.html" >Authors</a>
 <a href="../universe.html" >Universe</a>
 <a href="../methods.html" class="active">Methods</a>
 <a href="../downloads.html" >Downloads</a>
 </div></nav>
 <main>
-<div class="crumbs"><a href="../index.html">Home</a> › <a href="../methods.html">Methods</a> › CATALOG REPORT</div>
+<div class="crumbs"><a href="../index.html">Home</a> › <a href="../methods.html">Methods</a> › Catalog report</div>
 
 <p class="small">Rendered from <a href="CATALOG_REPORT.md">CATALOG_REPORT.md</a>.</p>
 <div class="md"><h1 id="infant-gut-shotgun-metagenome-catalog-catalog_report-release-2026-09-18">Infant Gut Shotgun-Metagenome Catalog — CATALOG_REPORT (release 2026-09-18)</h1>
@@ -462,17 +467,18 @@
 <h2 id="13-token-budget-log">13. Token budget log</h2>
 <p>See BUDGET.md (final): ≈19.6 M tokens across 3 track agents (Phase 1), 24 leaf workers (Haiku screen 12+1, Sonnet confirm 5+2+1, Opus 3), 4 track agents (Phases 3–4), and ≈1.2 M in-frame. No single frame exceeded 1.6 M.</p>
 <h2 id="10-per-sample-metadata-extraction-final-2026-09-25">10. Per-sample metadata extraction (final, 2026-09-25)</h2>
-<p>606,023 validated sample × field determinations over 150,677 samples / 381 included studies; 12 core fields + 4 extension fields (health_condition, multiple_birth, sibling_in_study, geo_subregion). Age at collection: 37% of infant-scope samples; preterm 23%; delivery 20%; antibiotics 14%. Gold (3,670 cMD samples): age precision 0.991 / recall 0.951, delivery 0.995 / 0.932, preterm 1.000 / 0.961. Details <code>extraction/EXTRACTION_REPORT.md</code>.</p>
+<p>609,584 validated sample × field determinations over 151,198 samples / 381 included studies; 12 core fields + 4 extension fields (health_condition, multiple_birth, sibling_in_study, geo_subregion). Age at collection: 37% of infant-scope samples; preterm 23%; delivery 20%; antibiotics 14%. Gold (3,670 cMD samples): age precision 0.991 / recall 0.951, delivery 0.995 / 0.932, preterm 1.000 / 0.961. Details <code>extraction/EXTRACTION_REPORT.md</code>. Sample unit is the BioSample except for 6 one-BioSample-per-infant deposits keyed per run (§10 of EXTRACTION_REPORT).</p>
 <h2 id="11-publication">11. Publication</h2>
 <p>Data package v1 (<code>data_package_v1.zip</code>: README, DATA_DICTIONARY, sample_metadata_wide, study_metadata_wide, cohorts, runs, determinations with evidence, notebook) and a static GitHub Pages website (<code>site.zip</code>, 774 pages: study, cohort, explorer with DuckDB-WASM slice downloads, fields, universe, methods; 0 broken internal links of 134,567). Publishing steps: <code>website/PUBLISH_INSTRUCTIONS.md</code>.</p></div>
 
 </main>
 <footer>
-<div><b>Infant Gut Shotgun-Metagenome Catalog</b> — data package v1 (built 2026-09-25). Curated tables are released under <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a>; archive metadata remains under INSDC terms.</div>
-<div>How to cite: <i>Infant Gut Shotgun-Metagenome Catalog v1, 2026.</i></div>
-<div>Caveats: every value carries a route (R1 archive attribute, R2 supplementary table, R3 paper text, R4 abstract/description) and a confidence; R3/R4 values are group-level statements applied to samples — see <a href="../fields/index.html">Fields</a> and <a href="../methods.html#limitations">Methods › Limitations</a>. Built with an LLM-assisted pipeline; treat individual values as evidence-linked claims, not ground truth.</div>
+<div><b>Infant Gut Shotgun-Metagenome Catalog</b> — package <span class="mono">1.2.1</span> · built 2026-09-26 · generator <span class="mono">nogit</span> · release <span class="mono">data-v1.2.1</span> (<a href="../data/VERSION.json">VERSION.json</a>, <a href="../docs/CHANGELOG.html">changelog</a>). Curated tables are released under <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a>; archive metadata remains under INSDC terms; community profiles from <a href="https://sandpiper.qut.edu.au/">Sandpiper</a> (Woodcroft et al. 2025, CC-BY).</div>
+<div>How to cite: <i>Infant Gut Shotgun-Metagenome Catalog, data package 1.2.1 (data-v1.2.1), 2026.</i></div>
+<div>Caveats: every value carries a route (R1 archive attribute, R2 supplementary table, R3 paper text, R4 abstract/description), a scope and a confidence tier (not a calibrated probability); R3/R4 values are group-level statements applied to samples — see <a href="../fields/index.html">Fields</a> and <a href="../methods.html#limitations">Methods › Limitations</a>. Built with an LLM-assisted pipeline; treat individual values as evidence-linked claims, not ground truth. Found an error? Every study, cohort and sample has a <b>Flag an issue</b> button that opens a prefilled GitHub issue.</div>
 </footer>
 
+<script>window.CATALOG={version:'1.2.1',release:'data-v1.2.1',issueRepo:'https://github.com/OlmLab/infant-gut-catalog/issues/new',issueTemplate:'catalog-finding.yml'};</script>
 <script src="../static/site.js"></script>
 
 </body>

@@ -4,7 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Infant Gut Shotgun-Metagenome Catalog</title>
-<meta name="description" content="Curated, evidence-linked catalog of public shotgun-metagenome studies of the human infant gut with per-sample metadata.">
+<meta name="description" content="Curated, evidence-linked catalog of public shotgun-metagenome studies of the human infant gut with per-sample metadata and Sandpiper community profiles.">
+<meta name="catalog-release" content="data-v1.2.1">
+<link rel="canonical" href="https://olmlab.github.io/infant-gut-catalog/index.html">
+<meta name="catalog-package-version" content="1.2.1">
+<meta name="catalog-build-date" content="2026-09-26">
 <link rel="stylesheet" href="static/site.css">
 
 
@@ -16,6 +20,7 @@
 <a href="cohorts/index.html" >Cohorts</a>
 <a href="samples/index.html" >Sample explorer</a>
 <a href="fields/index.html" >Fields</a>
+<a href="authors/index.html" >Authors</a>
 <a href="universe.html" >Universe</a>
 <a href="methods.html" >Methods</a>
 <a href="downloads.html" >Downloads</a>
@@ -28,33 +33,42 @@
 
 <div class="cards">
 <div class="card"><div class="num">389</div><div class="lbl">included studies (BioProjects)</div></div>
-<div class="card"><div class="num">154,222</div><div class="lbl">samples</div></div>
+<div class="card"><div class="num">154,206</div><div class="lbl">samples: 153,685 BioSample units + 521 run units; 16 parent BioSamples listed separately</div></div>
+<div class="card"><div class="num">71,795</div><div class="lbl">catalog-scope samples = age-scope infant (74,695: infant_evidenced + study_all_infant) AND gut/unknown body site (2,900 age-scope rows are body-site excluded/linked)</div></div>
 <div class="card"><div class="num">174,022</div><div class="lbl">sequencing runs</div></div>
-<div class="card"><div class="num">609,584</div><div class="lbl">sample × field determinations with evidence</div></div>
-<div class="card"><div class="num">37%</div><div class="lbl">of infant-scope samples with age at collection (54,150)</div></div>
+<div class="card"><div class="num">618,898</div><div class="lbl">sample × field determinations with evidence</div></div>
+<div class="card"><div class="num">73%</div><div class="lbl">of catalog-scope samples with age at collection (52,649 of 71,795; 72% of age-scope infant samples with age ≤ 1,100 d; 43% = 62,230 of 146,336 body-site infant-scope)</div></div>
+<div class="card"><div class="num">52%</div><div class="lbl">of samples with a Sandpiper/SingleM community profile (79,473 samples, 87,125 runs, 304 studies with ≥ 1 profiled sample, GTDB R232)</div></div>
 <div class="card"><div class="num">0.991</div><div class="lbl">age precision vs 3,346 independently curated samples</div></div>
 <div class="card"><div class="num">9,579</div><div class="lbl">studies screened (9,138 excluded, 52 in human review)</div></div>
 <div class="card"><div class="num">373</div><div class="lbl">cohorts (411 linked papers)</div></div>
 </div>
 
-<h2>Find a study, cohort or accession</h2>
+<h2>Age scope of the 154,206 samples</h2>
+<p class="small">"Age-scope infant" means age evidence, not body site alone (Reviewer B1); <b>catalog scope</b> = age-scope infant AND body_site_class primary/unknown (71,795 samples) and is the headline denominator. Counts from <span class="mono">sample_metadata_wide.age_scope</span>; 61 included studies are mixed-age deposits and carry a banner on their page.</p>
+<table class="tbl" style="max-width:700px"><thead><tr><th>age_scope</th><th class="num">samples</th><th>meaning</th></tr></thead><tbody>
+<tr><td class="mono">infant_evidenced</td><td class="num">67,598</td><td class="small">age ≤ 1,100 d, preterm/GA/DOL evidence on this sample or subject</td></tr><tr><td class="mono">age_unknown_no_study_estimate</td><td class="num">49,556</td><td class="small">no per-sample age and no per-study infant estimate</td></tr><tr><td class="mono">age_unknown_mixed_study</td><td class="num">14,410</td><td class="small">study estimated as mixed-age; no per-sample age</td></tr><tr><td class="mono">adult_flagged</td><td class="num">9,559</td><td class="small">resolved age &gt; 1,100 d (adult_age_flag)</td></tr><tr><td class="mono">study_all_infant</td><td class="num">7,097</td><td class="small">study evidence says all subjects are infants and the triage estimate ≈ n samples</td></tr><tr><td class="mono">non_infant_role</td><td class="num">5,986</td><td class="small">mother / other role</td></tr>
+</tbody></table>
+
+<h2>Find a study, cohort, author or accession</h2>
 <input id="q" class="searchbox" type="search" placeholder="Type a BioProject accession (PRJ…), a study title word, a cohort name, or a sample/run accession (SAMEA…, SRR…)" autocomplete="off">
 <ul id="search-results"></ul>
-<p class="small">Sample and run accessions are looked up in the <a href="samples/index.html">Sample explorer</a>; studies and cohorts are matched client-side against a small index.</p>
+<p class="small">Sample, BioSample and run accessions are looked up in the <a href="samples/index.html">Sample explorer</a>; studies, cohorts and first authors are matched client-side against a small index; all authors are on the <a href="authors/index.html">Authors</a> page.</p>
 
 <div class="sections">
 <a class="card" href="studies/index.html"><b>Studies</b><br>389 included BioProjects with per-study pages, links, coverage and downloads.</a>
 <a class="card" href="cohorts/index.html"><b>Cohorts</b><br>373 cohort clusters grouping studies and papers that share subjects.</a>
-<a class="card" href="samples/index.html"><b>Sample explorer</b><br>Filter 154,222 samples in the browser; download any slice as CSV or parquet; inspect evidence per value.</a>
-<a class="card" href="fields/index.html"><b>Fields &amp; data dictionary</b><br>Every column, vocabulary, coverage and route mix.</a>
+<a class="card" href="samples/index.html"><b>Sample explorer</b><br>Filter 154,206 samples in the browser; download any slice as CSV or parquet; inspect evidence per value.</a>
+<a class="card" href="fields/index.html"><b>Fields &amp; data dictionary</b><br>Every column, vocabulary, coverage, route mix, confidence tiers.</a>
+<a class="card" href="authors/index.html"><b>Authors</b><br>10,964 author names over 1,264 screened studies; report a missing or mis-triaged study.</a>
 <a class="card" href="universe.html"><b>Screened universe</b><br>9,579 candidate studies with status and exclusion reason.</a>
 <a class="card" href="methods.html"><b>Methods &amp; caveats</b><br>Enumeration, triage, four evidence routes, audits and gold evaluation.</a>
 <a class="card" href="downloads.html"><b>Downloads</b><br>The complete data package, individual tables and the getting-started notebook.</a>
 </div>
 
 <h2>Field coverage</h2>
-<img class="fig" src="static/field_coverage.png" alt="Field coverage: stacked bars of infant-scope samples with a value per field, split by evidence route; per-study coverage is bimodal">
-<p class="small">Infant-scope samples with a value for each field, coloured by evidence route (a), and per-study coverage fractions (b). Numbers per field are in <a href="fields/index.html">Fields</a>.</p>
+<img class="fig" src="static/field_coverage.png" alt="Field coverage, data package 1.2.1: fraction of samples with a value per field, body-site scope (n = 146,336) versus catalog scope (n = 71,795)">
+<p class="small">Fraction of samples with a value for each field, for the body-site infant scope (n = 146,336) and the catalog scope (n = 71,795); age at collection is recoverable for 73% of catalog-scope samples. Regenerated from <span class="mono">field_coverage_summary.csv</span> of package 1.2.1. Numbers per field are in <a href="fields/index.html">Fields</a>.</p>
 
 <h2>Route legend</h2>
 <table class="tbl" style="max-width:900px">
@@ -67,25 +81,27 @@
 
 </main>
 <footer>
-<div><b>Infant Gut Shotgun-Metagenome Catalog</b> — data package v1 (built 2026-09-25). Curated tables are released under <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a>; archive metadata remains under INSDC terms.</div>
-<div>How to cite: <i>Infant Gut Shotgun-Metagenome Catalog v1, 2026.</i></div>
-<div>Caveats: every value carries a route (R1 archive attribute, R2 supplementary table, R3 paper text, R4 abstract/description) and a confidence; R3/R4 values are group-level statements applied to samples — see <a href="fields/index.html">Fields</a> and <a href="methods.html#limitations">Methods › Limitations</a>. Built with an LLM-assisted pipeline; treat individual values as evidence-linked claims, not ground truth.</div>
+<div><b>Infant Gut Shotgun-Metagenome Catalog</b> — package <span class="mono">1.2.1</span> · built 2026-09-26 · generator <span class="mono">nogit</span> · release <span class="mono">data-v1.2.1</span> (<a href="data/VERSION.json">VERSION.json</a>, <a href="docs/CHANGELOG.html">changelog</a>). Curated tables are released under <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a>; archive metadata remains under INSDC terms; community profiles from <a href="https://sandpiper.qut.edu.au/">Sandpiper</a> (Woodcroft et al. 2025, CC-BY).</div>
+<div>How to cite: <i>Infant Gut Shotgun-Metagenome Catalog, data package 1.2.1 (data-v1.2.1), 2026.</i></div>
+<div>Caveats: every value carries a route (R1 archive attribute, R2 supplementary table, R3 paper text, R4 abstract/description), a scope and a confidence tier (not a calibrated probability); R3/R4 values are group-level statements applied to samples — see <a href="fields/index.html">Fields</a> and <a href="methods.html#limitations">Methods › Limitations</a>. Built with an LLM-assisted pipeline; treat individual values as evidence-linked claims, not ground truth. Found an error? Every study, cohort and sample has a <b>Flag an issue</b> button that opens a prefilled GitHub issue.</div>
 </footer>
 
+<script>window.CATALOG={version:'1.2.1',release:'data-v1.2.1',issueRepo:'https://github.com/OlmLab/infant-gut-catalog/issues/new',issueTemplate:'catalog-finding.yml'};</script>
 <script src="static/site.js"></script>
 
 <script>
 fetch('search_index.json').then(r=>r.json()).then(idx=>{
   const q=document.getElementById('q'), out=document.getElementById('search-results');
+  const esc=s=>String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   function run(){
     const s=q.value.trim().toLowerCase(); out.innerHTML='';
     if(s.length<2) return;
     if(/^(sam[end]|[sed]rr|[sed]rs|[sed]rx)\d+/i.test(s)){
-      const li=document.createElement('li'); li.innerHTML='Look up <b>'+s.toUpperCase()+'</b> in the <a href="samples/index.html?sample='+encodeURIComponent(s.toUpperCase())+'">sample explorer</a>';
+      const li=document.createElement('li'); li.innerHTML='Look up <b>'+esc(s.toUpperCase())+'</b> in the <a href="samples/index.html?q='+encodeURIComponent(s.toUpperCase())+'">sample explorer</a> (matches sample, BioSample and run accessions)';
       out.appendChild(li);
     }
     const hits=idx.filter(e=>e.k.includes(s)).slice(0,25);
-    for(const h of hits){const li=document.createElement('li'); li.innerHTML='<span class="tag">'+h.t+'</span> <a href="'+h.u+'">'+h.id+'</a> '+h.n; out.appendChild(li);}
+    for(const h of hits){const li=document.createElement('li'); li.innerHTML='<span class="tag">'+esc(h.t)+'</span> <a href="'+esc(h.u)+'">'+esc(h.id)+'</a> '+esc(h.n); out.appendChild(li);}
     if(!hits.length){const li=document.createElement('li');li.className='small';li.textContent='No study or cohort matches.';out.appendChild(li);}
   }
   q.addEventListener('input',run);

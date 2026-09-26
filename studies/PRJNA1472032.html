@@ -5,9 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>PRJNA1472032 — Metagenomic profiling of maternal and infant gut microbiome samples — Infant Gut Shotgun-Metagenome Catalog</title>
 <meta name="description" content="Metagenomic profiling of maternal and infant gut microbiome samples — 33 samples, 54 runs; infant gut shotgun metagenome study in the catalog.">
+<meta name="catalog-release" content="data-v1.2.1">
+<link rel="canonical" href="https://olmlab.github.io/infant-gut-catalog/studies/PRJNA1472032.html">
+<meta name="catalog-package-version" content="1.2.1">
+<meta name="catalog-build-date" content="2026-09-26">
 <link rel="stylesheet" href="../static/site.css">
 
-<link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.dataTables.min.css">
+<link rel="stylesheet" href="../static/vendor/dataTables.dataTables-2.1.8.min.css" integrity="sha384-bK2L0Q3Sn2fB8YZTIjKejpTUJXd8xNtKn4RcIm7KM3EX3orMlOI31hwtNH0iyky/" crossorigin="anonymous">
 
 
 </head>
@@ -18,6 +22,7 @@
 <a href="../cohorts/index.html" >Cohorts</a>
 <a href="../samples/index.html" >Sample explorer</a>
 <a href="../fields/index.html" >Fields</a>
+<a href="../authors/index.html" >Authors</a>
 <a href="../universe.html" >Universe</a>
 <a href="../methods.html" >Methods</a>
 <a href="../downloads.html" >Downloads</a>
@@ -27,10 +32,13 @@
 
 <h1><span class="mono">PRJNA1472032</span></h1>
 <p class="lead">Metagenomic profiling of maternal and infant gut microbiome samples</p>
+
 <div class="btns">
 <a class="btn sec" href="https://www.ebi.ac.uk/ena/browser/view/PRJNA1472032">ENA browser</a>
 <a class="btn sec" href="https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1472032">NCBI BioProject</a>
 <a class="btn" href="../samples/index.html?study=PRJNA1472032">Open in sample explorer</a>
+<a class="btn flag" href="https://github.com/OlmLab/infant-gut-catalog/issues/new?template=catalog-finding.yml&amp;labels=finding&amp;title=%5Bfinding%5D%20PRJNA1472032%3A%20verdict&amp;action=study_verdict&amp;current_state=verdict%3Dinclude%20%C2%B7%20status%3Dincluded%20%C2%B7%20stage%3Dopus_adjudication%20%C2%B7%20confidence%3D0.85%20%C2%B7%20evidence%3A%20%E2%80%9Cmaternal%20and%20infant%20gut%20microbiome%20samples%E2%80%9D%20%28study.title%29%3B%20%E2%80%9Craw%20metagenomic%20sequencing%20reads%E2%80%9D%20%28study.description%29%3B%20%E2%80%9CWGS%E2%80%9D%20%28run.library_strategy%29&amp;evidence_source=external_curation.human&amp;finding_type=wrong_verdict&amp;identifier=PRJNA1472032&amp;release_tag=data-v1.2.1%20%C2%B7%20studies%2FPRJNA1472032.html" title="Opens a prefilled GitHub issue (template catalog-finding.yml) — needs a GitHub account">Flag an issue</a>
+<a class="btn confirm" href="https://github.com/OlmLab/infant-gut-catalog/issues/new?template=catalog-finding.yml&amp;labels=finding&amp;title=%5Bconfirmed%5D%20PRJNA1472032%3A%20verdict&amp;action=confirm&amp;current_state=verdict%3Dinclude%20%C2%B7%20status%3Dincluded%20%C2%B7%20stage%3Dopus_adjudication%20%C2%B7%20confidence%3D0.85&amp;evidence_source=external_curation.human&amp;finding_type=confirmed_correct&amp;identifier=PRJNA1472032&amp;proposed_change=none%20%E2%80%94%20confirmed%20correct&amp;release_tag=data-v1.2.1%20%C2%B7%20studies%2FPRJNA1472032.html" title="Record that you checked this study and its verdict is correct">Confirm correct</a>
 </div>
 
 <div class="grid2">
@@ -38,30 +46,39 @@
 <h2>Summary</h2>
 <table class="tbl kv">
 <tr><td>Samples / runs</td><td>33 / 54</td></tr>
-<tr><td>Infant-scope samples</td><td>33</td></tr>
+
+<tr><td>Catalog scope</td><td><b>0</b> <span class="small">(age-scope infant AND body_site_class primary/unknown — the headline denominator)</span></td></tr>
+<tr><td>Age scope</td><td><b>0</b> infant-scope by age evidence (0 per-sample/subject evidence) · age_unknown_no_study_estimate 33</td></tr>
+<tr><td>Body-site infant-scope</td><td>33 <span class="small">(body_site_class primary or unknown)</span></td></tr>
 <tr><td>First public</td><td>2026-08-22</td></tr>
 <tr><td>Cohort</td><td><a href="../cohorts/COH2358.html">singleton study PRJNA1472032</a> <span class="small mono">COH2358</span></td></tr>
 <tr><td>Instrument (top)</td><td>Illumina NovaSeq 6000</td></tr>
 <tr><td>Median Gbp / run</td><td>0.25</td></tr>
 <tr><td>Country (archive top value)</td><td>—</td></tr>
 <tr><td>Controlled access</td><td>no</td></tr>
+<tr><td>Sandpiper profiles</td><td>none profiled</td></tr>
 </table>
 
 <h2>Subjects</h2>
 <table class="tbl kv">
-<tr><td>Unique infants (estimate)</td><td>33</td></tr>
-<tr><td>Longitudinal</td><td>no (max 1 timepoints per subject)</td></tr>
-<tr><td>Mother samples</td><td>—</td></tr>
-<tr><td>Roles</td><td>infant 33</td></tr>
+<tr><td>Unique infants</td><td>unknown (no infant-role samples) <span class="small">(source: no_infant_role_samples)</span></td></tr>
+<tr><td>Longitudinal</td><td>no</td></tr>
+<tr><td>Mother samples</td><td>0</td></tr>
+<tr><td>Roles (as evidenced; unknown when unevidenced)</td><td>unknown 33</td></tr>
 <tr><td>Body-site classes</td><td>primary 33</td></tr>
 </table>
+
+<h2>Authors and organisations</h2>
+<p class="small">No author on record for this BioProject (no linked paper, no BioProject publication, no ENA PubMed cross-reference).</p>
+<p class="small">Organisations: University of Nebraska Medical Center</p>
+<p class="small">Names are string-matched from Europe PMC author strings and NCBI BioProject records; the same person may appear under several initial variants. See <a href="../docs/AUTHORS_REPORT.html">Authors report</a>.</p>
 </div>
 <div>
 <h2>Inclusion evidence</h2>
 <table class="tbl kv">
 <tr><td>Verdict</td><td><span class="tag included">include</span> → included</td></tr>
 <tr><td>Decision stage</td><td>opus_adjudication</td></tr>
-<tr><td>Confidence</td><td>0.85</td></tr>
+<tr><td>Confidence (tier)</td><td>0.85</td></tr>
 <tr><td>Body-site call</td><td>—</td></tr>
 
 </table>
@@ -71,240 +88,319 @@
 <h2>Recoverability tiers (predicted before extraction)</h2>
 <p class="small">R1 archive attribute · R2 supplementary table · R3 paper text · R4 abstract · R0 none</p>
 <p><span class="tag R0">age: R0</span> <span class="tag R0">delivery: R0</span> <span class="tag R0">feeding: R0</span> <span class="tag R0">preterm: R0</span> <span class="tag R0">antibiotics: R0</span> <span class="tag R0">probiotic: R0</span> </p>
+
+<h2>Decision history (4 rows)</h2>
+<details><summary class="small">Every triage stage that judged this study, in stage order (screen → tier-1 rubric → confirmation → adjudication → growth waves → re-judgement → human review → final), from <span class="mono">study_verdict_history.parquet</span>. A haiku screen pass is a candidate forward, not a verdict. 2 consolidated bookkeeping rows that repeat the deciding stage are folded into the single <b>final</b> line.</summary>
+<table class="tbl compact small"><thead><tr><th>#</th><th>Stage</th><th>Level</th><th>Verdict</th><th class="num">Conf.</th><th>Model</th><th>Reason / quotes</th><th>Source table</th></tr></thead><tbody>
+<tr><td class="num">1.1</td><td class="mono">ff_confirm_r1</td><td class="small">growth_wave</td><td><span class="tag human_review">uncertain</span></td><td class="num">0.55</td><td class="mono">claude-sonnet-5</td><td><span class="mono">age_unknown_no_evidence</span> <span class="quote">“maternal and infant gut microbiome samples” (study.title) · “maternal and infant gut microbiome samples” (study.description)</span></td><td class="mono">ff_confirm_r1</td></tr><tr><td class="num">2.2</td><td class="mono">ff_confirm_r2</td><td class="small">growth_wave</td><td><span class="tag included">include</span></td><td class="num">0.6</td><td class="mono">claude-sonnet-5</td><td><span class="quote">“maternal and infant gut microbiome samples” (study.title) · “maternal and infant gut microbiome samples” (study.description)</span></td><td class="mono">ff_confirm_r2</td></tr><tr><td class="num">3.9</td><td class="mono">ff_adjudication_opus</td><td class="small">growth_wave</td><td><span class="tag included">include</span></td><td class="num">0.85</td><td class="mono">claude-opus-5</td><td><span class="quote">“maternal and infant gut microbiome samples” (study.title) · “raw metagenomic sequencing reads” (study.description) · “WGS” (run.library_strategy)</span></td><td class="mono">ff_adjudication_opus</td></tr><tr class="final"><td class="num">4</td><td class="mono">opus_adjudication</td><td class="small">consolidated_final</td><td><span class="tag included">include</span> <b>final</b></td><td class="num">0.85</td><td class="mono">claude-opus-5</td><td><span class="quote">“maternal and infant gut microbiome samples” (study.title) · “raw metagenomic sequencing reads” (study.description) · “WGS” (run.library_strategy)</span></td><td class="mono">universe_studies_all (final)</td></tr>
+</tbody></table></details>
 </div>
 </div>
+
+<h2>Community composition (Sandpiper/SingleM, GTDB R232)</h2>
+<p class="small">No run of this study is in the Sandpiper snapshot, so no community profile exists — runs not in the Sandpiper snapshot: published_after_snapshot_horizon 54.</p>
+
 
 <h2>Linked papers (0)</h2>
 <p class="small">No paper is linked to this BioProject in the catalog (orphan deposit or link not resolved).</p>
 
-<h2>Field coverage (fraction of infant-scope samples with a value)</h2>
+<h2>Field coverage (fraction of body-site infant-scope samples with a value)</h2>
 <div style="max-width:760px">
 <div class="covrow"><a href="../fields/index.html#age_at_collection_days">Age at collection (days)</a><div class="bar"><span style="width:0.0%"></span></div><span class="num">0%</span></div><div class="covrow"><a href="../fields/index.html#delivery_mode">Delivery mode</a><div class="bar"><span style="width:0.0%"></span></div><span class="num">0%</span></div><div class="covrow"><a href="../fields/index.html#feeding_mode">Feeding mode</a><div class="bar"><span style="width:0.0%"></span></div><span class="num">0%</span></div><div class="covrow"><a href="../fields/index.html#preterm_status">Preterm status</a><div class="bar"><span style="width:0.0%"></span></div><span class="num">0%</span></div><div class="covrow"><a href="../fields/index.html#antibiotic_exposure">Antibiotic exposure</a><div class="bar"><span style="width:0.0%"></span></div><span class="num">0%</span></div><div class="covrow"><a href="../fields/index.html#gestational_age_weeks">Gestational age (weeks)</a><div class="bar"><span style="width:0.0%"></span></div><span class="num">0%</span></div><div class="covrow"><a href="../fields/index.html#birth_weight_grams">Birth weight (g)</a><div class="bar"><span style="width:0.0%"></span></div><span class="num">0%</span></div><div class="covrow"><a href="../fields/index.html#probiotic_exposure">Probiotic exposure</a><div class="bar"><span style="width:0.0%"></span></div><span class="num">0%</span></div><div class="covrow"><a href="../fields/index.html#maternal_antibiotics">Maternal antibiotics</a><div class="bar"><span style="width:0.0%"></span></div><span class="num">0%</span></div><div class="covrow"><a href="../fields/index.html#hmo_supplementation">HMO supplementation</a><div class="bar"><span style="width:0.0%"></span></div><span class="num">0%</span></div><div class="covrow"><a href="../fields/index.html#nec_status">NEC status</a><div class="bar"><span style="width:0.0%"></span></div><span class="num">0%</span></div><div class="covrow"><a href="../fields/index.html#country">Country</a><div class="bar"><span style="width:100.0%"></span></div><span class="num">100%</span></div><div class="covrow"><a href="../fields/index.html#health_condition">Health condition</a><div class="bar"><span style="width:0.0%"></span></div><span class="num">0%</span></div><div class="covrow"><a href="../fields/index.html#multiple_birth">Multiple birth</a><div class="bar"><span style="width:0.0%"></span></div><span class="num">0%</span></div><div class="covrow"><a href="../fields/index.html#sibling_in_study">Sibling in study</a><div class="bar"><span style="width:0.0%"></span></div><span class="num">0%</span></div><div class="covrow"><a href="../fields/index.html#geo_subregion">Geographic subregion</a><div class="bar"><span style="width:100.0%"></span></div><span class="num">100%</span></div>
 </div>
 
+
+
 <h2>Downloads</h2>
 <div class="btns">
-<a class="btn sec" href="../data/studies/PRJNA1472032.csv" download>Samples (CSV, 17.6 KB)</a>
-<a class="btn sec" href="../data/studies/PRJNA1472032.parquet" download>Samples (parquet, 50.1 KB)</a>
-<a class="btn sec" href="../data/studies/PRJNA1472032_determinations.csv.gz" download>Determinations with evidence (CSV.gz, 1.0 KB, 99 rows)</a>
+<a class="btn sec" href="../data/studies/PRJNA1472032.csv.gz" download>Samples (CSV.gz, 2.3 KB)</a>
+<a class="btn sec" href="../data/studies/PRJNA1472032.parquet" download>Samples (parquet, 84.9 KB)</a>
+<a class="btn sec" href="../data/studies/PRJNA1472032_determinations.csv.gz" download>Determinations with evidence (CSV.gz, 990 B, 99 rows)</a>
 </div>
 
 <h2>Samples (33)</h2>
 
 <table id="samples" class="tbl display compact">
-<thead><tr><th>Sample</th><th>Links</th><th class="num">Age (d)</th><th>Delivery</th><th>Feeding</th><th>Preterm</th><th>Antibiotics</th><th>Sex</th><th>Subject</th><th class="num">t</th><th>Role</th><th class="num">Runs</th></tr></thead>
+<thead><tr><th>Sample</th><th>Links</th><th>Age scope</th><th class="num">Age (d)</th><th>Delivery</th><th>Feeding</th><th>Preterm</th><th>Antibiotics</th><th>Sex</th><th>Subject</th><th class="num">t</th><th>Role</th><th class="num">Runs</th><th>Top genus</th><th class="num"><i>Bifidobacterium</i></th></tr></thead>
 <tbody>
 <tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMN60466489">SAMN60466489</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMN60466489">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMN60466489">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small">PRJNA1472032|101B_CP05102-B</td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA1472032|101B_CP05102-B</td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMN60466488">SAMN60466488</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMN60466488">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMN60466488">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small">PRJNA1472032|101_CP05102-B</td><td class="num">1</td><td>infant</td><td class="num">2.0</td>
+<td class="small">PRJNA1472032|101_CP05102-B</td><td class="num">1</td><td>unknown</td><td class="num">2</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMN60466491">SAMN60466491</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMN60466491">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMN60466491">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small">PRJNA1472032|102B_CP05102-B</td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA1472032|102B_CP05102-B</td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMN60466490">SAMN60466490</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMN60466490">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMN60466490">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small">PRJNA1472032|102_CP05102-B</td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA1472032|102_CP05102-B</td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMN60466493">SAMN60466493</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMN60466493">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMN60466493">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small">PRJNA1472032|103B_CP05102-B</td><td class="num">1</td><td>infant</td><td class="num">2.0</td>
+<td class="small">PRJNA1472032|103B_CP05102-B</td><td class="num">1</td><td>unknown</td><td class="num">2</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMN60466492">SAMN60466492</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMN60466492">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMN60466492">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small">PRJNA1472032|103_CP05102-B</td><td class="num">1</td><td>infant</td><td class="num">2.0</td>
+<td class="small">PRJNA1472032|103_CP05102-B</td><td class="num">1</td><td>unknown</td><td class="num">2</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMN60466495">SAMN60466495</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMN60466495">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMN60466495">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small">PRJNA1472032|105B_CP05102-B</td><td class="num">1</td><td>infant</td><td class="num">2.0</td>
+<td class="small">PRJNA1472032|105B_CP05102-B</td><td class="num">1</td><td>unknown</td><td class="num">2</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMN60466494">SAMN60466494</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMN60466494">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMN60466494">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small">PRJNA1472032|105_CP05102-B</td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA1472032|105_CP05102-B</td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMN60466497">SAMN60466497</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMN60466497">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMN60466497">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small">PRJNA1472032|106B_CP05102-B</td><td class="num">1</td><td>infant</td><td class="num">2.0</td>
+<td class="small">PRJNA1472032|106B_CP05102-B</td><td class="num">1</td><td>unknown</td><td class="num">2</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMN60466496">SAMN60466496</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMN60466496">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMN60466496">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small">PRJNA1472032|106_CP05102-B</td><td class="num">1</td><td>infant</td><td class="num">2.0</td>
+<td class="small">PRJNA1472032|106_CP05102-B</td><td class="num">1</td><td>unknown</td><td class="num">2</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMN60466499">SAMN60466499</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMN60466499">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMN60466499">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small">PRJNA1472032|107B_CP05102-B</td><td class="num">1</td><td>infant</td><td class="num">2.0</td>
+<td class="small">PRJNA1472032|107B_CP05102-B</td><td class="num">1</td><td>unknown</td><td class="num">2</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMN60466498">SAMN60466498</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMN60466498">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMN60466498">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small">PRJNA1472032|107_CP05102-B</td><td class="num">1</td><td>infant</td><td class="num">2.0</td>
+<td class="small">PRJNA1472032|107_CP05102-B</td><td class="num">1</td><td>unknown</td><td class="num">2</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMN60466501">SAMN60466501</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMN60466501">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMN60466501">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small">PRJNA1472032|108B_CP05102-B</td><td class="num">1</td><td>infant</td><td class="num">2.0</td>
+<td class="small">PRJNA1472032|108B_CP05102-B</td><td class="num">1</td><td>unknown</td><td class="num">2</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMN60466500">SAMN60466500</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMN60466500">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMN60466500">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small">PRJNA1472032|108_CP05102-B</td><td class="num">1</td><td>infant</td><td class="num">2.0</td>
+<td class="small">PRJNA1472032|108_CP05102-B</td><td class="num">1</td><td>unknown</td><td class="num">2</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMN60466503">SAMN60466503</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMN60466503">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMN60466503">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small">PRJNA1472032|109B_CP05102-B</td><td class="num">1</td><td>infant</td><td class="num">2.0</td>
+<td class="small">PRJNA1472032|109B_CP05102-B</td><td class="num">1</td><td>unknown</td><td class="num">2</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMN60466502">SAMN60466502</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMN60466502">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMN60466502">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small">PRJNA1472032|109_CP05102-B</td><td class="num">1</td><td>infant</td><td class="num">2.0</td>
+<td class="small">PRJNA1472032|109_CP05102-B</td><td class="num">1</td><td>unknown</td><td class="num">2</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMN60466505">SAMN60466505</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMN60466505">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMN60466505">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small">PRJNA1472032|110B_CP05102-B</td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA1472032|110B_CP05102-B</td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMN60466504">SAMN60466504</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMN60466504">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMN60466504">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small">PRJNA1472032|110_CP05102-B</td><td class="num">1</td><td>infant</td><td class="num">2.0</td>
+<td class="small">PRJNA1472032|110_CP05102-B</td><td class="num">1</td><td>unknown</td><td class="num">2</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMN60466507">SAMN60466507</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMN60466507">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMN60466507">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small">PRJNA1472032|113B_CP05102-B</td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA1472032|113B_CP05102-B</td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMN60466508">SAMN60466508</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMN60466508">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMN60466508">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small">PRJNA1472032|113C_CP05102-B</td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA1472032|113C_CP05102-B</td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMN60466506">SAMN60466506</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMN60466506">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMN60466506">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small">PRJNA1472032|113_CP05102-B</td><td class="num">1</td><td>infant</td><td class="num">2.0</td>
+<td class="small">PRJNA1472032|113_CP05102-B</td><td class="num">1</td><td>unknown</td><td class="num">2</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMN60466510">SAMN60466510</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMN60466510">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMN60466510">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small">PRJNA1472032|114B_CP05102-B</td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA1472032|114B_CP05102-B</td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMN60466509">SAMN60466509</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMN60466509">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMN60466509">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small">PRJNA1472032|114_CP05102-B</td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA1472032|114_CP05102-B</td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMN60466512">SAMN60466512</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMN60466512">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMN60466512">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small">PRJNA1472032|115B_CP05102-B</td><td class="num">1</td><td>infant</td><td class="num">2.0</td>
+<td class="small">PRJNA1472032|115B_CP05102-B</td><td class="num">1</td><td>unknown</td><td class="num">2</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMN60466511">SAMN60466511</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMN60466511">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMN60466511">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small">PRJNA1472032|115_CP05102-B</td><td class="num">1</td><td>infant</td><td class="num">2.0</td>
+<td class="small">PRJNA1472032|115_CP05102-B</td><td class="num">1</td><td>unknown</td><td class="num">2</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMN60466514">SAMN60466514</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMN60466514">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMN60466514">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small">PRJNA1472032|116B_CP05102-B</td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA1472032|116B_CP05102-B</td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMN60466513">SAMN60466513</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMN60466513">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMN60466513">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small">PRJNA1472032|116_CP05102-B</td><td class="num">1</td><td>infant</td><td class="num">2.0</td>
+<td class="small">PRJNA1472032|116_CP05102-B</td><td class="num">1</td><td>unknown</td><td class="num">2</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMN60466516">SAMN60466516</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMN60466516">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMN60466516">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small">PRJNA1472032|117B_CP05102-B</td><td class="num">1</td><td>infant</td><td class="num">2.0</td>
+<td class="small">PRJNA1472032|117B_CP05102-B</td><td class="num">1</td><td>unknown</td><td class="num">2</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMN60466515">SAMN60466515</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMN60466515">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMN60466515">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small">PRJNA1472032|117_CP05102-B</td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA1472032|117_CP05102-B</td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMN60466518">SAMN60466518</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMN60466518">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMN60466518">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small">PRJNA1472032|118B_CP05102-B</td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA1472032|118B_CP05102-B</td><td class="num">1</td><td>unknown</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMN60466517">SAMN60466517</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMN60466517">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMN60466517">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small">PRJNA1472032|118_CP05102-B</td><td class="num">1</td><td>infant</td><td class="num">2.0</td>
+<td class="small">PRJNA1472032|118_CP05102-B</td><td class="num">1</td><td>unknown</td><td class="num">2</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMN60466520">SAMN60466520</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMN60466520">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMN60466520">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small">PRJNA1472032|119B_CP05102-B</td><td class="num">1</td><td>infant</td><td class="num">2.0</td>
+<td class="small">PRJNA1472032|119B_CP05102-B</td><td class="num">1</td><td>unknown</td><td class="num">2</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMN60466519">SAMN60466519</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMN60466519">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMN60466519">ENA sample</a></td>
+<td class="small">age_unknown_no_study_estimate</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small">PRJNA1472032|119_CP05102-B</td><td class="num">1</td><td>infant</td><td class="num">2.0</td>
+<td class="small">PRJNA1472032|119_CP05102-B</td><td class="num">1</td><td>unknown</td><td class="num">2</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr>
 </tbody></table>
 
 </main>
 <footer>
-<div><b>Infant Gut Shotgun-Metagenome Catalog</b> — data package v1 (built 2026-09-25). Curated tables are released under <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a>; archive metadata remains under INSDC terms.</div>
-<div>How to cite: <i>Infant Gut Shotgun-Metagenome Catalog v1, 2026.</i></div>
-<div>Caveats: every value carries a route (R1 archive attribute, R2 supplementary table, R3 paper text, R4 abstract/description) and a confidence; R3/R4 values are group-level statements applied to samples — see <a href="../fields/index.html">Fields</a> and <a href="../methods.html#limitations">Methods › Limitations</a>. Built with an LLM-assisted pipeline; treat individual values as evidence-linked claims, not ground truth.</div>
+<div><b>Infant Gut Shotgun-Metagenome Catalog</b> — package <span class="mono">1.2.1</span> · built 2026-09-26 · generator <span class="mono">nogit</span> · release <span class="mono">data-v1.2.1</span> (<a href="../data/VERSION.json">VERSION.json</a>, <a href="../docs/CHANGELOG.html">changelog</a>). Curated tables are released under <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a>; archive metadata remains under INSDC terms; community profiles from <a href="https://sandpiper.qut.edu.au/">Sandpiper</a> (Woodcroft et al. 2025, CC-BY).</div>
+<div>How to cite: <i>Infant Gut Shotgun-Metagenome Catalog, data package 1.2.1 (data-v1.2.1), 2026.</i></div>
+<div>Caveats: every value carries a route (R1 archive attribute, R2 supplementary table, R3 paper text, R4 abstract/description), a scope and a confidence tier (not a calibrated probability); R3/R4 values are group-level statements applied to samples — see <a href="../fields/index.html">Fields</a> and <a href="../methods.html#limitations">Methods › Limitations</a>. Built with an LLM-assisted pipeline; treat individual values as evidence-linked claims, not ground truth. Found an error? Every study, cohort and sample has a <b>Flag an issue</b> button that opens a prefilled GitHub issue.</div>
 </footer>
 
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-<script src="https://cdn.datatables.net/2.1.8/js/dataTables.min.js"></script>
+<script src="../static/vendor/jquery-3.7.1.min.js" integrity="sha384-1H217gwSVyLSIfaLxHbE7dRb3v4mYCKbpQvzx0cegeju1MVsGrX5xXxAvs/HgeFs" crossorigin="anonymous"></script>
+<script src="../static/vendor/dataTables-2.1.8.min.js" integrity="sha384-MgwUq0TVErv5Lkj/jIAgQpC+iUIqwhwXxJMfrZQVAOhr++1MR02yXH8aXdPc3fk0" crossorigin="anonymous"></script>
 
+<script>window.CATALOG={version:'1.2.1',release:'data-v1.2.1',issueRepo:'https://github.com/OlmLab/infant-gut-catalog/issues/new',issueTemplate:'catalog-finding.yml'};</script>
 <script src="../static/site.js"></script>
 
 <script>new DataTable('#samples',{pageLength:25,lengthMenu:[25,100,500],order:[]});</script>

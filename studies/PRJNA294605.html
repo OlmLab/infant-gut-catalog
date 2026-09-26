@@ -5,9 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>PRJNA294605 — Metagenomes from 11 human infant fecal samples hospitalized in the same intensive care unit — Infant Gut Shotgun-Metagenome Catalog</title>
 <meta name="description" content="Metagenomes from 11 human infant fecal samples hospitalized in the same intensive care unit — 158 samples, 158 runs; infant gut shotgun metagenome study in the catalog.">
+<meta name="catalog-release" content="data-v1.2.1">
+<link rel="canonical" href="https://olmlab.github.io/infant-gut-catalog/studies/PRJNA294605.html">
+<meta name="catalog-package-version" content="1.2.1">
+<meta name="catalog-build-date" content="2026-09-26">
 <link rel="stylesheet" href="../static/site.css">
 
-<link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.dataTables.min.css">
+<link rel="stylesheet" href="../static/vendor/dataTables.dataTables-2.1.8.min.css" integrity="sha384-bK2L0Q3Sn2fB8YZTIjKejpTUJXd8xNtKn4RcIm7KM3EX3orMlOI31hwtNH0iyky/" crossorigin="anonymous">
 
 
 </head>
@@ -18,6 +22,7 @@
 <a href="../cohorts/index.html" >Cohorts</a>
 <a href="../samples/index.html" >Sample explorer</a>
 <a href="../fields/index.html" >Fields</a>
+<a href="../authors/index.html" >Authors</a>
 <a href="../universe.html" >Universe</a>
 <a href="../methods.html" >Methods</a>
 <a href="../downloads.html" >Downloads</a>
@@ -27,41 +32,53 @@
 
 <h1><span class="mono">PRJNA294605</span></h1>
 <p class="lead">Metagenomes from 11 human infant fecal samples hospitalized in the same intensive care unit</p>
+
 <div class="btns">
 <a class="btn sec" href="https://www.ebi.ac.uk/ena/browser/view/PRJNA294605">ENA browser</a>
 <a class="btn sec" href="https://www.ncbi.nlm.nih.gov/bioproject/PRJNA294605">NCBI BioProject</a>
 <a class="btn" href="../samples/index.html?study=PRJNA294605">Open in sample explorer</a>
+<a class="btn flag" href="https://github.com/OlmLab/infant-gut-catalog/issues/new?template=catalog-finding.yml&amp;labels=finding&amp;title=%5Bfinding%5D%20PRJNA294605%3A%20verdict&amp;action=study_verdict&amp;current_state=verdict%3Dinclude%20%C2%B7%20status%3Dincluded%20%C2%B7%20stage%3Dsonnet_replicates_n3_agree1.00%20%C2%B7%20confidence%3D0.90%20%C2%B7%20evidence%3A%20%E2%80%9C11%20human%20infant%20fecal%20samples%20hospitalized%E2%80%9D%20%28study.title%29%3B%20%E2%80%9Cfecal%20samples%20from%20infant%2023%20collected%E2%80%9D%20%28sample.attr.isolation_source%29&amp;evidence_source=external_curation.human&amp;finding_type=wrong_verdict&amp;identifier=PRJNA294605&amp;release_tag=data-v1.2.1%20%C2%B7%20studies%2FPRJNA294605.html" title="Opens a prefilled GitHub issue (template catalog-finding.yml) — needs a GitHub account">Flag an issue</a>
+<a class="btn confirm" href="https://github.com/OlmLab/infant-gut-catalog/issues/new?template=catalog-finding.yml&amp;labels=finding&amp;title=%5Bconfirmed%5D%20PRJNA294605%3A%20verdict&amp;action=confirm&amp;current_state=verdict%3Dinclude%20%C2%B7%20status%3Dincluded%20%C2%B7%20stage%3Dsonnet_replicates_n3_agree1.00%20%C2%B7%20confidence%3D0.90&amp;evidence_source=external_curation.human&amp;finding_type=confirmed_correct&amp;identifier=PRJNA294605&amp;proposed_change=none%20%E2%80%94%20confirmed%20correct&amp;release_tag=data-v1.2.1%20%C2%B7%20studies%2FPRJNA294605.html" title="Record that you checked this study and its verdict is correct">Confirm correct</a>
 </div>
 
 <div class="grid2">
 <div>
 <h2>Summary</h2>
 <table class="tbl kv">
-<tr><td>Samples / runs</td><td>158 / 158 <span class="tag" title="This deposit registered one BioSample per infant and one run per stool; the catalog uses the RUN as the sample unit here.">sample unit: run · 11 BioSamples</span></td></tr>
-<tr><td>Infant-scope samples</td><td>158</td></tr>
+<tr><td>Samples / runs</td><td>158 / 158 <span class="tag" title="This deposit registered one BioSample per infant and one run per stool; the catalog uses the RUN as the sample unit here.">sample unit: ENA run · 0 BioSamples</span></td></tr>
+
+<tr><td>Catalog scope</td><td><b>158</b> <span class="small">(age-scope infant AND body_site_class primary/unknown — the headline denominator)</span></td></tr>
+<tr><td>Age scope</td><td><b>158</b> infant-scope by age evidence (158 per-sample/subject evidence)</td></tr>
+<tr><td>Body-site infant-scope</td><td>158 <span class="small">(body_site_class primary or unknown)</span></td></tr>
 <tr><td>First public</td><td>2016-06-29</td></tr>
 <tr><td>Cohort</td><td>—</td></tr>
 <tr><td>Instrument (top)</td><td>Illumina HiSeq 2000</td></tr>
 <tr><td>Median Gbp / run</td><td>2.99</td></tr>
 <tr><td>Country (archive top value)</td><td>USA: Pittsburgh, PA</td></tr>
 <tr><td>Controlled access</td><td>no</td></tr>
+<tr><td>Sandpiper profiles</td><td>138 of 158 samples (87%) · 138 of 158 runs (87%)</td></tr>
 </table>
 
 <h2>Subjects</h2>
 <table class="tbl kv">
-<tr><td>Unique infants (estimate)</td><td>11</td></tr>
+<tr><td>Unique infants</td><td>11 <span class="small">(source: subject_ids)</span></td></tr>
 <tr><td>Longitudinal</td><td>yes (max 22 timepoints per subject)</td></tr>
-<tr><td>Mother samples</td><td>—</td></tr>
-<tr><td>Roles</td><td>infant 169</td></tr>
-<tr><td>Body-site classes</td><td>primary 169</td></tr>
+<tr><td>Mother samples</td><td>0</td></tr>
+<tr><td>Roles (as evidenced; unknown when unevidenced)</td><td>infant 158</td></tr>
+<tr><td>Body-site classes</td><td>primary 158</td></tr>
 </table>
+
+<h2>Authors and organisations</h2>
+<p><a href="../authors/index.html?q=Brooks%20B">Brooks B</a> <span class="tag">first</span>, <a href="../authors/index.html?q=Olm%20MR">Olm MR</a>, <a href="../authors/index.html?q=Firek%20BA">Firek BA</a>, <a href="../authors/index.html?q=Baker%20R">Baker R</a>, <a href="../authors/index.html?q=Thomas%20BC">Thomas BC</a>, <a href="../authors/index.html?q=Morowitz%20MJ">Morowitz MJ</a>, <a href="../authors/index.html?q=Banfield%20JF">Banfield JF</a> <span class="tag">last</span>, <a href="../authors/index.html?q=Brown%20CT">Brown CT</a> <span class="tag">first</span>, <a href="../authors/index.html?q=Xiong%20W">Xiong W</a>, <a href="../authors/index.html?q=Firek%20B">Firek B</a>, <a href="../authors/index.html?q=Hettich%20RL">Hettich RL</a>, <a href="../authors/index.html?q=Bhattacharya%20N">Bhattacharya N</a>, <a href="../authors/index.html?q=Crits-Christoph%20A">Crits-Christoph A</a>, <a href="../authors/index.html?q=Song%20YS">Song YS</a>, <a href="../authors/index.html?q=Zeng%20S">Zeng S</a> <span class="tag">first</span>, <a href="../authors/index.html?q=Patangia%20D">Patangia D</a>, <a href="../authors/index.html?q=Almeida%20A">Almeida A</a>, <a href="../authors/index.html?q=Zhou%20Z">Zhou Z</a>, <a href="../authors/index.html?q=Mu%20D">Mu D</a>, <a href="../authors/index.html?q=Paul%20Ross%20R">Paul Ross R</a>, <a href="../authors/index.html?q=Stanton%20C">Stanton C</a>, <a href="../authors/index.html?q=Wang%20S">Wang S</a> <span class="tag">last</span>, <a href="../authors/index.html?q=Casaburi%20G">Casaburi G</a> <span class="tag">first</span>, <a href="../authors/index.html?q=Wei%20J">Wei J</a>, <a href="../authors/index.html?q=Kazi%20S">Kazi S</a>, <a href="../authors/index.html?q=Liu%20J">Liu J</a>, <a href="../authors/index.html?q=Wang%20K">Wang K</a>, <a href="../authors/index.html?q=Tao%20GZ">Tao GZ</a>, <a href="../authors/index.html?q=Lin%20PY">Lin PY</a>, <a href="../authors/index.html?q=Dunn%20JCY">Dunn JCY</a>, <a href="../authors/index.html?q=Henrick%20BM">Henrick BM</a>, <a href="../authors/index.html?q=Frese%20SA">Frese SA</a>, <a href="../authors/index.html?q=Sylvester%20KG">Sylvester KG</a> <span class="tag">last</span>, <a href="../authors/index.html?q=Peters%20SL">Peters SL</a> <span class="tag">first</span>, <a href="../authors/index.html?q=Lugli%20GA">Lugli GA</a> <span class="tag">first</span>, <a href="../authors/index.html?q=Mancabelli%20L">Mancabelli L</a>, <a href="../authors/index.html?q=Milani%20C">Milani C</a>, <a href="../authors/index.html?q=Fontana%20F">Fontana F</a>, <a href="../authors/index.html?q=Tarracchini%20C">Tarracchini C</a>, <a href="../authors/index.html?q=Alessandri%20G">Alessandri G</a>, <a href="../authors/index.html?q=van%20Sinderen%20D">van Sinderen D</a>, <a href="../authors/index.html?q=Turroni%20F">Turroni F</a>, <a href="../authors/index.html?q=Ventura%20M">Ventura M</a> <span class="tag">last</span>, <a href="../authors/index.html?q=Ormaasen%20I">Ormaasen I</a> <span class="tag">first</span>, <a href="../authors/index.html?q=Rudi%20K">Rudi K</a>, <a href="../authors/index.html?q=Diep%20DB">Diep DB</a>, <a href="../authors/index.html?q=Snipen%20L">Snipen L</a> <span class="tag">last</span>, <a href="../authors/index.html?q=Li%20S">Li S</a>, <a href="../authors/index.html?q=Ying%20J">Ying J</a>, <a href="../authors/index.html?q=Wang%20H">Wang H</a>, <a href="../authors/index.html?q=Qu%20Y">Qu Y</a>, <a href="../authors/index.html?q=Niu%20X">Niu X</a>, <a href="../authors/index.html?q=Xu%20X">Xu X</a> <span class="tag">first</span>, <a href="../authors/index.html?q=Feng%20Q">Feng Q</a>, <a href="../authors/index.html?q=Zhang%20T">Zhang T</a>, <a href="../authors/index.html?q=Gao%20Y">Gao Y</a>, <a href="../authors/index.html?q=Cheng%20Q">Cheng Q</a>, <a href="../authors/index.html?q=Zhang%20W">Zhang W</a>, <a href="../authors/index.html?q=Wu%20Q">Wu Q</a>, <a href="../authors/index.html?q=Xu%20K">Xu K</a>, <a href="../authors/index.html?q=Li%20Y">Li Y</a>, <a href="../authors/index.html?q=Nguyen%20N">Nguyen N</a>, <a href="../authors/index.html?q=Taft%20DH">Taft DH</a>, <a href="../authors/index.html?q=Mills%20DA">Mills DA</a>, <a href="../authors/index.html?q=Lemay%20DG">Lemay DG</a>, <a href="../authors/index.html?q=Zhu%20W">Zhu W</a>, <a href="../authors/index.html?q=Mao%20S">Mao S</a>, <a href="../authors/index.html?q=Zhang%20A">Zhang A</a>, <a href="../authors/index.html?q=He%20W">He W</a> <span class="tag">first</span>, <a href="../authors/index.html?q=Russel%20J">Russel J</a>, <a href="../authors/index.html?q=Klincke%20F">Klincke F</a>, <a href="../authors/index.html?q=Nesme%20J">Nesme J</a>, <a href="../authors/index.html?q=S%C3%B8rensen%20SJ">Sørensen SJ</a> <span class="tag">last</span>, <a href="../authors/index.html?q=Zhang%20L">Zhang L</a>, <a href="../authors/index.html?q=Yuan%20Y">Yuan Y</a>, <a href="../authors/index.html?q=Tian%20M">Tian M</a>, <a href="../authors/index.html?q=Zhou%20M">Zhou M</a>, <a href="../authors/index.html?q=Hu%20Y">Hu Y</a>, <a href="../authors/index.html?q=Huang%20J">Huang J</a>, <a href="../authors/index.html?q=Zou%20R">Zou R</a>, <a href="../authors/index.html?q=Zhao%20F">Zhao F</a>, <a href="../authors/index.html?q=Su%20X">Su X</a>, <a href="../authors/index.html?q=Liu%20Q">Liu Q</a>, <a href="../authors/index.html?q=He%20Y">He Y</a>, <a href="../authors/index.html?q=Feng%20J">Feng J</a>, <a href="../authors/index.html?q=Huang%20W">Huang W</a>, <a href="../authors/index.html?q=Luo%20Y">Luo Y</a>, <a href="../authors/index.html?q=Shen%20W">Shen W</a></p>
+<p class="small">Organisations: Banfield Lab, University of California, Berkeley</p>
+<p class="small">Names are string-matched from Europe PMC author strings and NCBI BioProject records; the same person may appear under several initial variants. See <a href="../docs/AUTHORS_REPORT.html">Authors report</a>.</p>
 </div>
 <div>
 <h2>Inclusion evidence</h2>
 <table class="tbl kv">
 <tr><td>Verdict</td><td><span class="tag included">include</span> → included</td></tr>
 <tr><td>Decision stage</td><td>sonnet_replicates_n3_agree1.00</td></tr>
-<tr><td>Confidence</td><td>0.90</td></tr>
+<tr><td>Confidence (tier)</td><td>0.90</td></tr>
 <tr><td>Body-site call</td><td>—</td></tr>
 
 </table>
@@ -71,14 +88,42 @@
 <h2>Recoverability tiers (predicted before extraction)</h2>
 <p class="small">R1 archive attribute · R2 supplementary table · R3 paper text · R4 abstract · R0 none</p>
 <p><span class="tag R2">age: R2</span> <span class="tag R2">delivery: R2</span> <span class="tag R2">feeding: R2</span> <span class="tag R2">preterm: R2</span> <span class="tag R2">antibiotics: R2</span> <span class="tag R3">probiotic: R3</span> </p>
+
+<h2>Decision history (5 rows)</h2>
+<details><summary class="small">Every triage stage that judged this study, in stage order (screen → tier-1 rubric → confirmation → adjudication → growth waves → re-judgement → human review → final), from <span class="mono">study_verdict_history.parquet</span>. A haiku screen pass is a candidate forward, not a verdict. 1 consolidated bookkeeping rows that repeat the deciding stage are folded into the single <b>final</b> line.</summary>
+<table class="tbl compact small"><thead><tr><th>#</th><th>Stage</th><th>Level</th><th>Verdict</th><th class="num">Conf.</th><th>Model</th><th>Reason / quotes</th><th>Source table</th></tr></thead><tbody>
+<tr><td class="num">1</td><td class="mono">triage_tier1</td><td class="small">tier1_rubric</td><td>— <span class="small">(model error: no verdict returned; raw: ERROR)</span></td><td class="num"></td><td class="mono">claude-sonnet-5</td><td><span class="quote"></span></td><td class="mono">triage_tier1</td></tr><tr><td class="num">2.1</td><td class="mono">confirm_r1_part02</td><td class="small">confirm</td><td><span class="tag included">include</span></td><td class="num">0.9</td><td class="mono">claude-sonnet-5</td><td><span class="quote">“11 human infant fecal samples hospitalized in the same intensive care unit” (study.title) · “Assembly of 14 fecal samples from infant 23 collected between Feb and Apr 2012” (sample.attr.isolation_source)</span></td><td class="mono">confirm_r1_part02</td></tr><tr><td class="num">3.2</td><td class="mono">confirm_r2</td><td class="small">confirm</td><td><span class="tag included">include</span></td><td class="num">0.9</td><td class="mono">claude-sonnet-5</td><td><span class="quote">“11 human infant fecal samples hospitalized” (study.title) · “fecal samples from infant 23 collected” (sample.attr.isolation_source)</span></td><td class="mono">confirm_r2</td></tr><tr><td class="num">4.3</td><td class="mono">confirm_r3</td><td class="small">confirm</td><td><span class="tag included">include</span></td><td class="num">0.9</td><td class="mono">claude-sonnet-5</td><td><span class="quote">“human infant fecal samples hospitalized” (study.title) · “fecal samples from infant 23” (sample.attr.isolation_source)</span></td><td class="mono">confirm_r3</td></tr><tr class="final"><td class="num">5</td><td class="mono">sonnet_replicates_n3_agree1.00</td><td class="small">consolidated_final</td><td><span class="tag included">include</span> <b>final</b></td><td class="num">0.9</td><td class="mono">claude-sonnet-5</td><td><span class="quote">“11 human infant fecal samples hospitalized” (study.title) · “fecal samples from infant 23 collected” (sample.attr.isolation_source)</span></td><td class="mono">universe_studies_all (final)</td></tr>
+</tbody></table></details>
 </div>
 </div>
+
+<h2>Community composition (Sandpiper/SingleM, GTDB R232)</h2>
+
+<p class="small">Mean relative abundance over <b>n = 138</b> catalog-scope samples with adequate depth (catalog scope = age-scope infant AND gut/unknown body site; 138 of 158 catalog-scope samples profiled). Age-scope breakdown of all 138 profiled samples in this study: infant 138 · adult/over-age 0 · unknown/other 0 — only the infant catalog-scope ones enter the panel. Relative abundance = fraction of prokaryotic (Bacteria + Archaea) coverage, coverage summed across a sample's runs then normalised — approximately cell proportions, not read fractions; not comparable with MetaPhlAn or 16S. Grey = coverage not resolved to this rank; white = named taxa outside the top list. <a href="../methods.html#taxonomy">Method and caveats</a>.</p>
+
+<div class="stackrow"><div class="stacklbl">Top phyla</div>
+<div class="stack" role="img" aria-label="Mean phylum composition"><span style="left:0.0%;width:0.94%;background:#D9D9D9" title="unassigned_at_phylum 0.9%"></span><span style="left:0.94%;width:59.33%;background:#CFB87C" title="Pseudomonadota 59.3%"></span><span style="left:60.27%;width:34.99%;background:#565A5C" title="Bacillota 35.0%"></span><span style="left:95.27%;width:3.79%;background:#A88B4A" title="Actinomycetota 3.8%"></span><span style="left:99.06%;width:0.93%;background:#8C8F91" title="Bacteroidota 0.9%"></span><span style="left:99.99%;width:0.01%;background:#7A6A3C" title="Fusobacteriota 0.0%"></span><span style="left:100.0%;width:0.0%;background:#3C3C3C" title="Bacillota_I 0.0%"></span></div></div>
+<p class="legend small"><span class="sw" style="background:#D9D9D9"></span>unassigned_at_phylum 0.9% · <span class="sw" style="background:#CFB87C"></span>Pseudomonadota 59.3% · <span class="sw" style="background:#565A5C"></span>Bacillota 35.0% · <span class="sw" style="background:#A88B4A"></span>Actinomycetota 3.8% · <span class="sw" style="background:#8C8F91"></span>Bacteroidota 0.9% · <span class="sw" style="background:#7A6A3C"></span>Fusobacteriota 0.0% · <span class="sw" style="background:#3C3C3C"></span>Bacillota_I 0.0%</p>
+
+<div class="stackrow"><div class="stacklbl">Top genera</div>
+<div class="stack" role="img" aria-label="Mean genus composition"><span style="left:0.0%;width:2.9%;background:#D9D9D9" title="unassigned_at_genus 2.9%"></span><span style="left:2.9%;width:35.8%;background:#CFB87C" title="Klebsiella 35.8%"></span><span style="left:38.7%;width:10.02%;background:#565A5C" title="Enterococcus 10.0%"></span><span style="left:48.71%;width:9.71%;background:#A88B4A" title="Veillonella 9.7%"></span><span style="left:58.43%;width:8.88%;background:#8C8F91" title="Enterobacter 8.9%"></span><span style="left:67.3%;width:6.25%;background:#7A6A3C" title="Staphylococcus 6.3%"></span><span style="left:73.56%;width:5.75%;background:#3C3C3C" title="Escherichia 5.7%"></span><span style="left:79.3%;width:2.9%;background:#8A7A48" title="Streptococcus 2.9%"></span><span style="left:82.21%;width:2.84%;background:#7F7060" title="Citrobacter 2.8%"></span><span style="left:85.05%;width:2.71%;background:#6E6A5E" title="Haemophilus_D 2.7%"></span><span style="left:87.76%;width:1.72%;background:#8F7418" title="Clostridium 1.7%"></span><span style="left:89.48%;width:1.6%;background:#6F6D62" title="Cutibacterium 1.6%"></span><span style="left:91.08%;width:1.05%;background:#6B6F73" title="Enterococcus_B 1.0%"></span><span style="left:92.13%;width:1.03%;background:#7D7461" title="Sarcina 1.0%"></span><span style="left:93.16%;width:0.94%;background:#4A4A4A" title="Pseudomonas 0.9%"></span><span style="left:94.11%;width:0.94%;background:#75604A" title="Bifidobacterium 0.9%"></span><span style="left:95.05%;width:4.95%;background:#FFFFFF" title="other named taxa 4.9%"></span></div></div>
+<p class="legend small"><span class="sw" style="background:#D9D9D9"></span>unassigned_at_genus 2.9% · <span class="sw" style="background:#CFB87C"></span><i>Klebsiella</i> 35.8% · <span class="sw" style="background:#565A5C"></span><i>Enterococcus</i> 10.0% · <span class="sw" style="background:#A88B4A"></span><i>Veillonella</i> 9.7% · <span class="sw" style="background:#8C8F91"></span><i>Enterobacter</i> 8.9% · <span class="sw" style="background:#7A6A3C"></span><i>Staphylococcus</i> 6.3% · <span class="sw" style="background:#3C3C3C"></span><i>Escherichia</i> 5.7% · <span class="sw" style="background:#8A7A48"></span><i>Streptococcus</i> 2.9% · <span class="sw" style="background:#7F7060"></span><i>Citrobacter</i> 2.8% · <span class="sw" style="background:#6E6A5E"></span><i>Haemophilus_D</i> 2.7% · <span class="sw" style="background:#8F7418"></span><i>Clostridium</i> 1.7% · <span class="sw" style="background:#6F6D62"></span><i>Cutibacterium</i> 1.6% · <span class="sw" style="background:#6B6F73"></span><i>Enterococcus_B</i> 1.0% · <span class="sw" style="background:#7D7461"></span><i>Sarcina</i> 1.0% · <span class="sw" style="background:#4A4A4A"></span><i>Pseudomonas</i> 0.9% · <span class="sw" style="background:#75604A"></span><i>Bifidobacterium</i> 0.9% · <span class="sw" style="background:#FFFFFF"></span>other named taxa 4.9%</p>
+
+
+
+<p class="small"><b>QC (profiled runs, display only — never a triage signal):</b> low complexity 20% (expected for Bifidobacterium-/Enterobacterales-dominated neonatal stool) · low depth (&lt;2× root) 0% · median prokaryotic read fraction 100.00% · median known-species fraction 97.25% · runs whose organism/library label fires a non-human-host / named-microbe / synthetic / RNA rule: 0.0%.</p>
+
 
 <h2>Linked papers (13)</h2>
 
 <table class="tbl">
 <thead><tr><th>Title</th><th>PMID</th><th>PMCID</th><th>DOI</th></tr></thead>
 <tbody><tr>
+<td>Evidence for persistent and shared bacterial strains against a background of largely unique gut colonization in hospitalized premature infants.</td>
+<td><a href="https://europepmc.org/article/MED/27258951">27258951</a></td>
+<td><a href="https://europepmc.org/article/PMC/PMC5148203">PMC5148203</a></td>
+<td><a href="https://doi.org/10.1038/ismej.2016.83">10.1038/ismej.2016.83</a></td>
+</tr><tr>
 <td>Strain-resolved analysis of hospital rooms and infants reveals overlap between the human and room microbiome.</td>
 <td><a href="https://europepmc.org/article/MED/29180750">29180750</a></td>
 <td><a href="https://europepmc.org/article/PMC/PMC5703836">PMC5703836</a></td>
@@ -138,1058 +183,1312 @@
 <td><a href="https://europepmc.org/article/MED/41025564">41025564</a></td>
 <td><a href="https://europepmc.org/article/PMC/PMC12677589">PMC12677589</a></td>
 <td><a href="https://doi.org/10.1002/advs.202505154">10.1002/advs.202505154</a></td>
-</tr><tr>
-<td>Evidence for persistent and shared bacterial strains against a background of largely unique gut colonization in hospitalized premature infants.</td>
-<td><a href="https://europepmc.org/article/MED/27258951">27258951</a></td>
-<td><a href="https://europepmc.org/article/PMC/PMC5148203">PMC5148203</a></td>
-<td><a href="https://doi.org/10.1038/ismej.2016.83">10.1038/ismej.2016.83</a></td>
 </tr></tbody></table>
 
 
-<h2>Field coverage (fraction of infant-scope samples with a value)</h2>
+<h2>Field coverage (fraction of body-site infant-scope samples with a value)</h2>
 <div style="max-width:760px">
 <div class="covrow"><a href="../fields/index.html#age_at_collection_days">Age at collection (days)</a><div class="bar"><span style="width:89.2%"></span></div><span class="num">89%</span></div><div class="covrow"><a href="../fields/index.html#delivery_mode">Delivery mode</a><div class="bar"><span style="width:89.2%"></span></div><span class="num">89%</span></div><div class="covrow"><a href="../fields/index.html#feeding_mode">Feeding mode</a><div class="bar"><span style="width:89.2%"></span></div><span class="num">89%</span></div><div class="covrow"><a href="../fields/index.html#preterm_status">Preterm status</a><div class="bar"><span style="width:89.2%"></span></div><span class="num">89%</span></div><div class="covrow"><a href="../fields/index.html#antibiotic_exposure">Antibiotic exposure</a><div class="bar"><span style="width:92.4%"></span></div><span class="num">92%</span></div><div class="covrow"><a href="../fields/index.html#gestational_age_weeks">Gestational age (weeks)</a><div class="bar"><span style="width:89.2%"></span></div><span class="num">89%</span></div><div class="covrow"><a href="../fields/index.html#birth_weight_grams">Birth weight (g)</a><div class="bar"><span style="width:89.2%"></span></div><span class="num">89%</span></div><div class="covrow"><a href="../fields/index.html#probiotic_exposure">Probiotic exposure</a><div class="bar"><span style="width:0.0%"></span></div><span class="num">0%</span></div><div class="covrow"><a href="../fields/index.html#maternal_antibiotics">Maternal antibiotics</a><div class="bar"><span style="width:0.0%"></span></div><span class="num">0%</span></div><div class="covrow"><a href="../fields/index.html#hmo_supplementation">HMO supplementation</a><div class="bar"><span style="width:0.0%"></span></div><span class="num">0%</span></div><div class="covrow"><a href="../fields/index.html#nec_status">NEC status</a><div class="bar"><span style="width:89.2%"></span></div><span class="num">89%</span></div><div class="covrow"><a href="../fields/index.html#country">Country</a><div class="bar"><span style="width:100.0%"></span></div><span class="num">100%</span></div><div class="covrow"><a href="../fields/index.html#health_condition">Health condition</a><div class="bar"><span style="width:89.2%"></span></div><span class="num">89%</span></div><div class="covrow"><a href="../fields/index.html#multiple_birth">Multiple birth</a><div class="bar"><span style="width:0.0%"></span></div><span class="num">0%</span></div><div class="covrow"><a href="../fields/index.html#sibling_in_study">Sibling in study</a><div class="bar"><span style="width:0.0%"></span></div><span class="num">0%</span></div><div class="covrow"><a href="../fields/index.html#geo_subregion">Geographic subregion</a><div class="bar"><span style="width:100.0%"></span></div><span class="num">100%</span></div>
 </div>
 
+
+<h2>Parent BioSamples (pooled) — 11</h2>
+<p class="small">This deposit registered one BioSample per infant; the catalog keys its samples by ENA run. The parent BioSamples are listed for provenance only and are counted in no sample, run or determination total.</p>
+<table class="tbl compact"><thead><tr><th>BioSample</th><th>Title</th><th class="num">Run units</th><th>Runs</th></tr></thead><tbody>
+<tr><td class="mono"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMN04161025">SAMN04161025</a></td><td>Metagenome or environmental sample from human gut metagenome</td><td class="num">19</td><td class="small mono">SRR3466404, SRR6257382, SRR6257383, SRR6257384, SRR6257385, SRR6257386, SRR6257387, SRR6257388, SRR6257389, SRR6257390, SRR6257391, SRR6257442, SRR6257443, SRR6257444, SRR6257445, SRR6257446, SRR6257447, SRR6257448, SRR6257449</td></tr><tr><td class="mono"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMN04161026">SAMN04161026</a></td><td>Metagenome or environmental sample from human gut metagenome</td><td class="num">12</td><td class="small mono">SRR3498907, SRR6257450, SRR6257451, SRR6257470, SRR6257471, SRR6257472, SRR6257473, SRR6257474, SRR6257475, SRR6257476, SRR6257477, SRR6257478</td></tr><tr><td class="mono"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMN04161027">SAMN04161027</a></td><td>Metagenome or environmental sample from human gut metagenome</td><td class="num">7</td><td class="small mono">SRR3498909, SRR6257469, SRR6257493, SRR6257495, SRR6257496, SRR6257497, SRR6257498</td></tr><tr><td class="mono"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMN04161028">SAMN04161028</a></td><td>Metagenome or environmental sample from human gut metagenome</td><td class="num">18</td><td class="small mono">SRR3506420, SRR6257396, SRR6257397, SRR6257489, SRR6257490, SRR6257491, SRR6257492, SRR6257494, SRR6257509, SRR6257510, SRR6257511, SRR6257512, SRR6257513, SRR6257514, SRR6257515, SRR6257516, SRR6257517, SRR6257518</td></tr><tr><td class="mono"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMN04161029">SAMN04161029</a></td><td>Metagenome or environmental sample from human gut metagenome</td><td class="num">19</td><td class="small mono">SRR3506419, SRR6257392, SRR6257393, SRR6257394, SRR6257395, SRR6257398, SRR6257399, SRR6257400, SRR6257401, SRR6257412, SRR6257413, SRR6257414, SRR6257415, SRR6257416, SRR6257417, SRR6257418, SRR6257419, SRR6257420, SRR6257421</td></tr><tr><td class="mono"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMN04161030">SAMN04161030</a></td><td>Metagenome or environmental sample from human gut metagenome</td><td class="num">12</td><td class="small mono">SRR3546776, SRR6257431, SRR6257432, SRR6257433, SRR6257434, SRR6257435, SRR6257436, SRR6257437, SRR6257438, SRR6257439, SRR6257440, SRR6257441</td></tr><tr><td class="mono"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMN04161031">SAMN04161031</a></td><td>Metagenome or environmental sample from human gut metagenome</td><td class="num">4</td><td class="small mono">SRR3546778, SRR6257428, SRR6257429, SRR6257430</td></tr><tr><td class="mono"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMN04161032">SAMN04161032</a></td><td>Metagenome or environmental sample from human gut metagenome</td><td class="num">12</td><td class="small mono">SRR3546779, SRR6257422, SRR6257423, SRR6257424, SRR6257425, SRR6257426, SRR6257427, SRR6257454, SRR6257455, SRR6257456, SRR6257457, SRR6257458</td></tr><tr><td class="mono"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMN04161033">SAMN04161033</a></td><td>Metagenome or environmental sample from human gut metagenome</td><td class="num">23</td><td class="small mono">SRR3546780, SRR6257452, SRR6257453, SRR6257459, SRR6257460, SRR6257461, SRR6257481, SRR6257482, SRR6257483, SRR6257484, SRR6257485, SRR6257486, SRR6257487, SRR6257499, SRR6257500, SRR6257501, SRR6257502, SRR6257503, SRR6257504, SRR6257505, SRR6257506, SRR6257507, SRR6257508</td></tr><tr><td class="mono"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMN04161034">SAMN04161034</a></td><td>Metagenome or environmental sample from human gut metagenome</td><td class="num">16</td><td class="small mono">SRR3546781, SRR6257374, SRR6257375, SRR6257402, SRR6257403, SRR6257404, SRR6257405, SRR6257406, SRR6257407, SRR6257408, SRR6257409, SRR6257410, SRR6257411, SRR6257479, SRR6257480, SRR6257488</td></tr><tr><td class="mono"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMN04161035">SAMN04161035</a></td><td>Metagenome or environmental sample from human gut metagenome</td><td class="num">16</td><td class="small mono">SRR3546782, SRR6257372, SRR6257373, SRR6257376, SRR6257377, SRR6257378, SRR6257379, SRR6257380, SRR6257381, SRR6257462, SRR6257463, SRR6257464, SRR6257465, SRR6257466, SRR6257467, SRR6257468</td></tr>
+</tbody></table>
+
+
 <h2>Downloads</h2>
 <div class="btns">
-<a class="btn sec" href="../data/studies/PRJNA294605.csv" download>Samples (CSV, 103.7 KB)</a>
-<a class="btn sec" href="../data/studies/PRJNA294605.parquet" download>Samples (parquet, 57.6 KB)</a>
-<a class="btn sec" href="../data/studies/PRJNA294605_determinations.csv.gz" download>Determinations with evidence (CSV.gz, 16.5 KB, 1,990 rows)</a>
+<a class="btn sec" href="../data/studies/PRJNA294605.csv.gz" download>Samples (CSV.gz, 15.4 KB)</a>
+<a class="btn sec" href="../data/studies/PRJNA294605.parquet" download>Samples (parquet, 109.2 KB)</a>
+<a class="btn sec" href="../data/studies/PRJNA294605_determinations.csv.gz" download>Determinations with evidence (CSV.gz, 15.5 KB, 1,902 rows)</a>
 </div>
 
-<h2>Samples (169)</h2>
+<h2>Samples (158)</h2>
 
 <table id="samples" class="tbl display compact">
-<thead><tr><th>Sample</th><th>Links</th><th class="num">Age (d)</th><th>Delivery</th><th>Feeding</th><th>Preterm</th><th>Antibiotics</th><th>Sex</th><th>Subject</th><th class="num">t</th><th>Role</th><th class="num">Runs</th></tr></thead>
+<thead><tr><th>Sample</th><th>Links</th><th>Age scope</th><th class="num">Age (d)</th><th>Delivery</th><th>Feeding</th><th>Preterm</th><th>Antibiotics</th><th>Sex</th><th>Subject</th><th class="num">t</th><th>Role</th><th class="num">Runs</th><th>Top genus</th><th class="num"><i>Bifidobacterium</i></th></tr></thead>
 <tbody>
 <tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257398">SRR6257398</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257398">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257398">SRR6257398</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257398">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257398">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">11</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>yes</td><td>male</td>
-<td class="small">PRJNA294605|PRJNA294605_11</td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_11</td><td class="num">1</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Staphylococcus</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257399">SRR6257399</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257399">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257399">SRR6257399</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257399">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257399">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">13</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>yes</td><td>male</td>
-<td class="small">PRJNA294605|PRJNA294605_11</td><td class="num">2</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_11</td><td class="num">2</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Klebsiella</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257392">SRR6257392</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257392">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257392">SRR6257392</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257392">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257392">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">14</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>yes</td><td>male</td>
-<td class="small">PRJNA294605|PRJNA294605_11</td><td class="num">3</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_11</td><td class="num">3</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Klebsiella</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257393">SRR6257393</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257393">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257393">SRR6257393</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257393">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257393">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">15</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>yes</td><td>male</td>
-<td class="small">PRJNA294605|PRJNA294605_11</td><td class="num">4</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_11</td><td class="num">4</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Klebsiella</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257394">SRR6257394</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257394">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257394">SRR6257394</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257394">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257394">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">20</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>yes</td><td>male</td>
-<td class="small">PRJNA294605|PRJNA294605_11</td><td class="num">5</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_11</td><td class="num">5</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Klebsiella</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257395">SRR6257395</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257395">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257395">SRR6257395</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257395">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257395">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">21</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>yes</td><td>male</td>
-<td class="small">PRJNA294605|PRJNA294605_11</td><td class="num">6</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_11</td><td class="num">6</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Klebsiella</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257400">SRR6257400</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257400">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257400">SRR6257400</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257400">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257400">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">23</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>yes</td><td>male</td>
-<td class="small">PRJNA294605|PRJNA294605_11</td><td class="num">7</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_11</td><td class="num">7</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Klebsiella</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257401">SRR6257401</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257401">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257401">SRR6257401</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257401">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257401">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">25</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>yes</td><td>male</td>
-<td class="small">PRJNA294605|PRJNA294605_11</td><td class="num">8</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_11</td><td class="num">8</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Klebsiella</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257413">SRR6257413</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257413">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257413">SRR6257413</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257413">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257413">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">27</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>yes</td><td>male</td>
-<td class="small">PRJNA294605|PRJNA294605_11</td><td class="num">9</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_11</td><td class="num">9</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Klebsiella</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257412">SRR6257412</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257412">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257412">SRR6257412</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257412">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257412">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">28</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>yes</td><td>male</td>
-<td class="small">PRJNA294605|PRJNA294605_11</td><td class="num">10</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_11</td><td class="num">10</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Klebsiella</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257415">SRR6257415</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257415">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257415">SRR6257415</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257415">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257415">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">33</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>yes</td><td>male</td>
-<td class="small">PRJNA294605|PRJNA294605_11</td><td class="num">11</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_11</td><td class="num">11</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Klebsiella</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257414">SRR6257414</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257414">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257414">SRR6257414</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257414">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257414">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">37</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>yes</td><td>male</td>
-<td class="small">PRJNA294605|PRJNA294605_11</td><td class="num">12</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_11</td><td class="num">12</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Klebsiella</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257417">SRR6257417</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257417">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257417">SRR6257417</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257417">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257417">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">46</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>yes</td><td>male</td>
-<td class="small">PRJNA294605|PRJNA294605_11</td><td class="num">13</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_11</td><td class="num">13</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Klebsiella</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257416">SRR6257416</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257416">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257416">SRR6257416</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257416">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257416">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">51</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>yes</td><td>male</td>
-<td class="small">PRJNA294605|PRJNA294605_11</td><td class="num">14</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_11</td><td class="num">14</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Klebsiella</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SAMN04161029">SAMN04161029</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMN04161029">ENA</a></td>
-<td class="num"></td>
-<td>c_section</td><td></td><td>preterm</td><td></td><td>male</td>
-<td class="small">PRJNA294605|PRJNA294605_11</td><td class="num"></td><td>infant</td><td class="num">19.0</td>
-</tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR3506419">SRR3506419</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR3506419">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR3506419">SRR3506419</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR3506419">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR3506419">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small">PRJNA294605|PRJNA294605_11</td><td class="num"></td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_11</td><td class="num"></td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Klebsiella</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257418">SRR6257418</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257418">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257418">SRR6257418</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257418">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257418">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td>yes</td><td></td>
-<td class="small">PRJNA294605|PRJNA294605_11</td><td class="num"></td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_11</td><td class="num"></td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Klebsiella</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257419">SRR6257419</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257419">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257419">SRR6257419</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257419">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257419">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td>yes</td><td></td>
-<td class="small">PRJNA294605|PRJNA294605_11</td><td class="num"></td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_11</td><td class="num"></td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Klebsiella</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257420">SRR6257420</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257420">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257420">SRR6257420</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257420">ENA run</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small">PRJNA294605|PRJNA294605_11</td><td class="num"></td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_11</td><td class="num"></td><td>infant</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257421">SRR6257421</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257421">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257421">SRR6257421</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257421">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257421">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td>yes</td><td></td>
-<td class="small">PRJNA294605|PRJNA294605_11</td><td class="num"></td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_11</td><td class="num"></td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Klebsiella</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257434">SRR6257434</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257434">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257434">SRR6257434</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257434">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257434">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">6</td>
 <td>vaginal</td><td>mixed</td><td>preterm</td><td>yes</td><td>male</td>
-<td class="small">PRJNA294605|PRJNA294605_14</td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_14</td><td class="num">1</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Haemophilus_D</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257435">SRR6257435</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257435">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257435">SRR6257435</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257435">ENA run</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">7</td>
 <td>vaginal</td><td>mixed</td><td>preterm</td><td>yes</td><td>male</td>
-<td class="small">PRJNA294605|PRJNA294605_14</td><td class="num">2</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_14</td><td class="num">2</td><td>infant</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257432">SRR6257432</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257432">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257432">SRR6257432</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257432">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257432">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">8</td>
 <td>vaginal</td><td>mixed</td><td>preterm</td><td>yes</td><td>male</td>
-<td class="small">PRJNA294605|PRJNA294605_14</td><td class="num">3</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_14</td><td class="num">3</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Staphylococcus</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257433">SRR6257433</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257433">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257433">SRR6257433</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257433">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257433">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">9</td>
 <td>vaginal</td><td>mixed</td><td>preterm</td><td>yes</td><td>male</td>
-<td class="small">PRJNA294605|PRJNA294605_14</td><td class="num">4</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_14</td><td class="num">4</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Enterococcus</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257438">SRR6257438</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257438">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257438">SRR6257438</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257438">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257438">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">10</td>
 <td>vaginal</td><td>mixed</td><td>preterm</td><td>yes</td><td>male</td>
-<td class="small">PRJNA294605|PRJNA294605_14</td><td class="num">5</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_14</td><td class="num">5</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Veillonella</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257439">SRR6257439</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257439">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257439">SRR6257439</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257439">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257439">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">11</td>
 <td>vaginal</td><td>mixed</td><td>preterm</td><td>yes</td><td>male</td>
-<td class="small">PRJNA294605|PRJNA294605_14</td><td class="num">6</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_14</td><td class="num">6</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Veillonella</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257436">SRR6257436</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257436">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257436">SRR6257436</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257436">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257436">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">12</td>
 <td>vaginal</td><td>mixed</td><td>preterm</td><td>yes</td><td>male</td>
-<td class="small">PRJNA294605|PRJNA294605_14</td><td class="num">7</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_14</td><td class="num">7</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Veillonella</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257437">SRR6257437</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257437">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257437">SRR6257437</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257437">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257437">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">14</td>
 <td>vaginal</td><td>mixed</td><td>preterm</td><td>yes</td><td>male</td>
-<td class="small">PRJNA294605|PRJNA294605_14</td><td class="num">8</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_14</td><td class="num">8</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Escherichia</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257440">SRR6257440</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257440">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257440">SRR6257440</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257440">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257440">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">15</td>
 <td>vaginal</td><td>mixed</td><td>preterm</td><td>yes</td><td>male</td>
-<td class="small">PRJNA294605|PRJNA294605_14</td><td class="num">9</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_14</td><td class="num">9</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Escherichia</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257441">SRR6257441</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257441">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257441">SRR6257441</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257441">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257441">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">16</td>
 <td>vaginal</td><td>mixed</td><td>preterm</td><td>yes</td><td>male</td>
-<td class="small">PRJNA294605|PRJNA294605_14</td><td class="num">10</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_14</td><td class="num">10</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Escherichia</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257431">SRR6257431</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257431">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257431">SRR6257431</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257431">ENA run</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">17</td>
 <td>vaginal</td><td>mixed</td><td>preterm</td><td>yes</td><td>male</td>
-<td class="small">PRJNA294605|PRJNA294605_14</td><td class="num">11</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_14</td><td class="num">11</td><td>infant</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SAMN04161030">SAMN04161030</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMN04161030">ENA</a></td>
-<td class="num"></td>
-<td>vaginal</td><td></td><td>preterm</td><td></td><td>male</td>
-<td class="small">PRJNA294605|PRJNA294605_14</td><td class="num"></td><td>infant</td><td class="num">12.0</td>
-</tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR3546776">SRR3546776</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR3546776">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR3546776">SRR3546776</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR3546776">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR3546776">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small">PRJNA294605|PRJNA294605_14</td><td class="num"></td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_14</td><td class="num"></td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Veillonella</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257430">SRR6257430</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257430">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257430">SRR6257430</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257430">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257430">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">9</td>
 <td>vaginal</td><td>mixed</td><td>preterm</td><td>yes</td><td>female</td>
-<td class="small">PRJNA294605|PRJNA294605_17</td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_17</td><td class="num">1</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Staphylococcus</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257429">SRR6257429</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257429">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257429">SRR6257429</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257429">ENA run</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">10</td>
 <td>vaginal</td><td>mixed</td><td>preterm</td><td>yes</td><td>female</td>
-<td class="small">PRJNA294605|PRJNA294605_17</td><td class="num">2</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_17</td><td class="num">2</td><td>infant</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257428">SRR6257428</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257428">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257428">SRR6257428</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257428">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257428">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">11</td>
 <td>vaginal</td><td>mixed</td><td>preterm</td><td>yes</td><td>female</td>
-<td class="small">PRJNA294605|PRJNA294605_17</td><td class="num">3</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_17</td><td class="num">3</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Staphylococcus</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SAMN04161031">SAMN04161031</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMN04161031">ENA</a></td>
-<td class="num"></td>
-<td>vaginal</td><td></td><td>preterm</td><td></td><td>female</td>
-<td class="small">PRJNA294605|PRJNA294605_17</td><td class="num"></td><td>infant</td><td class="num">4.0</td>
-</tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR3546778">SRR3546778</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR3546778">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR3546778">SRR3546778</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR3546778">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR3546778">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small">PRJNA294605|PRJNA294605_17</td><td class="num"></td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_17</td><td class="num"></td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Staphylococcus</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257427">SRR6257427</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257427">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257427">SRR6257427</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257427">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257427">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">10</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>yes</td><td>male</td>
-<td class="small">PRJNA294605|PRJNA294605_18</td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_18</td><td class="num">1</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Klebsiella</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257426">SRR6257426</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257426">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257426">SRR6257426</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257426">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257426">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">11</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>yes</td><td>male</td>
-<td class="small">PRJNA294605|PRJNA294605_18</td><td class="num">2</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_18</td><td class="num">2</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Klebsiella</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257425">SRR6257425</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257425">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257425">SRR6257425</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257425">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257425">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">13</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>yes</td><td>male</td>
-<td class="small">PRJNA294605|PRJNA294605_18</td><td class="num">3</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_18</td><td class="num">3</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Klebsiella</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257424">SRR6257424</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257424">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257424">SRR6257424</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257424">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257424">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">14</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>yes</td><td>male</td>
-<td class="small">PRJNA294605|PRJNA294605_18</td><td class="num">4</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_18</td><td class="num">4</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Klebsiella</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257423">SRR6257423</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257423">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257423">SRR6257423</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257423">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257423">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">16</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>yes</td><td>male</td>
-<td class="small">PRJNA294605|PRJNA294605_18</td><td class="num">5</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_18</td><td class="num">5</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Klebsiella</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257422">SRR6257422</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257422">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257422">SRR6257422</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257422">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257422">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">17</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>yes</td><td>male</td>
-<td class="small">PRJNA294605|PRJNA294605_18</td><td class="num">6</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_18</td><td class="num">6</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Klebsiella</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257454">SRR6257454</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257454">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257454">SRR6257454</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257454">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257454">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">18</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>yes</td><td>male</td>
-<td class="small">PRJNA294605|PRJNA294605_18</td><td class="num">7</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_18</td><td class="num">7</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Klebsiella</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257455">SRR6257455</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257455">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257455">SRR6257455</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257455">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257455">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">19</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>yes</td><td>male</td>
-<td class="small">PRJNA294605|PRJNA294605_18</td><td class="num">8</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_18</td><td class="num">8</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Klebsiella</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257456">SRR6257456</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257456">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257456">SRR6257456</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257456">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257456">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">20</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>yes</td><td>male</td>
-<td class="small">PRJNA294605|PRJNA294605_18</td><td class="num">9</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_18</td><td class="num">9</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Enterococcus</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257457">SRR6257457</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257457">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257457">SRR6257457</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257457">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257457">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">24</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>yes</td><td>male</td>
-<td class="small">PRJNA294605|PRJNA294605_18</td><td class="num">10</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_18</td><td class="num">10</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Klebsiella</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257458">SRR6257458</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257458">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257458">SRR6257458</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257458">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257458">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">37</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>yes</td><td>male</td>
-<td class="small">PRJNA294605|PRJNA294605_18</td><td class="num">11</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_18</td><td class="num">11</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Klebsiella</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SAMN04161032">SAMN04161032</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMN04161032">ENA</a></td>
-<td class="num"></td>
-<td>c_section</td><td></td><td>preterm</td><td></td><td>male</td>
-<td class="small">PRJNA294605|PRJNA294605_18</td><td class="num"></td><td>infant</td><td class="num">12.0</td>
-</tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR3546779">SRR3546779</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR3546779">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR3546779">SRR3546779</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR3546779">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR3546779">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small">PRJNA294605|PRJNA294605_18</td><td class="num"></td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_18</td><td class="num"></td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Klebsiella</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257459">SRR6257459</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257459">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257459">SRR6257459</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257459">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257459">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">10</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>yes</td><td>female</td>
-<td class="small">PRJNA294605|PRJNA294605_19</td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_19</td><td class="num">1</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Enterobacter</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257460">SRR6257460</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257460">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257460">SRR6257460</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257460">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257460">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">11</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>yes</td><td>female</td>
-<td class="small">PRJNA294605|PRJNA294605_19</td><td class="num">2</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_19</td><td class="num">2</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Enterococcus_B</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257461">SRR6257461</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257461">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257461">SRR6257461</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257461">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257461">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">12</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>yes</td><td>female</td>
-<td class="small">PRJNA294605|PRJNA294605_19</td><td class="num">3</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_19</td><td class="num">3</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Enterococcus_B</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257452">SRR6257452</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257452">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257452">SRR6257452</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257452">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257452">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">13</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>yes</td><td>female</td>
-<td class="small">PRJNA294605|PRJNA294605_19</td><td class="num">4</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_19</td><td class="num">4</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Escherichia</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257453">SRR6257453</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257453">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257453">SRR6257453</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257453">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257453">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">14</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>yes</td><td>female</td>
-<td class="small">PRJNA294605|PRJNA294605_19</td><td class="num">5</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_19</td><td class="num">5</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Enterobacter</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257506">SRR6257506</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257506">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257506">SRR6257506</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257506">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257506">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">15</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>yes</td><td>female</td>
-<td class="small">PRJNA294605|PRJNA294605_19</td><td class="num">6</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_19</td><td class="num">6</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Enterobacter</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257505">SRR6257505</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257505">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257505">SRR6257505</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257505">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257505">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">16</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>yes</td><td>female</td>
-<td class="small">PRJNA294605|PRJNA294605_19</td><td class="num">7</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_19</td><td class="num">7</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Enterobacter</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257504">SRR6257504</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257504">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257504">SRR6257504</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257504">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257504">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">17</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>yes</td><td>female</td>
-<td class="small">PRJNA294605|PRJNA294605_19</td><td class="num">8</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_19</td><td class="num">8</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Enterobacter</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257503">SRR6257503</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257503">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257503">SRR6257503</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257503">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257503">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">18</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>yes</td><td>female</td>
-<td class="small">PRJNA294605|PRJNA294605_19</td><td class="num">9</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_19</td><td class="num">9</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Enterobacter</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257502">SRR6257502</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257502">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257502">SRR6257502</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257502">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257502">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">19</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>yes</td><td>female</td>
-<td class="small">PRJNA294605|PRJNA294605_19</td><td class="num">10</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_19</td><td class="num">10</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Enterobacter</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257501">SRR6257501</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257501">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257501">SRR6257501</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257501">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257501">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">20</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>yes</td><td>female</td>
-<td class="small">PRJNA294605|PRJNA294605_19</td><td class="num">11</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_19</td><td class="num">11</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Enterobacter</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257500">SRR6257500</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257500">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257500">SRR6257500</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257500">ENA run</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">21</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>yes</td><td>female</td>
-<td class="small">PRJNA294605|PRJNA294605_19</td><td class="num">12</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_19</td><td class="num">12</td><td>infant</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257499">SRR6257499</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257499">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257499">SRR6257499</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257499">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257499">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">22</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>yes</td><td>female</td>
-<td class="small">PRJNA294605|PRJNA294605_19</td><td class="num">13</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_19</td><td class="num">13</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Enterobacter</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257508">SRR6257508</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257508">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257508">SRR6257508</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257508">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257508">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">23</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>yes</td><td>female</td>
-<td class="small">PRJNA294605|PRJNA294605_19</td><td class="num">14</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_19</td><td class="num">14</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Enterobacter</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257507">SRR6257507</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257507">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257507">SRR6257507</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257507">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257507">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">24</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>yes</td><td>female</td>
-<td class="small">PRJNA294605|PRJNA294605_19</td><td class="num">15</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_19</td><td class="num">15</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Enterococcus</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257481">SRR6257481</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257481">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257481">SRR6257481</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257481">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257481">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">26</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>yes</td><td>female</td>
-<td class="small">PRJNA294605|PRJNA294605_19</td><td class="num">16</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_19</td><td class="num">16</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Enterococcus</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257482">SRR6257482</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257482">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257482">SRR6257482</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257482">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257482">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">27</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>yes</td><td>female</td>
-<td class="small">PRJNA294605|PRJNA294605_19</td><td class="num">17</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_19</td><td class="num">17</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Enterococcus</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257483">SRR6257483</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257483">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257483">SRR6257483</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257483">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257483">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">31</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>yes</td><td>female</td>
-<td class="small">PRJNA294605|PRJNA294605_19</td><td class="num">18</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_19</td><td class="num">18</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Enterobacter</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257484">SRR6257484</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257484">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257484">SRR6257484</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257484">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257484">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">38</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>yes</td><td>female</td>
-<td class="small">PRJNA294605|PRJNA294605_19</td><td class="num">19</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_19</td><td class="num">19</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Klebsiella</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257485">SRR6257485</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257485">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257485">SRR6257485</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257485">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257485">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">49</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>yes</td><td>female</td>
-<td class="small">PRJNA294605|PRJNA294605_19</td><td class="num">20</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_19</td><td class="num">20</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Klebsiella</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257486">SRR6257486</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257486">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257486">SRR6257486</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257486">ENA run</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">56</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>yes</td><td>female</td>
-<td class="small">PRJNA294605|PRJNA294605_19</td><td class="num">21</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_19</td><td class="num">21</td><td>infant</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257487">SRR6257487</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257487">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257487">SRR6257487</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257487">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257487">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">57</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>yes</td><td>female</td>
-<td class="small">PRJNA294605|PRJNA294605_19</td><td class="num">22</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_19</td><td class="num">22</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Enterobacter</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SAMN04161033">SAMN04161033</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMN04161033">ENA</a></td>
-<td class="num"></td>
-<td>c_section</td><td></td><td>preterm</td><td></td><td>female</td>
-<td class="small">PRJNA294605|PRJNA294605_19</td><td class="num"></td><td>infant</td><td class="num">23.0</td>
-</tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR3546780">SRR3546780</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR3546780">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR3546780">SRR3546780</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR3546780">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR3546780">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small">PRJNA294605|PRJNA294605_19</td><td class="num"></td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_19</td><td class="num"></td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Enterobacter</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257488">SRR6257488</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257488">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257488">SRR6257488</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257488">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257488">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">12</td>
 <td>c_section</td><td>exclusive_breast</td><td>preterm</td><td>yes</td><td>female</td>
-<td class="small">PRJNA294605|PRJNA294605_21</td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_21</td><td class="num">1</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Haemophilus_D</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257479">SRR6257479</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257479">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257479">SRR6257479</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257479">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257479">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">13</td>
 <td>c_section</td><td>exclusive_breast</td><td>preterm</td><td>yes</td><td>female</td>
-<td class="small">PRJNA294605|PRJNA294605_21</td><td class="num">2</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_21</td><td class="num">2</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Haemophilus_D</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257480">SRR6257480</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257480">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257480">SRR6257480</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257480">ENA run</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">15</td>
 <td>c_section</td><td>exclusive_breast</td><td>preterm</td><td>yes</td><td>female</td>
-<td class="small">PRJNA294605|PRJNA294605_21</td><td class="num">3</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_21</td><td class="num">3</td><td>infant</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257403">SRR6257403</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257403">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257403">SRR6257403</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257403">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257403">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">16</td>
 <td>c_section</td><td>exclusive_breast</td><td>preterm</td><td>yes</td><td>female</td>
-<td class="small">PRJNA294605|PRJNA294605_21</td><td class="num">4</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_21</td><td class="num">4</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Klebsiella</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257402">SRR6257402</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257402">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257402">SRR6257402</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257402">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257402">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">17</td>
 <td>c_section</td><td>exclusive_breast</td><td>preterm</td><td>yes</td><td>female</td>
-<td class="small">PRJNA294605|PRJNA294605_21</td><td class="num">5</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_21</td><td class="num">5</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Klebsiella</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257405">SRR6257405</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257405">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257405">SRR6257405</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257405">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257405">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">18</td>
 <td>c_section</td><td>exclusive_breast</td><td>preterm</td><td>yes</td><td>female</td>
-<td class="small">PRJNA294605|PRJNA294605_21</td><td class="num">6</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_21</td><td class="num">6</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Klebsiella</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257404">SRR6257404</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257404">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257404">SRR6257404</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257404">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257404">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">19</td>
 <td>c_section</td><td>exclusive_breast</td><td>preterm</td><td>yes</td><td>female</td>
-<td class="small">PRJNA294605|PRJNA294605_21</td><td class="num">7</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_21</td><td class="num">7</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Klebsiella</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257407">SRR6257407</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257407">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257407">SRR6257407</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257407">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257407">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">21</td>
 <td>c_section</td><td>exclusive_breast</td><td>preterm</td><td>yes</td><td>female</td>
-<td class="small">PRJNA294605|PRJNA294605_21</td><td class="num">8</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_21</td><td class="num">8</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Klebsiella</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257406">SRR6257406</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257406">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257406">SRR6257406</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257406">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257406">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">22</td>
 <td>c_section</td><td>exclusive_breast</td><td>preterm</td><td>yes</td><td>female</td>
-<td class="small">PRJNA294605|PRJNA294605_21</td><td class="num">9</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_21</td><td class="num">9</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Klebsiella</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257409">SRR6257409</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257409">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257409">SRR6257409</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257409">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257409">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">23</td>
 <td>c_section</td><td>exclusive_breast</td><td>preterm</td><td>yes</td><td>female</td>
-<td class="small">PRJNA294605|PRJNA294605_21</td><td class="num">10</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_21</td><td class="num">10</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Klebsiella</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257408">SRR6257408</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257408">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257408">SRR6257408</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257408">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257408">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">24</td>
 <td>c_section</td><td>exclusive_breast</td><td>preterm</td><td>yes</td><td>female</td>
-<td class="small">PRJNA294605|PRJNA294605_21</td><td class="num">11</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_21</td><td class="num">11</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Klebsiella</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257411">SRR6257411</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257411">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257411">SRR6257411</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257411">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257411">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">26</td>
 <td>c_section</td><td>exclusive_breast</td><td>preterm</td><td>yes</td><td>female</td>
-<td class="small">PRJNA294605|PRJNA294605_21</td><td class="num">12</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_21</td><td class="num">12</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Klebsiella</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257410">SRR6257410</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257410">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257410">SRR6257410</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257410">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257410">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">27</td>
 <td>c_section</td><td>exclusive_breast</td><td>preterm</td><td>yes</td><td>female</td>
-<td class="small">PRJNA294605|PRJNA294605_21</td><td class="num">13</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_21</td><td class="num">13</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Klebsiella</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257374">SRR6257374</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257374">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257374">SRR6257374</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257374">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257374">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">28</td>
 <td>c_section</td><td>exclusive_breast</td><td>preterm</td><td>yes</td><td>female</td>
-<td class="small">PRJNA294605|PRJNA294605_21</td><td class="num">14</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_21</td><td class="num">14</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Klebsiella</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257375">SRR6257375</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257375">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257375">SRR6257375</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257375">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257375">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">30</td>
 <td>c_section</td><td>exclusive_breast</td><td>preterm</td><td>yes</td><td>female</td>
-<td class="small">PRJNA294605|PRJNA294605_21</td><td class="num">15</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_21</td><td class="num">15</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Enterobacter</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SAMN04161034">SAMN04161034</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMN04161034">ENA</a></td>
-<td class="num"></td>
-<td>c_section</td><td></td><td>preterm</td><td></td><td>female</td>
-<td class="small">PRJNA294605|PRJNA294605_21</td><td class="num"></td><td>infant</td><td class="num">16.0</td>
-</tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR3546781">SRR3546781</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR3546781">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR3546781">SRR3546781</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR3546781">ENA run</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small">PRJNA294605|PRJNA294605_21</td><td class="num"></td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_21</td><td class="num"></td><td>infant</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257372">SRR6257372</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257372">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257372">SRR6257372</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257372">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257372">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">7</td>
 <td>vaginal</td><td>exclusive_breast</td><td>preterm</td><td>yes</td><td>female</td>
-<td class="small">PRJNA294605|PRJNA294605_23</td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_23</td><td class="num">1</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>unassigned_at_genus</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257373">SRR6257373</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257373">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257373">SRR6257373</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257373">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257373">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">9</td>
 <td>vaginal</td><td>exclusive_breast</td><td>preterm</td><td>yes</td><td>female</td>
-<td class="small">PRJNA294605|PRJNA294605_23</td><td class="num">2</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_23</td><td class="num">2</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Klebsiella</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257378">SRR6257378</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257378">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257378">SRR6257378</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257378">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257378">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">13</td>
 <td>vaginal</td><td>exclusive_breast</td><td>preterm</td><td>yes</td><td>female</td>
-<td class="small">PRJNA294605|PRJNA294605_23</td><td class="num">3</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_23</td><td class="num">3</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Klebsiella</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257379">SRR6257379</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257379">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257379">SRR6257379</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257379">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257379">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">14</td>
 <td>vaginal</td><td>exclusive_breast</td><td>preterm</td><td>yes</td><td>female</td>
-<td class="small">PRJNA294605|PRJNA294605_23</td><td class="num">4</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_23</td><td class="num">4</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Klebsiella</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257376">SRR6257376</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257376">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257376">SRR6257376</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257376">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257376">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">15</td>
 <td>vaginal</td><td>exclusive_breast</td><td>preterm</td><td>yes</td><td>female</td>
-<td class="small">PRJNA294605|PRJNA294605_23</td><td class="num">5</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_23</td><td class="num">5</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Klebsiella</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257377">SRR6257377</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257377">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257377">SRR6257377</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257377">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257377">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">17</td>
 <td>vaginal</td><td>exclusive_breast</td><td>preterm</td><td>yes</td><td>female</td>
-<td class="small">PRJNA294605|PRJNA294605_23</td><td class="num">6</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_23</td><td class="num">6</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Klebsiella</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257380">SRR6257380</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257380">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257380">SRR6257380</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257380">ENA run</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">18</td>
 <td>vaginal</td><td>exclusive_breast</td><td>preterm</td><td>yes</td><td>female</td>
-<td class="small">PRJNA294605|PRJNA294605_23</td><td class="num">7</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_23</td><td class="num">7</td><td>infant</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257381">SRR6257381</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257381">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257381">SRR6257381</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257381">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257381">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">19</td>
 <td>vaginal</td><td>exclusive_breast</td><td>preterm</td><td>yes</td><td>female</td>
-<td class="small">PRJNA294605|PRJNA294605_23</td><td class="num">8</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_23</td><td class="num">8</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Klebsiella</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257465">SRR6257465</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257465">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257465">SRR6257465</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257465">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257465">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">20</td>
 <td>vaginal</td><td>exclusive_breast</td><td>preterm</td><td>yes</td><td>female</td>
-<td class="small">PRJNA294605|PRJNA294605_23</td><td class="num">9</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_23</td><td class="num">9</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Klebsiella</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257464">SRR6257464</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257464">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257464">SRR6257464</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257464">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257464">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">21</td>
 <td>vaginal</td><td>exclusive_breast</td><td>preterm</td><td>yes</td><td>female</td>
-<td class="small">PRJNA294605|PRJNA294605_23</td><td class="num">10</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_23</td><td class="num">10</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Klebsiella</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257463">SRR6257463</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257463">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257463">SRR6257463</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257463">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257463">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">29</td>
 <td>vaginal</td><td>exclusive_breast</td><td>preterm</td><td>yes</td><td>female</td>
-<td class="small">PRJNA294605|PRJNA294605_23</td><td class="num">11</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_23</td><td class="num">11</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Bifidobacterium</i></td><td class="num">42%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257462">SRR6257462</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257462">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257462">SRR6257462</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257462">ENA run</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">34</td>
 <td>vaginal</td><td>exclusive_breast</td><td>preterm</td><td>yes</td><td>female</td>
-<td class="small">PRJNA294605|PRJNA294605_23</td><td class="num">12</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_23</td><td class="num">12</td><td>infant</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257468">SRR6257468</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257468">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257468">SRR6257468</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257468">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257468">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">42</td>
 <td>vaginal</td><td>exclusive_breast</td><td>preterm</td><td>yes</td><td>female</td>
-<td class="small">PRJNA294605|PRJNA294605_23</td><td class="num">13</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_23</td><td class="num">13</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Bifidobacterium</i></td><td class="num">47%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257467">SRR6257467</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257467">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257467">SRR6257467</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257467">ENA run</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">50</td>
 <td>vaginal</td><td>exclusive_breast</td><td>preterm</td><td>yes</td><td>female</td>
-<td class="small">PRJNA294605|PRJNA294605_23</td><td class="num">14</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_23</td><td class="num">14</td><td>infant</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257466">SRR6257466</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257466">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257466">SRR6257466</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257466">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257466">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">55</td>
 <td>vaginal</td><td>exclusive_breast</td><td>preterm</td><td>yes</td><td>female</td>
-<td class="small">PRJNA294605|PRJNA294605_23</td><td class="num">15</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_23</td><td class="num">15</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Bacteroides</i></td><td class="num">25%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SAMN04161035">SAMN04161035</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMN04161035">ENA</a></td>
-<td class="num"></td>
-<td>vaginal</td><td></td><td>preterm</td><td></td><td>female</td>
-<td class="small">PRJNA294605|PRJNA294605_23</td><td class="num"></td><td>infant</td><td class="num">16.0</td>
-</tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR3546782">SRR3546782</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR3546782">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR3546782">SRR3546782</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR3546782">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR3546782">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small">PRJNA294605|PRJNA294605_23</td><td class="num"></td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_23</td><td class="num"></td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Klebsiella</i></td><td class="num">16%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257386">SRR6257386</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257386">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257386">SRR6257386</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257386">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257386">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">11</td>
 <td>c_section</td><td>exclusive_breast</td><td>preterm</td><td>yes</td><td>female</td>
-<td class="small">PRJNA294605|PRJNA294605_3</td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_3</td><td class="num">1</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Enterococcus</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257387">SRR6257387</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257387">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257387">SRR6257387</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257387">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257387">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">13</td>
 <td>c_section</td><td>exclusive_breast</td><td>preterm</td><td>yes</td><td>female</td>
-<td class="small">PRJNA294605|PRJNA294605_3</td><td class="num">2</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_3</td><td class="num">2</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Enterococcus</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257388">SRR6257388</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257388">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257388">SRR6257388</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257388">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257388">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">15</td>
 <td>c_section</td><td>exclusive_breast</td><td>preterm</td><td>yes</td><td>female</td>
-<td class="small">PRJNA294605|PRJNA294605_3</td><td class="num">3</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_3</td><td class="num">3</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Enterococcus</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257389">SRR6257389</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257389">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257389">SRR6257389</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257389">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257389">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">17</td>
 <td>c_section</td><td>exclusive_breast</td><td>preterm</td><td>yes</td><td>female</td>
-<td class="small">PRJNA294605|PRJNA294605_3</td><td class="num">4</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_3</td><td class="num">4</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Enterococcus</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257382">SRR6257382</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257382">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257382">SRR6257382</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257382">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257382">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">18</td>
 <td>c_section</td><td>exclusive_breast</td><td>preterm</td><td>yes</td><td>female</td>
-<td class="small">PRJNA294605|PRJNA294605_3</td><td class="num">5</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_3</td><td class="num">5</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Mixta</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257383">SRR6257383</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257383">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257383">SRR6257383</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257383">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257383">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">19</td>
 <td>c_section</td><td>exclusive_breast</td><td>preterm</td><td>yes</td><td>female</td>
-<td class="small">PRJNA294605|PRJNA294605_3</td><td class="num">6</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_3</td><td class="num">6</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Enterococcus</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257384">SRR6257384</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257384">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257384">SRR6257384</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257384">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257384">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">21</td>
 <td>c_section</td><td>exclusive_breast</td><td>preterm</td><td>yes</td><td>female</td>
-<td class="small">PRJNA294605|PRJNA294605_3</td><td class="num">7</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_3</td><td class="num">7</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Veillonella</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257385">SRR6257385</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257385">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257385">SRR6257385</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257385">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257385">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">22</td>
 <td>c_section</td><td>exclusive_breast</td><td>preterm</td><td>yes</td><td>female</td>
-<td class="small">PRJNA294605|PRJNA294605_3</td><td class="num">8</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_3</td><td class="num">8</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Veillonella</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257390">SRR6257390</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257390">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257390">SRR6257390</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257390">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257390">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">23</td>
 <td>c_section</td><td>exclusive_breast</td><td>preterm</td><td>yes</td><td>female</td>
-<td class="small">PRJNA294605|PRJNA294605_3</td><td class="num">9</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_3</td><td class="num">9</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Veillonella</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257391">SRR6257391</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257391">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257391">SRR6257391</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257391">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257391">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">25</td>
 <td>c_section</td><td>exclusive_breast</td><td>preterm</td><td>yes</td><td>female</td>
-<td class="small">PRJNA294605|PRJNA294605_3</td><td class="num">10</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_3</td><td class="num">10</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Veillonella</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257442">SRR6257442</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257442">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257442">SRR6257442</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257442">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257442">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">26</td>
 <td>c_section</td><td>exclusive_breast</td><td>preterm</td><td>yes</td><td>female</td>
-<td class="small">PRJNA294605|PRJNA294605_3</td><td class="num">11</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_3</td><td class="num">11</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Escherichia</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257443">SRR6257443</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257443">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257443">SRR6257443</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257443">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257443">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">27</td>
 <td>c_section</td><td>exclusive_breast</td><td>preterm</td><td>yes</td><td>female</td>
-<td class="small">PRJNA294605|PRJNA294605_3</td><td class="num">12</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_3</td><td class="num">12</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Escherichia</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257444">SRR6257444</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257444">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257444">SRR6257444</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257444">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257444">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">28</td>
 <td>c_section</td><td>exclusive_breast</td><td>preterm</td><td>yes</td><td>female</td>
-<td class="small">PRJNA294605|PRJNA294605_3</td><td class="num">13</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_3</td><td class="num">13</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Escherichia</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257445">SRR6257445</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257445">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257445">SRR6257445</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257445">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257445">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">39</td>
 <td>c_section</td><td>exclusive_breast</td><td>preterm</td><td>yes</td><td>female</td>
-<td class="small">PRJNA294605|PRJNA294605_3</td><td class="num">14</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_3</td><td class="num">14</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Varibaculum</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257446">SRR6257446</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257446">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257446">SRR6257446</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257446">ENA run</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">44</td>
 <td>c_section</td><td>exclusive_breast</td><td>preterm</td><td>yes</td><td>female</td>
-<td class="small">PRJNA294605|PRJNA294605_3</td><td class="num">15</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_3</td><td class="num">15</td><td>infant</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257447">SRR6257447</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257447">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257447">SRR6257447</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257447">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257447">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">52</td>
 <td>c_section</td><td>exclusive_breast</td><td>preterm</td><td>yes</td><td>female</td>
-<td class="small">PRJNA294605|PRJNA294605_3</td><td class="num">16</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_3</td><td class="num">16</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Veillonella</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SAMN04161025">SAMN04161025</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMN04161025">ENA</a></td>
-<td class="num"></td>
-<td>c_section</td><td></td><td>preterm</td><td></td><td>female</td>
-<td class="small">PRJNA294605|PRJNA294605_3</td><td class="num"></td><td>infant</td><td class="num">19.0</td>
-</tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR3466404">SRR3466404</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR3466404">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR3466404">SRR3466404</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR3466404">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR3466404">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small">PRJNA294605|PRJNA294605_3</td><td class="num"></td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_3</td><td class="num"></td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Veillonella</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257448">SRR6257448</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257448">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257448">SRR6257448</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257448">ENA run</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td>yes</td><td></td>
-<td class="small">PRJNA294605|PRJNA294605_3</td><td class="num"></td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_3</td><td class="num"></td><td>infant</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257449">SRR6257449</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257449">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257449">SRR6257449</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257449">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257449">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td>yes</td><td></td>
-<td class="small">PRJNA294605|PRJNA294605_3</td><td class="num"></td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_3</td><td class="num"></td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Escherichia</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257450">SRR6257450</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257450">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257450">SRR6257450</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257450">ENA run</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">8</td>
 <td>c_section</td><td>formula</td><td>preterm</td><td>yes</td><td>female</td>
-<td class="small">PRJNA294605|PRJNA294605_4</td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_4</td><td class="num">1</td><td>infant</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257451">SRR6257451</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257451">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257451">SRR6257451</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257451">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257451">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">9</td>
 <td>c_section</td><td>formula</td><td>preterm</td><td>yes</td><td>female</td>
-<td class="small">PRJNA294605|PRJNA294605_4</td><td class="num">2</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_4</td><td class="num">2</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Pseudomonas</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257476">SRR6257476</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257476">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257476">SRR6257476</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257476">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257476">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">10</td>
 <td>c_section</td><td>formula</td><td>preterm</td><td>yes</td><td>female</td>
-<td class="small">PRJNA294605|PRJNA294605_4</td><td class="num">3</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_4</td><td class="num">3</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Haemophilus_D</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257475">SRR6257475</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257475">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257475">SRR6257475</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257475">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257475">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">12</td>
 <td>c_section</td><td>formula</td><td>preterm</td><td>yes</td><td>female</td>
-<td class="small">PRJNA294605|PRJNA294605_4</td><td class="num">4</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_4</td><td class="num">4</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Veillonella</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257478">SRR6257478</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257478">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257478">SRR6257478</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257478">ENA run</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">13</td>
 <td>c_section</td><td>formula</td><td>preterm</td><td>yes</td><td>female</td>
-<td class="small">PRJNA294605|PRJNA294605_4</td><td class="num">5</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_4</td><td class="num">5</td><td>infant</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257477">SRR6257477</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257477">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257477">SRR6257477</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257477">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257477">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">14</td>
 <td>c_section</td><td>formula</td><td>preterm</td><td>yes</td><td>female</td>
-<td class="small">PRJNA294605|PRJNA294605_4</td><td class="num">6</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_4</td><td class="num">6</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Veillonella</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257472">SRR6257472</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257472">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257472">SRR6257472</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257472">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257472">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">15</td>
 <td>c_section</td><td>formula</td><td>preterm</td><td>yes</td><td>female</td>
-<td class="small">PRJNA294605|PRJNA294605_4</td><td class="num">7</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_4</td><td class="num">7</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Veillonella</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257471">SRR6257471</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257471">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257471">SRR6257471</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257471">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257471">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">16</td>
 <td>c_section</td><td>formula</td><td>preterm</td><td>yes</td><td>female</td>
-<td class="small">PRJNA294605|PRJNA294605_4</td><td class="num">8</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_4</td><td class="num">8</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Veillonella</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257474">SRR6257474</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257474">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257474">SRR6257474</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257474">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257474">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">18</td>
 <td>c_section</td><td>formula</td><td>preterm</td><td>yes</td><td>female</td>
-<td class="small">PRJNA294605|PRJNA294605_4</td><td class="num">9</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_4</td><td class="num">9</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Veillonella</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257473">SRR6257473</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257473">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257473">SRR6257473</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257473">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257473">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">21</td>
 <td>c_section</td><td>formula</td><td>preterm</td><td>yes</td><td>female</td>
-<td class="small">PRJNA294605|PRJNA294605_4</td><td class="num">10</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_4</td><td class="num">10</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Gleimia</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257470">SRR6257470</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257470">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257470">SRR6257470</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257470">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257470">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">26</td>
 <td>c_section</td><td>formula</td><td>preterm</td><td>yes</td><td>female</td>
-<td class="small">PRJNA294605|PRJNA294605_4</td><td class="num">11</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_4</td><td class="num">11</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Veillonella</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SAMN04161026">SAMN04161026</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMN04161026">ENA</a></td>
-<td class="num"></td>
-<td>c_section</td><td></td><td>preterm</td><td></td><td>female</td>
-<td class="small">PRJNA294605|PRJNA294605_4</td><td class="num"></td><td>infant</td><td class="num">12.0</td>
-</tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR3498907">SRR3498907</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR3498907">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR3498907">SRR3498907</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR3498907">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR3498907">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small">PRJNA294605|PRJNA294605_4</td><td class="num"></td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_4</td><td class="num"></td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Veillonella</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257469">SRR6257469</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257469">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257469">SRR6257469</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257469">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257469">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">7</td>
 <td>vaginal</td><td>formula</td><td>preterm</td><td>yes</td><td>female</td>
-<td class="small">PRJNA294605|PRJNA294605_8</td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_8</td><td class="num">1</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Escherichia</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257497">SRR6257497</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257497">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257497">SRR6257497</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257497">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257497">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">8</td>
 <td>vaginal</td><td>formula</td><td>preterm</td><td>yes</td><td>female</td>
-<td class="small">PRJNA294605|PRJNA294605_8</td><td class="num">2</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_8</td><td class="num">2</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Escherichia</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257498">SRR6257498</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257498">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257498">SRR6257498</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257498">ENA run</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">9</td>
 <td>vaginal</td><td>formula</td><td>preterm</td><td>yes</td><td>female</td>
-<td class="small">PRJNA294605|PRJNA294605_8</td><td class="num">3</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_8</td><td class="num">3</td><td>infant</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257495">SRR6257495</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257495">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257495">SRR6257495</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257495">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257495">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">10</td>
 <td>vaginal</td><td>formula</td><td>preterm</td><td>yes</td><td>female</td>
-<td class="small">PRJNA294605|PRJNA294605_8</td><td class="num">4</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_8</td><td class="num">4</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Escherichia</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257496">SRR6257496</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257496">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257496">SRR6257496</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257496">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257496">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">28</td>
 <td>vaginal</td><td>formula</td><td>preterm</td><td>yes</td><td>female</td>
-<td class="small">PRJNA294605|PRJNA294605_8</td><td class="num">5</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_8</td><td class="num">5</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Klebsiella</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257493">SRR6257493</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257493">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257493">SRR6257493</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257493">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257493">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">31</td>
 <td>vaginal</td><td>formula</td><td>preterm</td><td>yes</td><td>female</td>
-<td class="small">PRJNA294605|PRJNA294605_8</td><td class="num">6</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_8</td><td class="num">6</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Escherichia</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SAMN04161027">SAMN04161027</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMN04161027">ENA</a></td>
-<td class="num"></td>
-<td>vaginal</td><td></td><td>preterm</td><td></td><td>female</td>
-<td class="small">PRJNA294605|PRJNA294605_8</td><td class="num"></td><td>infant</td><td class="num">7.0</td>
-</tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR3498909">SRR3498909</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR3498909">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR3498909">SRR3498909</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR3498909">ENA run</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small">PRJNA294605|PRJNA294605_8</td><td class="num"></td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_8</td><td class="num"></td><td>infant</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257494">SRR6257494</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257494">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257494">SRR6257494</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257494">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257494">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">6</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>yes</td><td>male</td>
-<td class="small">PRJNA294605|PRJNA294605_9</td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_9</td><td class="num">1</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Streptococcus</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257491">SRR6257491</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257491">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257491">SRR6257491</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257491">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257491">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">7</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>yes</td><td>male</td>
-<td class="small">PRJNA294605|PRJNA294605_9</td><td class="num">2</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_9</td><td class="num">2</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Streptococcus</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257492">SRR6257492</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257492">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257492">SRR6257492</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257492">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257492">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">8</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>yes</td><td>male</td>
-<td class="small">PRJNA294605|PRJNA294605_9</td><td class="num">3</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_9</td><td class="num">3</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Streptococcus</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257489">SRR6257489</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257489">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257489">SRR6257489</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257489">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257489">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">9</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>yes</td><td>male</td>
-<td class="small">PRJNA294605|PRJNA294605_9</td><td class="num">4</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_9</td><td class="num">4</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Citrobacter</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257490">SRR6257490</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257490">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257490">SRR6257490</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257490">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257490">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">10</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>yes</td><td>male</td>
-<td class="small">PRJNA294605|PRJNA294605_9</td><td class="num">5</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_9</td><td class="num">5</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Klebsiella</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257514">SRR6257514</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257514">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257514">SRR6257514</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257514">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257514">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">11</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>yes</td><td>male</td>
-<td class="small">PRJNA294605|PRJNA294605_9</td><td class="num">6</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_9</td><td class="num">6</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Klebsiella</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257513">SRR6257513</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257513">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257513">SRR6257513</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257513">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257513">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">13</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>yes</td><td>male</td>
-<td class="small">PRJNA294605|PRJNA294605_9</td><td class="num">7</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_9</td><td class="num">7</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Citrobacter</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257512">SRR6257512</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257512">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257512">SRR6257512</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257512">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257512">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">14</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>yes</td><td>male</td>
-<td class="small">PRJNA294605|PRJNA294605_9</td><td class="num">8</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_9</td><td class="num">8</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Citrobacter</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257511">SRR6257511</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257511">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257511">SRR6257511</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257511">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257511">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">15</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>yes</td><td>male</td>
-<td class="small">PRJNA294605|PRJNA294605_9</td><td class="num">9</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_9</td><td class="num">9</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Citrobacter</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257518">SRR6257518</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257518">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257518">SRR6257518</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257518">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257518">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">16</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>yes</td><td>male</td>
-<td class="small">PRJNA294605|PRJNA294605_9</td><td class="num">10</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_9</td><td class="num">10</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Citrobacter</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257517">SRR6257517</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257517">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257517">SRR6257517</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257517">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257517">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">17</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>yes</td><td>male</td>
-<td class="small">PRJNA294605|PRJNA294605_9</td><td class="num">11</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_9</td><td class="num">11</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Klebsiella</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257516">SRR6257516</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257516">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257516">SRR6257516</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257516">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257516">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">19</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>yes</td><td>male</td>
-<td class="small">PRJNA294605|PRJNA294605_9</td><td class="num">12</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_9</td><td class="num">12</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Klebsiella</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257515">SRR6257515</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257515">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257515">SRR6257515</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257515">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257515">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">20</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>yes</td><td>male</td>
-<td class="small">PRJNA294605|PRJNA294605_9</td><td class="num">13</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_9</td><td class="num">13</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Klebsiella</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257510">SRR6257510</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257510">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257510">SRR6257510</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257510">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257510">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">21</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>yes</td><td>male</td>
-<td class="small">PRJNA294605|PRJNA294605_9</td><td class="num">14</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_9</td><td class="num">14</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Mediterraneibacter</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257509">SRR6257509</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257509">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257509">SRR6257509</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257509">ENA run</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">24</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>yes</td><td>male</td>
-<td class="small">PRJNA294605|PRJNA294605_9</td><td class="num">15</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_9</td><td class="num">15</td><td>infant</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257396">SRR6257396</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257396">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257396">SRR6257396</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257396">ENA run</a> · <a href="https://sandpiper.qut.edu.au/run/SRR6257396">Sandpiper</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">38</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>yes</td><td>male</td>
-<td class="small">PRJNA294605|PRJNA294605_9</td><td class="num">16</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_9</td><td class="num">16</td><td>infant</td><td class="num">1</td>
+<td class="small"><i>Veillonella</i></td><td class="num">0%</td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR6257397">SRR6257397</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257397">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR6257397">SRR6257397</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR6257397">ENA run</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">45</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>yes</td><td>male</td>
-<td class="small">PRJNA294605|PRJNA294605_9</td><td class="num">17</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_9</td><td class="num">17</td><td>infant</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SAMN04161028">SAMN04161028</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMN04161028">ENA</a></td>
-<td class="num"></td>
-<td>c_section</td><td></td><td>preterm</td><td></td><td>male</td>
-<td class="small">PRJNA294605|PRJNA294605_9</td><td class="num"></td><td>infant</td><td class="num">18.0</td>
-</tr><tr>
-<td class="mono"><a href="../samples/index.html?sample=SRR3506420">SRR3506420</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR3506420">ENA</a></td>
+<td class="mono"><a href="../samples/index.html?sample=SRR3506420">SRR3506420</a> <span class="tag" title="run-level sample unit">ENA run</span></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SRR3506420">ENA run</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num"></td>
 <td></td><td></td><td></td><td></td><td></td>
-<td class="small">PRJNA294605|PRJNA294605_9</td><td class="num"></td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJNA294605|PRJNA294605_9</td><td class="num"></td><td>infant</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr>
 </tbody></table>
 
 </main>
 <footer>
-<div><b>Infant Gut Shotgun-Metagenome Catalog</b> — data package v1 (built 2026-09-25). Curated tables are released under <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a>; archive metadata remains under INSDC terms.</div>
-<div>How to cite: <i>Infant Gut Shotgun-Metagenome Catalog v1, 2026.</i></div>
-<div>Caveats: every value carries a route (R1 archive attribute, R2 supplementary table, R3 paper text, R4 abstract/description) and a confidence; R3/R4 values are group-level statements applied to samples — see <a href="../fields/index.html">Fields</a> and <a href="../methods.html#limitations">Methods › Limitations</a>. Built with an LLM-assisted pipeline; treat individual values as evidence-linked claims, not ground truth.</div>
+<div><b>Infant Gut Shotgun-Metagenome Catalog</b> — package <span class="mono">1.2.1</span> · built 2026-09-26 · generator <span class="mono">nogit</span> · release <span class="mono">data-v1.2.1</span> (<a href="../data/VERSION.json">VERSION.json</a>, <a href="../docs/CHANGELOG.html">changelog</a>). Curated tables are released under <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a>; archive metadata remains under INSDC terms; community profiles from <a href="https://sandpiper.qut.edu.au/">Sandpiper</a> (Woodcroft et al. 2025, CC-BY).</div>
+<div>How to cite: <i>Infant Gut Shotgun-Metagenome Catalog, data package 1.2.1 (data-v1.2.1), 2026.</i></div>
+<div>Caveats: every value carries a route (R1 archive attribute, R2 supplementary table, R3 paper text, R4 abstract/description), a scope and a confidence tier (not a calibrated probability); R3/R4 values are group-level statements applied to samples — see <a href="../fields/index.html">Fields</a> and <a href="../methods.html#limitations">Methods › Limitations</a>. Built with an LLM-assisted pipeline; treat individual values as evidence-linked claims, not ground truth. Found an error? Every study, cohort and sample has a <b>Flag an issue</b> button that opens a prefilled GitHub issue.</div>
 </footer>
 
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-<script src="https://cdn.datatables.net/2.1.8/js/dataTables.min.js"></script>
+<script src="../static/vendor/jquery-3.7.1.min.js" integrity="sha384-1H217gwSVyLSIfaLxHbE7dRb3v4mYCKbpQvzx0cegeju1MVsGrX5xXxAvs/HgeFs" crossorigin="anonymous"></script>
+<script src="../static/vendor/dataTables-2.1.8.min.js" integrity="sha384-MgwUq0TVErv5Lkj/jIAgQpC+iUIqwhwXxJMfrZQVAOhr++1MR02yXH8aXdPc3fk0" crossorigin="anonymous"></script>
 
+<script>window.CATALOG={version:'1.2.1',release:'data-v1.2.1',issueRepo:'https://github.com/OlmLab/infant-gut-catalog/issues/new',issueTemplate:'catalog-finding.yml'};</script>
 <script src="../static/site.js"></script>
 
 <script>new DataTable('#samples',{pageLength:25,lengthMenu:[25,100,500],order:[]});</script>

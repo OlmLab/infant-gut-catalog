@@ -5,9 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>PRJEB52147 — The Association Between Milk Feedings in the Preterm Population, the Microbiome and Risk of Atopic Disease: Microbiome, Atopic Disease, and Prematurity (MAP Study) — Infant Gut Shotgun-Metagenome Catalog</title>
 <meta name="description" content="The Association Between Milk Feedings in the Preterm Population, the Microbiome and Risk of Atopic Disease: Microbiome, Atopic Disease, and Prematurity (MAP Study) — 90 samples, 90 runs; infant gut shotgun metagenome study in the catalog.">
+<meta name="catalog-release" content="data-v1.2.1">
+<link rel="canonical" href="https://olmlab.github.io/infant-gut-catalog/studies/PRJEB52147.html">
+<meta name="catalog-package-version" content="1.2.1">
+<meta name="catalog-build-date" content="2026-09-26">
 <link rel="stylesheet" href="../static/site.css">
 
-<link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.dataTables.min.css">
+<link rel="stylesheet" href="../static/vendor/dataTables.dataTables-2.1.8.min.css" integrity="sha384-bK2L0Q3Sn2fB8YZTIjKejpTUJXd8xNtKn4RcIm7KM3EX3orMlOI31hwtNH0iyky/" crossorigin="anonymous">
 
 
 </head>
@@ -18,6 +22,7 @@
 <a href="../cohorts/index.html" >Cohorts</a>
 <a href="../samples/index.html" >Sample explorer</a>
 <a href="../fields/index.html" >Fields</a>
+<a href="../authors/index.html" >Authors</a>
 <a href="../universe.html" >Universe</a>
 <a href="../methods.html" >Methods</a>
 <a href="../downloads.html" >Downloads</a>
@@ -27,10 +32,13 @@
 
 <h1><span class="mono">PRJEB52147</span></h1>
 <p class="lead">The Association Between Milk Feedings in the Preterm Population, the Microbiome and Risk of Atopic Disease: Microbiome, Atopic Disease, and Prematurity (MAP Study)</p>
+
 <div class="btns">
 <a class="btn sec" href="https://www.ebi.ac.uk/ena/browser/view/PRJEB52147">ENA browser</a>
 <a class="btn sec" href="https://www.ncbi.nlm.nih.gov/bioproject/PRJEB52147">NCBI BioProject</a>
 <a class="btn" href="../samples/index.html?study=PRJEB52147">Open in sample explorer</a>
+<a class="btn flag" href="https://github.com/OlmLab/infant-gut-catalog/issues/new?template=catalog-finding.yml&amp;labels=finding&amp;title=%5Bfinding%5D%20PRJEB52147%3A%20verdict&amp;action=study_verdict&amp;current_state=verdict%3Dinclude%20%C2%B7%20status%3Dincluded%20%C2%B7%20stage%3Dsonnet_replicates_n3_agree1.00%20%C2%B7%20confidence%3D0.90%20%C2%B7%20evidence%3A%20%E2%80%9CMilk%20Feedings%20in%20the%20Preterm%20Population%E2%80%9D%20%28study.title%29%3B%20%E2%80%9CUBERON%3Ameconium%E2%80%9D%20%28sample.attr.host_body_site%29%3B%20%E2%80%9Cpredict%20atopy...%20by%202%20years%20of%20age%E2%80%9D%20%28study.description%29&amp;evidence_source=external_curation.human&amp;finding_type=wrong_verdict&amp;identifier=PRJEB52147&amp;release_tag=data-v1.2.1%20%C2%B7%20studies%2FPRJEB52147.html" title="Opens a prefilled GitHub issue (template catalog-finding.yml) — needs a GitHub account">Flag an issue</a>
+<a class="btn confirm" href="https://github.com/OlmLab/infant-gut-catalog/issues/new?template=catalog-finding.yml&amp;labels=finding&amp;title=%5Bconfirmed%5D%20PRJEB52147%3A%20verdict&amp;action=confirm&amp;current_state=verdict%3Dinclude%20%C2%B7%20status%3Dincluded%20%C2%B7%20stage%3Dsonnet_replicates_n3_agree1.00%20%C2%B7%20confidence%3D0.90&amp;evidence_source=external_curation.human&amp;finding_type=confirmed_correct&amp;identifier=PRJEB52147&amp;proposed_change=none%20%E2%80%94%20confirmed%20correct&amp;release_tag=data-v1.2.1%20%C2%B7%20studies%2FPRJEB52147.html" title="Record that you checked this study and its verdict is correct">Confirm correct</a>
 </div>
 
 <div class="grid2">
@@ -38,30 +46,39 @@
 <h2>Summary</h2>
 <table class="tbl kv">
 <tr><td>Samples / runs</td><td>90 / 90</td></tr>
-<tr><td>Infant-scope samples</td><td>54</td></tr>
+
+<tr><td>Catalog scope</td><td><b>54</b> <span class="small">(age-scope infant AND body_site_class primary/unknown — the headline denominator)</span></td></tr>
+<tr><td>Age scope</td><td><b>54</b> infant-scope by age evidence (54 per-sample/subject evidence) · non_infant_role 36</td></tr>
+<tr><td>Body-site infant-scope</td><td>54 <span class="small">(body_site_class primary or unknown)</span></td></tr>
 <tr><td>First public</td><td>2022-04-11</td></tr>
 <tr><td>Cohort</td><td><a href="../cohorts/COH0041.html">MAP</a> <span class="small mono">COH0041</span></td></tr>
 <tr><td>Instrument (top)</td><td>Illumina NovaSeq 6000</td></tr>
 <tr><td>Median Gbp / run</td><td>0.37</td></tr>
 <tr><td>Country (archive top value)</td><td>USA:CA:San Diego</td></tr>
 <tr><td>Controlled access</td><td>no</td></tr>
+<tr><td>Sandpiper profiles</td><td>none profiled</td></tr>
 </table>
 
 <h2>Subjects</h2>
 <table class="tbl kv">
-<tr><td>Unique infants (estimate)</td><td>18</td></tr>
+<tr><td>Unique infants</td><td>18 <span class="small">(source: subject_ids)</span></td></tr>
 <tr><td>Longitudinal</td><td>yes (max 3 timepoints per subject)</td></tr>
-<tr><td>Mother samples</td><td>18</td></tr>
-<tr><td>Roles</td><td>infant 54 · mother 36</td></tr>
+<tr><td>Mother samples</td><td>36</td></tr>
+<tr><td>Roles (as evidenced; unknown when unevidenced)</td><td>infant 54 · mother 36</td></tr>
 <tr><td>Body-site classes</td><td>primary 54 · linked 36</td></tr>
 </table>
+
+<h2>Authors and organisations</h2>
+<p><a href="../authors/index.html?q=Bai-Tong%20SS">Bai-Tong SS</a> <span class="tag">first</span>, <a href="../authors/index.html?q=Thoemmes%20MS">Thoemmes MS</a>, <a href="../authors/index.html?q=Weldon%20KC">Weldon KC</a>, <a href="../authors/index.html?q=Motazavi%20D">Motazavi D</a>, <a href="../authors/index.html?q=Kitsen%20J">Kitsen J</a>, <a href="../authors/index.html?q=Hansen%20S">Hansen S</a>, <a href="../authors/index.html?q=Furst%20A">Furst A</a>, <a href="../authors/index.html?q=Geng%20B">Geng B</a>, <a href="../authors/index.html?q=Song%20SJ">Song SJ</a>, <a href="../authors/index.html?q=Gilbert%20JA">Gilbert JA</a>, <a href="../authors/index.html?q=Bode%20L">Bode L</a>, <a href="../authors/index.html?q=Dorrestein%20PC">Dorrestein PC</a>, <a href="../authors/index.html?q=Knight%20R">Knight R</a>, <a href="../authors/index.html?q=Leibel%20SA">Leibel SA</a>, <a href="../authors/index.html?q=Leibel%20SL">Leibel SL</a> <span class="tag">last</span></p>
+<p class="small">Organisations: University of California San Diego Microbiome Initiative</p>
+<p class="small">Names are string-matched from Europe PMC author strings and NCBI BioProject records; the same person may appear under several initial variants. See <a href="../docs/AUTHORS_REPORT.html">Authors report</a>.</p>
 </div>
 <div>
 <h2>Inclusion evidence</h2>
 <table class="tbl kv">
 <tr><td>Verdict</td><td><span class="tag included">include</span> → included</td></tr>
 <tr><td>Decision stage</td><td>sonnet_replicates_n3_agree1.00</td></tr>
-<tr><td>Confidence</td><td>0.90</td></tr>
+<tr><td>Confidence (tier)</td><td>0.90</td></tr>
 <tr><td>Body-site call</td><td>—</td></tr>
 
 </table>
@@ -71,8 +88,18 @@
 <h2>Recoverability tiers (predicted before extraction)</h2>
 <p class="small">R1 archive attribute · R2 supplementary table · R3 paper text · R4 abstract · R0 none</p>
 <p><span class="tag R3">age: R3</span> <span class="tag R3">delivery: R3</span> <span class="tag R3">feeding: R3</span> <span class="tag R3">preterm: R3</span> <span class="tag R3">antibiotics: R3</span> <span class="tag R3">probiotic: R3</span> </p>
+
+<h2>Decision history (6 rows)</h2>
+<details><summary class="small">Every triage stage that judged this study, in stage order (screen → tier-1 rubric → confirmation → adjudication → growth waves → re-judgement → human review → final), from <span class="mono">study_verdict_history.parquet</span>. A haiku screen pass is a candidate forward, not a verdict. 1 consolidated bookkeeping rows that repeat the deciding stage are folded into the single <b>final</b> line.</summary>
+<table class="tbl compact small"><thead><tr><th>#</th><th>Stage</th><th>Level</th><th>Verdict</th><th class="num">Conf.</th><th>Model</th><th>Reason / quotes</th><th>Source table</th></tr></thead><tbody>
+<tr><td class="num">1</td><td class="mono">screen_haiku</td><td class="small">screen</td><td><span class="tag human_review">uncertain</span> <span class="small">(screen-pass (haiku yes): candidate forwarded, not a verdict; raw: yes)</span></td><td class="num">0.95</td><td class="mono">claude-haiku-4-5-20251001</td><td><span class="quote">“preterm population microbiome risk of atopic disease” (study.title)</span></td><td class="mono">screen_haiku</td></tr><tr><td class="num">2</td><td class="mono">triage_tier1</td><td class="small">tier1_rubric</td><td><span class="tag included">include</span></td><td class="num">0.85</td><td class="mono">claude-sonnet-5</td><td><span class="quote"></span></td><td class="mono">triage_tier1</td></tr><tr><td class="num">3.1</td><td class="mono">confirm_r1_part03</td><td class="small">confirm</td><td><span class="tag included">include</span></td><td class="num">0.9</td><td class="mono">claude-sonnet-5</td><td><span class="quote">“Milk Feedings in the Preterm Population” (study.title) · “UBERON:meconium” (sample.attr.host_body_site) · “predict atopy... by 2 years of age” (study.description)</span></td><td class="mono">confirm_r1_part03</td></tr><tr><td class="num">4.2</td><td class="mono">confirm_r2</td><td class="small">confirm</td><td><span class="tag included">include</span></td><td class="num">0.9</td><td class="mono">claude-sonnet-5</td><td><span class="quote">“Microbiome, Atopic Disease, and Prematurity” (study.title) · “atopy (food allergies, allergic rhinitis, eczema, asthma) by 2 years of age” (study.description) · “UBERON:feces | UBERON:meconium” (sample.attr.host_body_site)</span></td><td class="mono">confirm_r2</td></tr><tr><td class="num">5.3</td><td class="mono">confirm_r3</td><td class="small">confirm</td><td><span class="tag included">include</span></td><td class="num">0.9</td><td class="mono">claude-sonnet-5</td><td><span class="quote">“Milk Feedings in the Preterm Population” (study.title) · “atopy... by 2 years of age” (study.description) · “UBERON:feces | UBERON:meconium” (sample.attr.host_body_site)</span></td><td class="mono">confirm_r3</td></tr><tr class="final"><td class="num">6</td><td class="mono">sonnet_replicates_n3_agree1.00</td><td class="small">consolidated_final</td><td><span class="tag included">include</span> <b>final</b></td><td class="num">0.9</td><td class="mono">claude-sonnet-5</td><td><span class="quote">“Milk Feedings in the Preterm Population” (study.title) · “UBERON:meconium” (sample.attr.host_body_site) · “predict atopy... by 2 years of age” (study.description)</span></td><td class="mono">universe_studies_all (final)</td></tr>
+</tbody></table></details>
 </div>
 </div>
+
+<h2>Community composition (Sandpiper/SingleM, GTDB R232)</h2>
+<p class="small">No run of this study is in the Sandpiper snapshot, so no community profile exists — runs not in the Sandpiper snapshot: ena_illumina_not_in_snapshot 52, small_run_lt_100Mbp 38.</p>
+
 
 <h2>Linked papers (1)</h2>
 
@@ -86,576 +113,759 @@
 </tr></tbody></table>
 
 
-<h2>Field coverage (fraction of infant-scope samples with a value)</h2>
+<h2>Field coverage (fraction of body-site infant-scope samples with a value)</h2>
 <div style="max-width:760px">
 <div class="covrow"><a href="../fields/index.html#age_at_collection_days">Age at collection (days)</a><div class="bar"><span style="width:100.0%"></span></div><span class="num">100%</span></div><div class="covrow"><a href="../fields/index.html#delivery_mode">Delivery mode</a><div class="bar"><span style="width:100.0%"></span></div><span class="num">100%</span></div><div class="covrow"><a href="../fields/index.html#feeding_mode">Feeding mode</a><div class="bar"><span style="width:98.1%"></span></div><span class="num">98%</span></div><div class="covrow"><a href="../fields/index.html#preterm_status">Preterm status</a><div class="bar"><span style="width:100.0%"></span></div><span class="num">100%</span></div><div class="covrow"><a href="../fields/index.html#antibiotic_exposure">Antibiotic exposure</a><div class="bar"><span style="width:100.0%"></span></div><span class="num">100%</span></div><div class="covrow"><a href="../fields/index.html#gestational_age_weeks">Gestational age (weeks)</a><div class="bar"><span style="width:100.0%"></span></div><span class="num">100%</span></div><div class="covrow"><a href="../fields/index.html#birth_weight_grams">Birth weight (g)</a><div class="bar"><span style="width:100.0%"></span></div><span class="num">100%</span></div><div class="covrow"><a href="../fields/index.html#probiotic_exposure">Probiotic exposure</a><div class="bar"><span style="width:0.0%"></span></div><span class="num">0%</span></div><div class="covrow"><a href="../fields/index.html#maternal_antibiotics">Maternal antibiotics</a><div class="bar"><span style="width:100.0%"></span></div><span class="num">100%</span></div><div class="covrow"><a href="../fields/index.html#hmo_supplementation">HMO supplementation</a><div class="bar"><span style="width:0.0%"></span></div><span class="num">0%</span></div><div class="covrow"><a href="../fields/index.html#nec_status">NEC status</a><div class="bar"><span style="width:100.0%"></span></div><span class="num">100%</span></div><div class="covrow"><a href="../fields/index.html#country">Country</a><div class="bar"><span style="width:100.0%"></span></div><span class="num">100%</span></div><div class="covrow"><a href="../fields/index.html#health_condition">Health condition</a><div class="bar"><span style="width:100.0%"></span></div><span class="num">100%</span></div><div class="covrow"><a href="../fields/index.html#multiple_birth">Multiple birth</a><div class="bar"><span style="width:94.4%"></span></div><span class="num">94%</span></div><div class="covrow"><a href="../fields/index.html#sibling_in_study">Sibling in study</a><div class="bar"><span style="width:33.3%"></span></div><span class="num">33%</span></div><div class="covrow"><a href="../fields/index.html#geo_subregion">Geographic subregion</a><div class="bar"><span style="width:100.0%"></span></div><span class="num">100%</span></div>
 </div>
 
+
+
 <h2>Downloads</h2>
 <div class="btns">
-<a class="btn sec" href="../data/studies/PRJEB52147.csv" download>Samples (CSV, 63.9 KB)</a>
-<a class="btn sec" href="../data/studies/PRJEB52147.parquet" download>Samples (parquet, 56.8 KB)</a>
+<a class="btn sec" href="../data/studies/PRJEB52147.csv.gz" download>Samples (CSV.gz, 5.3 KB)</a>
+<a class="btn sec" href="../data/studies/PRJEB52147.parquet" download>Samples (parquet, 93.0 KB)</a>
 <a class="btn sec" href="../data/studies/PRJEB52147_determinations.csv.gz" download>Determinations with evidence (CSV.gz, 7.5 KB, 1,379 rows)</a>
 </div>
 
 <h2>Samples (90)</h2>
 
 <table id="samples" class="tbl display compact">
-<thead><tr><th>Sample</th><th>Links</th><th class="num">Age (d)</th><th>Delivery</th><th>Feeding</th><th>Preterm</th><th>Antibiotics</th><th>Sex</th><th>Subject</th><th class="num">t</th><th>Role</th><th class="num">Runs</th></tr></thead>
+<thead><tr><th>Sample</th><th>Links</th><th>Age scope</th><th class="num">Age (d)</th><th>Delivery</th><th>Feeding</th><th>Preterm</th><th>Antibiotics</th><th>Sex</th><th>Subject</th><th class="num">t</th><th>Role</th><th class="num">Runs</th><th>Top genus</th><th class="num"><i>Bifidobacterium</i></th></tr></thead>
 <tbody>
 <tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA13943167">SAMEA13943167</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943167">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943167">ENA sample</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">2</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>no</td><td>male</td>
-<td class="small">PRJEB52147|J10</td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJEB52147|J10</td><td class="num">1</td><td>infant</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA13943169">SAMEA13943169</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943169">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943169">ENA sample</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">16</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>no</td><td>male</td>
-<td class="small">PRJEB52147|J10</td><td class="num">2</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJEB52147|J10</td><td class="num">2</td><td>infant</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA13943171">SAMEA13943171</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943171">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943171">ENA sample</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">39</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>no</td><td>male</td>
-<td class="small">PRJEB52147|J10</td><td class="num">3</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJEB52147|J10</td><td class="num">3</td><td>infant</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA13943168">SAMEA13943168</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943168">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943168">ENA sample</a></td>
+<td class="small">non_infant_role</td>
 <td class="num">16</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>no</td><td>male</td>
-<td class="small">PRJEB52147|J10_mother</td><td class="num">1</td><td>mother</td><td class="num">1.0</td>
+<td class="small">PRJEB52147|J10_mother</td><td class="num">1</td><td>mother</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA13943170">SAMEA13943170</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943170">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943170">ENA sample</a></td>
+<td class="small">non_infant_role</td>
 <td class="num">39</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>no</td><td>male</td>
-<td class="small">PRJEB52147|J10_mother</td><td class="num">2</td><td>mother</td><td class="num">1.0</td>
+<td class="small">PRJEB52147|J10_mother</td><td class="num">2</td><td>mother</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA13943172">SAMEA13943172</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943172">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943172">ENA sample</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">0</td>
 <td>vaginal</td><td>mixed</td><td>preterm</td><td>yes</td><td>male</td>
-<td class="small">PRJEB52147|J12</td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJEB52147|J12</td><td class="num">1</td><td>infant</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA13943174">SAMEA13943174</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943174">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943174">ENA sample</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">11</td>
 <td>vaginal</td><td>mixed</td><td>preterm</td><td>no</td><td>male</td>
-<td class="small">PRJEB52147|J12</td><td class="num">2</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJEB52147|J12</td><td class="num">2</td><td>infant</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA13943176">SAMEA13943176</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943176">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943176">ENA sample</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">40</td>
 <td>vaginal</td><td>mixed</td><td>preterm</td><td>yes</td><td>male</td>
-<td class="small">PRJEB52147|J12</td><td class="num">3</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJEB52147|J12</td><td class="num">3</td><td>infant</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA13943173">SAMEA13943173</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943173">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943173">ENA sample</a></td>
+<td class="small">non_infant_role</td>
 <td class="num">11</td>
 <td>vaginal</td><td>exclusive_breast</td><td>preterm</td><td>no</td><td>male</td>
-<td class="small">PRJEB52147|J12_mother</td><td class="num">1</td><td>mother</td><td class="num">1.0</td>
+<td class="small">PRJEB52147|J12_mother</td><td class="num">1</td><td>mother</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA13943175">SAMEA13943175</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943175">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943175">ENA sample</a></td>
+<td class="small">non_infant_role</td>
 <td class="num">40</td>
 <td>vaginal</td><td>exclusive_breast</td><td>preterm</td><td>yes</td><td>male</td>
-<td class="small">PRJEB52147|J12_mother</td><td class="num">2</td><td>mother</td><td class="num">1.0</td>
+<td class="small">PRJEB52147|J12_mother</td><td class="num">2</td><td>mother</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA13943177">SAMEA13943177</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943177">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943177">ENA sample</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">2</td>
 <td>c_section</td><td></td><td>preterm</td><td>yes</td><td>male</td>
-<td class="small">PRJEB52147|J13</td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJEB52147|J13</td><td class="num">1</td><td>infant</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA13943179">SAMEA13943179</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943179">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943179">ENA sample</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">14</td>
 <td>c_section</td><td>exclusive_breast</td><td>preterm</td><td>yes</td><td>male</td>
-<td class="small">PRJEB52147|J13</td><td class="num">2</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJEB52147|J13</td><td class="num">2</td><td>infant</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA13943181">SAMEA13943181</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943181">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943181">ENA sample</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">40</td>
 <td>c_section</td><td>exclusive_breast</td><td>preterm</td><td>no</td><td>male</td>
-<td class="small">PRJEB52147|J13</td><td class="num">3</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJEB52147|J13</td><td class="num">3</td><td>infant</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA13943178">SAMEA13943178</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943178">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943178">ENA sample</a></td>
+<td class="small">non_infant_role</td>
 <td class="num">14</td>
 <td>c_section</td><td>exclusive_breast</td><td>preterm</td><td>yes</td><td>male</td>
-<td class="small">PRJEB52147|J13_mother</td><td class="num">1</td><td>mother</td><td class="num">1.0</td>
+<td class="small">PRJEB52147|J13_mother</td><td class="num">1</td><td>mother</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA13943180">SAMEA13943180</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943180">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943180">ENA sample</a></td>
+<td class="small">non_infant_role</td>
 <td class="num">40</td>
 <td>c_section</td><td>exclusive_breast</td><td>preterm</td><td>no</td><td>male</td>
-<td class="small">PRJEB52147|J13_mother</td><td class="num">2</td><td>mother</td><td class="num">1.0</td>
+<td class="small">PRJEB52147|J13_mother</td><td class="num">2</td><td>mother</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA13943182">SAMEA13943182</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943182">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943182">ENA sample</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">0</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>yes</td><td>female</td>
-<td class="small">PRJEB52147|J14</td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJEB52147|J14</td><td class="num">1</td><td>infant</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA13943184">SAMEA13943184</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943184">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943184">ENA sample</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">12</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>no</td><td>female</td>
-<td class="small">PRJEB52147|J14</td><td class="num">2</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJEB52147|J14</td><td class="num">2</td><td>infant</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA13943186">SAMEA13943186</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943186">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943186">ENA sample</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">26</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>no</td><td>female</td>
-<td class="small">PRJEB52147|J14</td><td class="num">3</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJEB52147|J14</td><td class="num">3</td><td>infant</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA13943183">SAMEA13943183</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943183">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943183">ENA sample</a></td>
+<td class="small">non_infant_role</td>
 <td class="num">12</td>
 <td>c_section</td><td>exclusive_breast</td><td>preterm</td><td>no</td><td>female</td>
-<td class="small">PRJEB52147|J14_mother</td><td class="num">1</td><td>mother</td><td class="num">1.0</td>
+<td class="small">PRJEB52147|J14_mother</td><td class="num">1</td><td>mother</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA13943185">SAMEA13943185</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943185">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943185">ENA sample</a></td>
+<td class="small">non_infant_role</td>
 <td class="num">18</td>
 <td>c_section</td><td>exclusive_breast</td><td>preterm</td><td>no</td><td>female</td>
-<td class="small">PRJEB52147|J14_mother</td><td class="num">2</td><td>mother</td><td class="num">1.0</td>
+<td class="small">PRJEB52147|J14_mother</td><td class="num">2</td><td>mother</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA13943187">SAMEA13943187</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943187">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943187">ENA sample</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">3</td>
 <td>vaginal</td><td>exclusive_breast</td><td>preterm</td><td>yes</td><td>female</td>
-<td class="small">PRJEB52147|J15</td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJEB52147|J15</td><td class="num">1</td><td>infant</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA13943189">SAMEA13943189</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943189">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943189">ENA sample</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">16</td>
 <td>vaginal</td><td>exclusive_breast</td><td>preterm</td><td>yes</td><td>female</td>
-<td class="small">PRJEB52147|J15</td><td class="num">2</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJEB52147|J15</td><td class="num">2</td><td>infant</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA13943191">SAMEA13943191</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943191">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943191">ENA sample</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">42</td>
 <td>vaginal</td><td>exclusive_breast</td><td>preterm</td><td>no</td><td>female</td>
-<td class="small">PRJEB52147|J15</td><td class="num">3</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJEB52147|J15</td><td class="num">3</td><td>infant</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA13943188">SAMEA13943188</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943188">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943188">ENA sample</a></td>
+<td class="small">non_infant_role</td>
 <td class="num">16</td>
 <td>vaginal</td><td>exclusive_breast</td><td>preterm</td><td>yes</td><td>female</td>
-<td class="small">PRJEB52147|J15_mother</td><td class="num">1</td><td>mother</td><td class="num">1.0</td>
+<td class="small">PRJEB52147|J15_mother</td><td class="num">1</td><td>mother</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA13943190">SAMEA13943190</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943190">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943190">ENA sample</a></td>
+<td class="small">non_infant_role</td>
 <td class="num">42</td>
 <td>vaginal</td><td>exclusive_breast</td><td>preterm</td><td>no</td><td>female</td>
-<td class="small">PRJEB52147|J15_mother</td><td class="num">2</td><td>mother</td><td class="num">1.0</td>
+<td class="small">PRJEB52147|J15_mother</td><td class="num">2</td><td>mother</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA13943192">SAMEA13943192</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943192">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943192">ENA sample</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">1</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>yes</td><td>male</td>
-<td class="small">PRJEB52147|J16</td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJEB52147|J16</td><td class="num">1</td><td>infant</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA13943194">SAMEA13943194</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943194">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943194">ENA sample</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">12</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>no</td><td>male</td>
-<td class="small">PRJEB52147|J16</td><td class="num">2</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJEB52147|J16</td><td class="num">2</td><td>infant</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA13943196">SAMEA13943196</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943196">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943196">ENA sample</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">41</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>no</td><td>male</td>
-<td class="small">PRJEB52147|J16</td><td class="num">3</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJEB52147|J16</td><td class="num">3</td><td>infant</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA13943193">SAMEA13943193</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943193">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943193">ENA sample</a></td>
+<td class="small">non_infant_role</td>
 <td class="num">12</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>no</td><td>male</td>
-<td class="small">PRJEB52147|J16_mother</td><td class="num">1</td><td>mother</td><td class="num">1.0</td>
+<td class="small">PRJEB52147|J16_mother</td><td class="num">1</td><td>mother</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA13943195">SAMEA13943195</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943195">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943195">ENA sample</a></td>
+<td class="small">non_infant_role</td>
 <td class="num">41</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>no</td><td>male</td>
-<td class="small">PRJEB52147|J16_mother</td><td class="num">2</td><td>mother</td><td class="num">1.0</td>
+<td class="small">PRJEB52147|J16_mother</td><td class="num">2</td><td>mother</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA13943197">SAMEA13943197</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943197">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943197">ENA sample</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">1</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>yes</td><td>male</td>
-<td class="small">PRJEB52147|J17</td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJEB52147|J17</td><td class="num">1</td><td>infant</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA13943199">SAMEA13943199</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943199">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943199">ENA sample</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">12</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>no</td><td>male</td>
-<td class="small">PRJEB52147|J17</td><td class="num">2</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJEB52147|J17</td><td class="num">2</td><td>infant</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA13943201">SAMEA13943201</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943201">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943201">ENA sample</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">41</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>no</td><td>male</td>
-<td class="small">PRJEB52147|J17</td><td class="num">3</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJEB52147|J17</td><td class="num">3</td><td>infant</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA13943198">SAMEA13943198</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943198">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943198">ENA sample</a></td>
+<td class="small">non_infant_role</td>
 <td class="num">12</td>
 <td>c_section</td><td>exclusive_breast</td><td>preterm</td><td>no</td><td>male</td>
-<td class="small">PRJEB52147|J17_mother</td><td class="num">1</td><td>mother</td><td class="num">1.0</td>
+<td class="small">PRJEB52147|J17_mother</td><td class="num">1</td><td>mother</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA13943200">SAMEA13943200</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943200">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943200">ENA sample</a></td>
+<td class="small">non_infant_role</td>
 <td class="num">41</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>no</td><td>male</td>
-<td class="small">PRJEB52147|J17_mother</td><td class="num">2</td><td>mother</td><td class="num">1.0</td>
+<td class="small">PRJEB52147|J17_mother</td><td class="num">2</td><td>mother</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA13943202">SAMEA13943202</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943202">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943202">ENA sample</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">1</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>yes</td><td>female</td>
-<td class="small">PRJEB52147|J18</td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJEB52147|J18</td><td class="num">1</td><td>infant</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA13943204">SAMEA13943204</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943204">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943204">ENA sample</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">13</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>no</td><td>female</td>
-<td class="small">PRJEB52147|J18</td><td class="num">2</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJEB52147|J18</td><td class="num">2</td><td>infant</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA13943206">SAMEA13943206</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943206">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943206">ENA sample</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">42</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>no</td><td>female</td>
-<td class="small">PRJEB52147|J18</td><td class="num">3</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJEB52147|J18</td><td class="num">3</td><td>infant</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA13943203">SAMEA13943203</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943203">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943203">ENA sample</a></td>
+<td class="small">non_infant_role</td>
 <td class="num">13</td>
 <td>c_section</td><td>exclusive_breast</td><td>preterm</td><td>no</td><td>female</td>
-<td class="small">PRJEB52147|J18_mother</td><td class="num">1</td><td>mother</td><td class="num">1.0</td>
+<td class="small">PRJEB52147|J18_mother</td><td class="num">1</td><td>mother</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA13943205">SAMEA13943205</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943205">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943205">ENA sample</a></td>
+<td class="small">non_infant_role</td>
 <td class="num">42</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>no</td><td>female</td>
-<td class="small">PRJEB52147|J18_mother</td><td class="num">2</td><td>mother</td><td class="num">1.0</td>
+<td class="small">PRJEB52147|J18_mother</td><td class="num">2</td><td>mother</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA13943207">SAMEA13943207</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943207">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943207">ENA sample</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">2</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>yes</td><td>female</td>
-<td class="small">PRJEB52147|J19</td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJEB52147|J19</td><td class="num">1</td><td>infant</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA13943209">SAMEA13943209</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943209">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943209">ENA sample</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">13</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>no</td><td>female</td>
-<td class="small">PRJEB52147|J19</td><td class="num">2</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJEB52147|J19</td><td class="num">2</td><td>infant</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA13943211">SAMEA13943211</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943211">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943211">ENA sample</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">42</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>no</td><td>female</td>
-<td class="small">PRJEB52147|J19</td><td class="num">3</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJEB52147|J19</td><td class="num">3</td><td>infant</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA13943208">SAMEA13943208</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943208">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943208">ENA sample</a></td>
+<td class="small">non_infant_role</td>
 <td class="num">13</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>no</td><td>female</td>
-<td class="small">PRJEB52147|J19_mother</td><td class="num">1</td><td>mother</td><td class="num">1.0</td>
+<td class="small">PRJEB52147|J19_mother</td><td class="num">1</td><td>mother</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA13943210">SAMEA13943210</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943210">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943210">ENA sample</a></td>
+<td class="small">non_infant_role</td>
 <td class="num">42</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>no</td><td>female</td>
-<td class="small">PRJEB52147|J19_mother</td><td class="num">2</td><td>mother</td><td class="num">1.0</td>
+<td class="small">PRJEB52147|J19_mother</td><td class="num">2</td><td>mother</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA13943237">SAMEA13943237</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943237">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943237">ENA sample</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">1</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>yes</td><td>female</td>
-<td class="small">PRJEB52147|J2</td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJEB52147|J2</td><td class="num">1</td><td>infant</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA13943239">SAMEA13943239</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943239">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943239">ENA sample</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">10</td>
 <td>c_section</td><td>exclusive_breast</td><td>preterm</td><td>no</td><td>female</td>
-<td class="small">PRJEB52147|J2</td><td class="num">2</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJEB52147|J2</td><td class="num">2</td><td>infant</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA13943241">SAMEA13943241</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943241">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943241">ENA sample</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">38</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>no</td><td>female</td>
-<td class="small">PRJEB52147|J2</td><td class="num">3</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJEB52147|J2</td><td class="num">3</td><td>infant</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA13943212">SAMEA13943212</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943212">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943212">ENA sample</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">3</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>no</td><td>female</td>
-<td class="small">PRJEB52147|J20</td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJEB52147|J20</td><td class="num">1</td><td>infant</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA13943214">SAMEA13943214</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943214">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943214">ENA sample</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">18</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>no</td><td>female</td>
-<td class="small">PRJEB52147|J20</td><td class="num">2</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJEB52147|J20</td><td class="num">2</td><td>infant</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA13943216">SAMEA13943216</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943216">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943216">ENA sample</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">33</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>no</td><td>female</td>
-<td class="small">PRJEB52147|J20</td><td class="num">3</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJEB52147|J20</td><td class="num">3</td><td>infant</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA13943213">SAMEA13943213</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943213">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943213">ENA sample</a></td>
+<td class="small">non_infant_role</td>
 <td class="num">18</td>
 <td>c_section</td><td>exclusive_breast</td><td>preterm</td><td>no</td><td>female</td>
-<td class="small">PRJEB52147|J20_mother</td><td class="num">1</td><td>mother</td><td class="num">1.0</td>
+<td class="small">PRJEB52147|J20_mother</td><td class="num">1</td><td>mother</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA13943215">SAMEA13943215</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943215">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943215">ENA sample</a></td>
+<td class="small">non_infant_role</td>
 <td class="num">33</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>no</td><td>female</td>
-<td class="small">PRJEB52147|J20_mother</td><td class="num">2</td><td>mother</td><td class="num">1.0</td>
+<td class="small">PRJEB52147|J20_mother</td><td class="num">2</td><td>mother</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA13943217">SAMEA13943217</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943217">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943217">ENA sample</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">3</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>no</td><td>female</td>
-<td class="small">PRJEB52147|J21</td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJEB52147|J21</td><td class="num">1</td><td>infant</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA13943219">SAMEA13943219</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943219">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943219">ENA sample</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">18</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>no</td><td>female</td>
-<td class="small">PRJEB52147|J21</td><td class="num">2</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJEB52147|J21</td><td class="num">2</td><td>infant</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA13943221">SAMEA13943221</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943221">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943221">ENA sample</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">47</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>no</td><td>female</td>
-<td class="small">PRJEB52147|J21</td><td class="num">3</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJEB52147|J21</td><td class="num">3</td><td>infant</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA13943218">SAMEA13943218</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943218">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943218">ENA sample</a></td>
+<td class="small">non_infant_role</td>
 <td class="num">18</td>
 <td>c_section</td><td>exclusive_breast</td><td>preterm</td><td>no</td><td>female</td>
-<td class="small">PRJEB52147|J21_mother</td><td class="num">1</td><td>mother</td><td class="num">1.0</td>
+<td class="small">PRJEB52147|J21_mother</td><td class="num">1</td><td>mother</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA13943220">SAMEA13943220</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943220">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943220">ENA sample</a></td>
+<td class="small">non_infant_role</td>
 <td class="num">47</td>
 <td>c_section</td><td>exclusive_breast</td><td>preterm</td><td>no</td><td>female</td>
-<td class="small">PRJEB52147|J21_mother</td><td class="num">2</td><td>mother</td><td class="num">1.0</td>
+<td class="small">PRJEB52147|J21_mother</td><td class="num">2</td><td>mother</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA13943222">SAMEA13943222</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943222">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943222">ENA sample</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">2</td>
 <td>c_section</td><td>formula</td><td>preterm</td><td>no</td><td>female</td>
-<td class="small">PRJEB52147|J22</td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJEB52147|J22</td><td class="num">1</td><td>infant</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA13943224">SAMEA13943224</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943224">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943224">ENA sample</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">18</td>
 <td>c_section</td><td>formula</td><td>preterm</td><td>no</td><td>female</td>
-<td class="small">PRJEB52147|J22</td><td class="num">2</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJEB52147|J22</td><td class="num">2</td><td>infant</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA13943226">SAMEA13943226</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943226">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943226">ENA sample</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">32</td>
 <td>c_section</td><td>formula</td><td>preterm</td><td>no</td><td>female</td>
-<td class="small">PRJEB52147|J22</td><td class="num">3</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJEB52147|J22</td><td class="num">3</td><td>infant</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA13943223">SAMEA13943223</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943223">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943223">ENA sample</a></td>
+<td class="small">non_infant_role</td>
 <td class="num">18</td>
 <td>c_section</td><td>exclusive_breast</td><td>preterm</td><td>no</td><td>female</td>
-<td class="small">PRJEB52147|J22_mother</td><td class="num">1</td><td>mother</td><td class="num">1.0</td>
+<td class="small">PRJEB52147|J22_mother</td><td class="num">1</td><td>mother</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA13943225">SAMEA13943225</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943225">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943225">ENA sample</a></td>
+<td class="small">non_infant_role</td>
 <td class="num">32</td>
 <td>c_section</td><td>formula</td><td>preterm</td><td>no</td><td>female</td>
-<td class="small">PRJEB52147|J22_mother</td><td class="num">2</td><td>mother</td><td class="num">1.0</td>
+<td class="small">PRJEB52147|J22_mother</td><td class="num">2</td><td>mother</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA13943227">SAMEA13943227</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943227">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943227">ENA sample</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">3</td>
 <td>vaginal</td><td>exclusive_breast</td><td>preterm</td><td>yes</td><td>female</td>
-<td class="small">PRJEB52147|J24</td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJEB52147|J24</td><td class="num">1</td><td>infant</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA13943229">SAMEA13943229</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943229">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943229">ENA sample</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">18</td>
 <td>vaginal</td><td>exclusive_breast</td><td>preterm</td><td>no</td><td>female</td>
-<td class="small">PRJEB52147|J24</td><td class="num">2</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJEB52147|J24</td><td class="num">2</td><td>infant</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA13943231">SAMEA13943231</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943231">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943231">ENA sample</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">39</td>
 <td>vaginal</td><td>exclusive_breast</td><td>preterm</td><td>no</td><td>female</td>
-<td class="small">PRJEB52147|J24</td><td class="num">3</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJEB52147|J24</td><td class="num">3</td><td>infant</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA13943228">SAMEA13943228</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943228">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943228">ENA sample</a></td>
+<td class="small">non_infant_role</td>
 <td class="num">18</td>
 <td>vaginal</td><td>exclusive_breast</td><td>preterm</td><td>no</td><td>female</td>
-<td class="small">PRJEB52147|J24_mother</td><td class="num">1</td><td>mother</td><td class="num">1.0</td>
+<td class="small">PRJEB52147|J24_mother</td><td class="num">1</td><td>mother</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA13943230">SAMEA13943230</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943230">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943230">ENA sample</a></td>
+<td class="small">non_infant_role</td>
 <td class="num">39</td>
 <td>vaginal</td><td>exclusive_breast</td><td>preterm</td><td>no</td><td>female</td>
-<td class="small">PRJEB52147|J24_mother</td><td class="num">2</td><td>mother</td><td class="num">1.0</td>
+<td class="small">PRJEB52147|J24_mother</td><td class="num">2</td><td>mother</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA13943232">SAMEA13943232</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943232">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943232">ENA sample</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">2</td>
 <td>vaginal</td><td>exclusive_breast</td><td>preterm</td><td>yes</td><td>female</td>
-<td class="small">PRJEB52147|J25</td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJEB52147|J25</td><td class="num">1</td><td>infant</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA13943234">SAMEA13943234</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943234">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943234">ENA sample</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">12</td>
 <td>vaginal</td><td>exclusive_breast</td><td>preterm</td><td>yes</td><td>female</td>
-<td class="small">PRJEB52147|J25</td><td class="num">2</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJEB52147|J25</td><td class="num">2</td><td>infant</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA13943236">SAMEA13943236</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943236">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943236">ENA sample</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">40</td>
 <td>vaginal</td><td>exclusive_breast</td><td>preterm</td><td>no</td><td>female</td>
-<td class="small">PRJEB52147|J25</td><td class="num">3</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJEB52147|J25</td><td class="num">3</td><td>infant</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA13943233">SAMEA13943233</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943233">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943233">ENA sample</a></td>
+<td class="small">non_infant_role</td>
 <td class="num">12</td>
 <td>vaginal</td><td>exclusive_breast</td><td>preterm</td><td>yes</td><td>female</td>
-<td class="small">PRJEB52147|J25_mother</td><td class="num">1</td><td>mother</td><td class="num">1.0</td>
+<td class="small">PRJEB52147|J25_mother</td><td class="num">1</td><td>mother</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA13943235">SAMEA13943235</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943235">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943235">ENA sample</a></td>
+<td class="small">non_infant_role</td>
 <td class="num">40</td>
 <td>vaginal</td><td>exclusive_breast</td><td>preterm</td><td>no</td><td>female</td>
-<td class="small">PRJEB52147|J25_mother</td><td class="num">2</td><td>mother</td><td class="num">1.0</td>
+<td class="small">PRJEB52147|J25_mother</td><td class="num">2</td><td>mother</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA13943238">SAMEA13943238</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943238">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943238">ENA sample</a></td>
+<td class="small">non_infant_role</td>
 <td class="num">10</td>
 <td>c_section</td><td>exclusive_breast</td><td>preterm</td><td>no</td><td>female</td>
-<td class="small">PRJEB52147|J2_mother</td><td class="num">1</td><td>mother</td><td class="num">1.0</td>
+<td class="small">PRJEB52147|J2_mother</td><td class="num">1</td><td>mother</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA13943240">SAMEA13943240</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943240">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943240">ENA sample</a></td>
+<td class="small">non_infant_role</td>
 <td class="num">38</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>no</td><td>female</td>
-<td class="small">PRJEB52147|J2_mother</td><td class="num">2</td><td>mother</td><td class="num">1.0</td>
+<td class="small">PRJEB52147|J2_mother</td><td class="num">2</td><td>mother</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA13943242">SAMEA13943242</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943242">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943242">ENA sample</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">3</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>no</td><td>male</td>
-<td class="small">PRJEB52147|J6</td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJEB52147|J6</td><td class="num">1</td><td>infant</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA13943244">SAMEA13943244</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943244">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943244">ENA sample</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">10</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>no</td><td>male</td>
-<td class="small">PRJEB52147|J6</td><td class="num">2</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJEB52147|J6</td><td class="num">2</td><td>infant</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA13943246">SAMEA13943246</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943246">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943246">ENA sample</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">23</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>no</td><td>male</td>
-<td class="small">PRJEB52147|J6</td><td class="num">3</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJEB52147|J6</td><td class="num">3</td><td>infant</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA13943243">SAMEA13943243</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943243">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943243">ENA sample</a></td>
+<td class="small">non_infant_role</td>
 <td class="num">10</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>no</td><td>male</td>
-<td class="small">PRJEB52147|J6_mother</td><td class="num">1</td><td>mother</td><td class="num">1.0</td>
+<td class="small">PRJEB52147|J6_mother</td><td class="num">1</td><td>mother</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA13943245">SAMEA13943245</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943245">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943245">ENA sample</a></td>
+<td class="small">non_infant_role</td>
 <td class="num">23</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>no</td><td>male</td>
-<td class="small">PRJEB52147|J6_mother</td><td class="num">2</td><td>mother</td><td class="num">1.0</td>
+<td class="small">PRJEB52147|J6_mother</td><td class="num">2</td><td>mother</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA13943247">SAMEA13943247</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943247">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943247">ENA sample</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">3</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>no</td><td>male</td>
-<td class="small">PRJEB52147|J7</td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJEB52147|J7</td><td class="num">1</td><td>infant</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA13943249">SAMEA13943249</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943249">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943249">ENA sample</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">12</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>no</td><td>male</td>
-<td class="small">PRJEB52147|J7</td><td class="num">2</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJEB52147|J7</td><td class="num">2</td><td>infant</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA13943251">SAMEA13943251</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943251">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943251">ENA sample</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">33</td>
 <td>c_section</td><td>formula</td><td>preterm</td><td>no</td><td>male</td>
-<td class="small">PRJEB52147|J7</td><td class="num">3</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJEB52147|J7</td><td class="num">3</td><td>infant</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA13943248">SAMEA13943248</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943248">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943248">ENA sample</a></td>
+<td class="small">non_infant_role</td>
 <td class="num">12</td>
 <td>c_section</td><td>mixed</td><td>preterm</td><td>no</td><td>male</td>
-<td class="small">PRJEB52147|J7_mother</td><td class="num">1</td><td>mother</td><td class="num">1.0</td>
+<td class="small">PRJEB52147|J7_mother</td><td class="num">1</td><td>mother</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA13943250">SAMEA13943250</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943250">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943250">ENA sample</a></td>
+<td class="small">non_infant_role</td>
 <td class="num">33</td>
 <td>c_section</td><td>formula</td><td>preterm</td><td>no</td><td>male</td>
-<td class="small">PRJEB52147|J7_mother</td><td class="num">2</td><td>mother</td><td class="num">1.0</td>
+<td class="small">PRJEB52147|J7_mother</td><td class="num">2</td><td>mother</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA13943252">SAMEA13943252</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943252">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943252">ENA sample</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">2</td>
 <td>vaginal</td><td>mixed</td><td>preterm</td><td>no</td><td>female</td>
-<td class="small">PRJEB52147|J8</td><td class="num">1</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJEB52147|J8</td><td class="num">1</td><td>infant</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA13943254">SAMEA13943254</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943254">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943254">ENA sample</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">11</td>
 <td>vaginal</td><td>mixed</td><td>preterm</td><td>no</td><td>female</td>
-<td class="small">PRJEB52147|J8</td><td class="num">2</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJEB52147|J8</td><td class="num">2</td><td>infant</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA13943256">SAMEA13943256</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943256">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943256">ENA sample</a></td>
+<td class="small">infant_evidenced</td>
 <td class="num">40</td>
 <td>vaginal</td><td>mixed</td><td>preterm</td><td>no</td><td>female</td>
-<td class="small">PRJEB52147|J8</td><td class="num">3</td><td>infant</td><td class="num">1.0</td>
+<td class="small">PRJEB52147|J8</td><td class="num">3</td><td>infant</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA13943253">SAMEA13943253</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943253">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943253">ENA sample</a></td>
+<td class="small">non_infant_role</td>
 <td class="num">11</td>
 <td>vaginal</td><td>mixed</td><td>preterm</td><td>no</td><td>female</td>
-<td class="small">PRJEB52147|J8_mother</td><td class="num">1</td><td>mother</td><td class="num">1.0</td>
+<td class="small">PRJEB52147|J8_mother</td><td class="num">1</td><td>mother</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr><tr>
 <td class="mono"><a href="../samples/index.html?sample=SAMEA13943255">SAMEA13943255</a></td>
-<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943255">ENA</a></td>
+<td class="small"><a href="https://www.ebi.ac.uk/ena/browser/view/SAMEA13943255">ENA sample</a></td>
+<td class="small">non_infant_role</td>
 <td class="num">40</td>
 <td>vaginal</td><td>mixed</td><td>preterm</td><td>no</td><td>female</td>
-<td class="small">PRJEB52147|J8_mother</td><td class="num">2</td><td>mother</td><td class="num">1.0</td>
+<td class="small">PRJEB52147|J8_mother</td><td class="num">2</td><td>mother</td><td class="num">1</td>
+<td class="small"><i></i></td><td class="num"></td>
 </tr>
 </tbody></table>
 
 </main>
 <footer>
-<div><b>Infant Gut Shotgun-Metagenome Catalog</b> — data package v1 (built 2026-09-25). Curated tables are released under <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a>; archive metadata remains under INSDC terms.</div>
-<div>How to cite: <i>Infant Gut Shotgun-Metagenome Catalog v1, 2026.</i></div>
-<div>Caveats: every value carries a route (R1 archive attribute, R2 supplementary table, R3 paper text, R4 abstract/description) and a confidence; R3/R4 values are group-level statements applied to samples — see <a href="../fields/index.html">Fields</a> and <a href="../methods.html#limitations">Methods › Limitations</a>. Built with an LLM-assisted pipeline; treat individual values as evidence-linked claims, not ground truth.</div>
+<div><b>Infant Gut Shotgun-Metagenome Catalog</b> — package <span class="mono">1.2.1</span> · built 2026-09-26 · generator <span class="mono">nogit</span> · release <span class="mono">data-v1.2.1</span> (<a href="../data/VERSION.json">VERSION.json</a>, <a href="../docs/CHANGELOG.html">changelog</a>). Curated tables are released under <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a>; archive metadata remains under INSDC terms; community profiles from <a href="https://sandpiper.qut.edu.au/">Sandpiper</a> (Woodcroft et al. 2025, CC-BY).</div>
+<div>How to cite: <i>Infant Gut Shotgun-Metagenome Catalog, data package 1.2.1 (data-v1.2.1), 2026.</i></div>
+<div>Caveats: every value carries a route (R1 archive attribute, R2 supplementary table, R3 paper text, R4 abstract/description), a scope and a confidence tier (not a calibrated probability); R3/R4 values are group-level statements applied to samples — see <a href="../fields/index.html">Fields</a> and <a href="../methods.html#limitations">Methods › Limitations</a>. Built with an LLM-assisted pipeline; treat individual values as evidence-linked claims, not ground truth. Found an error? Every study, cohort and sample has a <b>Flag an issue</b> button that opens a prefilled GitHub issue.</div>
 </footer>
 
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-<script src="https://cdn.datatables.net/2.1.8/js/dataTables.min.js"></script>
+<script src="../static/vendor/jquery-3.7.1.min.js" integrity="sha384-1H217gwSVyLSIfaLxHbE7dRb3v4mYCKbpQvzx0cegeju1MVsGrX5xXxAvs/HgeFs" crossorigin="anonymous"></script>
+<script src="../static/vendor/dataTables-2.1.8.min.js" integrity="sha384-MgwUq0TVErv5Lkj/jIAgQpC+iUIqwhwXxJMfrZQVAOhr++1MR02yXH8aXdPc3fk0" crossorigin="anonymous"></script>
 
+<script>window.CATALOG={version:'1.2.1',release:'data-v1.2.1',issueRepo:'https://github.com/OlmLab/infant-gut-catalog/issues/new',issueTemplate:'catalog-finding.yml'};</script>
 <script src="../static/site.js"></script>
 
 <script>new DataTable('#samples',{pageLength:25,lengthMenu:[25,100,500],order:[]});</script>

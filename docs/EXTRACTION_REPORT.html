@@ -3,8 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>EXTRACTION REPORT — Infant Gut Shotgun-Metagenome Catalog</title>
-<meta name="description" content="Curated, evidence-linked catalog of public shotgun-metagenome studies of the human infant gut with per-sample metadata.">
+<title>Extraction report — Infant Gut Shotgun-Metagenome Catalog</title>
+<meta name="description" content="Curated, evidence-linked catalog of public shotgun-metagenome studies of the human infant gut with per-sample metadata and Sandpiper community profiles.">
+<meta name="catalog-release" content="data-v1.2.1">
+<link rel="canonical" href="https://olmlab.github.io/infant-gut-catalog/docs/EXTRACTION_REPORT.html">
+<meta name="catalog-package-version" content="1.2.1">
+<meta name="catalog-build-date" content="2026-09-26">
 <link rel="stylesheet" href="../static/site.css">
 
 
@@ -16,16 +20,17 @@
 <a href="../cohorts/index.html" >Cohorts</a>
 <a href="../samples/index.html" >Sample explorer</a>
 <a href="../fields/index.html" >Fields</a>
+<a href="../authors/index.html" >Authors</a>
 <a href="../universe.html" >Universe</a>
 <a href="../methods.html" class="active">Methods</a>
 <a href="../downloads.html" >Downloads</a>
 </div></nav>
 <main>
-<div class="crumbs"><a href="../index.html">Home</a> › <a href="../methods.html">Methods</a> › EXTRACTION REPORT</div>
+<div class="crumbs"><a href="../index.html">Home</a> › <a href="../methods.html">Methods</a> › Extraction report</div>
 
 <p class="small">Rendered from <a href="EXTRACTION_REPORT.md">EXTRACTION_REPORT.md</a>.</p>
 <div class="md"><h1 id="extraction-report-per-sample-metadata-for-the-infant-gut-shotgun-metagenome-catalog">EXTRACTION REPORT — per-sample metadata for the Infant Gut Shotgun-Metagenome Catalog</h1>
-<p>Date 2026-09-25 (v3, final passes + field extension) · plan artifact 8c115402 (5 phases) · scope: 389 included studies, 153,701 samples, 174,022 runs.</p>
+<p>Date 2026-09-25 (v4, after sample-unit fix) · plan artifact 8c115402 (5 phases) · scope: 389 included studies, 153,701 samples, 174,022 runs.</p>
 <h2 id="1-what-was-produced">1. What was produced</h2>
 <ul>
 <li><code>sample_determinations.parquet</code> — <strong>606,023 determinations</strong> (one per sample × field) over 150,544 samples in 379 studies; columns follow <code>catalog_schema.sql::sample_determinations</code> plus <code>route</code> (R1–R4), <code>scope</code> (sample|group), <code>group_audit</code>. Every row passes <code>validate_row()</code> (labelled ≤12-word verbatim quote, controlled vocabularies).</li>
@@ -355,15 +360,19 @@
 | Multiple birth | 4,792 | 3.3% | 18 |
 | Sibling in study | 3,924 | 2.7% | 10 |
 | Geo subregion | 47,016 | 32.2% | 172 |</p>
-<p>Tokens these passes: 2,358,996. <strong>Whole pipeline ≈ 47.3M.</strong> Published as data_package_v1.zip (README, DATA_DICTIONARY, wide tables, notebook) and the GitHub Pages site.</p></div>
+<p>Tokens these passes: 2,358,996. <strong>Whole pipeline ≈ 47.3M.</strong> Published as data_package_v1.zip (README, DATA_DICTIONARY, wide tables, notebook) and the GitHub Pages site.</p>
+<h2 id="10-sample-unit-fix-auditor-finding-2026-09-25">10. Sample-unit fix (auditor finding, 2026-09-25)</h2>
+<p>The catalog's sample unit is the BioSample. The AUDITOR session found deposits that register one BioSample per infant and one run per stool (PRJNA294605: 11 BioSamples / 158 runs, "Assembly of 14 fecal samples from infant 23…"), where run-keyed supplementary values had been collapsed to one per BioSample. Deterministic classification of all 11,116 multi-run BioSamples in 63 studies (criteria: pooled text; ≥2 distinct ages/timepoints across a BioSample's runs in run-keyed tables; time tokens in library names confirmed by attributes; NCBI BioSample date ranges) → <strong>6 class-A studies</strong> (PRJNA294605, PRJNA1055141, PRJNA1258733, PRJNA299342, PRJNA751712, PRJNA869587; 16 BioSamples / 521 runs); 33 technical (lanes, replicates, paired/unpaired, long+short) studies unchanged (row-level diff empty); 24 class-B studies stayed BioSample-unit. For class A: 521 run-level sample rows (<code>sample_unit=run</code>, <code>parent_biosample</code>), 89 run-keyed tables re-gated per run → 2,938 R2 rows + 698 propagated per-infant-constant R1 rows; 75 collapsed BioSample-level rows superseded (<code>sample_determinations_superseded.parquet</code>); subjects rebuilt (PRJNA294605: 3–22 timepoints per infant, age for 141/158 runs). Also from the auditor: own-data paper PMID 27258951 linked to PRJNA294605 (confidence 0.6 — full text unreadable, Europe PMC 500) and 136 preterm_status values derived from gestational age. Validator pass 100 %; gold metrics unchanged (no gold samples in class-A studies). Catalog now <strong>154,206 samples, 609,584 determinations</strong>. Report: <code>SAMPLE_UNIT_FIX_REPORT.md</code>; classification: <code>sample_unit_classification.csv</code>.
+Deviations declared by the track: NCBI efetch returns nothing for SAMEA ids (2,192 class-B BioSamples evaluated on ENA attributes); library-name criterion tightened after false positives and fired on none; column→field classes reused from accepted R2 rows rather than re-classified.</p></div>
 
 </main>
 <footer>
-<div><b>Infant Gut Shotgun-Metagenome Catalog</b> — data package v1 (built 2026-09-25). Curated tables are released under <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a>; archive metadata remains under INSDC terms.</div>
-<div>How to cite: <i>Infant Gut Shotgun-Metagenome Catalog v1, 2026.</i></div>
-<div>Caveats: every value carries a route (R1 archive attribute, R2 supplementary table, R3 paper text, R4 abstract/description) and a confidence; R3/R4 values are group-level statements applied to samples — see <a href="../fields/index.html">Fields</a> and <a href="../methods.html#limitations">Methods › Limitations</a>. Built with an LLM-assisted pipeline; treat individual values as evidence-linked claims, not ground truth.</div>
+<div><b>Infant Gut Shotgun-Metagenome Catalog</b> — package <span class="mono">1.2.1</span> · built 2026-09-26 · generator <span class="mono">nogit</span> · release <span class="mono">data-v1.2.1</span> (<a href="../data/VERSION.json">VERSION.json</a>, <a href="../docs/CHANGELOG.html">changelog</a>). Curated tables are released under <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a>; archive metadata remains under INSDC terms; community profiles from <a href="https://sandpiper.qut.edu.au/">Sandpiper</a> (Woodcroft et al. 2025, CC-BY).</div>
+<div>How to cite: <i>Infant Gut Shotgun-Metagenome Catalog, data package 1.2.1 (data-v1.2.1), 2026.</i></div>
+<div>Caveats: every value carries a route (R1 archive attribute, R2 supplementary table, R3 paper text, R4 abstract/description), a scope and a confidence tier (not a calibrated probability); R3/R4 values are group-level statements applied to samples — see <a href="../fields/index.html">Fields</a> and <a href="../methods.html#limitations">Methods › Limitations</a>. Built with an LLM-assisted pipeline; treat individual values as evidence-linked claims, not ground truth. Found an error? Every study, cohort and sample has a <b>Flag an issue</b> button that opens a prefilled GitHub issue.</div>
 </footer>
 
+<script>window.CATALOG={version:'1.2.1',release:'data-v1.2.1',issueRepo:'https://github.com/OlmLab/infant-gut-catalog/issues/new',issueTemplate:'catalog-finding.yml'};</script>
 <script src="../static/site.js"></script>
 
 </body>
