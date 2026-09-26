@@ -1,3 +1,9 @@
+## 1.2.2 — 2026-09-26
+Owner decisions applied (value_history change_stage=owner_decision, 701 rows):
+* PRJEB90577 (PediCAP, 631 peri-rectal swab samples): body_site_class excluded → primary, new column `body_site='rectal_swab'`; catalog_scope 71,795 → 72,358.
+* 70 samples labelled METAGENOMIC whose organism is a named microbe (68 PRJNA799247: Staphylococcus epidermidis/Clostridioides difficile; 2 PRJNA1082298: Enterobacter asburiae) and flagged non-metagenome by Sandpiper: body_site_class → excluded, reason assay_isolate_genome. Studies remain included.
+* `body_site` column added to sample_metadata_wide (currently only 'rectal_swab'; stool is implied by body_site_class=primary otherwise).
+
 # v1.2.1 (2026-09-26) — data fixes from the three final reviews (patch)
 * **F1 / R3-5 organisations.** 6,143 of 18,888 organisation rows tagged `org_type = not_an_organisation` ({'submission_id': 6033, 'lowercase_username': 93, 'placeholder': 9, 'email_or_handle': 8}); for PRJNA studies the NCBI BioProject Organization is preferred over the ENA center_name. `organisations_index.json` 9,886 → 3,747 keys; `study_authors_summary.organisations` rows containing a SUB id 6,042 → 0; studies with a displayable organisation 9,579 → 9,513 (included studies 386/389).
 * **R3-1 GTDB suffix genera.** Genus indicators match `^g__<Name>(_[A-Z]+)?$`: `sp_ra_g_Enterococcus` changed on 19,090 samples (mean 0.0234 → 0.0324), `sp_ra_g_Veillonella` 6,076, `sp_ra_enterobacterales_core` 3,315, `sp_ra_g_Bacteroides` 1,786, `sp_ra_g_Phocaeicola` 590; `gtdb_to_ncbi_note` table in the dictionary.

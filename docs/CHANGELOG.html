@@ -5,9 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Changelog — Infant Gut Shotgun-Metagenome Catalog</title>
 <meta name="description" content="Curated, evidence-linked catalog of public shotgun-metagenome studies of the human infant gut with per-sample metadata and Sandpiper community profiles.">
-<meta name="catalog-release" content="data-v1.2.1">
+<meta name="catalog-release" content="data-v1.2.2">
 <link rel="canonical" href="https://olmlab.github.io/infant-gut-catalog/docs/CHANGELOG.html">
-<meta name="catalog-package-version" content="1.2.1">
+<meta name="catalog-package-version" content="1.2.2">
 <meta name="catalog-build-date" content="2026-09-26">
 <link rel="stylesheet" href="../static/site.css">
 
@@ -29,7 +29,12 @@
 <div class="crumbs"><a href="../index.html">Home</a> › <a href="../methods.html">Methods</a> › Changelog</div>
 
 <p class="small">Rendered from <a href="CHANGELOG.md">CHANGELOG.md</a>.</p>
-<div class="md"><h1 id="v121-2026-09-26-data-fixes-from-the-three-final-reviews-patch">v1.2.1 (2026-09-26) — data fixes from the three final reviews (patch)</h1>
+<div class="md"><h2 id="122-2026-09-26">1.2.2 — 2026-09-26</h2>
+<p>Owner decisions applied (value_history change_stage=owner_decision, 701 rows):
+* PRJEB90577 (PediCAP, 631 peri-rectal swab samples): body_site_class excluded → primary, new column <code>body_site='rectal_swab'</code>; catalog_scope 71,795 → 72,358.
+* 70 samples labelled METAGENOMIC whose organism is a named microbe (68 PRJNA799247: Staphylococcus epidermidis/Clostridioides difficile; 2 PRJNA1082298: Enterobacter asburiae) and flagged non-metagenome by Sandpiper: body_site_class → excluded, reason assay_isolate_genome. Studies remain included.
+* <code>body_site</code> column added to sample_metadata_wide (currently only 'rectal_swab'; stool is implied by body_site_class=primary otherwise).</p>
+<h1 id="v121-2026-09-26-data-fixes-from-the-three-final-reviews-patch">v1.2.1 (2026-09-26) — data fixes from the three final reviews (patch)</h1>
 <ul>
 <li><strong>F1 / R3-5 organisations.</strong> 6,143 of 18,888 organisation rows tagged <code>org_type = not_an_organisation</code> ({'submission_id': 6033, 'lowercase_username': 93, 'placeholder': 9, 'email_or_handle': 8}); for PRJNA studies the NCBI BioProject Organization is preferred over the ENA center_name. <code>organisations_index.json</code> 9,886 → 3,747 keys; <code>study_authors_summary.organisations</code> rows containing a SUB id 6,042 → 0; studies with a displayable organisation 9,579 → 9,513 (included studies 386/389).</li>
 <li><strong>R3-1 GTDB suffix genera.</strong> Genus indicators match <code>^g__&lt;Name&gt;(_[A-Z]+)?$</code>: <code>sp_ra_g_Enterococcus</code> changed on 19,090 samples (mean 0.0234 → 0.0324), <code>sp_ra_g_Veillonella</code> 6,076, <code>sp_ra_enterobacterales_core</code> 3,315, <code>sp_ra_g_Bacteroides</code> 1,786, <code>sp_ra_g_Phocaeicola</code> 590; <code>gtdb_to_ncbi_note</code> table in the dictionary.</li>
@@ -73,12 +78,12 @@
 
 </main>
 <footer>
-<div><b>Infant Gut Shotgun-Metagenome Catalog</b> — package <span class="mono">1.2.1</span> · built 2026-09-26 · generator <span class="mono">nogit</span> · release <span class="mono">data-v1.2.1</span> (<a href="../data/VERSION.json">VERSION.json</a>, <a href="../docs/CHANGELOG.html">changelog</a>). Curated tables are released under <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a>; archive metadata remains under INSDC terms; community profiles from <a href="https://sandpiper.qut.edu.au/">Sandpiper</a> (Woodcroft et al. 2025, CC-BY).</div>
-<div>How to cite: <i>Infant Gut Shotgun-Metagenome Catalog, data package 1.2.1 (data-v1.2.1), 2026.</i></div>
+<div><b>Infant Gut Shotgun-Metagenome Catalog</b> — package <span class="mono">1.2.2</span> · built 2026-09-26 · generator <span class="mono">nogit</span> · release <span class="mono">data-v1.2.2</span> (<a href="../data/VERSION.json">VERSION.json</a>, <a href="../docs/CHANGELOG.html">changelog</a>). Curated tables are released under <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a>; archive metadata remains under INSDC terms; community profiles from <a href="https://sandpiper.qut.edu.au/">Sandpiper</a> (Woodcroft et al. 2025, CC-BY).</div>
+<div>How to cite: <i>Infant Gut Shotgun-Metagenome Catalog, data package 1.2.2 (data-v1.2.2), 2026.</i></div>
 <div>Caveats: every value carries a route (R1 archive attribute, R2 supplementary table, R3 paper text, R4 abstract/description), a scope and a confidence tier (not a calibrated probability); R3/R4 values are group-level statements applied to samples — see <a href="../fields/index.html">Fields</a> and <a href="../methods.html#limitations">Methods › Limitations</a>. Built with an LLM-assisted pipeline; treat individual values as evidence-linked claims, not ground truth. Found an error? Every study, cohort and sample has a <b>Flag an issue</b> button that opens a prefilled GitHub issue.</div>
 </footer>
 
-<script>window.CATALOG={version:'1.2.1',release:'data-v1.2.1',issueRepo:'https://github.com/OlmLab/infant-gut-catalog/issues/new',issueTemplate:'catalog-finding.yml'};</script>
+<script>window.CATALOG={version:'1.2.2',release:'data-v1.2.2',issueRepo:'https://github.com/OlmLab/infant-gut-catalog/issues/new',issueTemplate:'catalog-finding.yml'};</script>
 <script src="../static/site.js"></script>
 
 </body>

@@ -5,9 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>README — Infant Gut Shotgun-Metagenome Catalog</title>
 <meta name="description" content="Curated, evidence-linked catalog of public shotgun-metagenome studies of the human infant gut with per-sample metadata and Sandpiper community profiles.">
-<meta name="catalog-release" content="data-v1.2.1">
+<meta name="catalog-release" content="data-v1.2.2">
 <link rel="canonical" href="https://olmlab.github.io/infant-gut-catalog/docs/README.html">
-<meta name="catalog-package-version" content="1.2.1">
+<meta name="catalog-package-version" content="1.2.2">
 <meta name="catalog-build-date" content="2026-09-26">
 <link rel="stylesheet" href="../static/site.css">
 
@@ -31,7 +31,7 @@
 <p class="small">Rendered from <a href="README.md">README.md</a>.</p>
 <div class="md"><h1 id="infant-gut-shotgun-metagenome-catalog-data-package-v120-2026-09-26">Infant Gut Shotgun-Metagenome Catalog — data package v1.2.0 (2026-09-26)</h1>
 <p>A curated, evidence-linked catalog of every public shotgun-metagenome study of the human infant gut (0–36 months) in the INSDC archives (ENA/SRA/DDBJ), with per-sample metadata recovered from archive attributes, supplementary tables and papers.</p>
-<p><strong>Headline numbers (computed from the tables in this package; see CHANGELOG v1.2 and v1.2.1).</strong> 389 included studies · 154,206 catalog samples (153,685 BioSample units + 521 run units from 6 one-BioSample-per-infant deposits; their 16 parent BioSamples are listed in <code>parent_biosamples.parquet</code> and counted nowhere else) · 174,022 sequencing runs · 618,898 sample × field determinations, each with a verbatim evidence quote (9,559 of them are out-of-scope ages that document <code>adult_age_flag</code>) · <strong>age scope</strong>: 67,598 samples with per-sample or per-subject infant evidence + 7,097 in studies triage judged all-infant = 74,695 age-scope infant samples, of which 71,795 are also gut/unknown body site = <strong><code>catalog_scope</code>, the headline denominator</strong> (2,900 age-scope infant rows are body-site <code>excluded</code>/<code>linked</code>: skin, milk, oral, mother…); 14,410 samples sit in mixed-age deposits and 49,556 in studies without a per-study infant estimate (age unknown); 9,559 carry an out-of-range age (<code>adult_flagged</code>); 5,986 are mother/other samples · age at collection ≤ 1,100 d recovered for 53,669 of 74,695 age-scope infant samples (72%) for 52,649 of 71,795 catalog-scope samples (73%) and for 62,230 of 146,336 body-site infant-scope samples (43%; v1.2.0 said 54,105 of 146,631 before the v1.2.1 host/isolate exclusions; the v1.1 figure 53,802 was computed before the run-unit fix and the site's 54,150 included the 16 parent rows and rows later superseded) · precision vs curatedMetagenomicData (hi-res set, 3,498 gold rows; <code>extraction_gold_eval_hires.csv</code>): age 0.99, delivery mode 0.995, preterm status 1.00 (full set of 3,670 rows: age 0.976, delivery 0.995, preterm 1.00 — see <code>tier_field_precision.csv</code>, column <code>gold_set</code>).</p>
+<p><strong>Headline numbers (computed from the tables in this package; see CHANGELOG v1.2 and v1.2.2).</strong> 389 included studies · 154,206 catalog samples (153,685 BioSample units + 521 run units from 6 one-BioSample-per-infant deposits; their 16 parent BioSamples are listed in <code>parent_biosamples.parquet</code> and counted nowhere else) · 174,022 sequencing runs · 618,898 sample × field determinations, each with a verbatim evidence quote (9,559 of them are out-of-scope ages that document <code>adult_age_flag</code>) · <strong>age scope</strong>: 67,598 samples with per-sample or per-subject infant evidence + 7,097 in studies triage judged all-infant = 74,695 age-scope infant samples, of which 72,358 are also gut/unknown body site = <strong><code>catalog_scope</code>, the headline denominator</strong> (2,900 age-scope infant rows are body-site <code>excluded</code>/<code>linked</code>: skin, milk, oral, mother…); 14,410 samples sit in mixed-age deposits and 49,556 in studies without a per-study infant estimate (age unknown); 9,559 carry an out-of-range age (<code>adult_flagged</code>); 5,986 are mother/other samples · age at collection ≤ 1,100 d recovered for 53,669 of 74,695 age-scope infant samples (72%) for 52,649 of 72,358 catalog-scope samples (73%) and for 62,230 of 146,336 body-site infant-scope samples (43%; v1.2.0 said 54,105 of 146,631 before the v1.2.2 host/isolate exclusions; the v1.1 figure 53,802 was computed before the run-unit fix and the site's 54,150 included the 16 parent rows and rows later superseded) · precision vs curatedMetagenomicData (hi-res set, 3,498 gold rows; <code>extraction_gold_eval_hires.csv</code>): age 0.99, delivery mode 0.995, preterm status 1.00 (full set of 3,670 rows: age 0.976, delivery 0.995, preterm 1.00 — see <code>tier_field_precision.csv</code>, column <code>gold_set</code>).</p>
 <p>Universe screened: 9,579 candidate studies (all METAGENOMIC WGS/WXS runs in ENA with a human signal, no taxon filter) → 389 included, 52 unresolvable after two full-text review rounds; recall on the 22 curatedMetagenomicData infant BioProjects: 17/22 by the automated cascade, 18/22 after the human-review pass (one study, <code>decision_stage=session_model_review</code>), the rest excluded with a coded reason (<code>universe_studies_all.parquet</code>).</p>
 <h2 id="files">Files</h2>
 <table>
@@ -81,7 +81,7 @@
 <tr>
 <td><code>sandpiper_flag_table.csv</code></td>
 <td style="text-align: right;">20</td>
-<td>Single source for every Sandpiper flag (field, level, site label, definition, used) — v1.2.1</td>
+<td>Single source for every Sandpiper flag (field, level, site label, definition, used) — v1.2.2</td>
 </tr>
 <tr>
 <td><code>sandpiper_study_panel_status.csv</code></td>
@@ -193,12 +193,12 @@
 
 </main>
 <footer>
-<div><b>Infant Gut Shotgun-Metagenome Catalog</b> — package <span class="mono">1.2.1</span> · built 2026-09-26 · generator <span class="mono">nogit</span> · release <span class="mono">data-v1.2.1</span> (<a href="../data/VERSION.json">VERSION.json</a>, <a href="../docs/CHANGELOG.html">changelog</a>). Curated tables are released under <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a>; archive metadata remains under INSDC terms; community profiles from <a href="https://sandpiper.qut.edu.au/">Sandpiper</a> (Woodcroft et al. 2025, CC-BY).</div>
-<div>How to cite: <i>Infant Gut Shotgun-Metagenome Catalog, data package 1.2.1 (data-v1.2.1), 2026.</i></div>
+<div><b>Infant Gut Shotgun-Metagenome Catalog</b> — package <span class="mono">1.2.2</span> · built 2026-09-26 · generator <span class="mono">nogit</span> · release <span class="mono">data-v1.2.2</span> (<a href="../data/VERSION.json">VERSION.json</a>, <a href="../docs/CHANGELOG.html">changelog</a>). Curated tables are released under <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a>; archive metadata remains under INSDC terms; community profiles from <a href="https://sandpiper.qut.edu.au/">Sandpiper</a> (Woodcroft et al. 2025, CC-BY).</div>
+<div>How to cite: <i>Infant Gut Shotgun-Metagenome Catalog, data package 1.2.2 (data-v1.2.2), 2026.</i></div>
 <div>Caveats: every value carries a route (R1 archive attribute, R2 supplementary table, R3 paper text, R4 abstract/description), a scope and a confidence tier (not a calibrated probability); R3/R4 values are group-level statements applied to samples — see <a href="../fields/index.html">Fields</a> and <a href="../methods.html#limitations">Methods › Limitations</a>. Built with an LLM-assisted pipeline; treat individual values as evidence-linked claims, not ground truth. Found an error? Every study, cohort and sample has a <b>Flag an issue</b> button that opens a prefilled GitHub issue.</div>
 </footer>
 
-<script>window.CATALOG={version:'1.2.1',release:'data-v1.2.1',issueRepo:'https://github.com/OlmLab/infant-gut-catalog/issues/new',issueTemplate:'catalog-finding.yml'};</script>
+<script>window.CATALOG={version:'1.2.2',release:'data-v1.2.2',issueRepo:'https://github.com/OlmLab/infant-gut-catalog/issues/new',issueTemplate:'catalog-finding.yml'};</script>
 <script src="../static/site.js"></script>
 
 </body>
