@@ -5,9 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Data dictionary — Infant Gut Shotgun-Metagenome Catalog</title>
 <meta name="description" content="Curated, evidence-linked catalog of public shotgun-metagenome studies of the human infant gut with per-sample metadata and Sandpiper community profiles.">
-<meta name="catalog-release" content="data-v1.2.1">
+<meta name="catalog-release" content="data-v1.3.0">
+<meta name="catalog-release-id" content="R2026.1">
 <link rel="canonical" href="https://olmlab.github.io/infant-gut-catalog/docs/DATA_DICTIONARY.html">
-<meta name="catalog-package-version" content="1.2.1">
+<meta name="catalog-package-version" content="1.3.0">
 <meta name="catalog-build-date" content="2026-09-26">
 <link rel="stylesheet" href="../static/site.css">
 
@@ -24,6 +25,7 @@
 <a href="../universe.html" >Universe</a>
 <a href="../methods.html" class="active">Methods</a>
 <a href="../downloads.html" >Downloads</a>
+<a href="../releases/index.html" >Releases</a>
 </div></nav>
 <main>
 <div class="crumbs"><a href="../index.html">Home</a> › <a href="../methods.html">Methods</a> › Data dictionary</div>
@@ -522,6 +524,18 @@
 <td><code>src_track</code></td>
 <td>pipeline pass that produced the row</td>
 </tr>
+<tr>
+<td><code>release_added</code></td>
+<td>release in which this row first became visible (<code>R&lt;YYYY&gt;.&lt;n&gt;</code> or a pre-numbered package semver <code>1.0.0</code>–<code>1.2.2</code>); pre-1.3.0 values are reconstructed — see DATA_DICTIONARY 'Release columns'</td>
+</tr>
+<tr>
+<td><code>release_retired</code></td>
+<td>release that replaced/removed the row; null (empty in CSV) = current row</td>
+</tr>
+<tr>
+<td><code>package_added</code></td>
+<td>semver of the data package in which the row first appeared</td>
+</tr>
 </tbody>
 </table>
 <h2 id="routes">Routes</h2>
@@ -736,6 +750,58 @@
 <p>One row per (study, stage table, replicate). <code>stage_order</code> (v1.2.1) follows the stage ontology <code>stage_rank</code>/<code>stage_level</code>: screen &lt; tier1_rubric &lt; confirm r1–r3 &lt; adjudication &lt; growth_wave (wave order ff, gap, grow, grow_w2, grow_w3, gsa, loose, nm, r3, v3_delta; r1 &lt; r2 &lt; wave adjudication) &lt; growth_wave_merged &lt; biosample_rejudge &lt; human_review (round 1, round 2) &lt; consolidated_triage_v2 &lt; consolidated_final; ties broken by date, replicate, stage. <code>is_consolidated</code> marks rows copied from a consolidated table (<code>consolidated_kind</code> = final / triage_v2 / growth_wave) — render only the <code>final</code> row as the single 'final' line. <code>verdict_norm</code> (v1.2.1): Haiku screen <code>yes</code> → <code>uncertain</code> (screen-pass, not a verdict), <code>no</code> → <code>exclude</code>, <code>ERROR</code> and empty verdicts → null; <code>verdict_norm_note</code> explains each mapping. <code>stage_family</code> groups tables (haiku_screen, sonnet_rubric_tier1, sonnet_confirm:<em>, opus_adjudication:</em>, growth_triage_merged:*, biosample_rejudge, human_review_round1/2, triage_v2_consolidated, catalog_final). <code>verdict</code> is the raw label of that stage (include/exclude/unsure/uncertain; the Haiku screen's yes/no; <code>ERROR</code> for failed requests); <code>verdict_norm</code> maps it to include/exclude/uncertain/None. <code>is_final</code> marks the row that equals <code>universe_studies_all</code>. <code>evidence</code> is the stage's JSON evidence list; <code>src_artifact</code>/<code>src_version_id</code> name the release-bundle table the row was copied from.</p>
 <h2 id="value_historyparquet">value_history.parquet</h2>
 <p>Determinations that are not in <code>sample_determinations.parquet</code>. <code>status</code>: <code>superseded</code> (a higher-precedence value replaced it; <code>replaced_by</code> names it), <code>rejected</code> (validator or rule rejection; <code>reason</code>), <code>dropped</code> (group statement failed the Opus checklist audit; <code>reason</code> = drop_reason), <code>recommitted_out_of_scope_adult</code> (an R1 age the v1.1 validator rejected as out of range that v1.2 commits with <code>parse_note out_of_scope_adult</code> to evidence <code>adult_age_flag</code>), <code>not_committed_duplicate</code> (second out-of-range age attribute on the same sample), <code>moved_to_parent_biosamples</code>, <code>auditor_finding_applied</code> (study-level auditor findings and what was done). <code>change_stage</code> names the pipeline stage that made the change (<code>auditor_review:B2</code>/<code>B9</code> for v1.2.0; <code>auditor_review:R3-3</code> for the v1.2.1 host/isolate rule, statuses <code>recommitted_out_of_scope_host</code> and <code>recommitted_out_of_scope_isolate</code>, field_name <code>body_site_class</code>, evidence source <code>run.scientific_name</code> / <code>run.library_source</code>).</p>
+<h2 id="release-columns-r20261-package-130">Release columns (R2026.1, package 1.3.0)</h2>
+<p>Fact tables — <code>sample_determinations.parquet</code>, <code>universe_studies_all.parquet</code>, <code>study_metadata_wide.parquet</code>, <code>cohorts.csv</code>, <code>study_paper_links.csv</code>, <code>sandpiper_sample_summary.parquet</code>, <code>sandpiper_run_qc.parquet</code>, <code>sandpiper_top_genera.parquet</code>, <code>sandpiper_study_panels.parquet</code>, <code>study_metadata_wide.csv</code> — end with three columns:</p>
+<table>
+<thead>
+<tr>
+<th>column</th>
+<th>dtype</th>
+<th>meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>release_added</code></td>
+<td>string</td>
+<td>release in which this row first became visible (<code>R&lt;YYYY&gt;.&lt;n&gt;</code> or a pre-numbered package semver <code>1.0.0</code>–<code>1.2.2</code>); pre-1.3.0 values are reconstructed — see DATA_DICTIONARY 'Release columns'</td>
+</tr>
+<tr>
+<td><code>release_retired</code></td>
+<td>string | null</td>
+<td>release that replaced/removed the row; null (empty in CSV) = current row</td>
+</tr>
+<tr>
+<td><code>package_added</code></td>
+<td>string</td>
+<td>semver of the data package in which the row first appeared</td>
+</tr>
+</tbody>
+</table>
+<p>Release ids are <code>R&lt;YYYY&gt;.&lt;n&gt;</code> (first: <code>R2026.1</code> = package 1.3.0) or, for states published before numbering, the package
+semver <code>1.0.0</code> (first public package, 2026-09-25), <code>1.1.0</code> (release v11), <code>1.2.0</code>, <code>1.2.1</code>, <code>1.2.2</code>. "Current" = <code>release_retired IS NULL</code>;
+in the shipped fact tables every row is current. <code>sample_metadata_wide</code> is derived from <code>sample_determinations</code> and carries no release columns.</p>
+<p><strong>Reconstruction caveat.</strong> Packages before 1.3.0 carried no release columns, so <code>release_added</code> of pre-existing rows was reconstructed:
+newest <code>value_history.change_stage</code> touching the (sample_key, field_name) or <code>sample_determinations.src_track</code>, mapped to the package the
+CHANGELOG records for that stage (<code>sample_unit_fix</code> → 1.1.0, <code>auditor_review:B2</code>/<code>B9</code> → 1.2.0, <code>auditor_review:R3-3</code> → 1.2.1,
+<code>owner_decision</code> → 1.2.2). Exact for rows those stages touched (13191 current determinations:
+<code>src_track = sample_unit_fix</code> → 1.1.0, <code>src_track = adult_scope_fix</code> → 1.2.0); every other pre-1.3.0 row is labelled <code>1.0.0</code> by assumption
+(the first package is not archived as a table, so this cannot be verified row by row). <code>package_added</code> equals <code>release_added</code> for all
+pre-1.3.0 rows. Study verdict rows are all <code>1.0.0</code> (no verdict change is dated after the first package); Sandpiper rows are <code>1.2.0</code>
+(when Sandpiper landed; the v1.2.1 recomputation of existing rows is recorded in the CHANGELOG, not as retire+add).</p>
+<h2 id="sample_determinations_allparquet-r20261">sample_determinations_all.parquet (R2026.1)</h2>
+<p><code>sample_determinations</code> columns + the three release columns + <code>retired_reason</code> (string|null; <code>value_history.reason</code>) +
+<code>retired_change_stage</code> (string|null; <code>value_history.change_stage</code>). Rows: every current determination (618,898,
+<code>release_retired</code> null) ∪ every <strong>retired published value</strong> (1,316) reconstructed from <code>value_history</code>
+rows whose <code>status</code> ∈ {<code>superseded</code>, <code>moved_to_parent_biosamples</code>, <code>recommitted_out_of_scope_host</code>, <code>recommitted_out_of_scope_isolate</code>}
+(<code>release_retired</code> = the package of their <code>change_stage</code>). value_history rows with status <code>rejected</code>, <code>dropped</code>, <code>not_committed_duplicate</code>,
+<code>recommitted_out_of_scope_adult</code> (the pre-history of a row that IS current) or <code>auditor_finding_applied</code> were never published and are not
+rows here. Exactly one current row per (<code>sample_key</code>, <code>field_name</code>); retired rows may repeat a key. <code>sample_determinations_superseded.parquet</code>
+(223 rows) is the same set as the <code>superseded</code> rows of stages <code>sample_unit_fix</code> (75) and <code>auditor_review:B9</code> (148) and is kept for the v1.1 layout.</p>
+<h2 id="releasescsv-r20261">releases.csv (R2026.1)</h2>
+<p>One row per release id, oldest first: <code>release_id</code>, <code>package_version</code>, <code>release_date</code>, <code>data_tag</code>, <code>site_tag</code>, <code>doi</code> (empty until Zenodo
+mints one), <code>n_studies_included</code>, <code>n_samples</code>, <code>n_catalog_scope</code>, <code>n_determinations_current</code>, <code>sandpiper_version</code>, <code>notes_file</code>. Historical
+rows carry only the counts the CHANGELOGs state (empty otherwise — never invented).</p>
 <h2 id="sandpiper-columns-added-v120">Sandpiper columns (added v1.2.0)</h2>
 <p>Source: SingleM community profiles from Sandpiper 2.0.0 (Woodcroft et al. 2025, <em>Nat Biotechnol</em>; Zenodo record 20419175, CC-BY), taxonomy GTDB R232. Profiles are keyed by run; for a catalog sample with several profiled runs the filled coverage per taxon is <strong>summed across runs and then normalised</strong> (never averaged). Every <code>*_ra</code> column is a <strong>fraction of prokaryotic (Bacteria + Archaea) coverage</strong> — approximately a cell proportion, not a read fraction; not comparable with MetaPhlAn or 16S numbers.</p>
 <table>
@@ -1704,7 +1770,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="study_metadata_wideparquet-117-columns">study_metadata_wide.parquet (117 columns)</h3>
+<h3 id="study_metadata_wideparquet-120-columns">study_metadata_wide.parquet (120 columns)</h3>
 <table>
 <thead>
 <tr>
@@ -2299,17 +2365,32 @@
 <td>object</td>
 <td>human-readable note for the five studies sharing BioSamples (F6)</td>
 </tr>
+<tr>
+<td><code>release_added</code></td>
+<td>string</td>
+<td>release in which this row first became visible (<code>R&lt;YYYY&gt;.&lt;n&gt;</code> or a pre-numbered package semver <code>1.0.0</code>–<code>1.2.2</code>); pre-1.3.0 values are reconstructed — see DATA_DICTIONARY 'Release columns'</td>
+</tr>
+<tr>
+<td><code>release_retired</code></td>
+<td>string</td>
+<td>release that replaced/removed the row; null (empty in CSV) = current row</td>
+</tr>
+<tr>
+<td><code>package_added</code></td>
+<td>string</td>
+<td>semver of the data package in which the row first appeared</td>
+</tr>
 </tbody>
 </table></div>
 
 </main>
 <footer>
-<div><b>Infant Gut Shotgun-Metagenome Catalog</b> — package <span class="mono">1.2.1</span> · built 2026-09-26 · generator <span class="mono">nogit</span> · release <span class="mono">data-v1.2.1</span> (<a href="../data/VERSION.json">VERSION.json</a>, <a href="../docs/CHANGELOG.html">changelog</a>). Curated tables are released under <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a>; archive metadata remains under INSDC terms; community profiles from <a href="https://sandpiper.qut.edu.au/">Sandpiper</a> (Woodcroft et al. 2025, CC-BY).</div>
-<div>How to cite: <i>Infant Gut Shotgun-Metagenome Catalog, data package 1.2.1 (data-v1.2.1), 2026.</i></div>
+<div id="release-line"><b>Infant Gut Shotgun-Metagenome Catalog</b> — release <a href="../releases/index.html#rel-R2026.1"><span class="mono">R2026.1</span></a> · package <span class="mono">1.3.0</span> · build <span class="mono">b95c4e5</span> · built 2026-09-26 · data tag <span class="mono">data-v1.3.0</span> · DOI pending Zenodo integration (<a href="../data/VERSION.json">VERSION.json</a>, <a href="../changes/R2026.1.html">what changed</a>, <a href="../docs/CHANGELOG.html">changelog</a>). Curated tables are released under <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a>; archive metadata remains under INSDC terms; community profiles from <a href="https://sandpiper.qut.edu.au/">Sandpiper</a> (Woodcroft et al. 2025, CC-BY).</div>
+<div>How to cite: <i>Infant Gut Shotgun-Metagenome Catalog, release R2026.1 (data package 1.3.0), OlmLab, 2026-09-26.</i></div>
 <div>Caveats: every value carries a route (R1 archive attribute, R2 supplementary table, R3 paper text, R4 abstract/description), a scope and a confidence tier (not a calibrated probability); R3/R4 values are group-level statements applied to samples — see <a href="../fields/index.html">Fields</a> and <a href="../methods.html#limitations">Methods › Limitations</a>. Built with an LLM-assisted pipeline; treat individual values as evidence-linked claims, not ground truth. Found an error? Every study, cohort and sample has a <b>Flag an issue</b> button that opens a prefilled GitHub issue.</div>
 </footer>
 
-<script>window.CATALOG={version:'1.2.1',release:'data-v1.2.1',issueRepo:'https://github.com/OlmLab/infant-gut-catalog/issues/new',issueTemplate:'catalog-finding.yml'};</script>
+<script>window.CATALOG={version:'1.3.0',release:'data-v1.3.0',releaseId:'R2026.1',issueRepo:'https://github.com/OlmLab/infant-gut-catalog/issues/new',issueTemplate:'catalog-finding.yml'};</script>
 <script src="../static/site.js"></script>
 
 </body>

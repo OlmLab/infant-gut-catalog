@@ -5,9 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Sample explorer — Infant Gut Shotgun-Metagenome Catalog</title>
 <meta name="description" content="Curated, evidence-linked catalog of public shotgun-metagenome studies of the human infant gut with per-sample metadata and Sandpiper community profiles.">
-<meta name="catalog-release" content="data-v1.2.1">
+<meta name="catalog-release" content="data-v1.3.0">
+<meta name="catalog-release-id" content="R2026.1">
 <link rel="canonical" href="https://olmlab.github.io/infant-gut-catalog/samples/index.html">
-<meta name="catalog-package-version" content="1.2.1">
+<meta name="catalog-package-version" content="1.3.0">
 <meta name="catalog-build-date" content="2026-09-26">
 <link rel="stylesheet" href="../static/site.css">
 
@@ -24,6 +25,7 @@
 <a href="../universe.html" >Universe</a>
 <a href="../methods.html" >Methods</a>
 <a href="../downloads.html" >Downloads</a>
+<a href="../releases/index.html" >Releases</a>
 </div></nav>
 <main>
 <div class="crumbs"><a href="../index.html">Home</a> › Sample explorer</div>
@@ -101,22 +103,22 @@
   </div>
   <div class="status" id="dl-status"></div>
   <div id="result-wrap"><table class="tbl" id="result-table"><thead></thead><tbody></tbody></table></div>
-  <p class="small">Columns shown are a subset; downloads include all 147 columns of the filtered rows (with the README rule applied when the toggle is on — masked values are exported as empty with <span class="mono">__route</span>/<span class="mono">__confidence</span> kept, so you can see what was hidden). Full table: <a href="../data/sample_metadata_wide.parquet" download>parquet</a> · <a href="../data/package/sample_metadata_wide.csv.gz" download>CSV.gz</a>. Evidence for every value: <a href="../data/sample_determinations.parquet" download>sample_determinations.parquet</a>; history: <a href="../data/value_history.parquet" download>value_history.parquet</a> (563.2 KB).</p>
+  <p class="small">Columns shown are a subset; downloads include all 148 columns of the filtered rows (with the README rule applied when the toggle is on — masked values are exported as empty with <span class="mono">__route</span>/<span class="mono">__confidence</span> kept, so you can see what was hidden). Full table: <a href="../data/sample_metadata_wide.parquet" download>parquet</a> · <a href="../data/package/sample_metadata_wide.csv.gz" download>CSV.gz</a>. Evidence for every value: <a href="../data/sample_determinations.parquet" download>sample_determinations.parquet</a>; value timeline across releases (current + retired values): <a href="../data/sample_determinations_all.parquet" download>sample_determinations_all.parquet</a> (6.8 MB, loaded on demand when a sample detail is opened); history: <a href="../data/value_history.parquet" download>value_history.parquet</a> (569.1 KB).</p>
 </section>
 </div>
 <div class="detail" id="detail" role="dialog" aria-modal="false" aria-label="Sample details" tabindex="-1"><button class="close" id="detail-close" title="close (Escape)" aria-label="close sample details">×</button><div id="detail-body"></div></div>
 
 </main>
 <footer>
-<div><b>Infant Gut Shotgun-Metagenome Catalog</b> — package <span class="mono">1.2.1</span> · built 2026-09-26 · generator <span class="mono">nogit</span> · release <span class="mono">data-v1.2.1</span> (<a href="../data/VERSION.json">VERSION.json</a>, <a href="../docs/CHANGELOG.html">changelog</a>). Curated tables are released under <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a>; archive metadata remains under INSDC terms; community profiles from <a href="https://sandpiper.qut.edu.au/">Sandpiper</a> (Woodcroft et al. 2025, CC-BY).</div>
-<div>How to cite: <i>Infant Gut Shotgun-Metagenome Catalog, data package 1.2.1 (data-v1.2.1), 2026.</i></div>
+<div id="release-line"><b>Infant Gut Shotgun-Metagenome Catalog</b> — release <a href="../releases/index.html#rel-R2026.1"><span class="mono">R2026.1</span></a> · package <span class="mono">1.3.0</span> · build <span class="mono">b95c4e5</span> · built 2026-09-26 · data tag <span class="mono">data-v1.3.0</span> · DOI pending Zenodo integration (<a href="../data/VERSION.json">VERSION.json</a>, <a href="../changes/R2026.1.html">what changed</a>, <a href="../docs/CHANGELOG.html">changelog</a>). Curated tables are released under <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a>; archive metadata remains under INSDC terms; community profiles from <a href="https://sandpiper.qut.edu.au/">Sandpiper</a> (Woodcroft et al. 2025, CC-BY).</div>
+<div>How to cite: <i>Infant Gut Shotgun-Metagenome Catalog, release R2026.1 (data package 1.3.0), OlmLab, 2026-09-26.</i></div>
 <div>Caveats: every value carries a route (R1 archive attribute, R2 supplementary table, R3 paper text, R4 abstract/description), a scope and a confidence tier (not a calibrated probability); R3/R4 values are group-level statements applied to samples — see <a href="../fields/index.html">Fields</a> and <a href="../methods.html#limitations">Methods › Limitations</a>. Built with an LLM-assisted pipeline; treat individual values as evidence-linked claims, not ground truth. Found an error? Every study, cohort and sample has a <b>Flag an issue</b> button that opens a prefilled GitHub issue.</div>
 </footer>
 
-<script>window.CATALOG={version:'1.2.1',release:'data-v1.2.1',issueRepo:'https://github.com/OlmLab/infant-gut-catalog/issues/new',issueTemplate:'catalog-finding.yml'};</script>
+<script>window.CATALOG={version:'1.3.0',release:'data-v1.3.0',releaseId:'R2026.1',issueRepo:'https://github.com/OlmLab/infant-gut-catalog/issues/new',issueTemplate:'catalog-finding.yml'};</script>
 <script src="../static/site.js"></script>
 
-<script>window.EXPLORER_CFG={parquet:'../data/sample_metadata_wide.parquet',det:'../data/sample_determinations.parquet',vh:'../data/value_history.parquet',topgen:'../data/sandpiper_top_genera.parquet',fields:["probiotic_exposure", "preterm_status", "gestational_age_weeks", "delivery_mode", "feeding_mode", "antibiotic_exposure", "age_at_collection_days", "birth_weight_grams", "country", "maternal_antibiotics", "hmo_supplementation", "nec_status", "health_condition", "multiple_birth", "sibling_in_study", "geo_subregion", "sex", "timepoint_label", "subject_id"],studiesUrl:'../studies/',cohortsUrl:'../cohorts/',fieldsUrl:'../fields/index.html',csvgz:'../data/package/sample_metadata_wide.csv.gz'};</script>
+<script>window.EXPLORER_CFG={parquet:'../data/sample_metadata_wide.parquet',det:'../data/sample_determinations.parquet',vh:'../data/value_history.parquet',sdall:'../data/sample_determinations_all.parquet',releaseCols:{"added": "release_added", "reason": "retired_reason", "retired": "release_retired", "stage": "retired_change_stage"},releaseId:'R2026.1',topgen:'../data/sandpiper_top_genera.parquet',fields:["probiotic_exposure", "preterm_status", "gestational_age_weeks", "delivery_mode", "feeding_mode", "antibiotic_exposure", "age_at_collection_days", "birth_weight_grams", "country", "maternal_antibiotics", "hmo_supplementation", "nec_status", "health_condition", "multiple_birth", "sibling_in_study", "geo_subregion", "sex", "timepoint_label", "subject_id"],studiesUrl:'../studies/',cohortsUrl:'../cohorts/',fieldsUrl:'../fields/index.html',csvgz:'../data/package/sample_metadata_wide.csv.gz'};</script>
 <script>// F5 watchdog: if the module (or the CDN behind it) never runs, show the failure text and download links after 20 s
 setTimeout(function(){ if (!window.__explorerReady) { var b=document.getElementById('boot'); if (b && b.style.display !== 'none') { var C=window.EXPLORER_CFG; b.innerHTML='<b>The explorer could not start within 20 s.</b> DuckDB-WASM (pinned 1.29.0) is loaded from cdn.jsdelivr.net; the CDN may be blocked on your network (corporate proxy, CSP, offline) or the browser blocks WebAssembly/Workers. Everything the explorer shows is also downloadable: <a href="'+C.parquet+'">sample_metadata_wide.parquet</a> · <a href="'+C.csvgz+'">sample_metadata_wide.csv.gz</a> · <a href="'+C.det+'">sample_determinations.parquet</a> · per-study CSVs on each study page.'; } } }, 20000);</script>
 <script type="module" src="../static/explorer.js"></script>

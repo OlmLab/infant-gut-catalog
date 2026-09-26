@@ -104,6 +104,9 @@
 | `parse_note` | derivation notes (unit resolution, propagation, supersession, review flags) |
 | `group_audit` | keep/downgrade for group statements (Opus audit) |
 | `src_track` | pipeline pass that produced the row |
+| `release_added` | release in which this row first became visible (`R<YYYY>.<n>` or a pre-numbered package semver `1.0.0`–`1.2.2`); pre-1.3.0 values are reconstructed — see DATA_DICTIONARY 'Release columns' |
+| `release_retired` | release that replaced/removed the row; null (empty in CSV) = current row |
+| `package_added` | semver of the data package in which the row first appeared |
 
 ## Routes
 R1 = archive sample attribute or sample-name convention (per sample); R2 = supplementary table row (per sample; 'subject_level_join' in parse_note when copied from a per-subject row); R3 = statement in the paper text applied to a defined group; R4 = abstract/ENA description statement (group; confidence ≤0.5).
@@ -177,6 +180,43 @@ One row per (study, stage table, replicate). `stage_order` (v1.2.1) follows the 
 ## value_history.parquet
 Determinations that are not in `sample_determinations.parquet`. `status`: `superseded` (a higher-precedence value replaced it; `replaced_by` names it), `rejected` (validator or rule rejection; `reason`), `dropped` (group statement failed the Opus checklist audit; `reason` = drop_reason), `recommitted_out_of_scope_adult` (an R1 age the v1.1 validator rejected as out of range that v1.2 commits with `parse_note out_of_scope_adult` to evidence `adult_age_flag`), `not_committed_duplicate` (second out-of-range age attribute on the same sample), `moved_to_parent_biosamples`, `auditor_finding_applied` (study-level auditor findings and what was done). `change_stage` names the pipeline stage that made the change (`auditor_review:B2`/`B9` for v1.2.0; `auditor_review:R3-3` for the v1.2.1 host/isolate rule, statuses `recommitted_out_of_scope_host` and `recommitted_out_of_scope_isolate`, field_name `body_site_class`, evidence source `run.scientific_name` / `run.library_source`).
 
+
+## Release columns (R2026.1, package 1.3.0)
+Fact tables — `sample_determinations.parquet`, `universe_studies_all.parquet`, `study_metadata_wide.parquet`, `cohorts.csv`, `study_paper_links.csv`, `sandpiper_sample_summary.parquet`, `sandpiper_run_qc.parquet`, `sandpiper_top_genera.parquet`, `sandpiper_study_panels.parquet`, `study_metadata_wide.csv` — end with three columns:
+
+| column | dtype | meaning |
+|---|---|---|
+| `release_added` | string | release in which this row first became visible (`R<YYYY>.<n>` or a pre-numbered package semver `1.0.0`–`1.2.2`); pre-1.3.0 values are reconstructed — see DATA_DICTIONARY 'Release columns' |
+| `release_retired` | string \| null | release that replaced/removed the row; null (empty in CSV) = current row |
+| `package_added` | string | semver of the data package in which the row first appeared |
+
+Release ids are `R<YYYY>.<n>` (first: `R2026.1` = package 1.3.0) or, for states published before numbering, the package
+semver `1.0.0` (first public package, 2026-09-25), `1.1.0` (release v11), `1.2.0`, `1.2.1`, `1.2.2`. "Current" = `release_retired IS NULL`;
+in the shipped fact tables every row is current. `sample_metadata_wide` is derived from `sample_determinations` and carries no release columns.
+
+**Reconstruction caveat.** Packages before 1.3.0 carried no release columns, so `release_added` of pre-existing rows was reconstructed:
+newest `value_history.change_stage` touching the (sample_key, field_name) or `sample_determinations.src_track`, mapped to the package the
+CHANGELOG records for that stage (`sample_unit_fix` → 1.1.0, `auditor_review:B2`/`B9` → 1.2.0, `auditor_review:R3-3` → 1.2.1,
+`owner_decision` → 1.2.2). Exact for rows those stages touched (13191 current determinations:
+`src_track = sample_unit_fix` → 1.1.0, `src_track = adult_scope_fix` → 1.2.0); every other pre-1.3.0 row is labelled `1.0.0` by assumption
+(the first package is not archived as a table, so this cannot be verified row by row). `package_added` equals `release_added` for all
+pre-1.3.0 rows. Study verdict rows are all `1.0.0` (no verdict change is dated after the first package); Sandpiper rows are `1.2.0`
+(when Sandpiper landed; the v1.2.1 recomputation of existing rows is recorded in the CHANGELOG, not as retire+add).
+
+## sample_determinations_all.parquet (R2026.1)
+`sample_determinations` columns + the three release columns + `retired_reason` (string|null; `value_history.reason`) +
+`retired_change_stage` (string|null; `value_history.change_stage`). Rows: every current determination (618,898,
+`release_retired` null) ∪ every **retired published value** (1,316) reconstructed from `value_history`
+rows whose `status` ∈ {`superseded`, `moved_to_parent_biosamples`, `recommitted_out_of_scope_host`, `recommitted_out_of_scope_isolate`}
+(`release_retired` = the package of their `change_stage`). value_history rows with status `rejected`, `dropped`, `not_committed_duplicate`,
+`recommitted_out_of_scope_adult` (the pre-history of a row that IS current) or `auditor_finding_applied` were never published and are not
+rows here. Exactly one current row per (`sample_key`, `field_name`); retired rows may repeat a key. `sample_determinations_superseded.parquet`
+(223 rows) is the same set as the `superseded` rows of stages `sample_unit_fix` (75) and `auditor_review:B9` (148) and is kept for the v1.1 layout.
+
+## releases.csv (R2026.1)
+One row per release id, oldest first: `release_id`, `package_version`, `release_date`, `data_tag`, `site_tag`, `doi` (empty until Zenodo
+mints one), `n_studies_included`, `n_samples`, `n_catalog_scope`, `n_determinations_current`, `sandpiper_version`, `notes_file`. Historical
+rows carry only the counts the CHANGELOGs state (empty otherwise — never invented).
 
 ## Sandpiper columns (added v1.2.0)
 Source: SingleM community profiles from Sandpiper 2.0.0 (Woodcroft et al. 2025, *Nat Biotechnol*; Zenodo record 20419175, CC-BY), taxonomy GTDB R232. Profiles are keyed by run; for a catalog sample with several profiled runs the filled coverage per taxon is **summed across runs and then normalised** (never averaged). Every `*_ra` column is a **fraction of prokaryotic (Bacteria + Archaea) coverage** — approximately a cell proportion, not a read fraction; not comparable with MetaPhlAn or 16S numbers.
@@ -408,7 +448,7 @@ One row per study × organisation token × source (`bioproject_organization` = N
 | `catalog_scope` | bool | **headline scope (v1.2.1)** = `age_scope ∈ {infant_evidenced, study_all_infant}` AND `body_site_class ∈ {primary, unknown}`; the intersection used for headline counts (71,795 rows) and for Sandpiper study panels/medians |
 | `panel_scope` | bool | True when the row enters its study's Sandpiper panel/medians: `catalog_scope AND sp_profiled AND NOT sp_low_depth` |
 
-### study_metadata_wide.parquet (117 columns)
+### study_metadata_wide.parquet (120 columns)
 | column | dtype | description |
 |---|---|---|
 | `study_accession` | str | BioProject accession (key) |
@@ -528,3 +568,6 @@ One row per study × organisation token × source (`bioproject_organization` = N
 | `n_run_units` | int64 | run-unit rows (one BioSample per infant, one run per stool) |
 | `n_parent_biosamples` | int64 | parent BioSamples of the run units (listed in parent_biosamples.parquet, counted nowhere else) |
 | `shared_biosample_note` | object | human-readable note for the five studies sharing BioSamples (F6) |
+| `release_added` | string | release in which this row first became visible (`R<YYYY>.<n>` or a pre-numbered package semver `1.0.0`–`1.2.2`); pre-1.3.0 values are reconstructed — see DATA_DICTIONARY 'Release columns' |
+| `release_retired` | string | release that replaced/removed the row; null (empty in CSV) = current row |
+| `package_added` | string | semver of the data package in which the row first appeared |

@@ -5,9 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Changelog — Infant Gut Shotgun-Metagenome Catalog</title>
 <meta name="description" content="Curated, evidence-linked catalog of public shotgun-metagenome studies of the human infant gut with per-sample metadata and Sandpiper community profiles.">
-<meta name="catalog-release" content="data-v1.2.1">
+<meta name="catalog-release" content="data-v1.3.0">
+<meta name="catalog-release-id" content="R2026.1">
 <link rel="canonical" href="https://olmlab.github.io/infant-gut-catalog/docs/CHANGELOG.html">
-<meta name="catalog-package-version" content="1.2.1">
+<meta name="catalog-package-version" content="1.3.0">
 <meta name="catalog-build-date" content="2026-09-26">
 <link rel="stylesheet" href="../static/site.css">
 
@@ -24,12 +25,26 @@
 <a href="../universe.html" >Universe</a>
 <a href="../methods.html" class="active">Methods</a>
 <a href="../downloads.html" >Downloads</a>
+<a href="../releases/index.html" >Releases</a>
 </div></nav>
 <main>
 <div class="crumbs"><a href="../index.html">Home</a> › <a href="../methods.html">Methods</a> › Changelog</div>
 
 <p class="small">Rendered from <a href="CHANGELOG.md">CHANGELOG.md</a>.</p>
-<div class="md"><h1 id="v121-2026-09-26-data-fixes-from-the-three-final-reviews-patch">v1.2.1 (2026-09-26) — data fixes from the three final reviews (patch)</h1>
+<div class="md"><h2 id="130-2026-09-26-release-r20261-first-numbered-catalog-release-bitemporal-columns">1.3.0 — 2026-09-26 — release R2026.1 (first numbered catalog release; bitemporal columns)</h2>
+<p>Deterministic changes only; no LLM calls; no value of any 1.2.2 table changed (asserted at build: dropping the new columns reproduces every 1.2.2 fact table).
+* <strong>Release model</strong> (<code>VERSION.json.release_id = R2026.1</code>, <code>previous_release_id = 1.2.2</code>; registry <code>releases.csv</code>, one row per release id with the counts the CHANGELOGs state). Release ids are <code>R&lt;YYYY&gt;.&lt;n&gt;</code>; pre-numbered states are their package semver (<code>1.0.0</code> first public package 2026-09-25, <code>1.1.0</code> release v11, <code>1.2.0</code>, <code>1.2.1</code>, <code>1.2.2</code>).
+* <strong>Bitemporal columns</strong> <code>release_added</code>, <code>release_retired</code> (null = current), <code>package_added</code> appended at the end of <code>sample_determinations</code>, <code>universe_studies_all</code>, <code>study_metadata_wide</code> (parquet + csv), <code>cohorts.csv</code>, <code>study_paper_links.csv</code>, <code>sandpiper_sample_summary</code>, <code>sandpiper_run_qc</code>, <code>sandpiper_top_genera</code>, <code>sandpiper_study_panels</code>. <code>sample_metadata_wide</code> is derived and unchanged. <code>release_added</code> of pre-existing rows is reconstructed from <code>value_history.change_stage</code>/<code>src_track</code> (exact for 13,191 determinations: 3,632 run-level rows → 1.1.0, 9,559 adult-age recommits → 1.2.0; all other pre-1.3.0 rows <code>1.0.0</code> by assumption — DATA_DICTIONARY 'Release columns').
+* <strong><code>sample_determinations_all.parquet</code></strong> (620,214 rows = 618,898 current + 1,316 retired): retired published values reconstructed from <code>value_history</code> rows with status superseded / moved_to_parent_biosamples / recommitted_out_of_scope_host / recommitted_out_of_scope_isolate — 75 retired in 1.1.0 (sample_unit_fix), 245 in 1.2.0 (B2 97 + B9 148), 295 in 1.2.1 (R3-3), 701 in 1.2.2 (owner_decision) — with <code>retired_reason</code> and <code>retired_change_stage</code>.
+* <strong><code>RELEASE_NOTES_R2026.1.md</code></strong> generated from 1.2.2 → 1.3.0 (studies/samples, coverage on catalog_scope, verdict flips, findings, Sandpiper, gold metrics, schema changes, token cost).
+* <code>build_counts.json</code> regenerated from the tables (the 1.2.2 copy was stale: package_version 1.2.1, n_catalog_scope 71,795 → now 72,358); README heading carries the package version (1.2.2 shipped "v1.2.0").
+* Counts unchanged: 389 included studies · 154,206 samples · 72,358 catalog_scope · 618,898 current determinations · Sandpiper 2.0.0 (Zenodo 20419175).</p>
+<h2 id="122-2026-09-26">1.2.2 — 2026-09-26</h2>
+<p>Owner decisions applied (value_history change_stage=owner_decision, 701 rows):
+* PRJEB90577 (PediCAP, 631 peri-rectal swab samples): body_site_class excluded → primary, new column <code>body_site='rectal_swab'</code>; catalog_scope 71,795 → 72,358.
+* 70 samples labelled METAGENOMIC whose organism is a named microbe (68 PRJNA799247: Staphylococcus epidermidis/Clostridioides difficile; 2 PRJNA1082298: Enterobacter asburiae) and flagged non-metagenome by Sandpiper: body_site_class → excluded, reason assay_isolate_genome. Studies remain included.
+* <code>body_site</code> column added to sample_metadata_wide (currently only 'rectal_swab'; stool is implied by body_site_class=primary otherwise).</p>
+<h1 id="v121-2026-09-26-data-fixes-from-the-three-final-reviews-patch">v1.2.1 (2026-09-26) — data fixes from the three final reviews (patch)</h1>
 <ul>
 <li><strong>F1 / R3-5 organisations.</strong> 6,143 of 18,888 organisation rows tagged <code>org_type = not_an_organisation</code> ({'submission_id': 6033, 'lowercase_username': 93, 'placeholder': 9, 'email_or_handle': 8}); for PRJNA studies the NCBI BioProject Organization is preferred over the ENA center_name. <code>organisations_index.json</code> 9,886 → 3,747 keys; <code>study_authors_summary.organisations</code> rows containing a SUB id 6,042 → 0; studies with a displayable organisation 9,579 → 9,513 (included studies 386/389).</li>
 <li><strong>R3-1 GTDB suffix genera.</strong> Genus indicators match <code>^g__&lt;Name&gt;(_[A-Z]+)?$</code>: <code>sp_ra_g_Enterococcus</code> changed on 19,090 samples (mean 0.0234 → 0.0324), <code>sp_ra_g_Veillonella</code> 6,076, <code>sp_ra_enterobacterales_core</code> 3,315, <code>sp_ra_g_Bacteroides</code> 1,786, <code>sp_ra_g_Phocaeicola</code> 590; <code>gtdb_to_ncbi_note</code> table in the dictionary.</li>
@@ -73,12 +88,12 @@
 
 </main>
 <footer>
-<div><b>Infant Gut Shotgun-Metagenome Catalog</b> — package <span class="mono">1.2.1</span> · built 2026-09-26 · generator <span class="mono">nogit</span> · release <span class="mono">data-v1.2.1</span> (<a href="../data/VERSION.json">VERSION.json</a>, <a href="../docs/CHANGELOG.html">changelog</a>). Curated tables are released under <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a>; archive metadata remains under INSDC terms; community profiles from <a href="https://sandpiper.qut.edu.au/">Sandpiper</a> (Woodcroft et al. 2025, CC-BY).</div>
-<div>How to cite: <i>Infant Gut Shotgun-Metagenome Catalog, data package 1.2.1 (data-v1.2.1), 2026.</i></div>
+<div id="release-line"><b>Infant Gut Shotgun-Metagenome Catalog</b> — release <a href="../releases/index.html#rel-R2026.1"><span class="mono">R2026.1</span></a> · package <span class="mono">1.3.0</span> · build <span class="mono">b95c4e5</span> · built 2026-09-26 · data tag <span class="mono">data-v1.3.0</span> · DOI pending Zenodo integration (<a href="../data/VERSION.json">VERSION.json</a>, <a href="../changes/R2026.1.html">what changed</a>, <a href="../docs/CHANGELOG.html">changelog</a>). Curated tables are released under <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a>; archive metadata remains under INSDC terms; community profiles from <a href="https://sandpiper.qut.edu.au/">Sandpiper</a> (Woodcroft et al. 2025, CC-BY).</div>
+<div>How to cite: <i>Infant Gut Shotgun-Metagenome Catalog, release R2026.1 (data package 1.3.0), OlmLab, 2026-09-26.</i></div>
 <div>Caveats: every value carries a route (R1 archive attribute, R2 supplementary table, R3 paper text, R4 abstract/description), a scope and a confidence tier (not a calibrated probability); R3/R4 values are group-level statements applied to samples — see <a href="../fields/index.html">Fields</a> and <a href="../methods.html#limitations">Methods › Limitations</a>. Built with an LLM-assisted pipeline; treat individual values as evidence-linked claims, not ground truth. Found an error? Every study, cohort and sample has a <b>Flag an issue</b> button that opens a prefilled GitHub issue.</div>
 </footer>
 
-<script>window.CATALOG={version:'1.2.1',release:'data-v1.2.1',issueRepo:'https://github.com/OlmLab/infant-gut-catalog/issues/new',issueTemplate:'catalog-finding.yml'};</script>
+<script>window.CATALOG={version:'1.3.0',release:'data-v1.3.0',releaseId:'R2026.1',issueRepo:'https://github.com/OlmLab/infant-gut-catalog/issues/new',issueTemplate:'catalog-finding.yml'};</script>
 <script src="../static/site.js"></script>
 
 </body>
