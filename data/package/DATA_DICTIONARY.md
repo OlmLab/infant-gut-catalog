@@ -104,6 +104,9 @@
 | `parse_note` | derivation notes (unit resolution, propagation, supersession, review flags) |
 | `group_audit` | keep/downgrade for group statements (Opus audit) |
 | `src_track` | pipeline pass that produced the row |
+| `release_added` | release in which this row first became visible (`R<YYYY>.<n>` or a pre-numbered package semver `1.0.0`–`1.2.2`); pre-1.3.0 values are reconstructed — see DATA_DICTIONARY 'Release columns' |
+| `release_retired` | release that replaced/removed the row; null (empty in CSV) = current row |
+| `package_added` | semver of the data package in which the row first appeared |
 
 ## Routes
 R1 = archive sample attribute or sample-name convention (per sample); R2 = supplementary table row (per sample; 'subject_level_join' in parse_note when copied from a per-subject row); R3 = statement in the paper text applied to a defined group; R4 = abstract/ENA description statement (group; confidence ≤0.5).
@@ -177,6 +180,107 @@ One row per (study, stage table, replicate). `stage_order` (v1.2.1) follows the 
 ## value_history.parquet
 Determinations that are not in `sample_determinations.parquet`. `status`: `superseded` (a higher-precedence value replaced it; `replaced_by` names it), `rejected` (validator or rule rejection; `reason`), `dropped` (group statement failed the Opus checklist audit; `reason` = drop_reason), `recommitted_out_of_scope_adult` (an R1 age the v1.1 validator rejected as out of range that v1.2 commits with `parse_note out_of_scope_adult` to evidence `adult_age_flag`), `not_committed_duplicate` (second out-of-range age attribute on the same sample), `moved_to_parent_biosamples`, `auditor_finding_applied` (study-level auditor findings and what was done). `change_stage` names the pipeline stage that made the change (`auditor_review:B2`/`B9` for v1.2.0; `auditor_review:R3-3` for the v1.2.1 host/isolate rule, statuses `recommitted_out_of_scope_host` and `recommitted_out_of_scope_isolate`, field_name `body_site_class`, evidence source `run.scientific_name` / `run.library_source`).
 
+
+## Release columns (R2026.1, package 1.3.0)
+Fact tables — `sample_determinations.parquet`, `universe_studies_all.parquet`, `study_metadata_wide.parquet`, `cohorts.csv`, `study_paper_links.csv`, `sandpiper_sample_summary.parquet`, `sandpiper_run_qc.parquet`, `sandpiper_top_genera.parquet`, `sandpiper_study_panels.parquet`, `study_metadata_wide.csv` — end with three columns:
+
+| column | dtype | meaning |
+|---|---|---|
+| `release_added` | string | release in which this row first became visible (`R<YYYY>.<n>` or a pre-numbered package semver `1.0.0`–`1.2.2`); pre-1.3.0 values are reconstructed — see DATA_DICTIONARY 'Release columns' |
+| `release_retired` | string \| null | release that replaced/removed the row; null (empty in CSV) = current row |
+| `package_added` | string | semver of the data package in which the row first appeared |
+
+Release ids are `R<YYYY>.<n>` (first: `R2026.1` = package 1.3.0) or, for states published before numbering, the package
+semver `1.0.0` (first public package, 2026-09-25), `1.1.0` (release v11), `1.2.0`, `1.2.1`, `1.2.2`. "Current" = `release_retired IS NULL`;
+in the shipped fact tables every row is current. `sample_metadata_wide` is derived from `sample_determinations` and carries no release columns.
+
+**Reconstruction caveat.** Packages before 1.3.0 carried no release columns, so `release_added` of pre-existing rows was reconstructed:
+newest `value_history.change_stage` touching the (sample_key, field_name) or `sample_determinations.src_track`, mapped to the package the
+CHANGELOG records for that stage (`sample_unit_fix` → 1.1.0, `auditor_review:B2`/`B9` → 1.2.0, `auditor_review:R3-3` → 1.2.1,
+`owner_decision` → 1.2.2). Exact for rows those stages touched (13191 current determinations:
+`src_track = sample_unit_fix` → 1.1.0, `src_track = adult_scope_fix` → 1.2.0); every other pre-1.3.0 row is labelled `1.0.0` by assumption
+(the first package is not archived as a table, so this cannot be verified row by row). `package_added` equals `release_added` for all
+pre-1.3.0 rows. Study verdict rows are all `1.0.0` (no verdict change is dated after the first package); Sandpiper rows are `1.2.0`
+(when Sandpiper landed; the v1.2.1 recomputation of existing rows is recorded in the CHANGELOG, not as retire+add).
+
+## sample_determinations_all.parquet (R2026.1)
+`sample_determinations` columns + the three release columns + `retired_reason` (string|null; `value_history.reason`) +
+`retired_change_stage` (string|null; `value_history.change_stage`). Rows: every current determination (618,898,
+`release_retired` null) ∪ every **retired published value** (1,316) reconstructed from `value_history`
+rows whose `status` ∈ {`superseded`, `moved_to_parent_biosamples`, `recommitted_out_of_scope_host`, `recommitted_out_of_scope_isolate`}
+(`release_retired` = the package of their `change_stage`). value_history rows with status `rejected`, `dropped`, `not_committed_duplicate`,
+`recommitted_out_of_scope_adult` (the pre-history of a row that IS current) or `auditor_finding_applied` were never published and are not
+rows here. Exactly one current row per (`sample_key`, `field_name`); retired rows may repeat a key. `sample_determinations_superseded.parquet`
+(223 rows) is the same set as the `superseded` rows of stages `sample_unit_fix` (75) and `auditor_review:B9` (148) and is kept for the v1.1 layout.
+
+## releases.csv (R2026.1)
+One row per release id, oldest first: `release_id`, `package_version`, `release_date`, `data_tag`, `site_tag`, `doi` (empty until Zenodo
+mints one), `n_studies_included`, `n_samples`, `n_catalog_scope`, `n_determinations_current`, `sandpiper_version`, `notes_file`. Historical
+rows carry only the counts the CHANGELOGs state (empty otherwise — never invented).
+
+## Contribute worklist (R2026.2, package 1.4.0)
+`contribute_worklist.csv` — one row per **open** study (`universe_studies_all.triage_verdict ∈ {include, uncertain}` and at least one of the
+six worklist fields below 0.5 coverage on its catalog_scope samples; studies with 0 catalog_scope samples are judged on body-site scope
+`body_site_class ∈ {primary, unknown}`). Complete studies are not listed. Rules, templates and vocabularies: the pipeline's
+`config/contribute.yaml` and `docs/CONTRIBUTE.md`. Read-only: nothing here is a curated value — every column is derived from the tables
+of this package and from the recoverability / R2-rescue / supplement-inventory artifacts registered in `config/inputs.json` (group `contribute`).
+
+### contribute_worklist.csv (439 rows)
+
+| column | dtype | meaning |
+|---|---|---|
+| `rank` | int64 | 1 = highest priority_score (ties: n_samples desc, accession) |
+| `study_accession` | string | BioProject accession (universe_studies_all key) |
+| `study_title` | string | universe_studies_all.study_title |
+| `cohort_id` | string | cohorts.csv id |
+| `cohort_name` | string | cohorts.csv name |
+| `triage_verdict` | string | `include` | `uncertain` (open studies only) |
+| `n_samples` | int64 | sample units of the study (universe_studies_all.n_samples) |
+| `n_catalog_scope` | int64 | sample_metadata_wide rows with catalog_scope = True |
+| `n_infant_samples_est` | float64 | null | triage estimate of infant samples (universe_studies_all) |
+| `missing_fields` | string | ';'-joined short field names (age, delivery, feeding, preterm, antibiotics, probiotic) whose coverage < 0.5 |
+| `n_missing_fields` | int64 | count of missing_fields (≥ 1 for every listed study) |
+| `coverage_<field>` | float64 | fraction of catalog_scope samples with a value for the field (body-site scope {primary, unknown} when n_catalog_scope = 0); six columns: age, delivery, feeding, preterm, antibiotics, probiotic |
+| `best_tier_<field>` | string | best recoverability tier for study × field (`R1` archive attribute · `R2` supplementary table · `R3` paper text · `R4` abstract · `R0` none); six columns |
+| `blocker_code` | string | dominant reason the study is open — vocabulary in config/contribute.yaml `blocker_codes` (controlled_access, no_linked_paper, paywalled_abstract_only, tables_unjoinable_need_key, pdf_only_supplement, no_supplement_found, archive_only_uncertain, unitless_age_needs_curator, partial_coverage); decision order `blocker_order` |
+| `blocker_detail` | string ≤ 200 | the deciding evidence (counts, access tier, sample-ID forms from RESCUE_REPORT_v2, human-review note) |
+| `unlock_text` | string ≤ 200 | imperative 'what would unlock this' sentence from the `unlock_templates` of the blocker (id form / missing fields substituted) |
+| `contribution_type` | string | primary ask: per_sample_table | id_key | paper_pointer | age_schedule | verdict_evidence |
+| `n_linked_papers` | int64 | rows in study_paper_links for the study |
+| `own_data_pmids` | string | ';'-joined PMIDs of the linked papers (empty when none) |
+| `n_supp_tables_inventoried` | int64 | supp_inventory members with member_type = table across the linked papers |
+| `controlled_access` | bool | study or its cohort is in controlled_access_registry.csv (non-open tier) or flagged controlled in extraction_worklist / universe_studies_all |
+| `priority_score` | float64 | Σ over missing fields of weight × (1 − coverage) × log10(n_catalog_scope + 1); weights age 3, delivery 2, feeding 2, preterm 1.5, antibiotics 1, probiotic 0.5 |
+| `ena_url` | string | ENA browser URL of the study |
+| `ncbi_url` | string | NCBI BioProject URL |
+| `issue_url` | string | prefilled GitHub Issue (form catalog-contribution.yml, label contribution; query keys study_accession, contribution_type, release_tag, title) |
+| `release_added` | string | release in which this row first became visible (`R<YYYY>.<n>` or a pre-numbered package semver `1.0.0`–`1.2.2`); pre-1.3.0 values are reconstructed — see DATA_DICTIONARY 'Release columns' |
+| `release_retired` | string | release that replaced/removed the row; null (empty in CSV) = current row |
+| `package_added` | string | semver of the data package in which the row first appeared |
+
+### contribute_worklist_fields.csv (2,634 rows = 6 per worklist study)
+
+| column | dtype | meaning |
+|---|---|---|
+| `study_accession` | string | BioProject accession |
+| `field` | string | age | delivery | feeding | preterm | antibiotics | probiotic (short names of age_at_collection_days, delivery_mode, feeding_mode, preterm_status, antibiotic_exposure, probiotic_exposure) |
+| `coverage` | float64 | fraction of in-scope samples with a value (same scope rule as the worklist) |
+| `n_with_value` | int64 | in-scope samples with a value |
+| `n_catalog_scope` | int64 | catalog_scope samples of the study |
+| `best_tier` | string | best recoverability tier R0–R4 for the study × field |
+| `blocker_code` | string | `complete` when coverage ≥ 0.5, else the study blocker (only the age field carries unitless_age_needs_curator; other fields then partial_coverage) |
+| `evidence` | string ≤ 120 | tier + first recoverability evidence quote/source + note |
+| `release_added` | string | release in which this row first became visible (`R<YYYY>.<n>` or a pre-numbered package semver `1.0.0`–`1.2.2`); pre-1.3.0 values are reconstructed — see DATA_DICTIONARY 'Release columns' |
+| `release_retired` | string | release that replaced/removed the row; null (empty in CSV) = current row |
+| `package_added` | string | semver of the data package in which the row first appeared |
+
+**Blocker codes** (one per study, decision order = listing order for included studies; uncertain studies always `archive_only_uncertain`):
+`controlled_access` (study/cohort in the controlled-access registry) · `no_linked_paper` (0 rows in study_paper_links) · `paywalled_abstract_only`
+(extraction_worklist access_tier C/D/E) · `tables_unjoinable_need_key` (R2 rescue: supplementary tables keyed by paper-internal names) ·
+`pdf_only_supplement` (only PDF/DOCX supplements) · `no_supplement_found` (paper but no inventoried supplement) · `unitless_age_needs_curator`
+(age column without unit) · `partial_coverage` (paper + tables processed, fields still missing). Field-level code `complete` = field at/above threshold.
+**Contribution types**: `per_sample_table`, `id_key`, `paper_pointer`, `age_schedule`, `verdict_evidence` (dropdown of the GitHub Issue form
+`catalog-contribution.yml` that `issue_url` opens prefilled). Rows get `release_retired` when the study becomes complete in a later release.
 
 ## Sandpiper columns (added v1.2.0)
 Source: SingleM community profiles from Sandpiper 2.0.0 (Woodcroft et al. 2025, *Nat Biotechnol*; Zenodo record 20419175, CC-BY), taxonomy GTDB R232. Profiles are keyed by run; for a catalog sample with several profiled runs the filled coverage per taxon is **summed across runs and then normalised** (never averaged). Every `*_ra` column is a **fraction of prokaryotic (Bacteria + Archaea) coverage** — approximately a cell proportion, not a read fraction; not comparable with MetaPhlAn or 16S numbers.
@@ -408,7 +512,7 @@ One row per study × organisation token × source (`bioproject_organization` = N
 | `catalog_scope` | bool | **headline scope (v1.2.1)** = `age_scope ∈ {infant_evidenced, study_all_infant}` AND `body_site_class ∈ {primary, unknown}`; the intersection used for headline counts (71,795 rows) and for Sandpiper study panels/medians |
 | `panel_scope` | bool | True when the row enters its study's Sandpiper panel/medians: `catalog_scope AND sp_profiled AND NOT sp_low_depth` |
 
-### study_metadata_wide.parquet (117 columns)
+### study_metadata_wide.parquet (120 columns)
 | column | dtype | description |
 |---|---|---|
 | `study_accession` | str | BioProject accession (key) |
@@ -528,3 +632,6 @@ One row per study × organisation token × source (`bioproject_organization` = N
 | `n_run_units` | int64 | run-unit rows (one BioSample per infant, one run per stool) |
 | `n_parent_biosamples` | int64 | parent BioSamples of the run units (listed in parent_biosamples.parquet, counted nowhere else) |
 | `shared_biosample_note` | object | human-readable note for the five studies sharing BioSamples (F6) |
+| `release_added` | string | release in which this row first became visible (`R<YYYY>.<n>` or a pre-numbered package semver `1.0.0`–`1.2.2`); pre-1.3.0 values are reconstructed — see DATA_DICTIONARY 'Release columns' |
+| `release_retired` | string | release that replaced/removed the row; null (empty in CSV) = current row |
+| `package_added` | string | semver of the data package in which the row first appeared |
