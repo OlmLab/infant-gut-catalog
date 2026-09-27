@@ -3,19 +3,22 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Infant Gut Shotgun-Metagenome Catalog</title>
+<title>Human Shotgun-Metagenome Catalog</title>
 <meta name="description" content="Curated, evidence-linked catalog of public shotgun-metagenome studies of the human infant gut with per-sample metadata and Sandpiper community profiles.">
-<meta name="catalog-release" content="data-v1.2.1">
+<meta name="catalog-release" content="data-v1.7.1">
+<meta name="catalog-release-id" content="R2026.6">
 <link rel="canonical" href="https://olmlab.github.io/infant-gut-catalog/index.html">
-<meta name="catalog-package-version" content="1.2.1">
-<meta name="catalog-build-date" content="2026-09-26">
+<meta name="catalog-package-version" content="1.7.1">
+<meta name="catalog-build-date" content="2026-09-28">
 <link rel="stylesheet" href="static/site.css">
 
 
 </head>
 <body>
 <nav class="topnav"><div class="in">
-<a class="brand" href="index.html">Infant Gut Metagenome Catalog</a>
+<a class="brand" href="index.html">Human Metagenome Catalog</a>
+<a href="registry/index.html" >Registry</a>
+<span class="navgroup" title="Curated scope: Infant Gut Shotgun-Metagenome Catalog">Infant gut:</span>
 <a href="studies/index.html" >Studies</a>
 <a href="cohorts/index.html" >Cohorts</a>
 <a href="samples/index.html" >Sample explorer</a>
@@ -24,30 +27,55 @@
 <a href="universe.html" >Universe</a>
 <a href="methods.html" >Methods</a>
 <a href="downloads.html" >Downloads</a>
+<a href="releases/index.html" >Releases</a>
+<a href="contribute/index.html" >Contribute</a>
 </div></nav>
 <main>
 
 
-<h1>Infant Gut Shotgun-Metagenome Catalog</h1>
-<p class="lead">A curated, evidence-linked catalog of every public shotgun-metagenome study of the human infant gut (0–36 months) in the INSDC archives (ENA/SRA/DDBJ), with per-sample metadata recovered from archive attributes, supplementary tables and papers. Every value carries a verbatim evidence quote, a route (R1–R4) and a confidence.</p>
+<h1>Human Shotgun-Metagenome Catalog</h1>
+<p class="lead">Every public human shotgun-metagenome study in ENA/SRA/DDBJ — all body sites, all ages — plus curated, evidence-linked scopes. Two tiers: the <b>registry</b> lists every public ENA study with a human shotgun-metagenome signal — 54,410 studies, 1,984,314 sequencing runs, all body sites and ages — each classified from the archive record (host, UBERON-anchored body sites, life stages, assay, access) and, where harvested, with per-BioSample site / age / sex / country; <b>curated scopes</b> go deeper, recovering per-sample metadata from supplementary tables and papers with a verbatim evidence quote, a route (R1–R4) and a confidence on every value. The first curated scope is the <b>Infant Gut Shotgun-Metagenome Catalog</b> (389 studies, 154,356 samples); the adult gut is next.</p>
 
+
+<h2 id="registry">Registry: all human shotgun metagenomes</h2>
 <div class="cards">
-<div class="card"><div class="num">389</div><div class="lbl">included studies (BioProjects)</div></div>
-<div class="card"><div class="num">154,206</div><div class="lbl">samples: 153,685 BioSample units + 521 run units; 16 parent BioSamples listed separately</div></div>
-<div class="card"><div class="num">71,795</div><div class="lbl">catalog-scope samples = age-scope infant (74,695: infant_evidenced + study_all_infant) AND gut/unknown body site (2,900 age-scope rows are body-site excluded/linked)</div></div>
-<div class="card"><div class="num">174,022</div><div class="lbl">sequencing runs</div></div>
-<div class="card"><div class="num">618,898</div><div class="lbl">sample × field determinations with evidence</div></div>
-<div class="card"><div class="num">73%</div><div class="lbl">of catalog-scope samples with age at collection (52,649 of 71,795; 72% of age-scope infant samples with age ≤ 1,100 d; 43% = 62,230 of 146,336 body-site infant-scope)</div></div>
-<div class="card"><div class="num">52%</div><div class="lbl">of samples with a Sandpiper/SingleM community profile (79,473 samples, 87,125 runs, 304 studies with ≥ 1 profiled sample, GTDB R232)</div></div>
-<div class="card"><div class="num">0.991</div><div class="lbl">age precision vs 3,346 independently curated samples</div></div>
-<div class="card"><div class="num">9,579</div><div class="lbl">studies screened (9,138 excluded, 52 in human review)</div></div>
-<div class="card"><div class="num">373</div><div class="lbl">cohorts (411 linked papers)</div></div>
+<a class="card" href="registry/index.html"><div class="num">54,410</div><div class="lbl"><b>registry studies</b> (ENA BioProjects) — 6,187 host = human, 1,984,314 runs; 12 scopes: gut (infant / child / adult), oral, skin, vaginal-urogenital, respiratory, milk, blood/tissue, other</div></a>
+<a class="card" href="registry/index.html#explorer"><div class="num">explore</div><div class="lbl">filter the registry by body site, life stage, assay, host, classification stage or scope in the browser; CSV export; one page per scope with its largest studies</div></a>
 </div>
 
-<h2>Age scope of the 154,206 samples</h2>
-<p class="small">"Age-scope infant" means age evidence, not body site alone (Reviewer B1); <b>catalog scope</b> = age-scope infant AND body_site_class primary/unknown (71,795 samples) and is the headline denominator. Counts from <span class="mono">sample_metadata_wide.age_scope</span>; 61 included studies are mixed-age deposits and carry a banner on their page.</p>
+
+<h2 id="curated">Curated scope 1: Infant Gut Shotgun-Metagenome Catalog</h2>
+<p class="small">Every public shotgun-metagenome study of the human infant gut (0–36 months) in ENA/SRA/DDBJ, with per-sample metadata recovered from archive attributes, supplementary tables and papers. The pages linked in the navigation bar (Studies, Cohorts, Sample explorer, Fields, Authors, Universe) belong to this scope.</p>
+<div class="cards">
+<div class="card"><div class="num">389</div><div class="lbl">included studies (BioProjects)</div></div>
+<div class="card"><div class="num">154,356</div><div class="lbl">samples: 153,835 BioSample units + 521 run units; 16 parent BioSamples listed separately</div></div>
+<div class="card"><div class="num">72,358</div><div class="lbl">catalog-scope samples = age-scope infant (74,695: infant_evidenced + study_all_infant) AND gut/unknown body site (2,337 age-scope rows are body-site excluded/linked)</div></div>
+<div class="card"><div class="num">174,172</div><div class="lbl">sequencing runs</div></div>
+<div class="card"><div class="num">619,647</div><div class="lbl">sample × field determinations with evidence</div></div>
+<div class="card"><div class="num">73%</div><div class="lbl">of catalog-scope samples with age at collection (52,649 of 72,358; 72% of age-scope infant samples with age ≤ 1,100 d; 43% = 62,230 of 146,897 body-site infant-scope)</div></div>
+<div class="card"><div class="num">51%</div><div class="lbl">of samples with a Sandpiper/SingleM community profile (79,473 samples, 87,125 runs, 304 studies with ≥ 1 profiled sample, GTDB R232)</div></div>
+<div class="card"><div class="num">0.991</div><div class="lbl">age precision vs 3,346 independently curated samples</div></div>
+<div class="card"><div class="num">9,581</div><div class="lbl">studies screened (9,140 excluded, 52 in human review)</div></div>
+<div class="card"><div class="num">373</div><div class="lbl">cohorts (411 linked papers)</div></div>
+<a class="card contribute-card" href="contribute/index.html"><div class="num">439</div><div class="lbl"><b>studies need metadata — contribute</b> (165,497 samples): a per-sample table, an ID key or a paper pointer unlocks them</div></a>
+</div>
+
+
+<div class="cite note" id="cite">
+<b>Cite this release.</b> <i>Human Shotgun-Metagenome Catalog, release R2026.6 (data package 1.7.1), OlmLab, 2026-09-28.</i>
+<div class="small" style="margin-top:.3rem">
+<a href="https://zenodo.org/badge/latestdoi/1389758854"><img src="https://zenodo.org/badge/1389758854.svg" alt="Zenodo DOI badge (latest release of OlmLab/infant-gut-catalog-data)" height="20"></a>
+ <b>DOI: pending Zenodo integration</b> — the badge resolves to the latest archived DOI of the data repository (GitHub repository id 1389758854) once the owner enables the GitHub–Zenodo integration; until then releases are citable by release id, data tag (<a href="https://github.com/OlmLab/infant-gut-catalog-data/releases/tag/data-v1.7.1">data-v1.7.1</a>) and sha256 (VERSION.json).
+</div>
+<div class="small" style="margin-top:.3rem">Also cite the upstream sources this catalog is built on:
+<ul style="margin:.2rem 0 0 1rem"><li>Archive metadata: European Nucleotide Archive / INSDC (ENA, SRA, DDBJ) — archive metadata remains under INSDC terms. <a href="https://www.ebi.ac.uk/ena/browser/">https://www.ebi.ac.uk/ena/browser/</a></li><li>Community profiles: Woodcroft, B. J. et al. Comprehensive taxonomic identification of microbial species in metagenomic data using SingleM and Sandpiper. Nature Biotechnology (2025); bulk snapshot Zenodo record 20419175 (CC-BY). <a href="https://doi.org/10.5281/zenodo.20419175">https://doi.org/10.5281/zenodo.20419175</a></li><li>Gold evaluation set: Pasolli, E. et al. Accessible, curated metagenomic data through ExperimentHub (curatedMetagenomicData). Nature Methods 14, 1023–1024 (2017). <a href="https://doi.org/10.1038/nmeth.4468">https://doi.org/10.1038/nmeth.4468</a></li></ul></div>
+</div>
+<p class="small">This is release <b>R2026.6</b> (11 releases so far) — see the <a href="releases/index.html">release registry</a> and <a href="changes/R2026.6.html">what changed in this release</a>.</p>
+
+<h2>Age scope of the 154,356 samples</h2>
+<p class="small">"Age-scope infant" means age evidence, not body site alone (Reviewer B1); <b>catalog scope</b> = age-scope infant AND body_site_class primary/unknown (72,358 samples) and is the headline denominator. Counts from <span class="mono">sample_metadata_wide.age_scope</span>; 61 included studies are mixed-age deposits and carry a banner on their page.</p>
 <table class="tbl" style="max-width:700px"><thead><tr><th>age_scope</th><th class="num">samples</th><th>meaning</th></tr></thead><tbody>
-<tr><td class="mono">infant_evidenced</td><td class="num">67,598</td><td class="small">age ≤ 1,100 d, preterm/GA/DOL evidence on this sample or subject</td></tr><tr><td class="mono">age_unknown_no_study_estimate</td><td class="num">49,556</td><td class="small">no per-sample age and no per-study infant estimate</td></tr><tr><td class="mono">age_unknown_mixed_study</td><td class="num">14,410</td><td class="small">study estimated as mixed-age; no per-sample age</td></tr><tr><td class="mono">adult_flagged</td><td class="num">9,559</td><td class="small">resolved age &gt; 1,100 d (adult_age_flag)</td></tr><tr><td class="mono">study_all_infant</td><td class="num">7,097</td><td class="small">study evidence says all subjects are infants and the triage estimate ≈ n samples</td></tr><tr><td class="mono">non_infant_role</td><td class="num">5,986</td><td class="small">mother / other role</td></tr>
+<tr><td class="mono">infant_evidenced</td><td class="num">67,598</td><td class="small">age ≤ 1,100 d, preterm/GA/DOL evidence on this sample or subject</td></tr><tr><td class="mono">age_unknown_no_study_estimate</td><td class="num">49,556</td><td class="small">no per-sample age and no per-study infant estimate</td></tr><tr><td class="mono">age_unknown_mixed_study</td><td class="num">14,410</td><td class="small">study estimated as mixed-age; no per-sample age</td></tr><tr><td class="mono">adult_flagged</td><td class="num">9,704</td><td class="small">resolved age &gt; 1,100 d (adult_age_flag)</td></tr><tr><td class="mono">study_all_infant</td><td class="num">7,097</td><td class="small">study evidence says all subjects are infants and the triage estimate ≈ n samples</td></tr><tr><td class="mono">non_infant_role</td><td class="num">5,991</td><td class="small">mother / other role</td></tr>
 </tbody></table>
 
 <h2>Find a study, cohort, author or accession</h2>
@@ -58,17 +86,19 @@
 <div class="sections">
 <a class="card" href="studies/index.html"><b>Studies</b><br>389 included BioProjects with per-study pages, links, coverage and downloads.</a>
 <a class="card" href="cohorts/index.html"><b>Cohorts</b><br>373 cohort clusters grouping studies and papers that share subjects.</a>
-<a class="card" href="samples/index.html"><b>Sample explorer</b><br>Filter 154,206 samples in the browser; download any slice as CSV or parquet; inspect evidence per value.</a>
+<a class="card" href="samples/index.html"><b>Sample explorer</b><br>Filter 154,356 samples in the browser; download any slice as CSV or parquet; inspect evidence per value.</a>
 <a class="card" href="fields/index.html"><b>Fields &amp; data dictionary</b><br>Every column, vocabulary, coverage, route mix, confidence tiers.</a>
 <a class="card" href="authors/index.html"><b>Authors</b><br>10,964 author names over 1,264 screened studies; report a missing or mis-triaged study.</a>
-<a class="card" href="universe.html"><b>Screened universe</b><br>9,579 candidate studies with status and exclusion reason.</a>
+<a class="card" href="universe.html"><b>Screened universe</b><br>9,581 candidate studies with status and exclusion reason.</a>
+<a class="card" href="registry/index.html"><b>Registry: all human shotgun metagenomes</b><br>54,410 studies across all body sites and ages with archive-only classification (host, UBERON-anchored body site, life stage, assay); explorer, scope pages, CSV export.</a>
 <a class="card" href="methods.html"><b>Methods &amp; caveats</b><br>Enumeration, triage, four evidence routes, audits and gold evaluation.</a>
 <a class="card" href="downloads.html"><b>Downloads</b><br>The complete data package, individual tables and the getting-started notebook.</a>
+<a class="card" href="contribute/index.html"><b>Contribute</b><br>439 studies still lack per-sample metadata; the ranked worklist says what is missing, why, and what would unlock each one.</a>
 </div>
 
 <h2>Field coverage</h2>
-<img class="fig" src="static/field_coverage.png" alt="Field coverage, data package 1.2.1: fraction of samples with a value per field, body-site scope (n = 146,336) versus catalog scope (n = 71,795)">
-<p class="small">Fraction of samples with a value for each field, for the body-site infant scope (n = 146,336) and the catalog scope (n = 71,795); age at collection is recoverable for 73% of catalog-scope samples. Regenerated from <span class="mono">field_coverage_summary.csv</span> of package 1.2.1. Numbers per field are in <a href="fields/index.html">Fields</a>.</p>
+<img class="fig" src="static/field_coverage.png" alt="Field coverage, data package 1.7.1: fraction of samples with a value per field, body-site scope (n = 146,897) versus catalog scope (n = 72,358)">
+<p class="small">Fraction of samples with a value for each field, for the body-site infant scope (n = 146,897) and the catalog scope (n = 72,358); age at collection is recoverable for 73% of catalog-scope samples. Regenerated from <span class="mono">field_coverage_summary.csv</span> of package 1.7.1. Numbers per field are in <a href="fields/index.html">Fields</a>.</p>
 
 <h2>Route legend</h2>
 <table class="tbl" style="max-width:900px">
@@ -81,12 +111,12 @@
 
 </main>
 <footer>
-<div><b>Infant Gut Shotgun-Metagenome Catalog</b> — package <span class="mono">1.2.1</span> · built 2026-09-26 · generator <span class="mono">nogit</span> · release <span class="mono">data-v1.2.1</span> (<a href="data/VERSION.json">VERSION.json</a>, <a href="docs/CHANGELOG.html">changelog</a>). Curated tables are released under <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a>; archive metadata remains under INSDC terms; community profiles from <a href="https://sandpiper.qut.edu.au/">Sandpiper</a> (Woodcroft et al. 2025, CC-BY).</div>
-<div>How to cite: <i>Infant Gut Shotgun-Metagenome Catalog, data package 1.2.1 (data-v1.2.1), 2026.</i></div>
-<div>Caveats: every value carries a route (R1 archive attribute, R2 supplementary table, R3 paper text, R4 abstract/description), a scope and a confidence tier (not a calibrated probability); R3/R4 values are group-level statements applied to samples — see <a href="fields/index.html">Fields</a> and <a href="methods.html#limitations">Methods › Limitations</a>. Built with an LLM-assisted pipeline; treat individual values as evidence-linked claims, not ground truth. Found an error? Every study, cohort and sample has a <b>Flag an issue</b> button that opens a prefilled GitHub issue.</div>
+<div id="release-line"><b>Human Shotgun-Metagenome Catalog</b> — release <a href="releases/index.html#rel-R2026.6"><span class="mono">R2026.6</span></a> · package <span class="mono">1.7.1</span> · build <span class="mono">4b56c45</span> · built 2026-09-28 · data tag <span class="mono">data-v1.7.1</span> · DOI pending Zenodo integration (<a href="data/VERSION.json">VERSION.json</a>, <a href="changes/R2026.6.html">what changed</a>, <a href="docs/CHANGELOG.html">changelog</a>). Curated tables are released under <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a>; archive metadata remains under INSDC terms; community profiles from <a href="https://sandpiper.qut.edu.au/">Sandpiper</a> (Woodcroft et al. 2025, CC-BY).</div>
+<div>How to cite: <i>Human Shotgun-Metagenome Catalog, release R2026.6 (data package 1.7.1), OlmLab, 2026-09-28.</i></div>
+<div>Caveats: every value carries a route (R1 archive attribute, R2 supplementary table, R3 paper text, R4 abstract/description), a scope and a confidence tier (not a calibrated probability); R3/R4 values are group-level statements applied to samples — see <a href="fields/index.html">Fields</a> and <a href="methods.html#limitations">Methods › Limitations</a>. Built with an LLM-assisted pipeline; treat individual values as evidence-linked claims, not ground truth. Found an error? Every study, cohort and sample has a <b>Flag an issue</b> button that opens a prefilled GitHub issue. Know a study's missing metadata? See <a href="contribute/index.html">Contribute</a>.</div>
 </footer>
 
-<script>window.CATALOG={version:'1.2.1',release:'data-v1.2.1',issueRepo:'https://github.com/OlmLab/infant-gut-catalog/issues/new',issueTemplate:'catalog-finding.yml'};</script>
+<script>window.CATALOG={version:'1.7.1',release:'data-v1.7.1',releaseId:'R2026.6',issueRepo:'https://github.com/OlmLab/infant-gut-catalog/issues/new',issueTemplate:'catalog-finding.yml'};</script>
 <script src="static/site.js"></script>
 
 <script>
