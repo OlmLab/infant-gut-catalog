@@ -3,109 +3,133 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Infant Gut Shotgun-Metagenome Catalog</title>
-<meta name="description" content="Curated, evidence-linked catalog of public shotgun-metagenome studies of the human infant gut with per-sample metadata and Sandpiper community profiles.">
-<meta name="catalog-release" content="data-v1.2.1">
+<title>Microbiome Repo</title>
+<meta name="description" content="Microbiome Repo: every public human shotgun-metagenome study (registry) and a curated, evidence-linked catalog of human gut metagenomes of all ages with per-sample metadata.">
+<meta name="catalog-release" content="data-v1.10.1">
+<meta name="catalog-release-id" content="R2026.10">
 <link rel="canonical" href="https://olmlab.github.io/infant-gut-catalog/index.html">
-<meta name="catalog-package-version" content="1.2.1">
-<meta name="catalog-build-date" content="2026-09-26">
+<meta name="catalog-package-version" content="1.10.1">
+<meta name="catalog-build-date" content="2026-09-28">
 <link rel="stylesheet" href="static/site.css">
 
 
 </head>
 <body>
 <nav class="topnav"><div class="in">
-<a class="brand" href="index.html">Infant Gut Metagenome Catalog</a>
+<a class="brand" href="index.html">Microbiome Repo</a>
+<a href="registry/index.html" >Registry</a>
 <a href="studies/index.html" >Studies</a>
 <a href="cohorts/index.html" >Cohorts</a>
-<a href="samples/index.html" >Sample explorer</a>
+<a href="samples/index.html" >Samples</a>
 <a href="fields/index.html" >Fields</a>
 <a href="authors/index.html" >Authors</a>
-<a href="universe.html" >Universe</a>
+<a href="scope.html" >Scope</a>
 <a href="methods.html" >Methods</a>
 <a href="downloads.html" >Downloads</a>
+<a href="releases/index.html" >Releases</a>
+<a href="contribute/index.html" >Contribute</a>
+<a href="sources.html" >Sources</a>
 </div></nav>
 <main>
 
 
-<h1>Infant Gut Shotgun-Metagenome Catalog</h1>
-<p class="lead">A curated, evidence-linked catalog of every public shotgun-metagenome study of the human infant gut (0–36 months) in the INSDC archives (ENA/SRA/DDBJ), with per-sample metadata recovered from archive attributes, supplementary tables and papers. Every value carries a verbatim evidence quote, a route (R1–R4) and a confidence.</p>
+<h1>Microbiome Repo</h1>
+<p class="lead">Every public human shotgun-metagenome study in ENA/SRA/DDBJ (registry) and a curated, evidence-linked catalog of human gut metagenomes of all ages. Two tiers: the <b>registry</b> lists every public ENA study with a human shotgun-metagenome signal — 54,410 studies, 1,984,314 sequencing runs, all body sites and ages — each classified from the archive record (host, UBERON-anchored body sites, life stages, assay, access) and, where harvested, with per-BioSample site / age / sex / country. The <b>catalog</b> is the curated tier: every registry study of the <b>human gut</b>, <b>all ages</b> — 2,837 studies, 579,252 samples — with per-sample age, sex, BMI, country, health condition, antibiotic exposure, subject and timepoint recovered from archive attributes, supplementary tables and papers, every value carrying a verbatim evidence quote, a route (R1–R4) and a confidence. <b>Future plans:</b> the same curation for the other human microbiomes in the registry — oral, skin, vaginal / urogenital, respiratory, milk — one scope at a time.</p>
 
+<h2 id="catalog">Catalog: human gut, all ages</h2>
 <div class="cards">
-<div class="card"><div class="num">389</div><div class="lbl">included studies (BioProjects)</div></div>
-<div class="card"><div class="num">154,206</div><div class="lbl">samples: 153,685 BioSample units + 521 run units; 16 parent BioSamples listed separately</div></div>
-<div class="card"><div class="num">71,795</div><div class="lbl">catalog-scope samples = age-scope infant (74,695: infant_evidenced + study_all_infant) AND gut/unknown body site (2,900 age-scope rows are body-site excluded/linked)</div></div>
-<div class="card"><div class="num">174,022</div><div class="lbl">sequencing runs</div></div>
-<div class="card"><div class="num">618,898</div><div class="lbl">sample × field determinations with evidence</div></div>
-<div class="card"><div class="num">73%</div><div class="lbl">of catalog-scope samples with age at collection (52,649 of 71,795; 72% of age-scope infant samples with age ≤ 1,100 d; 43% = 62,230 of 146,336 body-site infant-scope)</div></div>
-<div class="card"><div class="num">52%</div><div class="lbl">of samples with a Sandpiper/SingleM community profile (79,473 samples, 87,125 runs, 304 studies with ≥ 1 profiled sample, GTDB R232)</div></div>
-<div class="card"><div class="num">0.991</div><div class="lbl">age precision vs 3,346 independently curated samples</div></div>
-<div class="card"><div class="num">9,579</div><div class="lbl">studies screened (9,138 excluded, 52 in human review)</div></div>
-<div class="card"><div class="num">373</div><div class="lbl">cohorts (411 linked papers)</div></div>
+<a class="card" href="studies/index.html"><div class="num">2,837</div><div class="lbl"><b>studies</b> (ENA BioProjects) with a page each: classification, papers, authors, coverage, evidence, downloads</div></a>
+<a class="card" href="samples/index.html"><div class="num">579,252</div><div class="lbl"><b>samples</b> (BioSamples; 516,586 gut/stool, 31,943 site unknown, 30,723 other-site samples of gut studies kept for provenance) — filter them in the browser</div></a>
+<a class="card" href="fields/index.html"><div class="num">1,729,195</div><div class="lbl"><b>sample × field values</b>, each with route, confidence and evidence quote (R1 1,173,210 · R2 142,737 · R3 161,462 · R4 251,786)</div></a>
+<div class="card"><div class="num">14,647</div><div class="lbl">neonate samples</div></div><div class="card"><div class="num">65,779</div><div class="lbl">infant samples</div></div><div class="card"><div class="num">26,010</div><div class="lbl">child samples</div></div><div class="card"><div class="num">4,841</div><div class="lbl">adolescent samples</div></div><div class="card"><div class="num">226,360</div><div class="lbl">adult samples</div></div><div class="card"><div class="num">29,156</div><div class="lbl">elderly samples</div></div><div class="card"><div class="num">212,459</div><div class="lbl">unknown samples</div></div>
+<a class="card" href="cohorts/index.html"><div class="num">69</div><div class="lbl"><b>cohorts</b>: groups of studies sharing a publication or a curated cohort record (172 studies)</div></a>
+<a class="card" href="authors/index.html"><div class="num">17,661</div><div class="lbl"><b>author names</b> over 1,899 studies; 3,133 linked papers</div></a>
+<a class="card contribute-card" href="contribute/index.html"><div class="num">1,266</div><div class="lbl"><b>studies need metadata — contribute</b> (414,265 samples): a per-sample table or a paper pointer unlocks them</div></a>
 </div>
 
-<h2>Age scope of the 154,206 samples</h2>
-<p class="small">"Age-scope infant" means age evidence, not body site alone (Reviewer B1); <b>catalog scope</b> = age-scope infant AND body_site_class primary/unknown (71,795 samples) and is the headline denominator. Counts from <span class="mono">sample_metadata_wide.age_scope</span>; 61 included studies are mixed-age deposits and carry a banner on their page.</p>
-<table class="tbl" style="max-width:700px"><thead><tr><th>age_scope</th><th class="num">samples</th><th>meaning</th></tr></thead><tbody>
-<tr><td class="mono">infant_evidenced</td><td class="num">67,598</td><td class="small">age ≤ 1,100 d, preterm/GA/DOL evidence on this sample or subject</td></tr><tr><td class="mono">age_unknown_no_study_estimate</td><td class="num">49,556</td><td class="small">no per-sample age and no per-study infant estimate</td></tr><tr><td class="mono">age_unknown_mixed_study</td><td class="num">14,410</td><td class="small">study estimated as mixed-age; no per-sample age</td></tr><tr><td class="mono">adult_flagged</td><td class="num">9,559</td><td class="small">resolved age &gt; 1,100 d (adult_age_flag)</td></tr><tr><td class="mono">study_all_infant</td><td class="num">7,097</td><td class="small">study evidence says all subjects are infants and the triage estimate ≈ n samples</td></tr><tr><td class="mono">non_infant_role</td><td class="num">5,986</td><td class="small">mother / other role</td></tr>
+<h2 id="registry">Registry: all human shotgun metagenomes</h2>
+<div class="cards">
+<a class="card" href="registry/index.html"><div class="num">54,410</div><div class="lbl"><b>registry studies</b> — 6,187 host = human, 1,984,314 runs, 611,601 harvested BioSamples; 12 body-site scopes</div></a>
+<a class="card" href="registry/index.html#explorer"><div class="num">explore</div><div class="lbl">filter the registry by body site, life stage, assay, host, classification stage or scope; CSV export; one page per scope</div></a>
+<a class="card" href="scope.html"><div class="num">3,426</div><div class="lbl">registry studies with gut / stool among their body sites — how the catalog is cut from the registry</div></a>
+</div>
+
+<h2 id="coverage">Field coverage by age category</h2>
+<p class="small">Share of catalog samples with a committed value. Age categories: neonate 0–28 d · infant 29–1,100 d · child 3–12 y · adolescent 12–18 y · adult 18–65 y · elderly &gt; 65 y · unknown (the <span class="mono">age_category_basis</span> column tells whether a category came from a numeric age, the sample's stated life stage, a cohort statement or the study's life stage).</p>
+<table class="tbl small"><thead><tr><th>age category</th><th class="num">samples</th><th class="num">age_at_collection_days</th><th class="num">sex</th><th class="num">bmi</th><th class="num">country</th><th class="num">health_condition</th><th class="num">antibiotic_exposure</th><th class="num">subject_id</th><th class="num">timepoint_label</th></tr></thead><tbody>
+<tr><td class="mono">neonate</td><td class="num">14,647</td><td class="num">98%</td><td class="num">70%</td><td class="num">1%</td><td class="num">95%</td><td class="num">24%</td><td class="num">37%</td><td class="num">86%</td><td class="num">49%</td></tr><tr><td class="mono">infant</td><td class="num">65,779</td><td class="num">67%</td><td class="num">40%</td><td class="num">0%</td><td class="num">96%</td><td class="num">7%</td><td class="num">14%</td><td class="num">54%</td><td class="num">34%</td></tr><tr><td class="mono">child</td><td class="num">26,010</td><td class="num">25%</td><td class="num">26%</td><td class="num">2%</td><td class="num">95%</td><td class="num">51%</td><td class="num">21%</td><td class="num">25%</td><td class="num">8%</td></tr><tr><td class="mono">adolescent</td><td class="num">4,841</td><td class="num">63%</td><td class="num">54%</td><td class="num">7%</td><td class="num">88%</td><td class="num">52%</td><td class="num">17%</td><td class="num">42%</td><td class="num">21%</td></tr><tr><td class="mono">adult</td><td class="num">226,360</td><td class="num">25%</td><td class="num">29%</td><td class="num">10%</td><td class="num">90%</td><td class="num">46%</td><td class="num">15%</td><td class="num">31%</td><td class="num">12%</td></tr><tr><td class="mono">elderly</td><td class="num">29,156</td><td class="num">42%</td><td class="num">50%</td><td class="num">21%</td><td class="num">96%</td><td class="num">33%</td><td class="num">25%</td><td class="num">26%</td><td class="num">15%</td></tr><tr><td class="mono">unknown</td><td class="num">212,459</td><td class="num">0%</td><td class="num">19%</td><td class="num">0%</td><td class="num">86%</td><td class="num">20%</td><td class="num">5%</td><td class="num">31%</td><td class="num">7%</td></tr><tr><td class="mono">all</td><td class="num">579,252</td><td class="num">24%</td><td class="num">29%</td><td class="num">5%</td><td class="num">90%</td><td class="num">31%</td><td class="num">12%</td><td class="num">34%</td><td class="num">14%</td></tr>
 </tbody></table>
 
-<h2>Find a study, cohort, author or accession</h2>
-<input id="q" class="searchbox" type="search" placeholder="Type a BioProject accession (PRJ…), a study title word, a cohort name, or a sample/run accession (SAMEA…, SRR…)" autocomplete="off">
-<ul id="search-results"></ul>
-<p class="small">Sample, BioSample and run accessions are looked up in the <a href="samples/index.html">Sample explorer</a>; studies, cohorts and first authors are matched client-side against a small index; all authors are on the <a href="authors/index.html">Authors</a> page.</p>
-
-<div class="sections">
-<a class="card" href="studies/index.html"><b>Studies</b><br>389 included BioProjects with per-study pages, links, coverage and downloads.</a>
-<a class="card" href="cohorts/index.html"><b>Cohorts</b><br>373 cohort clusters grouping studies and papers that share subjects.</a>
-<a class="card" href="samples/index.html"><b>Sample explorer</b><br>Filter 154,206 samples in the browser; download any slice as CSV or parquet; inspect evidence per value.</a>
-<a class="card" href="fields/index.html"><b>Fields &amp; data dictionary</b><br>Every column, vocabulary, coverage, route mix, confidence tiers.</a>
-<a class="card" href="authors/index.html"><b>Authors</b><br>10,964 author names over 1,264 screened studies; report a missing or mis-triaged study.</a>
-<a class="card" href="universe.html"><b>Screened universe</b><br>9,579 candidate studies with status and exclusion reason.</a>
-<a class="card" href="methods.html"><b>Methods &amp; caveats</b><br>Enumeration, triage, four evidence routes, audits and gold evaluation.</a>
-<a class="card" href="downloads.html"><b>Downloads</b><br>The complete data package, individual tables and the getting-started notebook.</a>
+<div class="sections" style="grid-template-columns:repeat(auto-fit,minmax(320px,1fr))">
+<div class="card"><b>Health condition</b> <span class="small">(top 12 codes; <a href="fields/index.html#health_condition">all codes</a>)</span>
+<table class="tbl small" style="margin-top:.4rem"><thead><tr><th>code</th><th class="num">samples</th><th class="num">studies</th></tr></thead><tbody>
+<tr><td><a class="mono" href="samples/index.html?health_condition=healthy_control">healthy_control</a> <span class="small">Healthy / control</span></td><td class="num">60,406</td><td class="num">438</td></tr><tr><td><a class="mono" href="samples/index.html?health_condition=intervention_cohort">intervention_cohort</a> <span class="small">Intervention cohort (drug</span></td><td class="num">15,140</td><td class="num">76</td></tr><tr><td><a class="mono" href="samples/index.html?health_condition=other_cancer">other_cancer</a> <span class="small">Other cancer (incl. immunotherapy cohorts)</span></td><td class="num">11,715</td><td class="num">112</td></tr><tr><td><a class="mono" href="samples/index.html?health_condition=other_disease">other_disease</a> <span class="small">Other disease / condition</span></td><td class="num">10,795</td><td class="num">121</td></tr><tr><td><a class="mono" href="samples/index.html?health_condition=gi_infection_or_diarrhoea">gi_infection_or_diarrhoea</a> <span class="small">GI infection / diarrhoea (incl. C. difficile)</span></td><td class="num">10,264</td><td class="num">80</td></tr><tr><td><a class="mono" href="samples/index.html?health_condition=transplant_or_immunocompromised">transplant_or_immunocompromised</a> <span class="small">Transplant / immunocompromised (HSCT</span></td><td class="num">8,541</td><td class="num">48</td></tr><tr><td><a class="mono" href="samples/index.html?health_condition=other_infection">other_infection</a> <span class="small">Other infection (HIV</span></td><td class="num">6,360</td><td class="num">65</td></tr><tr><td><a class="mono" href="samples/index.html?health_condition=type2_diabetes">type2_diabetes</a> <span class="small">Type 2 diabetes / prediabetes</span></td><td class="num">5,392</td><td class="num">51</td></tr><tr><td><a class="mono" href="samples/index.html?health_condition=ulcerative_colitis">ulcerative_colitis</a> <span class="small">Ulcerative colitis</span></td><td class="num">5,335</td><td class="num">49</td></tr><tr><td><a class="mono" href="samples/index.html?health_condition=obesity">obesity</a> <span class="small">Obesity / overweight</span></td><td class="num">4,846</td><td class="num">54</td></tr><tr><td><a class="mono" href="samples/index.html?health_condition=crohns_disease">crohns_disease</a> <span class="small">Crohn&#39;s disease</span></td><td class="num">4,782</td><td class="num">59</td></tr><tr><td><a class="mono" href="samples/index.html?health_condition=neurological_psychiatric">neurological_psychiatric</a> <span class="small">Neurological / psychiatric (PD</span></td><td class="num">4,377</td><td class="num">76</td></tr>
+</tbody></table></div>
+<div class="card"><b>Country</b> <span class="small">(top 12 of 115)</span>
+<table class="tbl small" style="margin-top:.4rem"><thead><tr><th>ISO-2</th><th class="num">samples</th><th class="num">studies</th></tr></thead><tbody>
+<tr><td><a class="mono" href="samples/index.html?country=US">US</a></td><td class="num">155,585</td><td class="num">615</td></tr><tr><td><a class="mono" href="samples/index.html?country=CN">CN</a></td><td class="num">60,551</td><td class="num">572</td></tr><tr><td><a class="mono" href="samples/index.html?country=GB">GB</a></td><td class="num">39,529</td><td class="num">99</td></tr><tr><td><a class="mono" href="samples/index.html?country=HK">HK</a></td><td class="num">23,132</td><td class="num">51</td></tr><tr><td><a class="mono" href="samples/index.html?country=FI">FI</a></td><td class="num">22,545</td><td class="num">29</td></tr><tr><td><a class="mono" href="samples/index.html?country=SE">SE</a></td><td class="num">20,854</td><td class="num">44</td></tr><tr><td><a class="mono" href="samples/index.html?country=NL">NL</a></td><td class="num">15,785</td><td class="num">63</td></tr><tr><td><a class="mono" href="samples/index.html?country=DK">DK</a></td><td class="num">14,224</td><td class="num">66</td></tr><tr><td><a class="mono" href="samples/index.html?country=CA">CA</a></td><td class="num">13,425</td><td class="num">77</td></tr><tr><td><a class="mono" href="samples/index.html?country=ES">ES</a></td><td class="num">10,782</td><td class="num">90</td></tr><tr><td><a class="mono" href="samples/index.html?country=DE">DE</a></td><td class="num">10,385</td><td class="num">84</td></tr><tr><td><a class="mono" href="samples/index.html?country=IT">IT</a></td><td class="num">9,047</td><td class="num">84</td></tr>
+</tbody></table></div>
+<div class="card"><b>Largest studies</b>
+<table class="tbl small" style="margin-top:.4rem"><thead><tr><th>study</th><th class="num">samples</th><th>ages</th></tr></thead><tbody>
+<tr><td><a href="studies/PRJEB75464.html">PRJEB75464</a> <span class="small">PREDICT 3 UK22A</span></td><td class="num">12,349</td><td class="small mono">adult:12,349</td></tr><tr><td><a href="studies/PRJNA400115.html">PRJNA400115</a> <span class="small">TEDDY Microbiome</span></td><td class="num">12,266</td><td class="small mono">unknown:12,266</td></tr><tr><td><a href="studies/PRJEB75462.html">PRJEB75462</a> <span class="small">PREDICT 3 US21</span></td><td class="num">11,795</td><td class="small mono">unknown:11,795</td></tr><tr><td><a href="studies/PRJEB51353.html">PRJEB51353</a> <span class="small">Human gut metagenomes of SCAPIS Uppsala and Malmo</span></td><td class="num">9,817</td><td class="small mono">adult:9,817</td></tr><tr><td><a href="studies/PRJNA416160.html">PRJNA416160</a> <span class="small">The Environmental Determinants of Diabetes in the Young (TED</span></td><td class="num">8,743</td><td class="small mono">unknown:8,743</td></tr><tr><td><a href="studies/PRJEB75463.html">PRJEB75463</a> <span class="small">PREDICT 3 US22A</span></td><td class="num">8,468</td><td class="small mono">adult:8,468</td></tr><tr><td><a href="studies/PRJEB11419.html">PRJEB11419</a> <span class="small">American Gut Project</span></td><td class="num">7,024</td><td class="small mono">adult:3,785 unknown:2,362 elderly:650</td></tr><tr><td><a href="studies/PRJEB108612.html">PRJEB108612</a> <span class="small">MOMmy-Microbiome_Epigenome_Neurodevelopment</span></td><td class="num">5,328</td><td class="small mono">unknown:5,328</td></tr><tr><td><a href="studies/PRJEB23147.html">PRJEB23147</a> <span class="small">Human_colon_16S</span></td><td class="num">5,249</td><td class="small mono">adult:5,249</td></tr><tr><td><a href="studies/PRJNA1468137.html">PRJNA1468137</a> <span class="small">Maternal influences on infant gut microbiome and health</span></td><td class="num">4,749</td><td class="small mono">unknown:4,749</td></tr><tr><td><a href="studies/PRJNA1347413.html">PRJNA1347413</a> <span class="small">Metagenomic data from the ASPREE-XT study</span></td><td class="num">4,711</td><td class="small mono">elderly:4,711</td></tr><tr><td><a href="studies/PRJEB108450.html">PRJEB108450</a> <span class="small">Exploring Fecal Microbiome in the CHILD COVID-19 sub-project</span></td><td class="num">4,102</td><td class="small mono">adult:2,038 child:1,727 adolescent:291</td></tr>
+</tbody></table></div>
 </div>
 
-<h2>Field coverage</h2>
-<img class="fig" src="static/field_coverage.png" alt="Field coverage, data package 1.2.1: fraction of samples with a value per field, body-site scope (n = 146,336) versus catalog scope (n = 71,795)">
-<p class="small">Fraction of samples with a value for each field, for the body-site infant scope (n = 146,336) and the catalog scope (n = 71,795); age at collection is recoverable for 73% of catalog-scope samples. Regenerated from <span class="mono">field_coverage_summary.csv</span> of package 1.2.1. Numbers per field are in <a href="fields/index.html">Fields</a>.</p>
 
-<h2>Route legend</h2>
-<table class="tbl" style="max-width:900px">
-<tr><th>Route</th><th>Evidence</th><th>Scope</th></tr>
-<tr><td><span class="tag R1">R1</span></td><td>archive sample attribute or sample-name convention</td><td>per sample</td></tr>
-<tr><td><span class="tag R2">R2</span></td><td>supplementary table row keyed to the study's own accessions or library names</td><td>per sample (or per subject)</td></tr>
-<tr><td><span class="tag R3">R3</span></td><td>statement in the paper text applied to a defined group</td><td>group</td></tr>
-<tr><td><span class="tag R4">R4</span></td><td>abstract / ENA description statement (confidence ≤ 0.5)</td><td>group</td></tr>
-</table>
+<div class="cite note" id="cite">
+<b>Cite this release.</b> <i>Microbiome Repo, release R2026.10 (data package 1.10.1), OlmLab, 2026-09-28.</i>
+<div class="small" style="margin-top:.3rem">
+<a href="https://zenodo.org/badge/latestdoi/1389758854"><img src="https://zenodo.org/badge/1389758854.svg" alt="Zenodo DOI badge (latest release of OlmLab/infant-gut-catalog-data)" height="20"></a>
+ <b>DOI: pending Zenodo integration</b> — the badge resolves to the latest archived DOI of the data repository (GitHub repository id 1389758854) once the owner enables the GitHub–Zenodo integration; until then releases are citable by release id, data tag (<a href="https://github.com/OlmLab/infant-gut-catalog-data/releases/tag/data-v1.10.1">data-v1.10.1</a>) and sha256 (VERSION.json).
+</div>
+<div class="small" style="margin-top:.3rem">Also cite the upstream sources this catalog is built on:
+<ul style="margin:.2rem 0 0 1rem"></ul></div>
+</div>
+<p class="small">This is release <b>R2026.10</b> (15 releases so far) — see the <a href="releases/index.html">release registry</a> and <a href="changes/R2026.10.html">what changed in this release</a>.</p>
+
+<h2>Find a study, cohort or accession</h2>
+<input id="q" class="searchbox" type="search" placeholder="Type a BioProject accession (PRJ…), a study title word, a cohort name, an author, or a sample accession (SAMEA…, SAMN…)" autocomplete="off">
+<ul id="search-results"></ul>
+<p class="small">Sample and BioSample accessions are looked up in the <a href="samples/index.html">sample explorer</a>; studies, cohorts and first authors are matched client-side against a small index; all authors are on the <a href="authors/index.html">Authors</a> page.</p>
+
+<div class="sections">
+<a class="card" href="studies/index.html"><b>Studies</b><br>2,837 BioProjects with per-study pages, papers, coverage, evidence and downloads.</a>
+<a class="card" href="cohorts/index.html"><b>Cohorts</b><br>69 multi-study groups sharing a publication or a curated cohort record.</a>
+<a class="card" href="samples/index.html"><b>Samples</b><br>Filter 579,252 samples by age category, health condition, country, sex, antibiotics; download any slice as CSV.</a>
+<a class="card" href="fields/index.html"><b>Fields &amp; data dictionary</b><br>Every field, vocabulary, coverage by age category, route mix and confidence.</a>
+<a class="card" href="authors/index.html"><b>Authors</b><br>17,661 author names linked to 1,899 catalog studies.</a>
+<a class="card" href="scope.html"><b>Scope</b><br>How the 2,837 catalog studies are cut from the 54,410 registry studies, and what is left out.</a>
+<a class="card" href="registry/index.html"><b>Registry</b><br>54,410 studies across all body sites and ages with archive-only classification; explorer, scope pages, CSV export.</a>
+<a class="card" href="methods.html"><b>Methods</b><br>Registry classification, curation routes R1–R4, precedence, evidence rules, limitations.</a>
+<a class="card" href="sources.html"><b>Sources &amp; acknowledgements</b><br>Archives, literature, software, models and funding behind the catalog; related metadata efforts and what we could ingest.</a>
+</div>
+
 
 </main>
 <footer>
-<div><b>Infant Gut Shotgun-Metagenome Catalog</b> — package <span class="mono">1.2.1</span> · built 2026-09-26 · generator <span class="mono">nogit</span> · release <span class="mono">data-v1.2.1</span> (<a href="data/VERSION.json">VERSION.json</a>, <a href="docs/CHANGELOG.html">changelog</a>). Curated tables are released under <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a>; archive metadata remains under INSDC terms; community profiles from <a href="https://sandpiper.qut.edu.au/">Sandpiper</a> (Woodcroft et al. 2025, CC-BY).</div>
-<div>How to cite: <i>Infant Gut Shotgun-Metagenome Catalog, data package 1.2.1 (data-v1.2.1), 2026.</i></div>
-<div>Caveats: every value carries a route (R1 archive attribute, R2 supplementary table, R3 paper text, R4 abstract/description), a scope and a confidence tier (not a calibrated probability); R3/R4 values are group-level statements applied to samples — see <a href="fields/index.html">Fields</a> and <a href="methods.html#limitations">Methods › Limitations</a>. Built with an LLM-assisted pipeline; treat individual values as evidence-linked claims, not ground truth. Found an error? Every study, cohort and sample has a <b>Flag an issue</b> button that opens a prefilled GitHub issue.</div>
+<div id="release-line"><b>Microbiome Repo</b> — release <a href="releases/index.html#rel-R2026.10"><span class="mono">R2026.10</span></a> · package <span class="mono">1.10.1</span> · build <span class="mono">ceb95b1</span> · built 2026-09-28 · data tag <span class="mono">data-v1.10.1</span> · DOI pending Zenodo integration (<a href="data/VERSION.json">VERSION.json</a>, <a href="changes/R2026.10.html">what changed</a>, <a href="docs/CHANGELOG.html">changelog</a>). Curated tables (registry_*, gut_* and the infant extension) are released under <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a>; archive metadata remains under INSDC terms; community profiles from <a href="https://sandpiper.qut.edu.au/">Sandpiper</a> (Woodcroft et al. 2025, CC-BY).</div>
+<div>How to cite: <i>Microbiome Repo, release R2026.10 (data package 1.10.1), OlmLab, 2026-09-28.</i> · <a href="sources.html">Sources and acknowledgements</a></div>
+<div>Caveats: every value carries a route (R1 archive attribute, R2 supplementary table, R3 paper text, R4 abstract/description), a scope and a confidence tier (not a calibrated probability); R3/R4 values are cohort-wide statements applied to the study's samples — see <a href="fields/index.html">Fields</a> and <a href="methods.html#limitations">Methods › Limitations</a>. Built with an LLM-assisted pipeline; treat individual values as evidence-linked claims, not ground truth. Found an error? Every study, cohort and sample has a <b>Flag an issue</b> button that opens a prefilled GitHub issue. Know a study's missing metadata? See <a href="contribute/index.html">Contribute</a>.</div>
 </footer>
 
-<script>window.CATALOG={version:'1.2.1',release:'data-v1.2.1',issueRepo:'https://github.com/OlmLab/infant-gut-catalog/issues/new',issueTemplate:'catalog-finding.yml'};</script>
+<script>window.CATALOG={version:'1.10.1',release:'data-v1.10.1',releaseId:'R2026.10',issueRepo:'https://github.com/OlmLab/infant-gut-catalog/issues/new',issueTemplate:'catalog-finding.yml'};</script>
 <script src="static/site.js"></script>
 
 <script>
-fetch('search_index.json').then(r=>r.json()).then(idx=>{
-  const q=document.getElementById('q'), out=document.getElementById('search-results');
-  const esc=s=>String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-  function run(){
-    const s=q.value.trim().toLowerCase(); out.innerHTML='';
-    if(s.length<2) return;
-    if(/^(sam[end]|[sed]rr|[sed]rs|[sed]rx)\d+/i.test(s)){
-      const li=document.createElement('li'); li.innerHTML='Look up <b>'+esc(s.toUpperCase())+'</b> in the <a href="samples/index.html?q='+encodeURIComponent(s.toUpperCase())+'">sample explorer</a> (matches sample, BioSample and run accessions)';
-      out.appendChild(li);
-    }
-    const hits=idx.filter(e=>e.k.includes(s)).slice(0,25);
-    for(const h of hits){const li=document.createElement('li'); li.innerHTML='<span class="tag">'+esc(h.t)+'</span> <a href="'+esc(h.u)+'">'+esc(h.id)+'</a> '+esc(h.n); out.appendChild(li);}
-    if(!hits.length){const li=document.createElement('li');li.className='small';li.textContent='No study or cohort matches.';out.appendChild(li);}
+(function(){
+  const q = document.getElementById('q'), out = document.getElementById('search-results');
+  let idx = null;
+  const h = s => String(s === null || s === undefined ? '' : s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  async function run(){
+    const s = q.value.trim().toLowerCase(); out.innerHTML = '';
+    if (s.length < 2) return;
+    if (/^sam[nedа]?a?\d+$/i.test(s) || /^[sed]rr\d+$/i.test(s)) { out.innerHTML = '<li><a href="samples/index.html?q=' + encodeURIComponent(q.value.trim()) + '">Look up ' + h(q.value.trim()) + ' in the sample explorer</a></li>'; return; }
+    if (!idx) idx = await fetch('search_index.json').then(r => r.json());
+    const hits = idx.filter(x => x.k.includes(s)).slice(0, 30);
+    out.innerHTML = hits.map(x => '<li><span class="tag">' + h(x.t) + '</span> <a href="' + h(x.u) + '">' + h(x.id) + '</a> ' + h(x.n) + '</li>').join('') || '<li>No study, cohort or scope matches — try the <a href="authors/index.html?q=' + encodeURIComponent(q.value.trim()) + '">Authors</a> page or the <a href="registry/index.html?q=' + encodeURIComponent(q.value.trim()) + '">registry explorer</a>.</li>';
   }
-  q.addEventListener('input',run);
-});
+  q.addEventListener('input', () => { clearTimeout(q._t); q._t = setTimeout(run, 150); });
+})();
 </script>
 
 </body>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sources and acknowledgements — Microbiome Repo</title>
+<meta name="description" content="Where the data comes from, what it is built with, who funds it, and the related human-microbiome metadata efforts we could ingest.">
+<meta name="catalog-release" content="data-v1.10.1">
+<meta name="catalog-release-id" content="R2026.10">
+<link rel="canonical" href="https://olmlab.github.io/infant-gut-catalog/sources.html">
+<meta name="catalog-package-version" content="1.10.1">
+<meta name="catalog-build-date" content="2026-09-28">
+<link rel="stylesheet" href="static/site.css">
+
+
+</head>
+<body>
+<nav class="topnav"><div class="in">
+<a class="brand" href="index.html">Microbiome Repo</a>
+<a href="registry/index.html" >Registry</a>
+<a href="studies/index.html" >Studies</a>
+<a href="cohorts/index.html" >Cohorts</a>
+<a href="samples/index.html" >Samples</a>
+<a href="fields/index.html" >Fields</a>
+<a href="authors/index.html" >Authors</a>
+<a href="scope.html" >Scope</a>
+<a href="methods.html" >Methods</a>
+<a href="downloads.html" >Downloads</a>
+<a href="releases/index.html" >Releases</a>
+<a href="contribute/index.html" >Contribute</a>
+<a href="sources.html" class="active">Sources</a>
+</div></nav>
+<main>
+<div class="crumbs"><a href="index.html">Home</a> › Sources</div>
+
+<h1>Sources and acknowledgements</h1>
+<p class="lead">Everything on this site is derived from public archives and open literature; this page names those sources and their terms, the software and models the pipeline uses, the funding, and the other projects that curate human-microbiome metadata — with an honest assessment of what each could add to the catalog and how it would join. Last reviewed 2026-09-28.</p>
+<p class="note">Development of Microbiome Repo is supported by a grant from Anthropic to the Olm Lab (University of Colorado Boulder) for organising human microbiome metadata.</p>
+
+<h2 id="data">Data sources</h2>
+<table class="tbl small"><thead><tr><th>source</th><th>what we take from it</th><th>terms</th></tr></thead><tbody>
+<tr><td><a href="https://www.ebi.ac.uk/ena/browser/">European Nucleotide Archive (ENA) / INSDC (SRA, DDBJ)</a></td><td>Study, sample, run and BioSample records and attributes for every registry study (portal API); the archive metadata is route R1.</td><td class="small">INSDC: free and unrestricted access to all records.</td></tr><tr><td><a href="https://www.ncbi.nlm.nih.gov/bioproject/">NCBI BioProject and BioSample</a></td><td>BioProject records (titles, descriptions, publications, organisations) and BioSample attributes; E-utilities.</td><td class="small">NCBI public-domain data policy.</td></tr><tr><td><a href="https://europepmc.org/">Europe PMC</a></td><td>Paper ↔ accession links, abstracts, open-access full text (JATS) and supplementary files behind routes R2, R3 and R4; author lists.</td><td class="small">Europe PMC open-access subset; individual article licences apply to reuse of text.</td></tr><tr><td><a href="https://sandpiper.qut.edu.au/">Sandpiper (SingleM community profiles of public metagenomes)</a></td><td>Per-run community profiles and the count of profiled runs per study; profiles shown for the infant studies.</td><td class="small">CC-BY (Woodcroft et al. 2025).</td></tr><tr><td><a href="https://waldronlab.io/curatedMetagenomicData/">curatedMetagenomicData (cMD)</a></td><td>Gold standard for the infant-field extraction evaluation (age, delivery mode, preterm status precision) and the 22 infant BioProjects used for study-level recall.</td><td class="small">Artistic-2.0 (Bioconductor package); data via ExperimentHub.</td></tr><tr><td><a href="https://obophenotype.github.io/uberon/">UBERON</a></td><td>Anchors of the body-site vocabulary (config/vocab/body_sites.yaml).</td><td class="small">CC-BY 3.0.</td></tr><tr><td><a href="https://gtdb.ecogenomic.org/">GTDB</a></td><td>Taxonomy of the Sandpiper community panels (release stated on each panel).</td><td class="small">CC-BY-SA 4.0.</td></tr>
+</tbody></table>
+
+<h2 id="software">Software and models</h2>
+<table class="tbl small"><thead><tr><th>component</th><th>role</th><th>licence</th></tr></thead><tbody>
+<tr><td><a href="https://duckdb.org/docs/api/wasm/overview">DuckDB-WASM</a></td><td>In-browser SQL over the parquet tables (sample and registry explorers); pinned 1.29.0 from jsDelivr.</td><td class="small">MIT.</td></tr><tr><td><a href="https://datatables.net/">DataTables and jQuery</a></td><td>Sortable study, cohort and scope tables.</td><td class="small">MIT.</td></tr><tr><td><a href="https://github.com/OlmLab/catalog-pipeline">Apache Parquet / Arrow, pandas, DuckDB, Jinja2, Python-Markdown</a></td><td>Pipeline and site generator (catalog-pipeline).</td><td class="small">Apache-2.0 / BSD / MIT (see the repository).</td></tr><tr><td><a href="https://www.anthropic.com/">Anthropic Claude models</a></td><td>Model-assisted classification (registry), key triage (R1), value normalisation, cohort-statement extraction (R3, R4) and adjudication — always with a verbatim evidence quote; roles and model ids in config/models.yaml and on every model-derived row.</td><td class="small">Anthropic usage policies.</td></tr>
+</tbody></table>
+
+<h2 id="related">Related efforts and what we could ingest</h2>
+<p class="small">Resources that curate or harmonise human microbiome metadata. <b>Ingestion</b> is our assessment: <span class="tag included">used</span> already part of the pipeline · <span class="tag">candidate_high</span> per-sample curated fields that join on archive accessions · <span class="tag">candidate_medium</span> partial overlap, cross-check or future scopes · <span class="tag">candidate_low</span> out of scope (amplicon) or not yet released · <span class="tag">not_applicable</span> derived data without per-sample metadata. Any ingested value would enter as its own evidence row (route R2, <span class="mono">evidence_source = external.&lt;resource&gt;</span>, the resource's identifier as locator) after the study's own tables in precedence, and only under terms that allow redistribution. Know one we missed? <a href="https://github.com/OlmLab/infant-gut-catalog/issues/new?template=catalog-finding.yml&labels=finding&title=%5Bsources%5D%20missing%20resource">Tell us</a>.</p>
+
+<div class="card" style="margin:.6rem 0" id="curatedMetagenomicData_3_cMD_3">
+<b><a href="https://waldronlab.io/curatedMetagenomicData/">curatedMetagenomicData 3 (cMD 3)</a></b> <span class="tag ">candidate_high</span> <span class="small">Pasolli et al. 2017 Nat Methods; cMD 3 — Nature Communications 2025</span><br>
+<span class="small"><b>Scope:</b> human shotgun metagenomes, all body sites; manually curated per-sample metadata · <b>Size:</b> &gt; 22,000 samples, 94 studies, 42 countries (cMD 3) · <b>Licence:</b> Artistic-2.0; metadata redistributable with attribution</span><br>
+<span class="small"><b>Offers:</b> Per-sample curated age, sex, BMI, country, disease, antibiotics and study condition; MetaPhlAn/HUMAnN profiles; NCBI accessions per sample.</span><br>
+<span class="small"><b>Join:</b> sample_metadata NCBI_accession (SRR/ERR run ids, &#39;;&#39;-separated) → registry runs → BioSample; study_name → PMID / BioProject.</span><br>
+<span class="small"><b>Assessment:</b> Best per-sample external source for the core fields; already our gold standard for the infant fields. Ingest as an external curated table (route R2, evidence_source external.cmd3, evidence_locator = cMD study_name/sample_id, confidence 0.8) with precedence after the study&#39;s own supplementary tables. Disease codes map to health_conditions.yaml by rule.</span>
+</div>
+
+<div class="card" style="margin:.6rem 0" id="GMrepo_v3">
+<b><a href="https://gmrepo.humangut.info/">GMrepo v3</a></b> <span class="tag ">candidate_high</span> <span class="small">Wu et al. 2020, Dai et al. 2022, Liu et al. 2026 NAR (v3)</span><br>
+<span class="small"><b>Scope:</b> human gut, 16S and shotgun; phenotype-centred curation · <b>Size:</b> 890 projects, 118,965 runs/samples (87,048 16S · 31,917 WGS), 302 diseases (v3) · <b>Licence:</b> Check the site&#39;s terms before redistribution (academic use stated).</span><br>
+<span class="small"><b>Offers:</b> Per-run curated phenotype (MeSH disease), age, sex, BMI, country, health status; project-level markers; RESTful API and downloads.</span><br>
+<span class="small"><b>Join:</b> run accession (SRR/ERR/DRR) and project id (PRJNA…) → registry runs / studies.</span><br>
+<span class="small"><b>Assessment:</b> The 31,917 WGS runs overlap the catalog directly; disease → MeSH gives a mapping target for health_conditions.yaml. Ingest phenotype/age/sex/BMI as external.gmrepo_v3 rows (route R2, confidence 0.75) once redistribution terms are confirmed; otherwise use only as a cross-check and link out per study.</span>
+</div>
+
+<div class="card" style="margin:.6rem 0" id="African_Human_Microbiome_Portal_H3ABioNet">
+<b><a href="https://microbiome.h3abionet.org/">African Human Microbiome Portal (H3ABioNet)</a></b> <span class="tag ">candidate_medium</span> <span class="small">Database 2024</span><br>
+<span class="small"><b>Scope:</b> African human microbiome samples, metadata only · <b>Size:</b> 14,889 records, 70 BioProjects, 72 articles · <b>Licence:</b> Open access (check reuse terms).</span><br>
+<span class="small"><b>Offers:</b> Harmonised, ontology-coded metadata (demographics, body site, disease) for African cohorts; filtered downloads.</span><br>
+<span class="small"><b>Join:</b> BioProject / BioSample accession.</span><br>
+<span class="small"><b>Assessment:</b> Improves population coverage where archive attributes are thin; join on BioProject then BioSample.</span>
+</div>
+
+<div class="card" style="margin:.6rem 0" id="BugSigDB">
+<b><a href="https://bugsigdb.org/">BugSigDB</a></b> <span class="tag ">candidate_medium</span> <span class="small">Geistlinger et al. 2023 Nat Biotechnol</span><br>
+<span class="small"><b>Scope:</b> curated microbial signatures from published studies, all body sites · <b>Size:</b> thousands of signatures from &gt; 1,000 studies · <b>Licence:</b> CC-BY 4.0</span><br>
+<span class="small"><b>Offers:</b> Study-level curation: condition, body site, sequencing type, cohort location, linked PMID/DOI (CC-BY).</span><br>
+<span class="small"><b>Join:</b> PMID / DOI → registry_study_papers → study.</span><br>
+<span class="small"><b>Assessment:</b> Study-level condition and cohort-location annotations can support R4-like cohort statements (confidence ≤ 0.5) for studies whose papers BugSigDB curated.</span>
+</div>
+
+<div class="card" style="margin:.6rem 0" id="HMP_/_iHMP_data_portal">
+<b><a href="https://portal.hmpdacc.org/">HMP / iHMP data portal</a></b> <span class="tag ">candidate_medium</span> <span class="small">Human Microbiome Project Consortium 2012; iHMP 2019</span><br>
+<span class="small"><b>Scope:</b> HMP1 and iHMP cohorts (multi-site, longitudinal) · <b>Size:</b> &gt; 30,000 files across the HMP programmes · <b>Licence:</b> Open for the public tier; controlled tier via dbGaP.</span><br>
+<span class="small"><b>Offers:</b> Rich subject and visit metadata for the HMP cohorts (partly controlled access).</span><br>
+<span class="small"><b>Join:</b> SRS / SRR accessions and BioProjects of the HMP studies.</span><br>
+<span class="small"><b>Assessment:</b> Per-visit metadata for the HMP gut samples in the catalog (thousands of samples); only the public tier can be redistributed.</span>
+</div>
+
+<div class="card" style="margin:.6rem 0" id="HumanMetagenomeDB">
+<b><a href="https://webapp.ufz.de/hmgdb/">HumanMetagenomeDB</a></b> <span class="tag ">candidate_medium</span> <span class="small">Kasmanas et al. 2021 NAR</span><br>
+<span class="small"><b>Scope:</b> human metagenomes from SRA and MG-RAST, all body sites · <b>Size:</b> 69,822 metagenomes, 203 standardised attributes (v1.0) · <b>Licence:</b> Check (UFZ).</span><br>
+<span class="small"><b>Offers:</b> Standardised host attributes (body site, age, sex, disease, country) from archive metadata, ontology terms.</span><br>
+<span class="small"><b>Join:</b> SRA sample / run accession.</span><br>
+<span class="small"><b>Assessment:</b> Derived from the same archive attributes as our R1, so mostly a consistency check for the 2020 snapshot; its ontology mappings (body site, disease) can validate our vocabularies.</span>
+</div>
+
+<div class="card" style="margin:.6rem 0" id="mBodyMap">
+<b><a href="https://mbodymap.microbiome.cloud/">mBodyMap</a></b> <span class="tag ">candidate_medium</span> <span class="small">Jin et al. 2022 NAR</span><br>
+<span class="small"><b>Scope:</b> human microbes across body sites with health/disease associations; per-run curated phenotypes · <b>Size:</b> tens of thousands of runs across 20+ body sites (see site) · <b>Licence:</b> Check.</span><br>
+<span class="small"><b>Offers:</b> Per-run body site, phenotype and disease annotation; taxon–disease associations.</span><br>
+<span class="small"><b>Join:</b> run accession, project id.</span><br>
+<span class="small"><b>Assessment:</b> Body-site and disease annotations for non-gut sites make it a candidate when the oral, skin and vaginal scopes are curated.</span>
+</div>
+
+<div class="card" style="margin:.6rem 0" id="Meta2DB_LLNL">
+<b><a href="https://gdo-meta2db.llnl.gov/">Meta2DB (LLNL)</a></b> <span class="tag ">candidate_medium</span> <span class="small">Meta2DB 2024 bioRxiv / 2026</span><br>
+<span class="small"><b>Scope:</b> curated shotgun metagenomic feature sets with labelled health-state metadata · <b>Size:</b> see Zenodo record 17315984 · <b>Licence:</b> Zenodo record (check).</span><br>
+<span class="small"><b>Offers:</b> Labelled sample metadata (health state) for shotgun studies; Centrifuge-based profiles.</span><br>
+<span class="small"><b>Join:</b> SRA run accession.</span><br>
+<span class="small"><b>Assessment:</b> Health-state labels for shotgun samples map to health_conditions.yaml; profiles out of scope.</span>
+</div>
+
+<div class="card" style="margin:.6rem 0" id="MGnify_EBI_Metagenomics">
+<b><a href="https://www.ebi.ac.uk/metagenomics/">MGnify (EBI Metagenomics)</a></b> <span class="tag ">candidate_medium</span> <span class="small">Richardson et al. 2023 NAR</span><br>
+<span class="small"><b>Scope:</b> analysed public metagenomes and amplicon studies, all biomes · <b>Size:</b> hundreds of thousands of analysed samples · <b>Licence:</b> EMBL-EBI terms (open).</span><br>
+<span class="small"><b>Offers:</b> Biome (GOLD) classification, ENA-linked sample metadata via the API, uniform analyses.</span><br>
+<span class="small"><b>Join:</b> ENA study / sample accession (native).</span><br>
+<span class="small"><b>Assessment:</b> Biome assignments cross-check the registry&#39;s body-site classification for the studies MGnify analysed.</span>
+</div>
+
+<div class="card" style="margin:.6rem 0" id="MicrobeAtlas">
+<b><a href="https://microbeatlas.org/">MicrobeAtlas</a></b> <span class="tag ">candidate_medium</span> <span class="small">Cell 2026</span><br>
+<span class="small"><b>Scope:</b> all microbiome samples in SRA (amplicon and metagenomic), all biomes · <b>Size:</b> 2,390,937 samples, 52,950 studies · <b>Licence:</b> Check.</span><br>
+<span class="small"><b>Offers:</b> Harmonised SSU-rRNA community profiles, extracted metadata keywords, environmental ontology and geographic coordinates per sample.</span><br>
+<span class="small"><b>Join:</b> SRA sample / run accession.</span><br>
+<span class="small"><b>Assessment:</b> Geography and environment annotations could fill country for samples without a geo attribute (as an inferred route with low confidence) and cross-check body-site classes; the profiles are rRNA-based and outside our scope.</span>
+</div>
+
+<div class="card" style="margin:.6rem 0" id="MicrobiomeDB_VEuPathDB">
+<b><a href="https://microbiomedb.org/">MicrobiomeDB (VEuPathDB)</a></b> <span class="tag ">candidate_medium</span> <span class="small">Oliveira et al. 2018 NAR</span><br>
+<span class="small"><b>Scope:</b> curated microbiome studies (mostly 16S, some shotgun), human and other hosts · <b>Size:</b> dozens of studies with rich sample metadata · <b>Licence:</b> Check (VEuPathDB data-use policy).</span><br>
+<span class="small"><b>Offers:</b> Deeply curated per-sample metadata with ontology terms, downloadable per study.</span><br>
+<span class="small"><b>Join:</b> SRA accessions where deposited.</span><br>
+<span class="small"><b>Assessment:</b> Small overlap but very high metadata quality for the studies it covers; worth an accession-level join test.</span>
+</div>
+
+<div class="card" style="margin:.6rem 0" id="EMBERS_LLM_extraction_of_metadata_from_26,435_gut-microbiome_papers">
+<b><a href="https://www.biorxiv.org/content/10.1101/2024.10.26.620145">EMBERS (LLM extraction of metadata from 26,435 gut-microbiome papers)</a></b> <span class="tag ">candidate_low</span> <span class="small">bioRxiv 2024</span><br>
+<span class="small"><b>Scope:</b> paper-derived sample metadata for human gut studies · <b>Size:</b> 26,435 papers · <b>Licence:</b> Check (preprint; data release status unknown).</span><br>
+<span class="small"><b>Offers:</b> Automated extraction and harmonisation of sample metadata from papers — the same idea as our R3/R4 routes.</span><br>
+<span class="small"><b>Join:</b> PMID → study; sample-level join depends on the released tables.</span><br>
+<span class="small"><b>Assessment:</b> Methodologically closest to our approach; ingest only if a table with accessions and verbatim evidence is released.</span>
+</div>
+
+<div class="card" style="margin:.6rem 0" id="Human_Microbiome_Compendium_MicroBioMap">
+<b><a href="https://microbiomap.org/">Human Microbiome Compendium (MicroBioMap)</a></b> <span class="tag ">candidate_low</span> <span class="small">Abdill et al. 2023 bioRxiv</span><br>
+<span class="small"><b>Scope:</b> human gut 16S amplicon samples from SRA · <b>Size:</b> ≈ 168,000 samples · <b>Licence:</b> CC-BY</span><br>
+<span class="small"><b>Offers:</b> Uniformly processed 16S profiles and a harmonised sample_metadata.tsv (CC-BY).</span><br>
+<span class="small"><b>Join:</b> SRA run / sample accession.</span><br>
+<span class="small"><b>Assessment:</b> Amplicon-only, so outside the shotgun scope; its harmonised metadata columns and the study list are a useful comparison for the registry&#39;s amplicon_misfiled calls.</span>
+</div>
+
+<div class="card" style="margin:.6rem 0" id="PRIME">
+<b><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12807763/">PRIME</a></b> <span class="tag ">candidate_low</span> <span class="small">2025</span><br>
+<span class="small"><b>Scope:</b> human 16S amplicon studies with harmonised phenotypes · <b>Size:</b> 53,449 samples, 111 studies, 93 body sites · <b>Licence:</b> Check.</span><br>
+<span class="small"><b>Offers:</b> Harmonised disease, demographics, body-site and protocol metadata for amplicon studies.</span><br>
+<span class="small"><b>Join:</b> SRA accessions.</span><br>
+<span class="small"><b>Assessment:</b> Amplicon-only; useful as a vocabulary reference for phenotype categories.</span>
+</div>
+
+<div class="card" style="margin:.6rem 0" id="gutMEGA,_gutMDisorder,_Disbiome,_HMDAD,_GutMetaNet,_HGMT">
+<b><a href="https://gutmega.omicsbio.info/">gutMEGA, gutMDisorder, Disbiome, HMDAD, GutMetaNet, HGMT</a></b> <span class="tag ">not_applicable</span> <span class="small">various (2020–2025)</span><br>
+<span class="small"><b>Scope:</b> derived quantitative or literature-curated gut microbiome resources · <b>Size:</b> — · <b>Licence:</b> various</span><br>
+<span class="small"><b>Offers:</b> Taxon–condition associations and processed abundances rather than per-sample archive-linked metadata.</span><br>
+<span class="small"><b>Join:</b> PMID where given.</span><br>
+<span class="small"><b>Assessment:</b> No per-sample metadata to ingest; listed for completeness. HGMT (tumour cohorts, 18,630 stool samples) could supply cohort-level condition labels for immunotherapy studies.</span>
+</div>
+
+
+<h2 id="cite">Citing and licence</h2>
+
+<div class="cite note" id="cite">
+<b>Cite this release.</b> <i>Microbiome Repo, release R2026.10 (data package 1.10.1), OlmLab, 2026-09-28.</i>
+<div class="small" style="margin-top:.3rem">
+<a href="https://zenodo.org/badge/latestdoi/1389758854"><img src="https://zenodo.org/badge/1389758854.svg" alt="Zenodo DOI badge (latest release of OlmLab/infant-gut-catalog-data)" height="20"></a>
+ <b>DOI: pending Zenodo integration</b> — the badge resolves to the latest archived DOI of the data repository (GitHub repository id 1389758854) once the owner enables the GitHub–Zenodo integration; until then releases are citable by release id, data tag (<a href="https://github.com/OlmLab/infant-gut-catalog-data/releases/tag/data-v1.10.1">data-v1.10.1</a>) and sha256 (VERSION.json).
+</div>
+<div class="small" style="margin-top:.3rem">Also cite the upstream sources this catalog is built on:
+<ul style="margin:.2rem 0 0 1rem"></ul></div>
+</div>
+<p class="small">Curated tables (<span class="mono">registry_*</span>, <span class="mono">gut_*</span> and the infant extension) are released under CC-BY-4.0; archive metadata remains under INSDC terms; community profiles from Sandpiper (CC-BY). When you use values from this catalog, please also cite the primary studies — every study page lists its papers.</p>
+
+</main>
+<footer>
+<div id="release-line"><b>Microbiome Repo</b> — release <a href="releases/index.html#rel-R2026.10"><span class="mono">R2026.10</span></a> · package <span class="mono">1.10.1</span> · build <span class="mono">ceb95b1</span> · built 2026-09-28 · data tag <span class="mono">data-v1.10.1</span> · DOI pending Zenodo integration (<a href="data/VERSION.json">VERSION.json</a>, <a href="changes/R2026.10.html">what changed</a>, <a href="docs/CHANGELOG.html">changelog</a>). Curated tables (registry_*, gut_* and the infant extension) are released under <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a>; archive metadata remains under INSDC terms; community profiles from <a href="https://sandpiper.qut.edu.au/">Sandpiper</a> (Woodcroft et al. 2025, CC-BY).</div>
+<div>How to cite: <i>Microbiome Repo, release R2026.10 (data package 1.10.1), OlmLab, 2026-09-28.</i> · <a href="sources.html">Sources and acknowledgements</a></div>
+<div>Caveats: every value carries a route (R1 archive attribute, R2 supplementary table, R3 paper text, R4 abstract/description), a scope and a confidence tier (not a calibrated probability); R3/R4 values are cohort-wide statements applied to the study's samples — see <a href="fields/index.html">Fields</a> and <a href="methods.html#limitations">Methods › Limitations</a>. Built with an LLM-assisted pipeline; treat individual values as evidence-linked claims, not ground truth. Found an error? Every study, cohort and sample has a <b>Flag an issue</b> button that opens a prefilled GitHub issue. Know a study's missing metadata? See <a href="contribute/index.html">Contribute</a>.</div>
+</footer>
+
+<script>window.CATALOG={version:'1.10.1',release:'data-v1.10.1',releaseId:'R2026.10',issueRepo:'https://github.com/OlmLab/infant-gut-catalog/issues/new',issueTemplate:'catalog-finding.yml'};</script>
+<script src="static/site.js"></script>
+
+</body>
+</html>
