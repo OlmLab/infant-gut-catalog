@@ -104,6 +104,9 @@
 | `parse_note` | derivation notes (unit resolution, propagation, supersession, review flags) |
 | `group_audit` | keep/downgrade for group statements (Opus audit) |
 | `src_track` | pipeline pass that produced the row |
+| `release_added` | release in which this row first became visible (`R<YYYY>.<n>` or a pre-numbered package semver `1.0.0`–`1.2.2`); pre-1.3.0 values are reconstructed — see DATA_DICTIONARY 'Release columns' |
+| `release_retired` | release that replaced/removed the row; null (empty in CSV) = current row |
+| `package_added` | semver of the data package in which the row first appeared |
 
 ## Routes
 R1 = archive sample attribute or sample-name convention (per sample); R2 = supplementary table row (per sample; 'subject_level_join' in parse_note when copied from a per-subject row); R3 = statement in the paper text applied to a defined group; R4 = abstract/ENA description statement (group; confidence ≤0.5).
@@ -177,6 +180,555 @@ One row per (study, stage table, replicate). `stage_order` (v1.2.1) follows the 
 ## value_history.parquet
 Determinations that are not in `sample_determinations.parquet`. `status`: `superseded` (a higher-precedence value replaced it; `replaced_by` names it), `rejected` (validator or rule rejection; `reason`), `dropped` (group statement failed the Opus checklist audit; `reason` = drop_reason), `recommitted_out_of_scope_adult` (an R1 age the v1.1 validator rejected as out of range that v1.2 commits with `parse_note out_of_scope_adult` to evidence `adult_age_flag`), `not_committed_duplicate` (second out-of-range age attribute on the same sample), `moved_to_parent_biosamples`, `auditor_finding_applied` (study-level auditor findings and what was done). `change_stage` names the pipeline stage that made the change (`auditor_review:B2`/`B9` for v1.2.0; `auditor_review:R3-3` for the v1.2.1 host/isolate rule, statuses `recommitted_out_of_scope_host` and `recommitted_out_of_scope_isolate`, field_name `body_site_class`, evidence source `run.scientific_name` / `run.library_source`).
 
+
+## Release columns (R2026.1, package 1.3.0)
+Fact tables — `sample_determinations.parquet`, `universe_studies_all.parquet`, `study_metadata_wide.parquet`, `cohorts.csv`, `study_paper_links.csv`, `sandpiper_sample_summary.parquet`, `sandpiper_run_qc.parquet`, `sandpiper_top_genera.parquet`, `sandpiper_study_panels.parquet`, `study_metadata_wide.csv` — end with three columns:
+
+| column | dtype | meaning |
+|---|---|---|
+| `release_added` | string | release in which this row first became visible (`R<YYYY>.<n>` or a pre-numbered package semver `1.0.0`–`1.2.2`); pre-1.3.0 values are reconstructed — see DATA_DICTIONARY 'Release columns' |
+| `release_retired` | string \| null | release that replaced/removed the row; null (empty in CSV) = current row |
+| `package_added` | string | semver of the data package in which the row first appeared |
+
+Release ids are `R<YYYY>.<n>` (first: `R2026.1` = package 1.3.0) or, for states published before numbering, the package
+semver `1.0.0` (first public package, 2026-09-25), `1.1.0` (release v11), `1.2.0`, `1.2.1`, `1.2.2`. "Current" = `release_retired IS NULL`;
+in the shipped fact tables every row is current. `sample_metadata_wide` is derived from `sample_determinations` and carries no release columns.
+
+**Reconstruction caveat.** Packages before 1.3.0 carried no release columns, so `release_added` of pre-existing rows was reconstructed:
+newest `value_history.change_stage` touching the (sample_key, field_name) or `sample_determinations.src_track`, mapped to the package the
+CHANGELOG records for that stage (`sample_unit_fix` → 1.1.0, `auditor_review:B2`/`B9` → 1.2.0, `auditor_review:R3-3` → 1.2.1,
+`owner_decision` → 1.2.2). Exact for rows those stages touched (13191 current determinations:
+`src_track = sample_unit_fix` → 1.1.0, `src_track = adult_scope_fix` → 1.2.0); every other pre-1.3.0 row is labelled `1.0.0` by assumption
+(the first package is not archived as a table, so this cannot be verified row by row). `package_added` equals `release_added` for all
+pre-1.3.0 rows. Study verdict rows are all `1.0.0` (no verdict change is dated after the first package); Sandpiper rows are `1.2.0`
+(when Sandpiper landed; the v1.2.1 recomputation of existing rows is recorded in the CHANGELOG, not as retire+add).
+
+## sample_determinations_all.parquet (R2026.1)
+`sample_determinations` columns + the three release columns + `retired_reason` (string|null; `value_history.reason`) +
+`retired_change_stage` (string|null; `value_history.change_stage`). Rows: every current determination (618,898,
+`release_retired` null) ∪ every **retired published value** (1,316) reconstructed from `value_history`
+rows whose `status` ∈ {`superseded`, `moved_to_parent_biosamples`, `recommitted_out_of_scope_host`, `recommitted_out_of_scope_isolate`}
+(`release_retired` = the package of their `change_stage`). value_history rows with status `rejected`, `dropped`, `not_committed_duplicate`,
+`recommitted_out_of_scope_adult` (the pre-history of a row that IS current) or `auditor_finding_applied` were never published and are not
+rows here. Exactly one current row per (`sample_key`, `field_name`); retired rows may repeat a key. `sample_determinations_superseded.parquet`
+(223 rows) is the same set as the `superseded` rows of stages `sample_unit_fix` (75) and `auditor_review:B9` (148) and is kept for the v1.1 layout.
+
+## releases.csv (R2026.1)
+One row per release id, oldest first: `release_id`, `package_version`, `release_date`, `data_tag`, `site_tag`, `doi` (empty until Zenodo
+mints one), `n_studies_included`, `n_samples`, `n_catalog_scope`, `n_determinations_current`, `sandpiper_version`, `notes_file`. Historical
+rows carry only the counts the CHANGELOGs state (empty otherwise — never invented).
+
+## Contribute worklist (R2026.2, package 1.4.0)
+`contribute_worklist.csv` — one row per **open** study (`universe_studies_all.triage_verdict ∈ {include, uncertain}` and at least one of the
+six worklist fields below 0.5 coverage on its catalog_scope samples; studies with 0 catalog_scope samples are judged on body-site scope
+`body_site_class ∈ {primary, unknown}`). Complete studies are not listed. Rules, templates and vocabularies: the pipeline's
+`config/contribute.yaml` and `docs/CONTRIBUTE.md`. Read-only: nothing here is a curated value — every column is derived from the tables
+of this package and from the recoverability / R2-rescue / supplement-inventory artifacts registered in `config/inputs.json` (group `contribute`).
+
+### contribute_worklist.csv (439 rows)
+
+| column | dtype | meaning |
+|---|---|---|
+| `rank` | int64 | 1 = highest priority_score (ties: n_samples desc, accession) |
+| `study_accession` | string | BioProject accession (universe_studies_all key) |
+| `study_title` | string | universe_studies_all.study_title |
+| `cohort_id` | string | cohorts.csv id |
+| `cohort_name` | string | cohorts.csv name |
+| `triage_verdict` | string | `include` | `uncertain` (open studies only) |
+| `n_samples` | int64 | sample units of the study (universe_studies_all.n_samples) |
+| `n_catalog_scope` | int64 | sample_metadata_wide rows with catalog_scope = True |
+| `n_infant_samples_est` | float64 | null | triage estimate of infant samples (universe_studies_all) |
+| `missing_fields` | string | ';'-joined short field names (age, delivery, feeding, preterm, antibiotics, probiotic) whose coverage < 0.5 |
+| `n_missing_fields` | int64 | count of missing_fields (≥ 1 for every listed study) |
+| `coverage_<field>` | float64 | fraction of catalog_scope samples with a value for the field (body-site scope {primary, unknown} when n_catalog_scope = 0); six columns: age, delivery, feeding, preterm, antibiotics, probiotic |
+| `best_tier_<field>` | string | best recoverability tier for study × field (`R1` archive attribute · `R2` supplementary table · `R3` paper text · `R4` abstract · `R0` none); six columns |
+| `blocker_code` | string | dominant reason the study is open — vocabulary in config/contribute.yaml `blocker_codes` (controlled_access, no_linked_paper, paywalled_abstract_only, tables_unjoinable_need_key, pdf_only_supplement, no_supplement_found, archive_only_uncertain, unitless_age_needs_curator, partial_coverage); decision order `blocker_order` |
+| `blocker_detail` | string ≤ 200 | the deciding evidence (counts, access tier, sample-ID forms from RESCUE_REPORT_v2, human-review note) |
+| `unlock_text` | string ≤ 200 | imperative 'what would unlock this' sentence from the `unlock_templates` of the blocker (id form / missing fields substituted) |
+| `contribution_type` | string | primary ask: per_sample_table | id_key | paper_pointer | age_schedule | verdict_evidence |
+| `n_linked_papers` | int64 | rows in study_paper_links for the study |
+| `own_data_pmids` | string | ';'-joined PMIDs of the linked papers (empty when none) |
+| `n_supp_tables_inventoried` | int64 | supp_inventory members with member_type = table across the linked papers |
+| `controlled_access` | bool | study or its cohort is in controlled_access_registry.csv (non-open tier) or flagged controlled in extraction_worklist / universe_studies_all |
+| `priority_score` | float64 | Σ over missing fields of weight × (1 − coverage) × log10(n_catalog_scope + 1); weights age 3, delivery 2, feeding 2, preterm 1.5, antibiotics 1, probiotic 0.5 |
+| `ena_url` | string | ENA browser URL of the study |
+| `ncbi_url` | string | NCBI BioProject URL |
+| `issue_url` | string | prefilled GitHub Issue (form catalog-contribution.yml, label contribution; query keys study_accession, contribution_type, release_tag, title) |
+| `release_added` | string | release in which this row first became visible (`R<YYYY>.<n>` or a pre-numbered package semver `1.0.0`–`1.2.2`); pre-1.3.0 values are reconstructed — see DATA_DICTIONARY 'Release columns' |
+| `release_retired` | string | release that replaced/removed the row; null (empty in CSV) = current row |
+| `package_added` | string | semver of the data package in which the row first appeared |
+
+### contribute_worklist_fields.csv (2,634 rows = 6 per worklist study)
+
+| column | dtype | meaning |
+|---|---|---|
+| `study_accession` | string | BioProject accession |
+| `field` | string | age | delivery | feeding | preterm | antibiotics | probiotic (short names of age_at_collection_days, delivery_mode, feeding_mode, preterm_status, antibiotic_exposure, probiotic_exposure) |
+| `coverage` | float64 | fraction of in-scope samples with a value (same scope rule as the worklist) |
+| `n_with_value` | int64 | in-scope samples with a value |
+| `n_catalog_scope` | int64 | catalog_scope samples of the study |
+| `best_tier` | string | best recoverability tier R0–R4 for the study × field |
+| `blocker_code` | string | `complete` when coverage ≥ 0.5, else the study blocker (only the age field carries unitless_age_needs_curator; other fields then partial_coverage) |
+| `evidence` | string ≤ 120 | tier + first recoverability evidence quote/source + note |
+| `release_added` | string | release in which this row first became visible (`R<YYYY>.<n>` or a pre-numbered package semver `1.0.0`–`1.2.2`); pre-1.3.0 values are reconstructed — see DATA_DICTIONARY 'Release columns' |
+| `release_retired` | string | release that replaced/removed the row; null (empty in CSV) = current row |
+| `package_added` | string | semver of the data package in which the row first appeared |
+
+**Blocker codes** (one per study, decision order = listing order for included studies; uncertain studies always `archive_only_uncertain`):
+`controlled_access` (study/cohort in the controlled-access registry) · `no_linked_paper` (0 rows in study_paper_links) · `paywalled_abstract_only`
+(extraction_worklist access_tier C/D/E) · `tables_unjoinable_need_key` (R2 rescue: supplementary tables keyed by paper-internal names) ·
+`pdf_only_supplement` (only PDF/DOCX supplements) · `no_supplement_found` (paper but no inventoried supplement) · `unitless_age_needs_curator`
+(age column without unit) · `partial_coverage` (paper + tables processed, fields still missing). Field-level code `complete` = field at/above threshold.
+**Contribution types**: `per_sample_table`, `id_key`, `paper_pointer`, `age_schedule`, `verdict_evidence` (dropdown of the GitHub Issue form
+`catalog-contribution.yml` that `issue_url` opens prefilled). Rows get `release_retired` when the study becomes complete in a later release.
+
+## Registry tier (R2026.4, package 1.6.0)
+The registry is the **outer tier** of the catalog (docs/EXPANSION.md): every ENA study with a human shotgun-metagenome signal, any body site,
+any age, classified at STUDY level from ENA study/sample/run metadata (no paper reading). Enumeration slices: S1 `library_source=METAGENOMIC` ×
+`WGS|WXS`; S2 misfiled `GENOMIC` on verified human-metagenome taxa; S3 `OTHER|Targeted-Capture|WGA` adjudication (per-slice completeness in
+`registry_universe_audit.csv`). Classification stages: `deterministic_prior` (infant-universe verdict carried over), `deterministic_rule`,
+`sonnet_x2` (two rubric replicates agree), `opus_adjudicated` (replicates disagreed → adjudication), `pending`. Vocabularies: the pipeline's
+`config/vocab/{body_sites,life_stages,assay,population_flags}.yaml`; scope rules: `config/scope.yaml`. The curated infant catalog is the scope
+`infant_gut` inside this registry (`in_infant_catalog` mirrors `universe_studies_all.triage_verdict`). The run-level table `registry_runs.parquet`
+(all runs of the universe, 46 ENA fields + `found_by`) is attached to the GitHub Release of the data repository as `registry_runs_v<version>.parquet`
+(too large for this package). Bitemporal columns follow the package convention (`release_added`, `release_retired`, `package_added`).
+
+### registry_studies.parquet (54,410 rows)
+
+| column | dtype | meaning |
+|---|---|---|
+| `study_accession` | string | ENA/INSDC BioProject accession (PRJ…); primary key |
+| `secondary_study_accession` | string | ENA secondary study accession (ERP/SRP/DRP) |
+| `study_title` | string | ENA study title |
+| `description_short` | string | ENA study description truncated to 300 characters |
+| `center_name` | string | Submitting centre |
+| `first_public_min` | string | Earliest run first_public date (ISO) |
+| `first_public_max` | string | Latest run first_public date (ISO) |
+| `n_runs` | int64 | Runs in the registry universe for this study |
+| `n_samples` | int64 | Distinct sample_accession values |
+| `n_biosamples` | int64 | Distinct BioSample accessions |
+| `library_strategies` | string | JSON dict strategy → run count |
+| `library_sources` | string | ';'-joined distinct library_source values |
+| `instrument_platforms` | string | ';'-joined distinct instrument_platform values |
+| `scientific_names_top` | string | ';'-joined top-5 scientific_name values with run counts, e.g. 'human gut metagenome (120)' |
+| `host_tax_ids` | string | ';'-joined distinct host_tax_id values |
+| `n_runs_host_9606` | int64 | Runs with host_tax_id 9606 |
+| `n_runs_nonhuman_host` | int64 | Runs with a non-9606 host_tax_id |
+| `human_signal` | bool | Frame-free sweep human-signal rule outcome (pre-filter) |
+| `human_signal_rule` | string | A|B|C|none — which human-signal rule fired |
+| `ambiguous` | bool | Human-signal rule tie flag |
+| `host_human` | string | Classified host |
+| `host_evidence` | string | JSON list of {source, quote} (quote ≤ 12 words; source from the curation-skill label list) |
+| `assay` | string | Assay class (config/vocab/assay.yaml) |
+| `access` | string | Access tier |
+| `body_sites` | string | ';'-joined body-site codes (config/vocab/body_sites.yaml) |
+| `body_site_primary` | string | Primary body-site code (multi_site when ≥ 3 strong sites) |
+| `body_site_evidence` | string | JSON evidence list |
+| `life_stages` | string | ';'-joined life-stage codes (config/vocab/life_stages.yaml) |
+| `life_stage_primary` | string | Primary life-stage code (mixed_ages when ≥ 3 strong stages) |
+| `life_stage_evidence` | string | JSON evidence list |
+| `population_flags` | string | ';'-joined flags (config/vocab/population_flags.yaml) |
+| `health_context` | string | ≤ 120 chars free text or null |
+| `classification_stage` | string | Cascade stage that produced the classification |
+| `classification_confidence` | float64 | 0–1; minimum over components |
+| `classification_model` | string | 'deterministic' or the resolved model id of the deciding stage |
+| `in_infant_catalog` | string | Infant-catalog verdict |
+| `infant_reason_code` | string | Infant triage reason_code (curation-skill vocabulary) or null |
+| `scope_memberships` | string | ';'-joined scope ids from config/scope.yaml |
+| `universe_slice` | string | Enumeration slice that found the study |
+| `release_added` | string | Bitemporal: release id in which the row first appeared |
+| `release_retired` | string | Bitemporal: release id in which the row was retired; null = current |
+| `package_added` | string | Bitemporal: package semver of first appearance |
+
+### registry_universe_audit.csv
+
+| column | dtype | meaning |
+|---|---|---|
+| `slice` | string | Slice tag / ENA query label |
+| `ena_query` | string | ENA portal query string |
+| `ena_count` | int64 | Count returned by the ENA count endpoint |
+| `rows_pulled` | int64 | read_run rows actually streamed |
+| `n_studies` | int64 | Distinct studies in the slice |
+| `completeness` | float64 | rows_pulled / ena_count |
+| `pulled_at` | string | ISO timestamp of the pull |
+
+### registry_biosamples.parquet (611,601 rows) — one row per harvested BioSample of a registry study (S2: human_all studies outside the curated infant catalog) — added R2026.5
+
+| column | dtype | meaning |
+|---|---|---|
+| `sample_accession` | string | BioSample accession (SAMN/SAME/SAMD) as listed in registry_biosample_index; primary key |
+| `study_accession` | string | ENA study (BioProject) the sample belongs to |
+| `n_attributes` | int64 | Non-placeholder attribute rows harvested for the sample |
+| `source` | string | ena_xml | ncbi_biosample — where the attribute record came from |
+| `body_site_code` | string | config/vocab/body_sites.yaml code from the normalised body-site attribute; unknown_site when an attribute existed but mapped to no site; null when no body-site attribute |
+| `body_site_raw_key` | string | Normalised attribute key the code came from (e.g. host_body_site, isolation_source) |
+| `body_site_raw_value` | string | Raw attribute value the code came from |
+| `life_stage` | string | config/vocab/life_stages.yaml code from the age attribute (or from age_days); unknown_age when an age attribute existed but was not interpretable; null when none |
+| `age_days` | float64 | Age at collection in days when a numeric age with unit was given |
+| `age_raw_key` | string | Attribute key the age came from |
+| `age_raw_value` | string | Raw age value |
+| `sex` | string | female | male | unknown; null when no sex attribute |
+| `sex_raw_key` | string | Attribute key the sex came from |
+| `sex_raw_value` | string | Raw sex/gender value |
+| `country_iso2` | string | ISO-3166-1 alpha-2 from geo_loc_name / country attributes |
+| `country_raw_key` | string | Attribute key the country came from |
+| `country_raw_value` | string | Raw geographic value |
+| `collection_date_raw` | string | Raw collection date attribute |
+| `collection_year` | Int64 | Year extracted from collection_date_raw |
+| `disease_raw` | string | First non-placeholder disease/health/phenotype attribute value (≤200 chars; NOT normalised — no controlled vocabulary yet) |
+| `release_added` | string | Release id in which the row first appeared |
+| `release_retired` | string | Release id in which the row was retired (null = current) |
+| `package_added` | string | Package version that first carried the row |
+
+### registry_study_papers.parquet (6,398 rows) — one row per study × linked paper (accession mention in Europe PMC and/or publication declared in the NCBI BioProject record); 4,217 human_all studies outside the curated infant catalog — added R2026.5
+
+| column | dtype | meaning |
+|---|---|---|
+| `study_accession` | str | ENA study (BioProject) accession |
+| `paper_id` | str | Europe PMC id (MED:<pmid> | PMC… | PPR… | DOI:…); part of the key |
+| `pmid` | str | PubMed id of the linked paper |
+| `pmcid` | str | PubMed Central id |
+| `doi` | str | DOI |
+| `title` | str | Paper title |
+| `journal` | str | Journal |
+| `year` | Int64 | Publication year |
+| `pub_type` | str | Europe PMC publication types |
+| `is_open_access` | boolean | Europe PMC open-access flag |
+| `in_epmc_fulltext` | object | Full text available in Europe PMC |
+| `source` | str | europepmc_mention | bioproject_xml | both — how the paper was linked |
+| `match_field` | str | abstract_or_title | fulltext_only — where the accession was mentioned |
+| `match_accession` | str | Accession matched (primary PRJ… or secondary ERP/SRP/DRP) |
+| `bioproject_declared` | bool | Paper is listed as a publication in the NCBI BioProject record |
+| `n_registry_studies` | int64 | How many processed registry studies this paper mentions |
+| `relation` | str | data_paper | related | unsure — deterministic link class (see REGISTRY_S2_PAPERS.md §2.3) |
+| `method` | str | Rule that produced the relation (det_bioproject_declared 0.9, det_single_mention_abstract 0.75, det_single_mention_fulltext 0.6) |
+| `confidence` | float64 | Rule confidence (null for unsure) |
+| `contested` | bool | True when the paper mentions ≥ 2 processed studies |
+| `contest_reason` | str | multi_study | … |
+| `epmc_rank` | float64 | Rank of the paper in the Europe PMC hit list for the study |
+| `epmc_hit_count` | float64 | Europe PMC hitCount for the study query |
+| `epmc_hits_capped` | object | Hit list truncated at 300 (never true in R2026.5) |
+| `body_site_primary` | str | registry_studies.body_site_primary at harvest time (convenience) |
+| `release_added` | string | Release id in which the row first appeared |
+| `release_retired` | string | Release id in which the row was retired (null = current) |
+| `package_added` | string | Package version that first carried the row |
+
+### registry_bioproject_records.parquet (4,217 rows) — one row per processed registry study (NCBI BioProject XML) — added R2026.5
+
+| column | dtype | meaning |
+|---|---|---|
+| `study_accession` | str | ENA study (BioProject) accession |
+| `secondary_study_accession` | str | ENA secondary study accession |
+| `found_in_ncbi` | bool | BioProject record found via esearch |
+| `bioproject_uid` | str | NCBI BioProject UID |
+| `archive` | str | NCBI | EBI | DDBJ |
+| `center_id` | str | Submitting center id |
+| `center_id_center` | str | Center attribute of center_id |
+| `title` | str | Paper title |
+| `name` | str | BioProject name |
+| `organisation` | str | Submitting organisation (first) |
+| `submitter_owner` | str | Submitter/owner organisation |
+| `organizations_json` | str | JSON list of organisations (name, abbr, role) |
+| `n_publications` | float64 | Publications declared in the record |
+| `publication_pmids` | str | ; -joined PMIDs declared |
+| `publication_dois` | str | ; -joined DOIs declared |
+| `publications_json` | str | JSON list of declared publications |
+| `grants_json` | str | JSON list of grants |
+| `external_links_json` | str | JSON list of external links |
+| `registration_date` | str | ProjectReleaseDate when present (239 studies) |
+| `submitted` | str | Submission date |
+| `last_update` | str | Last update date |
+| `submission_access` | str | public | controlled |
+| `data_types` | str | Declared data types |
+| `target_material` | str | BioProject target material (eGenome, …) |
+| `target_capture` | str | Target capture (eWhole, …) |
+| `target_sample_scope` | str | Sample scope (eMultiisolate, eEnvironment, …) |
+| `method_type` | str | Method type (eSequencing, …) |
+| `relevance_medical` | str | Medical relevance flag |
+| `body_site_primary` | str | registry_studies.body_site_primary at harvest time (convenience) |
+| `release_added` | string | Release id in which the row first appeared |
+| `release_retired` | string | Release id in which the row was retired (null = current) |
+| `package_added` | string | Package version that first carried the row |
+
+### registry_authors.parquet (52,110 rows) — one row per study × paper × author (Europe PMC core records of ≤ 5 linked papers per study) — added R2026.5
+
+| column | dtype | meaning |
+|---|---|---|
+| `study_accession` | str | ENA study (BioProject) accession |
+| `author_full_name` | str | Author full name (Europe PMC) |
+| `author_display` | str | Surname + initials |
+| `author_surname` | str | Surname |
+| `author_initials` | str | Initials |
+| `is_group` | bool | Collective/group author |
+| `source` | str | europepmc_mention | bioproject_xml | both — how the paper was linked |
+| `pmid` | str | PubMed id of the linked paper |
+| `pmcid` | str | PubMed Central id |
+| `doi` | str | DOI |
+| `paper_title` | str | Paper title |
+| `pub_year` | Int64 | Publication year |
+| `position` | int64 | Author position (1 = first); part of the key |
+| `n_authors` | int64 | Authors on the paper |
+| `is_first` | bool | First author |
+| `is_last` | bool | Last author |
+| `affiliation` | str | Affiliation string (e-mail addresses removed, rule F7) |
+| `orcid` | str | ORCID iD when present |
+| `paper_relation` | str | relation of the study×paper link (registry_study_papers) |
+| `link_method` | str | method of the link |
+| `author_source` | str | europepmc_core |
+| `author_key` | str | lower-case surname + initials key for de-duplication |
+| `release_added` | string | Release id in which the row first appeared |
+| `release_retired` | string | Release id in which the row was retired (null = current) |
+| `package_added` | string | Package version that first carried the row |
+
+### gut_sample_determinations.parquet (1,659,128 rows) — one row per sample × field of the gut_all curated scope (current value; precedence infant catalog > R1 > R2 > R3 > R4) — added R2026.7
+
+| column | dtype | meaning |
+|---|---|---|
+| `sample_key` | string | BioSample accession (or run accession for run-unit samples); with field_name the key |
+| `field_name` | string | Field of config/packs/gut.yaml |
+| `study_accession` | string | ENA study |
+| `field_value` | string | Raw value as found in the source |
+| `value_normalized` | string | Normalised value (days for age, vocabulary codes, ISO-2 country, yes/no) |
+| `confidence` | float64 | Route/parser confidence tier (R1 0.85–0.9, R2 0.8–0.85, R3 ≤ 0.7, R4 ≤ 0.5) |
+| `evidence_source` | string | Labelled source: sample.attr.<key> | paper.supp.<file>[sheet!column] | paper.abstract | study.description | study.title | … |
+| `evidence_locator` | string | biosample_attr | PMCID | PMID | accession |
+| `evidence_quote` | string | Verbatim quote ≤ 12 words |
+| `evidence_limited_to_abstract` | float64 | 1 when the evidence is abstract/description only (R4) |
+| `determined_by` | string | Parser / stage id |
+| `route` | string | R1 | R2 | R3 | R4 |
+| `scope` | string | sample (rows expanded from study_all statements carry 'expanded from study_all' in parse_note) |
+| `parse_note` | string | Parser notes |
+| `group_audit` | string | Audit note for group statements (infant rows) |
+| `src_track` | string | infant_catalog (copied from the curated infant tables) | gut_all_v1 |
+| `release_added` | string | Release id in which the row first appeared |
+| `release_retired` | string | Release id in which the row was retired (null = current) |
+| `package_added` | string | Package version that first carried the row |
+
+### gut_sample_metadata_wide.parquet (579,252 rows) — one row per sample of the gut_all curated scope (one column per field with its route and confidence) — added R2026.7
+
+| column | dtype | meaning |
+|---|---|---|
+| `sample_key` | string | BioSample accession; primary key |
+| `study_accession` | string | ENA study |
+| `biosample_accession` | string | BioSample accession |
+| `secondary_sample` | string | ERS/SRS/DRS accession (infant rows) |
+| `sample_unit` | string | biosample | run |
+| `body_site_code` | string | Registry body-site code of the sample (from its attributes) or the infant catalog's class |
+| `sample_life_stage` | string | Registry life stage from the sample's age attribute |
+| `curated_source` | string | infant_catalog | gut_all_v1 |
+| `in_infant_catalog` | bool | Study is an included infant-catalog study |
+| `age_at_collection_days` | float64 | Age at collection in days |
+| `sex` | string | female | male |
+| `bmi` | float64 | Body-mass index kg/m² |
+| `country` | string | ISO-3166-1 alpha-2 |
+| `health_condition` | string | config/vocab/health_conditions.yaml code |
+| `health_condition_detail` | string | Raw health / disease text |
+| `antibiotic_exposure` | string | yes | no |
+| `subject_id` | string | Subject / participant identifier as given by the source |
+| `timepoint_label` | string | Timepoint / visit label as given |
+| `age_at_collection_days__confidence` | float64 | Confidence of the committed age_at_collection_days value |
+| `age_at_collection_days__route` | string | Route of the committed age_at_collection_days value |
+| `sex__confidence` | float64 | Confidence of the committed sex value |
+| `sex__route` | string | Route of the committed sex value |
+| `bmi__confidence` | float64 | Confidence of the committed bmi value |
+| `bmi__route` | string | Route of the committed bmi value |
+| `country__confidence` | float64 | Confidence of the committed country value |
+| `country__route` | string | Route of the committed country value |
+| `health_condition__confidence` | float64 | Confidence of the committed health_condition value |
+| `health_condition__route` | string | Route of the committed health_condition value |
+| `health_condition_detail__confidence` | float64 | Confidence of the committed health_condition_detail value |
+| `health_condition_detail__route` | string | Route of the committed health_condition_detail value |
+| `antibiotic_exposure__confidence` | float64 | Confidence of the committed antibiotic_exposure value |
+| `antibiotic_exposure__route` | string | Route of the committed antibiotic_exposure value |
+| `subject_id__confidence` | float64 | Confidence of the committed subject_id value |
+| `subject_id__route` | string | Route of the committed subject_id value |
+| `timepoint_label__confidence` | float64 | Confidence of the committed timepoint_label value |
+| `timepoint_label__route` | string | Route of the committed timepoint_label value |
+| `delivery_mode` | string | Infant-catalog field (only on infant rows) |
+| `feeding_mode` | string | Infant-catalog field (only on infant rows) |
+| `preterm_status` | string | Infant-catalog field (only on infant rows) |
+| `gestational_age_weeks` | string | Infant-catalog field (only on infant rows) |
+| `birth_weight_grams` | string | Infant-catalog field (only on infant rows) |
+| `maternal_antibiotics` | string | Infant-catalog field (only on infant rows) |
+| `probiotic_exposure` | string | Infant-catalog field (only on infant rows) |
+| `hmo_supplementation` | string | Infant-catalog field (only on infant rows) |
+| `nec_status` | string | Infant-catalog field (only on infant rows) |
+| `age_category` | string | neonate | infant | child | adolescent | adult | elderly | unknown (config/packs/gut.yaml age_categories) |
+| `age_category_basis` | string | age_at_collection_days | infant_catalog_age_scope | sample_life_stage | study_life_stage | unknown |
+| `body_site_class` | string | primary (gut/stool) | unknown | excluded | linked |
+| `body_site_basis` | string | sample_attribute | study_single_site | none |
+| `infant_scope` | bool | == the infant catalog's catalog_scope rule (reproduces the infant catalog exactly) |
+| `n_fields_with_value` | int64 | Pack fields with a committed value |
+| `release_added` | string | Release id |
+| `release_retired` | string | Release id when retired (null = current) |
+| `package_added` | string | Package version |
+
+### gut_studies.parquet (2,837 rows) — one row per study of the gut_all curated scope — registry columns plus curation coverage — added R2026.7
+
+| column | dtype | meaning |
+|---|---|---|
+| `study_accession` | string | ENA study; primary key |
+| `secondary_study_accession` | string | registry_studies column (see registry_studies.parquet) |
+| `study_title` | string | registry_studies column (see registry_studies.parquet) |
+| `description_short` | string | registry_studies column (see registry_studies.parquet) |
+| `center_name` | string | registry_studies column (see registry_studies.parquet) |
+| `first_public_min` | string | registry_studies column (see registry_studies.parquet) |
+| `first_public_max` | string | registry_studies column (see registry_studies.parquet) |
+| `n_runs` | int64 | Runs |
+| `n_samples` | int64 | Samples |
+| `n_biosamples` | int64 | BioSamples |
+| `n_runs_sandpiper` | int64 | Runs with Sandpiper profiles |
+| `…registry_studies columns…` |  | all registry_studies columns are carried (classification, evidence, scope memberships, sample roll-ups) |
+| `cov_<field>` | float64 | Share of the study's samples with a value for each pack field |
+| `n_samples_curated` | int64 | Samples in gut_sample_metadata_wide |
+| `age_categories` | string | JSON dict age_category → samples |
+| `health_conditions` | string | JSON dict health_condition → samples (top 6) |
+| `curated_depth` | string | Routes present among the study's committed values (e.g. R1;R2;R4) |
+| `curated_source` | string | infant_catalog | gut_all_v1 |
+| `release_added` | string | Release id |
+| `release_retired` | string | Release id when retired |
+| `package_added` | string | Package version |
+
+### gut_runs.parquet (721,678 rows) — one row per sequencing run of a gut_all catalog study (registry_runs ∩ gut_studies) with the catalog sample_key — added R2026.12 / 1.12.0 — added R2026.12
+
+| column | dtype | meaning |
+|---|---|---|
+| `run_accession` | string | ENA/SRA run accession (SRR/ERR/DRR) |
+| `study_accession` | string | BioProject of the run (a gut_studies row) |
+| `sample_accession` | string | BioSample accession(s) of the run (';'-joined when the run pools several) |
+| `secondary_sample_accession` | string | SRS/ERS secondary sample accession(s) |
+| `experiment_accession` | string | SRX/ERX experiment accession |
+| `library_name` | string | Submitter library name |
+| `library_strategy` | string | ENA library_strategy (WGS / WXS / OTHER …) |
+| `library_source` | string | ENA library_source (METAGENOMIC …) |
+| `library_layout` | string | SINGLE | PAIRED |
+| `instrument_platform` | string | ENA instrument_platform |
+| `instrument_model` | string | ENA instrument_model |
+| `read_count` | string | ENA read_count (as delivered by the portal) |
+| `base_count` | string | ENA base_count (as delivered by the portal) |
+| `first_public` | string | ENA first_public date (YYYY-MM-DD); its year bounds collection_date (R1 parser) |
+| `sandpiper_profiled` | bool | Run present in the Sandpiper snapshot (registry_runs_sandpiper) |
+| `sample_key` | string | gut_sample_metadata_wide.sample_key of the run's sample (run accession for run-unit samples; null when the BioSample is not a catalog sample, e.g. pooled runs) |
+
+### gut_sandpiper_sample_summary.parquet (339,626 rows) — one row per catalog sample with >= 1 run in the Sandpiper 2.0.0 snapshot (339,626 samples / 2,084 studies) — added R2026.12 — added R2026.12
+
+| column | dtype | meaning |
+|---|---|---|
+| `sample_key` | str | catalog sample key (gut_sample_metadata_wide) |
+| `study_accession` | str | BioProject |
+| `n_runs_profiled` | int64 | runs of the sample with a Sandpiper profile |
+| `n_runs_total` | int64 | runs of the sample in gut_runs |
+| `qc_partial` | bool | 1 = some runs of the sample are unprofiled |
+| `root_coverage_sum` | float64 | summed SingleM root coverage over the profiled runs (depth proxy) |
+| `richness_genus` | int64 | genera with relative abundance >= 0.001 |
+| `shannon_genus` | float64 | Shannon index over genus relative abundances (natural log) |
+| `shannon_genus_assigned` | float64 | Shannon over genus-assigned coverage only (unassigned remainder excluded) |
+| `top_genus` | str | most abundant GTDB genus |
+| `top_genus_relabund` | float64 | its relative abundance (0-1) |
+| `unassigned_genus_relabund` | float64 | share of root coverage not resolved to a genus |
+| `unassigned_species_relabund` | float64 | share of root coverage not resolved to a species |
+| `spf` | float64 | Sandpiper single-copy-marker profile fraction (per_acc_summary) |
+| `known_species_fraction` | float64 | fraction of coverage in known species (per_acc_summary) |
+| `qc_flags` | str | ';'-joined QC flags (qc_low_depth, qc_low_complexity, qc_non_metagenome, qc_partial, ...) — flagged, never dropped |
+| `qc_any_flag` | bool | 1 = at least one QC flag set |
+| `qc_low_depth` | bool | root coverage below the depth threshold |
+| `qc_low_complexity` | bool | Sandpiper low_complexity flag |
+| `qc_readfraction_warning` | bool | Sandpiper read-fraction warning |
+| `qc_non_metagenome` | bool | organism prediction not a metagenome (loose rule) |
+| `qc_non_metagenome_strict` | bool | organism prediction not a metagenome (strict rule) |
+| `qc_synthetic` | bool | Sandpiper synthetic-sample flag |
+| `qc_rna` | bool | RNA / non-DNA library flag |
+| `qc_predicted_ecological` | bool | Sandpiper host_or_not prediction = ecological |
+| `qc_no_genus_assigned` | bool | no coverage resolved to any genus |
+| `organism_labels` | str | ';'-joined Sandpiper organism labels of the runs |
+| `runs_profiled` | str | ';'-joined profiled run accessions |
+| `sandpiper_url` | str | Sandpiper page of the first profiled run |
+| `age_category` | str | catalog age category (copied from the wide table) |
+| `body_site_class` | str | catalog body-site class |
+| `infant_scope` | bool | infant-extension filter flag |
+| `taxonomy_db` | str | taxonomy database (GTDB) |
+| `taxonomy_version` | str | GTDB release (R232) |
+| `sandpiper_version` | str | Sandpiper version (2.0.0) |
+| `zenodo_record` | str | Zenodo record of the bulk snapshot (20419175) |
+
+### gut_sandpiper_pca_scores.parquet (335,956 rows) — one row per scored sample of the genus-level CLR-PCA (335,956 samples x 383 genera; root coverage >= 2) — added R2026.12 — added R2026.12
+
+| column | dtype | meaning |
+|---|---|---|
+| `sample_key` | str | catalog sample key |
+| `pc1` | float32 | PCA score, component 1 (16.3 % variance) |
+| `pc2` | float32 | component 2 (6.5 %) |
+| `pc3` | float32 | component 3 (3.8 %) |
+| `pc4` | float32 | component 4 (3.2 %) |
+| `pc5` | float32 | component 5 (2.3 %) |
+| `study_accession` | str | BioProject |
+| `root_coverage_sum` | float64 | summed root coverage (depth proxy) |
+| `taxonomy_db` | str | taxonomy database (GTDB) |
+| `taxonomy_version` | str | GTDB release (R232) |
+| `sandpiper_version` | str | Sandpiper version (2.0.0) |
+| `zenodo_record` | str | Zenodo record of the bulk snapshot (20419175) |
+| `pca_method` | str | CLR on 383 genera (prevalence >= 1 %), multiplicative pseudocount, randomized SVD |
+
+### gut_sandpiper_pca_loadings.parquet (383 rows) — one row per genus x component loading of the CLR-PCA — added R2026.12 — added R2026.12
+
+| column | dtype | meaning |
+|---|---|---|
+| `genus` | str | GTDB R232 genus |
+| `pc1` | float64 | loading |
+| `pc2` | float64 | loading |
+| `pc3` | float64 | loading |
+| `pc4` | float64 | loading |
+| `pc5` | float64 | loading |
+| `prevalence_ge_0p1pct` | float64 | share of samples where the genus is >= 0.1 % relative abundance |
+| `mean_relabund` | float64 | mean relative abundance over scored samples |
+| `clr_mean` | float64 | mean CLR value |
+| `taxonomy_db` | str | taxonomy database (GTDB) |
+| `taxonomy_version` | str | GTDB release (R232) |
+| `sandpiper_version` | str | Sandpiper version (2.0.0) |
+
+### gut_sandpiper_pca_variance.csv (5 rows) — one row per PCA component: explained variance ratio — added R2026.12 — added R2026.12
+
+| column | dtype | meaning |
+|---|---|---|
+| `pc` | str | component index |
+| `explained_variance_ratio` | float64 | share of CLR variance |
+| `singular_value` | float64 | singular value |
+| `cumulative` | float64 | cumulative explained variance ratio |
+| `n_samples` | int64 | samples in the PCA |
+| `n_genera` | int64 | genera in the PCA |
+| `root_coverage_min` | int64 | minimum root coverage for inclusion |
+| `prevalence_min` | float64 | minimum genus prevalence for inclusion |
+| `prevalence_detection` | float64 | relative-abundance threshold used for prevalence |
+| `pseudocount` | float64 | multiplicative pseudocount before CLR |
+| `total_clr_variance` | float64 | total variance of the CLR matrix |
+
+### gut_sandpiper_study_coverage.csv (2,837 rows) — one row per catalog study: Sandpiper join coverage — added R2026.12 — added R2026.12
+
+| column | dtype | meaning |
+|---|---|---|
+| `study_accession` | str | BioProject |
+| `study_title` | str | study title |
+| `n_runs` | int64 | runs in gut_runs |
+| `n_runs_profiled` | int64 | runs with a profile |
+| `n_samples` | int64 | samples |
+| `n_infant_scope` | int64 | infant-scope samples |
+| `n_samples_profiled` | int64 | samples with >= 1 profiled run |
+| `n_samples_partial` | int64 | samples with unprofiled runs |
+| `n_low_depth` | int64 | samples flagged low depth |
+| `n_low_complexity` | int64 | samples flagged low complexity |
+| `n_any_flag` | int64 | samples with any QC flag |
+| `root_coverage_median` | float64 | median root coverage |
+| `richness_genus_median` | float64 | median genus richness |
+| `shannon_genus_median` | float64 | median Shannon |
+| `frac_runs_profiled` | float64 | profiled / total runs |
+| `frac_samples_profiled` | float64 | profiled / total samples |
+| `coverage_class` | str | full | partial | none |
+| `top_genus_mode` | str | most frequent top genus |
+| `prefix` | str | accession prefix (SRR/ERR/DRR) |
+| `sandpiper_version` | str | Sandpiper version (2.0.0) |
+| `taxonomy_db` | str | taxonomy database (GTDB) |
+| `taxonomy_version` | str | GTDB release (R232) |
+| `zenodo_record` | int64 | Zenodo record of the bulk snapshot (20419175) |
 
 ## Sandpiper columns (added v1.2.0)
 Source: SingleM community profiles from Sandpiper 2.0.0 (Woodcroft et al. 2025, *Nat Biotechnol*; Zenodo record 20419175, CC-BY), taxonomy GTDB R232. Profiles are keyed by run; for a catalog sample with several profiled runs the filled coverage per taxon is **summed across runs and then normalised** (never averaged). Every `*_ra` column is a **fraction of prokaryotic (Bacteria + Archaea) coverage** — approximately a cell proportion, not a read fraction; not comparable with MetaPhlAn or 16S numbers.
@@ -408,7 +960,7 @@ One row per study × organisation token × source (`bioproject_organization` = N
 | `catalog_scope` | bool | **headline scope (v1.2.1)** = `age_scope ∈ {infant_evidenced, study_all_infant}` AND `body_site_class ∈ {primary, unknown}`; the intersection used for headline counts (71,795 rows) and for Sandpiper study panels/medians |
 | `panel_scope` | bool | True when the row enters its study's Sandpiper panel/medians: `catalog_scope AND sp_profiled AND NOT sp_low_depth` |
 
-### study_metadata_wide.parquet (117 columns)
+### study_metadata_wide.parquet (120 columns)
 | column | dtype | description |
 |---|---|---|
 | `study_accession` | str | BioProject accession (key) |
@@ -528,3 +1080,6 @@ One row per study × organisation token × source (`bioproject_organization` = N
 | `n_run_units` | int64 | run-unit rows (one BioSample per infant, one run per stool) |
 | `n_parent_biosamples` | int64 | parent BioSamples of the run units (listed in parent_biosamples.parquet, counted nowhere else) |
 | `shared_biosample_note` | object | human-readable note for the five studies sharing BioSamples (F6) |
+| `release_added` | string | release in which this row first became visible (`R<YYYY>.<n>` or a pre-numbered package semver `1.0.0`–`1.2.2`); pre-1.3.0 values are reconstructed — see DATA_DICTIONARY 'Release columns' |
+| `release_retired` | string | release that replaced/removed the row; null (empty in CSV) = current row |
+| `package_added` | string | semver of the data package in which the row first appeared |

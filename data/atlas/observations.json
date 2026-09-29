@@ -1,0 +1,1345 @@
+{
+ "meta": {
+  "n_samples": 306165,
+  "n_studies": 1905,
+  "presence_threshold": 0.0001,
+  "sample_filter": "body_site_class == primary; not qc_non_metagenome / qc_synthetic / qc_rna / qc_predicted_ecological / qc_low_depth / qc_no_genus_assigned",
+  "hdi_source": "UNDP Human Development Report 2023/24 (HDI 2022 values), transcribed from memory, rounded to 2 decimals, UNVERIFIED (hdr.undp.org unreachable from the build sandbox); band: high >= 0.80, middle 0.70-0.79, low < 0.70; PR, TW, GF, IO, TC have no UNDP value",
+  "generated_from": "package 1.11.0 wide table + Sandpiper 2.0.0 genus/species tables"
+ },
+ "cards": [
+  {
+   "id": "a_age_trajectories",
+   "title": "Genus trajectories across life stages",
+   "figure": "a_age_trajectories.png",
+   "csv": "a_age_trajectories.csv",
+   "description": "Bifidobacterium dominates neonates and infants and declines through childhood to adulthood; Faecalibacterium and Prevotella rise from near-absence in neonates to several percent in children and adults; Escherichia is a neonatal genus that becomes rare later. Bacteroides is the exception: the pooled rise from infants to adults is not reproduced within studies (median within-study change \u2248 0), so it is a between-study, not a within-study, pattern. Faint dots are individual studies.",
+   "definition": "Samples with a known age category (n=202,760, 1,209 studies). Mean relative abundance per category (symlog axis); black squares = median of per-study means over studies with >= 20 samples in that category. Per-study consistency, infant vs adult, studies with >= 20 samples in both (effect = \u0394 mean log10(relabund + 1e-5)): Bifidobacterium: 12 studies, 92% agree, median \u0394log10=-0.78 (pooled -1.10); Bacteroides: 12 studies, 50% agree, median \u0394log10=-0.03 (pooled +1.51); Prevotella: 12 studies, 75% agree, median \u0394log10=+0.48 (pooled +0.83); Escherichia: 12 studies, 75% agree, median \u0394log10=-0.63 (pooled -1.15); Faecalibacterium: 12 studies, 83% agree, median \u0394log10=+0.77 (pooled +2.04).",
+   "confounder": "Age categories are study-level attributes for most samples (routes R3/R4), so category and study are strongly confounded; only 12 studies contain both infants and adults with >= 20 samples each. Repeated sampling of the same infants inflates n.",
+   "n_samples": 202760,
+   "n_studies": 1209,
+   "numbers": {
+    "consistency": {
+     "Bifidobacterium": {
+      "n_studies": 12,
+      "median_effect": -0.7782067656517029,
+      "frac_agree": 0.9166666666666666,
+      "pooled_effect": -1.1038880348205566,
+      "n_a": 1369,
+      "n_b": 2479
+     },
+     "Bacteroides": {
+      "n_studies": 12,
+      "median_effect": -0.03339970111846924,
+      "frac_agree": 0.5,
+      "pooled_effect": 1.5069522857666016,
+      "n_a": 1369,
+      "n_b": 2479
+     },
+     "Prevotella": {
+      "n_studies": 12,
+      "median_effect": 0.4763296842575073,
+      "frac_agree": 0.75,
+      "pooled_effect": 0.8348875045776367,
+      "n_a": 1369,
+      "n_b": 2479
+     },
+     "Escherichia": {
+      "n_studies": 12,
+      "median_effect": -0.6327929496765137,
+      "frac_agree": 0.75,
+      "pooled_effect": -1.148472547531128,
+      "n_a": 1369,
+      "n_b": 2479
+     },
+     "Faecalibacterium": {
+      "n_studies": 12,
+      "median_effect": 0.7651350498199463,
+      "frac_agree": 0.8333333333333334,
+      "pooled_effect": 2.0446133613586426,
+      "n_a": 1369,
+      "n_b": 2479
+     }
+    }
+   },
+   "tag": null
+  },
+  {
+   "id": "b_pb_ratio_hdi",
+   "title": "Prevotella/Bacteroides ratio follows the industrialisation gradient",
+   "figure": "b_pb_ratio_hdi.png",
+   "csv": "b_pb_ratio_hdi.csv",
+   "description": "Countries with low Human Development Index carry Prevotella-dominated gut communities, and the Prevotella/Bacteroides balance tips towards Bacteroides (and its GTDB split-off Phocaeicola) as HDI increases. The relation holds when each study is reduced to a single median, so it is not an artefact of a handful of large cohorts.",
+   "definition": "Samples aged child to elderly with a country that has an HDI value (n=156,928, 984 studies); PB = log10((Prevotella + 1e-5)/(Bacteroides + Phocaeicola + 1e-5)) per sample; countries with >= 30 such samples plotted (n=59); black squares = median over per-study medians (studies with >= 20 samples in the country). Study-level check: 785 studies with >= 20 samples and >= 80 % from one country, Spearman \u03c1(HDI, study median PB) = -0.28, p = 1.1e-15.",
+   "confounder": "Country and study are almost perfectly confounded (most studies sample one country) and low-HDI countries are represented by few studies, often with a specific recruitment focus (malnutrition, infection). HDI values were transcribed from memory (see methods) and are unverified. Infants and neonates are excluded because age dominates the P/B ratio.",
+   "n_samples": 156928,
+   "n_studies": 984,
+   "numbers": {
+    "spearman_country": -0.8431491328149068,
+    "p_country": 5.408776720273713e-17,
+    "spearman_study": -0.2806022577270166,
+    "p_study": 1.1393466166444741e-15,
+    "n_countries": 59,
+    "n_studies_single_country": 785
+   },
+   "tag": null
+  },
+  {
+   "id": "b_vanish_blossum_volcano",
+   "title": "Genera that vanish or bloom with industrialisation (study-level volcano)",
+   "figure": "b_vanish_blossum_volcano.png",
+   "csv": "b_vanish_blossum_volcano.csv",
+   "description": "Treating each study as one observation, genera that are more abundant in studies from low-HDI countries (VANISH-like: Prevotella, Alloprevotella, Catenibacterium, Holdemanella, Cryptobacteroides, Limisoma) separate from genera that are more abundant in high-HDI studies (BloSSUM-like: Alistipes, Bacteroides, Phocaeicola, Parabacteroides, Fusicatenibacter, Enterocloster, Anaerostipes). Names follow GTDB R232; a random low-HDI study exceeds a random high-HDI study for Prevotella 88 % of the time.",
+   "definition": "Unit = study: 785 studies with >= 20 child-to-elderly samples of which >= 80 % come from one country; low band HDI < 0.70 (n=42 studies), high band HDI >= 0.80 (n=569); middle-band studies excluded. Per study: mean of log10(relabund + 1e-5) over its samples (absent = 1e-5). Genera with prevalence >= 5 % in the child-to-elderly set (n=283). Effect = difference of band medians; p from two-sided Mann\u2013Whitney over studies; q = Benjamini\u2013Hochberg. Column frac_low_studies_higher gives the probability that a random low-HDI study exceeds a random high-HDI study.",
+   "confounder": "Only 42 low-HDI studies enter, several from the same research groups and with specific cohorts (children with malnutrition, rural cohorts recruited for that reason); study-level testing removes pseudo-replication but not recruitment bias. HDI table is transcribed and unverified.",
+   "n_samples": 151323,
+   "n_studies": 785,
+   "numbers": {
+    "n_genera": 283,
+    "n_vanish": 61,
+    "n_blossum": 144,
+    "n_low": 42,
+    "n_high": 569
+   },
+   "tag": null
+  },
+  {
+   "id": "d_disease_within_study",
+   "title": "Disease signatures that reproduce within studies",
+   "figure": "d_disease_within_study.png",
+   "csv": "d_disease_within_study.csv",
+   "description": "Comparing patients with healthy controls inside the same study removes the between-study differences that dominate pooled contrasts. Inflammatory bowel disease shows the most consistent signal: lower Faecalibacterium, lower genus richness and higher Escherichia. Colorectal cancer is marked by higher Fusobacterium in all 14 studies. Type 2 diabetes rests on only three studies and its shifts are small.",
+   "definition": "Samples with health_condition = healthy_control vs (IBD = crohns_disease + ulcerative_colitis + ibd_unspecified | colorectal_cancer | type2_diabetes), all ages. Unit = study with >= 20 samples in both groups. Per-study effect = mean(disease) \u2212 mean(healthy) of log10(relabund + 1e-5), or of genus richness. Summary = median of per-study effects; \"agree\" = fraction of studies whose effect has the sign of that median. IBD: 9 studies, Faecalibacterium: median \u0394=-0.83, 78% agree | IBD: 9 studies, Escherichia: median \u0394=+0.68, 89% agree | IBD: 9 studies, Fusobacterium (all GTDB genera): median \u0394=+0.26, 100% agree | IBD: 9 studies, genus richness: median \u0394=-10.79, 89% agree | colorectal_cancer: 14 studies, Faecalibacterium: median \u0394=-0.38, 93% agree | colorectal_cancer: 14 studies, Escherichia: median \u0394=+0.36, 93% agree | colorectal_cancer: 14 studies, Fusobacterium (all GTDB genera): median \u0394=+0.65, 100% agree | colorectal_cancer: 14 studies, genus richness: median \u0394=-1.20, 64% agree | type2_diabetes: 3 studies, Faecalibacterium: median \u0394=-0.11, 67% agree | type2_diabetes: 3 studies, Escherichia: median \u0394=+0.05, 67% agree | type2_diabetes: 3 studies, Fusobacterium (all GTDB genera): median \u0394=+0.08, 67% agree | type2_diabetes: 3 studies, genus richness: median \u0394=+0.14, 67% agree",
+   "confounder": "health_condition is a study-level label for most samples (R3/R4), so within a study controls may come from a different recruitment stream; treatments (antibiotics, chemotherapy, metformin) are not adjusted; several IBD cohorts sample the same patients longitudinally.",
+   "n_samples": 5042,
+   "n_studies": 26,
+   "numbers": {
+    "summary": [
+     {
+      "contrast": "IBD",
+      "feature": "Faecalibacterium",
+      "n_studies": 9,
+      "median_effect": -0.8343877792358398,
+      "frac_agree": 0.7777777777777778,
+      "pooled_effect": -0.285524845123291,
+      "n_a": 747,
+      "n_b": 1535
+     },
+     {
+      "contrast": "IBD",
+      "feature": "Escherichia",
+      "n_studies": 9,
+      "median_effect": 0.6761748790740967,
+      "frac_agree": 0.8888888888888888,
+      "pooled_effect": 0.25408267974853516,
+      "n_a": 747,
+      "n_b": 1535
+     },
+     {
+      "contrast": "IBD",
+      "feature": "Fusobacterium (all GTDB genera)",
+      "n_studies": 9,
+      "median_effect": 0.26473569869995117,
+      "frac_agree": 1.0,
+      "pooled_effect": 0.165374755859375,
+      "n_a": 747,
+      "n_b": 1535
+     },
+     {
+      "contrast": "IBD",
+      "feature": "genus richness",
+      "n_studies": 9,
+      "median_effect": -10.78924418604651,
+      "frac_agree": 0.8888888888888888,
+      "pooled_effect": -9.119691398348586,
+      "n_a": 747,
+      "n_b": 1535
+     },
+     {
+      "contrast": "colorectal_cancer",
+      "feature": "Faecalibacterium",
+      "n_studies": 14,
+      "median_effect": -0.38430899381637573,
+      "frac_agree": 0.9285714285714286,
+      "pooled_effect": -0.09994792938232422,
+      "n_a": 1124,
+      "n_b": 995
+     },
+     {
+      "contrast": "colorectal_cancer",
+      "feature": "Escherichia",
+      "n_studies": 14,
+      "median_effect": 0.3603663444519043,
+      "frac_agree": 0.9285714285714286,
+      "pooled_effect": 0.5185115337371826,
+      "n_a": 1124,
+      "n_b": 995
+     },
+     {
+      "contrast": "colorectal_cancer",
+      "feature": "Fusobacterium (all GTDB genera)",
+      "n_studies": 14,
+      "median_effect": 0.6501040458679199,
+      "frac_agree": 1.0,
+      "pooled_effect": 0.8018374443054199,
+      "n_a": 1124,
+      "n_b": 995
+     },
+     {
+      "contrast": "colorectal_cancer",
+      "feature": "genus richness",
+      "n_studies": 14,
+      "median_effect": -1.2018335830835838,
+      "frac_agree": 0.6428571428571429,
+      "pooled_effect": 4.750816753932227,
+      "n_a": 1124,
+      "n_b": 995
+     },
+     {
+      "contrast": "type2_diabetes",
+      "feature": "Faecalibacterium",
+      "n_studies": 3,
+      "median_effect": -0.11231112480163574,
+      "frac_agree": 0.6666666666666666,
+      "pooled_effect": 0.22634375095367432,
+      "n_a": 303,
+      "n_b": 338
+     },
+     {
+      "contrast": "type2_diabetes",
+      "feature": "Escherichia",
+      "n_studies": 3,
+      "median_effect": 0.05260729789733887,
+      "frac_agree": 0.6666666666666666,
+      "pooled_effect": 0.6889650821685791,
+      "n_a": 303,
+      "n_b": 338
+     },
+     {
+      "contrast": "type2_diabetes",
+      "feature": "Fusobacterium (all GTDB genera)",
+      "n_studies": 3,
+      "median_effect": 0.07774877548217773,
+      "frac_agree": 0.6666666666666666,
+      "pooled_effect": 0.43700647354125977,
+      "n_a": 303,
+      "n_b": 338
+     },
+     {
+      "contrast": "type2_diabetes",
+      "feature": "genus richness",
+      "n_studies": 3,
+      "median_effect": 0.14069835680751197,
+      "frac_agree": 0.6666666666666666,
+      "pooled_effect": 5.419837194445826,
+      "n_a": 303,
+      "n_b": 338
+     }
+    ]
+   },
+   "tag": null
+  },
+  {
+   "id": "e_richness_shannon",
+   "title": "Richness and Shannon diversity by life stage, HDI band and health condition",
+   "figure": "e_richness_shannon.png",
+   "csv": "e_richness_shannon.csv",
+   "description": "Genus richness rises from a median of 7 genera in neonates to 53 in adults and 61 in the elderly. Contrary to the usual expectation, children and adults from low-HDI countries do not show more genera than those from high-HDI countries in this collection (median 49 vs 55; per-study medians 40 vs 50), a result that most likely reflects the shallower sequencing of many low-HDI cohorts rather than biology. Across health conditions, transplant/immunocompromised patients, Crohn's disease, gastrointestinal infection and malnutrition have the lowest richness, and these gaps are visible in per-study medians as well as in the pooled boxes.",
+   "definition": "Richness = number of genera with relabund > 0 in the Sandpiper profile; Shannon on genus proportions (from the per-sample summary table). Panels: life stage (n=202,760); HDI band for child-to-elderly samples with a country HDI (n=156,928); health condition for the 12 most common curated conditions (n=75,414). Per-group n, n studies and per-study medians are in the CSV.",
+   "confounder": "Richness depends strongly on sequencing depth (see the depth card) and depth differs systematically between studies, countries and eras; age, country and condition are all study-level attributes for most samples. No depth rarefaction was applied, so the HDI-band panel in particular should not be read as a biological result.",
+   "n_samples": 306165,
+   "n_studies": 1905,
+   "numbers": {
+    "groups": [
+     {
+      "group": "neonate",
+      "n_samples": 8687,
+      "n_studies": 98,
+      "median": 7.0,
+      "q1": 4.0,
+      "q3": 10.0,
+      "median_of_study_medians": 6.0,
+      "n_studies_ge20": 47,
+      "facet": "age_category",
+      "metric": "richness"
+     },
+     {
+      "group": "infant",
+      "n_samples": 30765,
+      "n_studies": 212,
+      "median": 15.0,
+      "q1": 9.0,
+      "q3": 25.0,
+      "median_of_study_medians": 14.0,
+      "n_studies_ge20": 142,
+      "facet": "age_category",
+      "metric": "richness"
+     },
+     {
+      "group": "child",
+      "n_samples": 15151,
+      "n_studies": 165,
+      "median": 39.0,
+      "q1": 27.0,
+      "q3": 52.0,
+      "median_of_study_medians": 39.0,
+      "n_studies_ge20": 104,
+      "facet": "age_category",
+      "metric": "richness"
+     },
+     {
+      "group": "adolescent",
+      "n_samples": 3065,
+      "n_studies": 93,
+      "median": 44.0,
+      "q1": 30.0,
+      "q3": 58.0,
+      "median_of_study_medians": 45.0,
+      "n_studies_ge20": 37,
+      "facet": "age_category",
+      "metric": "richness"
+     },
+     {
+      "group": "adult",
+      "n_samples": 125958,
+      "n_studies": 871,
+      "median": 53.0,
+      "q1": 36.0,
+      "q3": 70.0,
+      "median_of_study_medians": 47.5,
+      "n_studies_ge20": 681,
+      "facet": "age_category",
+      "metric": "richness"
+     },
+     {
+      "group": "elderly",
+      "n_samples": 19134,
+      "n_studies": 258,
+      "median": 61.0,
+      "q1": 45.0,
+      "q3": 78.0,
+      "median_of_study_medians": 54.0,
+      "n_studies_ge20": 124,
+      "facet": "age_category",
+      "metric": "richness"
+     },
+     {
+      "group": "low",
+      "n_samples": 5429,
+      "n_studies": 55,
+      "median": 49.0,
+      "q1": 24.0,
+      "q3": 77.0,
+      "median_of_study_medians": 40.0,
+      "n_studies_ge20": 44,
+      "facet": "hdi_band",
+      "metric": "richness"
+     },
+     {
+      "group": "middle",
+      "n_samples": 20492,
+      "n_studies": 229,
+      "median": 44.0,
+      "q1": 32.0,
+      "q3": 57.0,
+      "median_of_study_medians": 43.75,
+      "n_studies_ge20": 176,
+      "facet": "hdi_band",
+      "metric": "richness"
+     },
+     {
+      "group": "high",
+      "n_samples": 131007,
+      "n_studies": 714,
+      "median": 55.0,
+      "q1": 38.0,
+      "q3": 71.0,
+      "median_of_study_medians": 50.0,
+      "n_studies_ge20": 584,
+      "facet": "hdi_band",
+      "metric": "richness"
+     },
+     {
+      "group": "healthy_control",
+      "n_samples": 44167,
+      "n_studies": 470,
+      "median": 45.0,
+      "q1": 25.0,
+      "q3": 62.0,
+      "median_of_study_medians": 49.5,
+      "n_studies_ge20": 317,
+      "facet": "health_condition",
+      "metric": "richness"
+     },
+     {
+      "group": "ibs",
+      "n_samples": 1751,
+      "n_studies": 17,
+      "median": 50.0,
+      "q1": 39.0,
+      "q3": 63.0,
+      "median_of_study_medians": 50.0,
+      "n_studies_ge20": 13,
+      "facet": "health_condition",
+      "metric": "richness"
+     },
+     {
+      "group": "obesity",
+      "n_samples": 2522,
+      "n_studies": 38,
+      "median": 51.0,
+      "q1": 39.0,
+      "q3": 65.0,
+      "median_of_study_medians": 51.0,
+      "n_studies_ge20": 29,
+      "facet": "health_condition",
+      "metric": "richness"
+     },
+     {
+      "group": "type2_diabetes",
+      "n_samples": 2291,
+      "n_studies": 40,
+      "median": 48.0,
+      "q1": 34.0,
+      "q3": 64.0,
+      "median_of_study_medians": 43.0,
+      "n_studies_ge20": 25,
+      "facet": "health_condition",
+      "metric": "richness"
+     },
+     {
+      "group": "crohns_disease",
+      "n_samples": 2540,
+      "n_studies": 43,
+      "median": 31.0,
+      "q1": 18.0,
+      "q3": 45.0,
+      "median_of_study_medians": 31.0,
+      "n_studies_ge20": 23,
+      "facet": "health_condition",
+      "metric": "richness"
+     },
+     {
+      "group": "ulcerative_colitis",
+      "n_samples": 2458,
+      "n_studies": 38,
+      "median": 40.0,
+      "q1": 25.0,
+      "q3": 56.0,
+      "median_of_study_medians": 40.75,
+      "n_studies_ge20": 24,
+      "facet": "health_condition",
+      "metric": "richness"
+     },
+     {
+      "group": "colorectal_cancer",
+      "n_samples": 2834,
+      "n_studies": 40,
+      "median": 50.0,
+      "q1": 34.0,
+      "q3": 65.0,
+      "median_of_study_medians": 50.0,
+      "n_studies_ge20": 33,
+      "facet": "health_condition",
+      "metric": "richness"
+     },
+     {
+      "group": "liver_disease",
+      "n_samples": 1395,
+      "n_studies": 22,
+      "median": 37.0,
+      "q1": 21.5,
+      "q3": 52.0,
+      "median_of_study_medians": 31.0,
+      "n_studies_ge20": 18,
+      "facet": "health_condition",
+      "metric": "richness"
+     },
+     {
+      "group": "kidney_disease",
+      "n_samples": 1853,
+      "n_studies": 10,
+      "median": 54.0,
+      "q1": 41.0,
+      "q3": 68.0,
+      "median_of_study_medians": 52.5,
+      "n_studies_ge20": 8,
+      "facet": "health_condition",
+      "metric": "richness"
+     },
+     {
+      "group": "gi_infection_or_diarrhoea",
+      "n_samples": 7268,
+      "n_studies": 64,
+      "median": 35.0,
+      "q1": 20.75,
+      "q3": 50.0,
+      "median_of_study_medians": 33.0,
+      "n_studies_ge20": 45,
+      "facet": "health_condition",
+      "metric": "richness"
+     },
+     {
+      "group": "malnutrition",
+      "n_samples": 1806,
+      "n_studies": 8,
+      "median": 32.0,
+      "q1": 27.0,
+      "q3": 36.0,
+      "median_of_study_medians": 28.5,
+      "n_studies_ge20": 4,
+      "facet": "health_condition",
+      "metric": "richness"
+     },
+     {
+      "group": "transplant_or_immunocompromised",
+      "n_samples": 4529,
+      "n_studies": 32,
+      "median": 19.0,
+      "q1": 8.0,
+      "q3": 32.0,
+      "median_of_study_medians": 19.0,
+      "n_studies_ge20": 27,
+      "facet": "health_condition",
+      "metric": "richness"
+     },
+     {
+      "group": "neonate",
+      "n_samples": 8687,
+      "n_studies": 98,
+      "median": 1.0356820362053978,
+      "q1": 0.59843183281812,
+      "q3": 1.4581526894781782,
+      "median_of_study_medians": 0.9889695680979427,
+      "n_studies_ge20": 47,
+      "facet": "age_category",
+      "metric": "shannon"
+     },
+     {
+      "group": "infant",
+      "n_samples": 30765,
+      "n_studies": 212,
+      "median": 1.6813088203799214,
+      "q1": 1.0848823252940218,
+      "q3": 2.241157460554922,
+      "median_of_study_medians": 1.5918101747442739,
+      "n_studies_ge20": 142,
+      "facet": "age_category",
+      "metric": "shannon"
+     },
+     {
+      "group": "child",
+      "n_samples": 15151,
+      "n_studies": 165,
+      "median": 2.67008963593511,
+      "q1": 2.1987189026975757,
+      "q3": 3.045076091468231,
+      "median_of_study_medians": 2.702006945709628,
+      "n_studies_ge20": 104,
+      "facet": "age_category",
+      "metric": "shannon"
+     },
+     {
+      "group": "adolescent",
+      "n_samples": 3065,
+      "n_studies": 93,
+      "median": 2.78147193538289,
+      "q1": 2.2142658428547985,
+      "q3": 3.2048410246900163,
+      "median_of_study_medians": 2.8101762644374086,
+      "n_studies_ge20": 37,
+      "facet": "age_category",
+      "metric": "shannon"
+     },
+     {
+      "group": "adult",
+      "n_samples": 125958,
+      "n_studies": 871,
+      "median": 3.0787768379764495,
+      "q1": 2.5304708337417026,
+      "q3": 3.488479805537474,
+      "median_of_study_medians": 2.903672803258234,
+      "n_studies_ge20": 681,
+      "facet": "age_category",
+      "metric": "shannon"
+     },
+     {
+      "group": "elderly",
+      "n_samples": 19134,
+      "n_studies": 258,
+      "median": 3.24122337441399,
+      "q1": 2.7951884288884226,
+      "q3": 3.594119133900619,
+      "median_of_study_medians": 3.0429724352294683,
+      "n_studies_ge20": 124,
+      "facet": "age_category",
+      "metric": "shannon"
+     },
+     {
+      "group": "low",
+      "n_samples": 5429,
+      "n_studies": 55,
+      "median": 2.7365881835936166,
+      "q1": 2.0582411343495775,
+      "q3": 3.401945828754619,
+      "median_of_study_medians": 2.555099497869805,
+      "n_studies_ge20": 44,
+      "facet": "hdi_band",
+      "metric": "shannon"
+     },
+     {
+      "group": "middle",
+      "n_samples": 20492,
+      "n_studies": 229,
+      "median": 2.742987918574394,
+      "q1": 2.257057694783997,
+      "q3": 3.1518288312659895,
+      "median_of_study_medians": 2.7243894012532626,
+      "n_studies_ge20": 176,
+      "facet": "hdi_band",
+      "metric": "shannon"
+     },
+     {
+      "group": "high",
+      "n_samples": 131007,
+      "n_studies": 714,
+      "median": 3.1308557664707797,
+      "q1": 2.621753552832134,
+      "q3": 3.520132208935483,
+      "median_of_study_medians": 2.991598993465642,
+      "n_studies_ge20": 584,
+      "facet": "hdi_band",
+      "metric": "shannon"
+     },
+     {
+      "group": "healthy_control",
+      "n_samples": 44167,
+      "n_studies": 470,
+      "median": 2.8186844076013085,
+      "q1": 2.1654633849690077,
+      "q3": 3.2991002163006087,
+      "median_of_study_medians": 2.9432288668679303,
+      "n_studies_ge20": 317,
+      "facet": "health_condition",
+      "metric": "shannon"
+     },
+     {
+      "group": "ibs",
+      "n_samples": 1751,
+      "n_studies": 17,
+      "median": 3.087604896545739,
+      "q1": 2.784475170148287,
+      "q3": 3.355241297333812,
+      "median_of_study_medians": 2.9986401007486387,
+      "n_studies_ge20": 13,
+      "facet": "health_condition",
+      "metric": "shannon"
+     },
+     {
+      "group": "obesity",
+      "n_samples": 2522,
+      "n_studies": 38,
+      "median": 3.0197142361739617,
+      "q1": 2.565732221161438,
+      "q3": 3.3956940256199144,
+      "median_of_study_medians": 3.0353788635286536,
+      "n_studies_ge20": 29,
+      "facet": "health_condition",
+      "metric": "shannon"
+     },
+     {
+      "group": "type2_diabetes",
+      "n_samples": 2291,
+      "n_studies": 40,
+      "median": 2.880384826274727,
+      "q1": 2.3813474734973186,
+      "q3": 3.3355189837681696,
+      "median_of_study_medians": 2.738042115340953,
+      "n_studies_ge20": 25,
+      "facet": "health_condition",
+      "metric": "shannon"
+     },
+     {
+      "group": "crohns_disease",
+      "n_samples": 2540,
+      "n_studies": 43,
+      "median": 2.453744707052203,
+      "q1": 1.894503406241976,
+      "q3": 2.921705824989725,
+      "median_of_study_medians": 2.424658125913557,
+      "n_studies_ge20": 23,
+      "facet": "health_condition",
+      "metric": "shannon"
+     },
+     {
+      "group": "ulcerative_colitis",
+      "n_samples": 2458,
+      "n_studies": 38,
+      "median": 2.728518751464166,
+      "q1": 2.2131483512853687,
+      "q3": 3.1632881797260533,
+      "median_of_study_medians": 2.726014578438627,
+      "n_studies_ge20": 24,
+      "facet": "health_condition",
+      "metric": "shannon"
+     },
+     {
+      "group": "colorectal_cancer",
+      "n_samples": 2834,
+      "n_studies": 40,
+      "median": 2.9581556781685503,
+      "q1": 2.4037586289016972,
+      "q3": 3.367656840538208,
+      "median_of_study_medians": 2.9329009386988765,
+      "n_studies_ge20": 33,
+      "facet": "health_condition",
+      "metric": "shannon"
+     },
+     {
+      "group": "liver_disease",
+      "n_samples": 1395,
+      "n_studies": 22,
+      "median": 2.632722014538931,
+      "q1": 1.983861871093243,
+      "q3": 3.111236615514391,
+      "median_of_study_medians": 2.4367051730098863,
+      "n_studies_ge20": 18,
+      "facet": "health_condition",
+      "metric": "shannon"
+     },
+     {
+      "group": "kidney_disease",
+      "n_samples": 1853,
+      "n_studies": 10,
+      "median": 3.1269006575639082,
+      "q1": 2.729360783902677,
+      "q3": 3.4620851160275485,
+      "median_of_study_medians": 3.0495953150817403,
+      "n_studies_ge20": 8,
+      "facet": "health_condition",
+      "metric": "shannon"
+     },
+     {
+      "group": "gi_infection_or_diarrhoea",
+      "n_samples": 7268,
+      "n_studies": 64,
+      "median": 2.4897895114353323,
+      "q1": 1.9417606748965799,
+      "q3": 2.9625849724733,
+      "median_of_study_medians": 2.4386545932336894,
+      "n_studies_ge20": 45,
+      "facet": "health_condition",
+      "metric": "shannon"
+     },
+     {
+      "group": "malnutrition",
+      "n_samples": 1806,
+      "n_studies": 8,
+      "median": 2.4977512584897807,
+      "q1": 2.2142671973295776,
+      "q3": 2.7341492217100063,
+      "median_of_study_medians": 2.3130975326442247,
+      "n_studies_ge20": 4,
+      "facet": "health_condition",
+      "metric": "shannon"
+     },
+     {
+      "group": "transplant_or_immunocompromised",
+      "n_samples": 4529,
+      "n_studies": 32,
+      "median": 1.929674193342176,
+      "q1": 1.053585995925885,
+      "q3": 2.5519260852745513,
+      "median_of_study_medians": 1.935807857998686,
+      "n_studies_ge20": 27,
+      "facet": "health_condition",
+      "metric": "shannon"
+     }
+    ]
+   },
+   "tag": null
+  },
+  {
+   "id": "f_map_prevotella",
+   "title": "World map: Prevotella prevalence",
+   "figure": "f_map_prevotella.png",
+   "csv": "f_map_prevotella.csv",
+   "description": "Prevotella is carried by nearly every child and adult sampled in low-HDI African, South-Asian and Latin-American countries but by well under half in most of Europe, North America and East Asia. Highest: FJ 100%, VE 100%, ZW 100%; lowest: HN 3%, PE 21%, TR 29%.",
+   "definition": "Prevalence = share of child-to-elderly samples (age_category child, adolescent, adult or elderly) with genus relative abundance >= 1e-4 (0.01 %); countries with >= 30 such samples coloured, others grey; Hong Kong and Singapore are drawn as dots because the 110 m base map merges them into larger polygons. The CSV adds mean relative abundance, n studies and the median of per-study prevalences (studies with >= 20 samples in the country).",
+   "confounder": "Country-level prevalence is a mixture of a few studies per country, each with its own recruitment (many low-HDI cohorts are disease or malnutrition studies); the 1e-4 threshold detects low-level presence and is sensitive to sequencing depth; country is missing for ~4 % of samples.",
+   "n_samples": 156928,
+   "n_studies": 984,
+   "numbers": {
+    "highest": [
+     [
+      "FJ",
+      1.0
+     ],
+     [
+      "VE",
+      1.0
+     ],
+     [
+      "ZW",
+      1.0
+     ]
+    ],
+    "lowest": [
+     [
+      "HN",
+      0.032258063554763794
+     ],
+     [
+      "PE",
+      0.20895522832870483
+     ],
+     [
+      "TR",
+      0.2881355881690979
+     ]
+    ],
+    "n_countries": 59
+   },
+   "tag": null
+  },
+  {
+   "id": "f_map_bifidobacterium",
+   "title": "World map: Bifidobacterium prevalence",
+   "figure": "f_map_bifidobacterium.png",
+   "csv": "f_map_bifidobacterium.csv",
+   "description": "In neonates and infants Bifidobacterium is present in 73% of samples overall, so the map shows children and adults, where prevalence differs between countries. Highest: FI 97%, MY 96%, HK 92%; lowest: VE 6%, ZW 10%, BF 13%. The CSV also carries the infant values per country.",
+   "definition": "Prevalence = share of child-to-elderly samples (age_category child, adolescent, adult or elderly) with genus relative abundance >= 1e-4 (0.01 %); countries with >= 30 such samples coloured, others grey; Hong Kong and Singapore are drawn as dots because the 110 m base map merges them into larger polygons. The CSV adds mean relative abundance, n studies and the median of per-study prevalences (studies with >= 20 samples in the country).",
+   "confounder": "Country-level prevalence is a mixture of a few studies per country, each with its own recruitment (many low-HDI cohorts are disease or malnutrition studies); the 1e-4 threshold detects low-level presence and is sensitive to sequencing depth; country is missing for ~4 % of samples.",
+   "n_samples": 163308,
+   "n_studies": 1050,
+   "numbers": {
+    "highest": [
+     [
+      "FI",
+      0.9667250514030457
+     ],
+     [
+      "MY",
+      0.9558948278427124
+     ],
+     [
+      "HK",
+      0.9207029342651367
+     ]
+    ],
+    "lowest": [
+     [
+      "VE",
+      0.05649717524647713
+     ],
+     [
+      "ZW",
+      0.10294117778539658
+     ],
+     [
+      "BF",
+      0.12857143580913544
+     ]
+    ],
+    "n_countries": 61
+   },
+   "tag": null
+  },
+  {
+   "id": "g_depth_vs_richness",
+   "title": "Caution: richness tracks sequencing depth",
+   "figure": "g_depth_vs_richness.png",
+   "csv": "g_depth_vs_richness.csv",
+   "description": "The number of genera detected in a sample rises steadily with the amount of sequence profiled, and this holds inside individual studies too (median within-study Spearman \u03c1 = 0.31). Any richness difference between groups that also differ in depth (countries, eras, sample types) is therefore partly or wholly technical. The atlas does not rarefy, so read richness cards with this curve in mind.",
+   "definition": "All 306,165 analysis samples; depth proxy = Sandpiper root_coverage_sum (marker-gene coverage summed over the profile; roughly proportional to bases sequenced); richness = genera with relabund > 0. Hexbin on log10 depth; line = median richness in 0.25-log10 depth bins. Within-study \u03c1 computed for studies with >= 20 samples (n=1483).",
+   "confounder": "Root coverage also depends on read length and library type; samples flagged low-depth (root coverage < 2) were already excluded; only Illumina runs >= 100 Mbp are profiled by Sandpiper.",
+   "n_samples": 306165,
+   "n_studies": 1905,
+   "numbers": {
+    "spearman_all": 0.3905948790354167,
+    "median_within_study_rho": 0.3125430065776238,
+    "n_studies": 1483,
+    "frac_positive": 0.8867161159811193
+   },
+   "tag": null
+  },
+  {
+   "id": "h_variance_explained",
+   "title": "How much of the composition does \"study\" explain?",
+   "figure": "h_variance_explained.png",
+   "csv": "h_variance_explained.csv",
+   "description": "On a random subsample of 5,000 samples, the study a sample came from explains 35% of the Aitchison-distance variance (Bray\u2013Curtis: 44%), versus 8% for country, 7% for life stage and 3% for health condition. Study has many more levels than the other factors and so absorbs part of their signal, but the label-permuted baselines (black ticks) show how much R\u00b2 the number of levels alone produces; study still stands far above its baseline. This is why every observation on this page reports a within-study estimate.",
+   "definition": "Subsample: 5,000 samples drawn without replacement (seed 42) from samples with a known country and life stage; matrix = 167 genera with prevalence >= 10 %, CLR after adding 1e-5, Euclidean (Aitchison) distance; Bray\u2013Curtis on renormalised relabund (samples with none of the kept genera set to distance 1); also the Euclidean distance on the 5 released PCA scores (column r2_pca5). R\u00b2 is the PERMANOVA numerator, one factor at a time (marginal, unadjusted). Permuted baseline = mean R\u00b2 over 20 label shuffles.",
+   "confounder": "Marginal R\u00b2 values are not additive and the factors are nested (study within country, mostly one life stage per study); a nested model would attribute shared variance differently. Subsample results vary by about \u00b10.01 between seeds (not shown).",
+   "n_samples": 5000,
+   "n_studies": 809,
+   "numbers": {
+    "table": [
+     {
+      "factor": "study_accession",
+      "n_levels": 809,
+      "r2_aitchison": 0.3542505336884624,
+      "r2_braycurtis": 0.4436287615321114,
+      "r2_pca5": 0.6283868559297238,
+      "r2_aitchison_permuted_mean": 0.16172947808641186
+     },
+     {
+      "factor": "country",
+      "n_levels": 73,
+      "r2_aitchison": 0.0829217648584395,
+      "r2_braycurtis": 0.10090567652063476,
+      "r2_pca5": 0.18736862430266743,
+      "r2_aitchison_permuted_mean": 0.01453835902657416
+     },
+     {
+      "factor": "age_category",
+      "n_levels": 6,
+      "r2_aitchison": 0.06900602673720446,
+      "r2_braycurtis": 0.10833274655182368,
+      "r2_pca5": 0.228192200660706,
+      "r2_aitchison_permuted_mean": 0.0009981668539271959
+     },
+     {
+      "factor": "health_condition",
+      "n_levels": 28,
+      "r2_aitchison": 0.03261671616877715,
+      "r2_braycurtis": 0.04378571858271907,
+      "r2_pca5": 0.07451318226570436,
+      "r2_aitchison_permuted_mean": 0.00548084734957055
+     }
+    ]
+   },
+   "tag": null
+  },
+  {
+   "id": "i_dominant_genus_by_age",
+   "title": "Exploratory: which genus dominates a sample, by life stage",
+   "figure": "i_dominant_genus_by_age.png",
+   "csv": "i_dominant_genus_by_age.csv",
+   "description": "For each sample the single most abundant genus was taken from the Sandpiper profile. Bifidobacterium is the top genus in 23% of neonates and 40% of infants but only 4% of adults; Escherichia is the top genus in 15% of neonatal samples. The 103,405 samples without an age category have a dominant-genus mix that sits between children and adults (Bifidobacterium-dominated in 13%), i.e. they are mostly but not exclusively adult.",
+   "definition": "All analysis samples (n=306,165); top genus = genus with the largest relative abundance (from the per-sample summary); the eight most common top genera are shown, the rest grouped as other.",
+   "confounder": "Dominance is a single-feature summary and is sensitive to the GTDB genus splits (Phocaeicola vs Bacteroides); the unknown-age group is defined by missing metadata, not by biology.",
+   "n_samples": 306165,
+   "n_studies": 1905,
+   "numbers": {
+    "shares": {
+     "Bacteroides": {
+      "neonate": 0.043,
+      "infant": 0.101,
+      "child": 0.256,
+      "adolescent": 0.18,
+      "adult": 0.171,
+      "elderly": 0.157,
+      "unknown": 0.148
+     },
+     "Prevotella": {
+      "neonate": 0.012,
+      "infant": 0.068,
+      "child": 0.147,
+      "adolescent": 0.163,
+      "adult": 0.15,
+      "elderly": 0.146,
+      "unknown": 0.149
+     },
+     "Bifidobacterium": {
+      "neonate": 0.226,
+      "infant": 0.403,
+      "child": 0.106,
+      "adolescent": 0.127,
+      "adult": 0.044,
+      "elderly": 0.038,
+      "unknown": 0.129
+     },
+     "Faecalibacterium": {
+      "neonate": 0.003,
+      "infant": 0.022,
+      "child": 0.09,
+      "adolescent": 0.115,
+      "adult": 0.133,
+      "elderly": 0.08,
+      "unknown": 0.08
+     },
+     "Phocaeicola": {
+      "neonate": 0.026,
+      "infant": 0.056,
+      "child": 0.09,
+      "adolescent": 0.116,
+      "adult": 0.097,
+      "elderly": 0.053,
+      "unknown": 0.089
+     },
+     "Blautia_A": {
+      "neonate": 0.003,
+      "infant": 0.024,
+      "child": 0.031,
+      "adolescent": 0.035,
+      "adult": 0.068,
+      "elderly": 0.092,
+      "unknown": 0.052
+     },
+     "Roseburia": {
+      "neonate": 0.004,
+      "infant": 0.011,
+      "child": 0.036,
+      "adolescent": 0.052,
+      "adult": 0.061,
+      "elderly": 0.048,
+      "unknown": 0.041
+     },
+     "Alistipes": {
+      "neonate": 0.004,
+      "infant": 0.008,
+      "child": 0.04,
+      "adolescent": 0.047,
+      "adult": 0.05,
+      "elderly": 0.078,
+      "unknown": 0.033
+     },
+     "other": {
+      "neonate": 0.678,
+      "infant": 0.308,
+      "child": 0.203,
+      "adolescent": 0.165,
+      "adult": 0.226,
+      "elderly": 0.308,
+      "unknown": 0.278
+     }
+    }
+   },
+   "tag": "exploratory"
+  },
+  {
+   "id": "i_delivery_mode_infants",
+   "title": "Exploratory: birth mode and the infant gut, within studies",
+   "figure": "i_delivery_mode_infants.png",
+   "csv": "i_delivery_mode_infants.csv",
+   "description": "Among infant studies that recorded both vaginal and Caesarean births, the well-known Caesarean signature reproduces study by study: Bacteroides and Phocaeicola are depleted after C-section while Enterococcus and Klebsiella are enriched. Bifidobacterium shows no consistent within-study difference (median \u0394 = -0.05, 52% of studies agree) even though the pooled contrast is large (-0.91) \u2014 a textbook case of a between-study artefact. Each dot is one study.",
+   "definition": "Neonate and infant samples with a curated delivery_mode (n=14,815, 68 studies); unit = study with >= 20 samples in both birth modes; effect = mean log10(relabund + 1e-5) in C-section minus vaginal; summary = median across studies; agree = share of studies with the sign of the median. Bifidobacterium: 31 studies, median \u0394=-0.05, 52% agree; Bacteroides: 31 studies, median \u0394=-0.55, 90% agree; Phocaeicola: 31 studies, median \u0394=-0.53, 84% agree; Escherichia: 31 studies, median \u0394=-0.24, 58% agree; Enterococcus: 31 studies, median \u0394=+0.32, 87% agree; Klebsiella: 31 studies, median \u0394=+0.33, 81% agree",
+   "confounder": "Infant age at sampling differs between studies and the C-section effect fades with age; antibiotic exposure at birth, feeding and NICU status are not adjusted; delivery mode is a sample-level attribute here (R1/R2) but comes from a minority of infant studies.",
+   "n_samples": 14815,
+   "n_studies": 68,
+   "numbers": {
+    "summary": [
+     {
+      "genus": "Bifidobacterium",
+      "n_studies": 31,
+      "median_effect": -0.05333280563354492,
+      "frac_agree": 0.5161290322580645,
+      "pooled_effect": -0.9051792621612549,
+      "n_a": 7665,
+      "n_b": 5055
+     },
+     {
+      "genus": "Bacteroides",
+      "n_studies": 31,
+      "median_effect": -0.5479786396026611,
+      "frac_agree": 0.9032258064516129,
+      "pooled_effect": -1.2616281509399414,
+      "n_a": 7665,
+      "n_b": 5055
+     },
+     {
+      "genus": "Phocaeicola",
+      "n_studies": 31,
+      "median_effect": -0.533078670501709,
+      "frac_agree": 0.8387096774193549,
+      "pooled_effect": -1.1133129596710205,
+      "n_a": 7665,
+      "n_b": 5055
+     },
+     {
+      "genus": "Escherichia",
+      "n_studies": 31,
+      "median_effect": -0.24176406860351562,
+      "frac_agree": 0.5806451612903226,
+      "pooled_effect": -0.4607574939727783,
+      "n_a": 7665,
+      "n_b": 5055
+     },
+     {
+      "genus": "Enterococcus",
+      "n_studies": 31,
+      "median_effect": 0.3177907466888428,
+      "frac_agree": 0.8709677419354839,
+      "pooled_effect": 0.7869513034820557,
+      "n_a": 7665,
+      "n_b": 5055
+     },
+     {
+      "genus": "Klebsiella",
+      "n_studies": 31,
+      "median_effect": 0.33024144172668457,
+      "frac_agree": 0.8064516129032258,
+      "pooled_effect": 0.7169384956359863,
+      "n_a": 7665,
+      "n_b": 5055
+     }
+    ]
+   },
+   "tag": "exploratory"
+  },
+  {
+   "id": "i_akkermansia",
+   "title": "Exploratory: Akkermansia prevalence by life stage and HDI band",
+   "figure": "i_akkermansia.png",
+   "csv": "i_akkermansia.csv",
+   "description": "Akkermansia (the mucin degrader A. muciniphila) is detected in 4% of neonates and 42% of adults. Among children and adults its prevalence is 14% in low-HDI countries versus 47% in high-HDI countries, consistent with its BloSSUM classification in the volcano card; the per-study dots show the spread behind the bars.",
+   "definition": "Prevalence at relabund >= 1e-4; life-stage panel over samples with a known age category (n=202,760); HDI panel over child-to-elderly samples with a country HDI (n=156,928); dots = per-study prevalence for studies with >= 20 samples in the band (n=804).",
+   "confounder": "Prevalence at a 1e-4 threshold depends on depth, and low-HDI cohorts tend to be shallower; the HDI panel is not depth-matched.",
+   "n_samples": 306165,
+   "n_studies": 1905,
+   "numbers": {
+    "table": [
+     {
+      "facet": "life stage",
+      "group": "neonate",
+      "n_samples": 8687,
+      "n_studies": 98,
+      "prevalence": 0.03741222516403822,
+      "mean_relabund": 0.0010309352073818445
+     },
+     {
+      "facet": "life stage",
+      "group": "infant",
+      "n_samples": 30765,
+      "n_studies": 212,
+      "prevalence": 0.17523159434422234,
+      "mean_relabund": 0.008602309040725231
+     },
+     {
+      "facet": "life stage",
+      "group": "child",
+      "n_samples": 15151,
+      "n_studies": 165,
+      "prevalence": 0.4075638571711438,
+      "mean_relabund": 0.02006549946963787
+     },
+     {
+      "facet": "life stage",
+      "group": "adolescent",
+      "n_samples": 3065,
+      "n_studies": 93,
+      "prevalence": 0.30538336052202286,
+      "mean_relabund": 0.007748181466013193
+     },
+     {
+      "facet": "life stage",
+      "group": "adult",
+      "n_samples": 125958,
+      "n_studies": 871,
+      "prevalence": 0.4165118531574017,
+      "mean_relabund": 0.00971242319792509
+     },
+     {
+      "facet": "life stage",
+      "group": "elderly",
+      "n_samples": 19134,
+      "n_studies": 258,
+      "prevalence": 0.5397721333751437,
+      "mean_relabund": 0.014583404175937176
+     },
+     {
+      "facet": "HDI band (child\u2013elderly)",
+      "group": "low",
+      "n_samples": 5429,
+      "n_studies": 55,
+      "prevalence": 0.13501565665868484,
+      "mean_relabund": 0.002952088136225939
+     },
+     {
+      "facet": "HDI band (child\u2013elderly)",
+      "group": "middle",
+      "n_samples": 20492,
+      "n_studies": 229,
+      "prevalence": 0.2629806753855163,
+      "mean_relabund": 0.006544747389853001
+     },
+     {
+      "facet": "HDI band (child\u2013elderly)",
+      "group": "high",
+      "n_samples": 131007,
+      "n_studies": 714,
+      "prevalence": 0.47254726846657047,
+      "mean_relabund": 0.012446563690900803
+     }
+    ]
+   },
+   "tag": "exploratory"
+  },
+  {
+   "id": "i_feeding_mode_infants",
+   "title": "Exploratory: feeding mode and the infant gut, within studies",
+   "figure": "i_feeding_mode_infants.png",
+   "csv": "i_feeding_mode_infants.csv",
+   "description": "Only twelve infant studies record exclusive breastfeeding and formula feeding for at least 20 infants each, so the evidence base is thin. Bifidobacterium: median \u0394 -0.49 with 58% of 12 studies agreeing; Bacteroides: median \u0394 +0.32 with 67% of 12 studies agreeing; Escherichia: median \u0394 +0.17 with 67% of 12 studies agreeing; Klebsiella: median \u0394 +0.35 with 83% of 12 studies agreeing; Enterococcus: median \u0394 -0.10 with 58% of 12 studies agreeing. Bifidobacterium is lower in formula-fed infants in the larger studies but the direction flips in several small ones.",
+   "definition": "Neonate and infant samples with feeding_mode exclusive_breast or formula (n=6,194, 50 studies); unit = study with >= 20 samples in both groups; effect = mean log10(relabund + 1e-5) in formula minus exclusive-breast; summary = median across studies.",
+   "confounder": "Feeding mode changes with age and is recorded at different ages across studies; mixed feeding excluded; delivery mode and antibiotics not adjusted; very few studies qualify.",
+   "n_samples": 6194,
+   "n_studies": 50,
+   "numbers": {
+    "summary": [
+     {
+      "genus": "Bifidobacterium",
+      "n_studies": 12,
+      "median_effect": -0.4902108311653137,
+      "frac_agree": 0.5833333333333334,
+      "pooled_effect": -0.17386984825134277,
+      "n_a": 2383,
+      "n_b": 1738
+     },
+     {
+      "genus": "Bacteroides",
+      "n_studies": 12,
+      "median_effect": 0.3168606162071228,
+      "frac_agree": 0.6666666666666666,
+      "pooled_effect": 0.19359159469604492,
+      "n_a": 2383,
+      "n_b": 1738
+     },
+     {
+      "genus": "Escherichia",
+      "n_studies": 12,
+      "median_effect": 0.17183077335357666,
+      "frac_agree": 0.6666666666666666,
+      "pooled_effect": 0.31624412536621094,
+      "n_a": 2383,
+      "n_b": 1738
+     },
+     {
+      "genus": "Klebsiella",
+      "n_studies": 12,
+      "median_effect": 0.3540757894515991,
+      "frac_agree": 0.8333333333333334,
+      "pooled_effect": 0.5488531589508057,
+      "n_a": 2383,
+      "n_b": 1738
+     },
+     {
+      "genus": "Enterococcus",
+      "n_studies": 12,
+      "median_effect": -0.09994149208068848,
+      "frac_agree": 0.5833333333333334,
+      "pooled_effect": 0.04330921173095703,
+      "n_a": 2383,
+      "n_b": 1738
+     }
+    ]
+   },
+   "tag": "exploratory"
+  },
+  {
+   "id": "i_species_prevalence_by_age",
+   "title": "Exploratory: the most prevalent species across life stages",
+   "figure": "i_species_prevalence_by_age.png",
+   "csv": "i_species_prevalence_by_age.csv",
+   "description": "At species level (GTDB R232 names; species table thresholded at 0.1 % relative abundance) the twelve most prevalent species in the whole collection are adult-type organisms. Eleven of them are found in 4\u201314 % of neonates and then climb steeply through infancy and childhood; Bifidobacterium longum is the only one that peaks in infants (51%). The unknown-age column again resembles adults. Suffixed names such as Blautia_A wexlerae are GTDB placeholder genera.",
+   "definition": "Species prevalence = share of samples with relabund >= 1e-3 (the species table is released at this threshold); denominators are all analysis samples per life stage (n = neonate 8,687, infant 30,765, child 15,151, adolescent 3,065, adult 125,958, elderly 19,134, unknown 103,405).",
+   "confounder": "The 0.1 % species threshold is ten times the genus presence threshold, so species prevalence is depth-sensitive and lower than genus prevalence; life stage is a study-level attribute for most samples.",
+   "n_samples": 306165,
+   "n_studies": 1905,
+   "numbers": {
+    "table": {
+     "neonate": {
+      "Blautia_A wexlerae": 0.054,
+      "Bacteroides uniformis": 0.104,
+      "Phocaeicola vulgatus": 0.139,
+      "Fusicatenibacter saccharivorans": 0.046,
+      "Parabacteroides distasonis": 0.121,
+      "Roseburia rectalis": 0.041,
+      "Anaerostipes hadrus": 0.044,
+      "Faecalibacterium duncaniae": 0.044,
+      "Alistipes putredinis": 0.039,
+      "Gemmiger qucibialis": 0.044,
+      "Gemmiger formicilis": 0.036,
+      "Bifidobacterium longum": 0.242
+     },
+     "infant": {
+      "Blautia_A wexlerae": 0.324,
+      "Bacteroides uniformis": 0.21,
+      "Phocaeicola vulgatus": 0.26,
+      "Fusicatenibacter saccharivorans": 0.162,
+      "Parabacteroides distasonis": 0.208,
+      "Roseburia rectalis": 0.134,
+      "Anaerostipes hadrus": 0.217,
+      "Faecalibacterium duncaniae": 0.071,
+      "Alistipes putredinis": 0.08,
+      "Gemmiger qucibialis": 0.063,
+      "Gemmiger formicilis": 0.101,
+      "Bifidobacterium longum": 0.506
+     },
+     "child": {
+      "Blautia_A wexlerae": 0.592,
+      "Bacteroides uniformis": 0.552,
+      "Phocaeicola vulgatus": 0.6,
+      "Fusicatenibacter saccharivorans": 0.494,
+      "Parabacteroides distasonis": 0.534,
+      "Roseburia rectalis": 0.454,
+      "Anaerostipes hadrus": 0.456,
+      "Faecalibacterium duncaniae": 0.375,
+      "Alistipes putredinis": 0.334,
+      "Gemmiger qucibialis": 0.372,
+      "Gemmiger formicilis": 0.393,
+      "Bifidobacterium longum": 0.473
+     },
+     "adolescent": {
+      "Blautia_A wexlerae": 0.633,
+      "Bacteroides uniformis": 0.636,
+      "Phocaeicola vulgatus": 0.661,
+      "Fusicatenibacter saccharivorans": 0.662,
+      "Parabacteroides distasonis": 0.54,
+      "Roseburia rectalis": 0.641,
+      "Anaerostipes hadrus": 0.485,
+      "Faecalibacterium duncaniae": 0.623,
+      "Alistipes putredinis": 0.544,
+      "Gemmiger qucibialis": 0.596,
+      "Gemmiger formicilis": 0.547,
+      "Bifidobacterium longum": 0.444
+     },
+     "adult": {
+      "Blautia_A wexlerae": 0.701,
+      "Bacteroides uniformis": 0.726,
+      "Phocaeicola vulgatus": 0.67,
+      "Fusicatenibacter saccharivorans": 0.681,
+      "Parabacteroides distasonis": 0.581,
+      "Roseburia rectalis": 0.607,
+      "Anaerostipes hadrus": 0.592,
+      "Faecalibacterium duncaniae": 0.578,
+      "Alistipes putredinis": 0.574,
+      "Gemmiger qucibialis": 0.573,
+      "Gemmiger formicilis": 0.527,
+      "Bifidobacterium longum": 0.4
+     },
+     "elderly": {
+      "Blautia_A wexlerae": 0.679,
+      "Bacteroides uniformis": 0.74,
+      "Phocaeicola vulgatus": 0.663,
+      "Fusicatenibacter saccharivorans": 0.637,
+      "Parabacteroides distasonis": 0.568,
+      "Roseburia rectalis": 0.568,
+      "Anaerostipes hadrus": 0.482,
+      "Faecalibacterium duncaniae": 0.532,
+      "Alistipes putredinis": 0.613,
+      "Gemmiger qucibialis": 0.572,
+      "Gemmiger formicilis": 0.475,
+      "Bifidobacterium longum": 0.349
+     },
+     "unknown": {
+      "Blautia_A wexlerae": 0.583,
+      "Bacteroides uniformis": 0.576,
+      "Phocaeicola vulgatus": 0.554,
+      "Fusicatenibacter saccharivorans": 0.522,
+      "Parabacteroides distasonis": 0.488,
+      "Roseburia rectalis": 0.464,
+      "Anaerostipes hadrus": 0.475,
+      "Faecalibacterium duncaniae": 0.432,
+      "Alistipes putredinis": 0.415,
+      "Gemmiger qucibialis": 0.415,
+      "Gemmiger formicilis": 0.399,
+      "Bifidobacterium longum": 0.397
+     }
+    }
+   },
+   "tag": "exploratory"
+  }
+ ]
+}
