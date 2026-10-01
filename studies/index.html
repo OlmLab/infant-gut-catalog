@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Studies — Microbiome Repo</title>
+<meta name="description" content="All 2,886 human gut shotgun-metagenome studies of the catalog (all ages) with sample counts, age categories, health conditions, curation depth and per-field coverage.">
+<meta name="catalog-release" content="data-v1.13.1">
+<meta name="catalog-release-id" content="R2026.14">
+<link rel="canonical" href="https://olmlab.github.io/microbiome_repo/studies/index.html">
+<meta name="catalog-package-version" content="1.13.1">
+<meta name="catalog-build-date" content="2026-10-01">
+<link rel="stylesheet" href="../static/site.css">
+
+<link rel="stylesheet" href="../static/vendor/dataTables.dataTables-2.1.8.min.css" integrity="sha384-bK2L0Q3Sn2fB8YZTIjKejpTUJXd8xNtKn4RcIm7KM3EX3orMlOI31hwtNH0iyky/" crossorigin="anonymous">
+
+
+</head>
+<body>
+<nav class="topnav"><div class="in">
+<a class="brand" href="../index.html">Microbiome Repo</a>
+<a href="../index.html" >Home</a>
+<a href="../studies/index.html" class="active">Studies</a>
+<a href="../samples/index.html" >Samples</a>
+<a href="../cohorts/index.html" >Cohorts</a>
+<a href="../collections/index.html" >Collections</a>
+<a href="../atlas/index.html" >Atlas</a>
+<a href="../authors/index.html" >Authors</a>
+<a href="../registry/index.html" >Registry</a>
+<a href="../downloads/index.html" >Downloads</a>
+<a href="../contribute/index.html" >Contribute</a>
+<a href="../about/index.html" >About</a>
+</div></nav>
+<main>
+<div class="crumbs"><a href="../index.html">Home</a> › Studies</div>
+
+<h1>Studies (2,886)</h1>
+<p class="lead">Every study in the catalog — an INSDC BioProject deposited in ENA, NCBI SRA or DDBJ and enumerated through ENA's mirror; human gut shotgun metagenomes of all ages — with the number of curated samples, the age-category mix, the most frequent health-condition code, the routes that contributed values (<span class="mono">depth</span>: R1 archive attributes · R2 supplementary tables · R3 paper full text · R4 abstracts) and the per-field coverage. Click an accession for the study page (how it entered the registry, papers, authors, coverage, evidence, sequencing, sample table, downloads). <span class="mono">Gbp/run</span> is the mean base count per run in Gbp from <span class="mono">gut_runs.parquet</span>. The table is loaded from <a href="../data/studies_index.json">studies_index.json</a>; the full study table with every column is <a href="../data/gut_studies.parquet" download>gut_studies.parquet</a>.</p>
+<div class="btns"><a class="btn sec" href="../data/gut_studies.parquet" download>Download study table (parquet)</a> <a class="btn sec" href="../samples/index.html">Open the sample explorer</a></div>
+<table id="studies" class="tbl display compact" style="width:100%">
+<thead><tr><th>Study</th><th>Title</th><th class="num">Samples</th><th>Age categories</th><th>Top condition</th><th>Country</th><th>Depth</th><th class="num">Age %</th><th class="num">Health %</th><th class="num">Country %</th><th>First author</th><th class="num">Papers</th><th>Public</th><th class="num">Runs</th><th class="num">Gbp/run</th></tr></thead>
+<tbody></tbody></table>
+
+</main>
+<footer>
+<div id="release-line"><b>Microbiome Repo</b> — release <a href="../downloads/index.html#rel-R2026.14"><span class="mono">R2026.14</span></a> · package <span class="mono">1.13.1</span> · build <span class="mono">6b02707</span> · built 2026-10-01 · data tag <span class="mono">data-v1.13.1</span> · DOI pending Zenodo integration (<a href="../data/VERSION.json">VERSION.json</a>, <a href="../changes/R2026.14.html">what changed</a>, <a href="../docs/CHANGELOG.html">changelog</a>). Curated tables (registry_*, gut_* and the infant extension) are released under <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a>; archive metadata remains under INSDC terms; community profiles from <a href="https://sandpiper.qut.edu.au/">Sandpiper</a> (Woodcroft et al. 2025, CC-BY).</div>
+<div>How to cite: <i>Microbiome Repo, release R2026.14 (data package 1.13.1), OlmLab, 2026-10-01.</i> · <a href="../about/index.html">About</a> · <a href="../about/sources.html">Sources and acknowledgements</a> · created in the <a href="https://www.colorado.edu/lab/olm/">Olm Lab at the University of Colorado Boulder</a>, funded by <a href="https://www.anthropic.com/news/ai-for-science-program">Anthropic&#39;s AI for Science program</a></div>
+<div>Caveats: every value carries a route (R1 archive attribute, R2 supplementary table, R3 paper text, R4 abstract/description), a scope and a confidence tier (not a calibrated probability); R3/R4 values are cohort-wide statements applied to the study's samples — see <a href="../fields/index.html">Fields</a> and <a href="../about/methods.html#limitations">Methods › Limitations</a>. Built with an LLM-assisted pipeline; treat individual values as evidence-linked claims, not ground truth. Found an error? Every study and cohort page has a <b>Flag an issue</b> link that opens a short prefilled GitHub issue. Know a study's missing metadata? See <a href="../contribute/index.html">Contribute</a>.</div>
+</footer>
+
+<script src="../static/vendor/jquery-3.7.1.min.js" integrity="sha384-1H217gwSVyLSIfaLxHbE7dRb3v4mYCKbpQvzx0cegeju1MVsGrX5xXxAvs/HgeFs" crossorigin="anonymous"></script>
+<script src="../static/vendor/dataTables-2.1.8.min.js" integrity="sha384-MgwUq0TVErv5Lkj/jIAgQpC+iUIqwhwXxJMfrZQVAOhr++1MR02yXH8aXdPc3fk0" crossorigin="anonymous"></script>
+
+<script>window.CATALOG={version:'1.13.1',release:'data-v1.13.1',releaseId:'R2026.14',issueRepo:'https://github.com/OlmLab/microbiome_repo/issues/new',issueTemplate:'simple-finding.yml',issueLabel:'finding'};</script>
+<script src="../static/site.js"></script>
+
+<script>
+fetch('../data/studies_index.json').then(r => r.json()).then(rows => {
+  const h = s => String(s === null || s === undefined ? '' : s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  new DataTable('#studies', {
+    data: rows, pageLength: 50, lengthMenu: [25, 50, 100, 500], order: [[2, 'desc']], deferRender: true,
+    columns: [
+      {data: 'a', render: (d, t) => t === 'display' ? '<a href="' + h(d) + '.html">' + h(d) + '</a>' : d},
+      {data: 't', render: (d, t) => t === 'display' ? '<span class="small">' + h(d) + '</span>' : d},
+      {data: 'n', className: 'num', render: (d, t) => t === 'display' ? Number(d).toLocaleString() : d},
+      {data: 'ag', render: (d, t) => t === 'display' ? '<span class="mono small">' + h(d) + '</span>' : d},
+      {data: 'hc', render: (d, t) => t === 'display' ? '<span class="mono small">' + h(d) + '</span>' : d},
+      {data: 'co', className: 'mono'},
+      {data: 'd', render: (d, t) => t === 'display' ? '<span class="mono small">' + h(d) + '</span>' : d},
+      {data: 'ca', className: 'num', render: (d, t) => t === 'display' ? d + '%' : d},
+      {data: 'ch', className: 'num', render: (d, t) => t === 'display' ? d + '%' : d},
+      {data: 'cc', className: 'num', render: (d, t) => t === 'display' ? d + '%' : d},
+      {data: 'fa', render: (d, t) => t === 'display' ? '<span class="small">' + h(d) + '</span>' : d},
+      {data: 'p', className: 'num'},
+      {data: 'y', className: 'mono'},
+      {data: 'nr', className: 'num', render: (d, t) => t === 'display' ? (d === null || d === undefined ? '' : Number(d).toLocaleString()) : d},
+      {data: 'gb', className: 'num', render: (d, t) => t === 'display' ? (d === null || d === undefined ? '' : Number(d).toFixed(2)) : d}
+    ]
+  });
+});
+</script>
+
+</body>
+</html>
